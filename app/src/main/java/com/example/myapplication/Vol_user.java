@@ -1,16 +1,22 @@
 package com.example.myapplication;
 
+import java.util.Date;
+
 public class Vol_user implements Volunteer_user {
     String first_name;
     String last_name;
     Address address;
     String phone_num;
+    Date birth_date;
+    String Email;
 
-    public Vol_user(String first_name, String last_name, Address address, String phone_num) {
+    public Vol_user(String first_name, String last_name, Address address, String phone_num,Date birthdate, String email) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.address = address;
         this.phone_num = phone_num;
+        this.birth_date = birthdate;
+        this.Email = email;
     }
 
     public String getFirst_name() {
@@ -31,6 +37,22 @@ public class Vol_user implements Volunteer_user {
 
     public Address getAddress() {
         return address;
+    }
+
+    public Date getBirth_date() {
+        return birth_date;
+    }
+
+    public void setBirth_date(Date birth_date) {
+        this.birth_date = birth_date;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public void setAddress(Address address) {

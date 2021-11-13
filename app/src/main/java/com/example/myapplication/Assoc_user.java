@@ -6,12 +6,14 @@ public class Assoc_user implements Association_user {
     String phone_num;
     Address address;
     String name;
+    String Email;
     HashMap<String, Association_post> posts ;
 
-    public Assoc_user(String phone_num, Address address, String name) {
+    public Assoc_user(String phone_num, Address address, String name,String email) {
         this.phone_num = phone_num;
         this.address = address;
         this.name = name;
+        this.Email = email;
        this.posts = new HashMap<String, Association_post>();
     }
     public void add_post(Association_post post)
@@ -48,4 +50,11 @@ public class Assoc_user implements Association_user {
         this.name = name;
     }
 
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
 }

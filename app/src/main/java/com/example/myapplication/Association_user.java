@@ -30,4 +30,13 @@ public interface Association_user {
      * @return
      */
     public void setName(String name);
+    /**
+     * @return  return the Association email address,
+     */
+    public String getEmail();
+    /**
+     * @param email - new association email
+     * @return
+     */
+    public void setEmail(String email);
 }

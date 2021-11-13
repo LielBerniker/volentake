@@ -1,8 +1,9 @@
 package com.example.myapplication;
 
 
+import java.util.Date;
 
-    public interface Volunteer_user {
+public interface Volunteer_user {
         /**
          * @return  return the the first name of user,
          */
@@ -39,4 +40,22 @@ package com.example.myapplication;
          * @return
          */
         public void setPhone_num(String phone_num);
+    /**
+     * @return  return the birth date of user,
+     */
+    public Date getBirth_date() ;
+    /**
+     * @param birth_date - new birth date
+     * @return
+     */
+    public void setBirth_date(Date birth_date);
+    /**
+     * @return  return email address of user,
+     */
+    public String getEmail();
+    /**
+     * @param email - new email address
+     * @return
+     */
+    public void setEmail(String email);
     }
