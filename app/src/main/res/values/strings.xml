@@ -5,4 +5,5 @@
     <string name="volunteerloginbutton">התחברות</string>
     <string name="volunteercreateuser">יצירת משתמש</string>
     <string name="volunteerloginback">חזרה לדף הראשי</string>
+    <string name="volunteerloginemailtext">אימייל:</string>
 </resources>
