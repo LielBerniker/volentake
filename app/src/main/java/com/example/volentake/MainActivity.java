@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-//        associationLoginBtn.setOnClickListener(view -> {
-//            Intent intent = new Intent(MainActivity.this, AssociationLogIn.class);
-//            startActivity(intent);
-//        });
-//
-//        guestLoginBtn.setOnClickListener(view -> {
-//            Intent intent = new Intent(MainActivity.this, GuestUser.class);
-//            startActivity(intent);
-//        });
+        associationLoginBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, AssociationLogIn.class);
+            startActivity(intent);
+        });
+
+        guestLoginBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, GuestUser.class);
+            startActivity(intent);
+        });
 
 
     }
