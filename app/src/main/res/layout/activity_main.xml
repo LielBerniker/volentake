@@ -7,81 +7,69 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mainactivitytitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="שם משתמש"
+        android:text="@string/volentake"
+        android:textAlignment="textStart"
+        android:textSize="34sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.11" />
+
+    <Button
+        android:id="@+id/volunteerloginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מתנדב"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainactivitytitle"
+        app:layout_constraintVertical_bias="0.456" />
+
+    <Button
+        android:id="@+id/associationloginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="עמותה"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volunteerloginbtn"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <Button
+        android:id="@+id/guestloginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אורח"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/associationloginbtn"
+        app:layout_constraintVertical_bias="0.144" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mainactivitysubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="סיסמא"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
-
-    <EditText
-        android:id="@+id/txtuser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="user"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199" />
-
-    <EditText
-        android:id="@+id/txtpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
-
-    <Button
-        android:id="@+id/btnsend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClicklog"
         android:text="התחברות"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.377"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
-
-    <Button
-        android:id="@+id/btnreg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickreg"
-        android:text="הרשמה"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.377"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
-
+        app:layout_constraintTop_toBottomOf="@+id/mainactivitytitle"
+        app:layout_constraintVertical_bias="0.73" />
 </android.support.constraint.ConstraintLayout>

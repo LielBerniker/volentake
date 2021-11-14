@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
-            android:name=".VolunteerUserSignUp"
+            android:name=".VolunteerPage"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".GuestUser"
+            android:exported="false" />
+        <activity
+            android:name=".AssociationLogIn"
+            android:exported="false" />
+        <activity
+            android:name=".VolunteerLogIn"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

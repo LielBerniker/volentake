@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VolunteerLogIn">
+
+    <TextView
+        android:id="@+id/volunteerloglntitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volunteerloglntitle"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <Button
+        android:id="@+id/volunteerloginbtn"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:text="@string/volunteerloginbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle" />
+
+    <Button
+        android:id="@+id/volunteercreateuser"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="88dp"
+        android:text="@string/volunteercreateuser"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volunteerloginbtn"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <Button
+        android:id="@+id/volunteerloginback"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:text="@string/volunteerloginback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volunteercreateuser"
+        app:layout_constraintVertical_bias="0.16" />
+
+    <EditText
+        android:id="@+id/volunteeruseremail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/volunteeruserpassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
+        app:layout_constraintVertical_bias="0.779"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/volunteeruserpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="84dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/emailtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="אימייל:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toEndOf="@+id/volunteeruseremail"
+        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/passwordtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="סיסמה:"
+        app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toEndOf="@+id/volunteeruserpassword"
+        tools:ignore="MissingConstraints" />
+</android.support.constraint.ConstraintLayout>
