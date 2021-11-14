@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">volentake</string>
     <string name="volentake">Volentake</string>
+    <string name="volunteerloglntitle">התחברות משתמש מתנדב</string>
+    <string name="volunteerloginbutton">התחברות</string>
+    <string name="volunteercreateuser">יצירת משתמש</string>
+    <string name="volunteerloginback">חזרה לדף הראשי</string>
 </resources>
