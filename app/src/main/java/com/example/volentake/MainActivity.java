@@ -4,26 +4,43 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    EditText txt_username;
-    EditText txt_pass;
+
+    private Button volunteerLoginBtn;
+    private Button associationLoginBtn;
+    private Button guestLoginBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       txt_username =(EditText)findViewById(R.id.txtuser);
-        txt_pass =(EditText)findViewById(R.id.txtpass);
-        String user_name = txt_username.getText().toString();
-        String pass = txt_pass.getText().toString();
+
+        volunteerLoginBtn = (Button) findViewById(R.id.volunteerloginbtn);
+        associationLoginBtn = (Button) findViewById(R.id.associationloginbtn);
+        guestLoginBtn = (Button) findViewById(R.id.guestloginbtn);
+
+        volunteerLoginBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, VolunteerLogIn.class);
+            startActivity(intent);
+        });
+
+//        associationLoginBtn.setOnClickListener(view -> {
+//            Intent intent = new Intent(MainActivity.this, AssociationLogIn.class);
+//            startActivity(intent);
+//        });
+//
+//        guestLoginBtn.setOnClickListener(view -> {
+//            Intent intent = new Intent(MainActivity.this, GuestUser.class);
+//            startActivity(intent);
+//        });
+
+
     }
 
-    public void onClicklog(View view) {
-        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-        startActivity(intent);
-    }
 
-    public void onClickreg(View view) {
-    }
+
+
 }
