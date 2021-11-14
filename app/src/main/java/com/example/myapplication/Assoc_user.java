@@ -18,7 +18,7 @@ public class Assoc_user implements Association_user {
     }
     public void add_post(Association_post post)
     {
-        posts.put(post.getName(),post);
+        posts.put(post.getId(),post);
     }
 
     public void add_post(String name, Address location, int num_of_participants, String type, String phone_number)

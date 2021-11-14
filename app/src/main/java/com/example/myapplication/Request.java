@@ -15,7 +15,7 @@ public interface Request {
      */
     public Volunteer_user getVol();
     /**
-     * @param new Volunteer
+     * @param vol - new volunteer
      * @return
      */
     public void setVolunteer(Volunteer_user vol);

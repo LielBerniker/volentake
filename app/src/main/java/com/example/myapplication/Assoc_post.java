@@ -17,6 +17,9 @@ public class Assoc_post implements Association_post {
         this.phone_number = phone_number;
     }
 
+    @Override
+    public String getId() { return id; }
+
     public String getName() {
         return name;
     }

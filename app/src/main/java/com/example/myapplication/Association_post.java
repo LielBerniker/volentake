@@ -2,6 +2,10 @@ package com.example.myapplication;
 
 public interface Association_post {
     /**
+     * @return  return the post id ,
+     */
+    public String getId();
+    /**
      * @return  return the post name ,
      */
     public String getName();
