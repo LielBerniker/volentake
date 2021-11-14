@@ -1,11 +1,13 @@
 package com.example.myapplication;
 
 public class Assoc_post implements Association_post {
+    String id;
     String name;
     Address location;
     int num_of_participants;
     String type;
     String phone_number;
+    String description;
 
     public Assoc_post(String name, Address location, int num_of_participants, String type, String phone_number) {
         this.name = name;
@@ -45,6 +47,12 @@ public class Assoc_post implements Association_post {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPhone_number() {

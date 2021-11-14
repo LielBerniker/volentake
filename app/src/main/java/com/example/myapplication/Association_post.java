@@ -46,4 +46,13 @@ public interface Association_post {
      * @return
      */
     public void setPhone_number(String phone_number);
+    /**
+     * @return  return the post description ,
+     */
+    public String getDescription();
+    /**
+     * @param description - new post description
+     * @return
+     */
+    public void setDescription(String description);
 }
