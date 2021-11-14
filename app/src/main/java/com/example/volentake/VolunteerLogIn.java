@@ -40,10 +40,10 @@ public class VolunteerLogIn extends AppCompatActivity {
             startActivity(intent);
         });
 
-//        volunteerCreateUser.setOnClickListener(view -> {
-//            Intent intent = new Intent(VolunteerLogIn.this, VolunteerUserSignUp.class);
-//            startActivity(intent);
-//        });
+        volunteerCreateUser.setOnClickListener(view -> {
+            Intent intent = new Intent(VolunteerLogIn.this, VolunteerUserSignUp.class);
+            startActivity(intent);
+        });
 
         volunteerLoginBack.setOnClickListener(view -> {
             Intent intent = new Intent(VolunteerLogIn.this, MainActivity.class);

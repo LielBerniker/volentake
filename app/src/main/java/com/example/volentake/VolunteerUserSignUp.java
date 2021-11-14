@@ -8,6 +8,6 @@ public class VolunteerUserSignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_volunteer_user_sign_up2);
+        setContentView(R.layout.activity_volunteer_user_sign_up);
     }
 }
