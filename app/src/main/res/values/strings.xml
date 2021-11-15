@@ -1,9 +1,15 @@
 <resources>
-    <string name="app_name">volentake</string>
-    <string name="volentake">Volentake</string>
-    <string name="volunteerloglntitle">התחברות משתמש מתנדב</string>
-    <string name="volunteerloginbutton">התחברות</string>
-    <string name="volunteercreateuser">יצירת משתמש</string>
-    <string name="volunteerloginback">חזרה לדף הראשי</string>
-    <string name="volunteerloginemailtext">אימייל:</string>
+    <string name="app_name">Voluntake</string>
+    <string name="volunteerLogInTitle">התחברות משתמש מתנדב</string>
+    <string name="associationLogInTitle">התחברות משתמש עמותה</string>
+    <string name="LogIn">התחברות</string>
+    <string name="CreateUser">יצירת משתמש</string>
+    <string name="backToMainMenu">חזרה לדף הראשי</string>
+    <string name="emailText">אימייל</string>
+    <string name="firstNameText">שם פרטי</string>
+    <string name="lastNameText">שם משפחה</string>
+    <string name="addressText">כתובת</string>
+    <string name="phoneText">פלאפון</string>
+    <string name="birthOfDateText">תאריך לידה</string>
+    <string name="passwordText">סיסמה</string>
 </resources>

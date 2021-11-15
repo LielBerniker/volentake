@@ -26,8 +26,8 @@ public class VolunteerLogIn extends AppCompatActivity {
         volunteerCreateUser = (Button) findViewById(R.id.volunteercreateuser);
         volunteerLoginBack = (Button) findViewById(R.id.volunteerloginback);
 
-        volunteerEmailEditText = (TextView) findViewById(R.id.emailtext);
-        volunteerPasswordEditText = (TextView) findViewById(R.id.passwordtext);
+        volunteerEmailEditText = (TextView) findViewById(R.id.volunteeruseremail);
+        volunteerPasswordEditText = (TextView) findViewById(R.id.volunteeruserpassword);
 
         volunteerLoginBtn.setOnClickListener(view -> {
 

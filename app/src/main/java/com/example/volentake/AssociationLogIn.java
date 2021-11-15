@@ -27,8 +27,8 @@ public class AssociationLogIn extends AppCompatActivity {
         associationCreateUser = (Button) findViewById(R.id.associationcreateuser);
         associationLoginBack = (Button) findViewById(R.id.associationloginback);
 
-        associationEmailEditText = (TextView) findViewById(R.id.emailtext);
-        associationPasswordEditText = (TextView) findViewById(R.id.passwordtext);
+        associationEmailEditText = (TextView) findViewById(R.id.associationuseremail);
+        associationPasswordEditText = (TextView) findViewById(R.id.volunteeruserpassword);
 
         associationLoginBtn.setOnClickListener(view -> {
 
