@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/inputMail"
@@ -9,80 +9,92 @@
 
     <EditText
         android:id="@+id/inputFirstName"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
+        android:layout_width="229dp"
+        android:layout_height="51dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/firstNameText"
         app:layout_constraintBottom_toTopOf="@+id/inputLastName"
         app:layout_constraintEnd_toEndOf="@+id/inputLastName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
 
     <EditText
         android:id="@+id/inputLastName"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/lastNameText"
         app:layout_constraintBottom_toTopOf="@+id/inputAddress"
         app:layout_constraintEnd_toEndOf="@+id/inputAddress"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFirstName"
         app:layout_constraintVertical_bias="0.243" />
 
     <EditText
         android:id="@+id/inputAddress"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/addressText"
         app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
         app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputLastName"
         app:layout_constraintVertical_bias="0.341" />
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
         android:text="@string/phoneText"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toTopOf="@+id/editTextDate"
         app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputAddress"
         app:layout_constraintVertical_bias="0.434" />
 
     <EditText
         android:id="@+id/editTextDate"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date"
         android:text="@string/birthOfDateText"
         app:layout_constraintBottom_toTopOf="@+id/editTextEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/editTextEmailAddress"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
         app:layout_constraintVertical_bias="0.542" />
 
     <EditText
         android:id="@+id/editTextEmailAddress"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="@string/emailText"
         app:layout_constraintBottom_toTopOf="@+id/volunteerInputPassword"
         app:layout_constraintEnd_toEndOf="@+id/volunteerInputPassword"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate"
         app:layout_constraintVertical_bias="0.65" />
 
     <EditText
         android:id="@+id/volunteerInputPassword"
-        android:layout_width="210dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="סיסמה"
@@ -97,4 +109,4 @@
         app:layout_constraintVertical_bias="0.759" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "276392989258",
+    "project_id": "volunteerapp-a225e",
+    "storage_bucket": "volunteerapp-a225e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276392989258:android:af2d1e29d77db4212c4cb3",
+        "android_client_info": {
+          "package_name": "com.example.volentake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276392989258-3rktm36dl89kppqski1k01lsjfvbfbj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw6q9G0WcAzDv1RzFze0zUgD8RnBB7Q6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276392989258-3rktm36dl89kppqski1k01lsjfvbfbj3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
