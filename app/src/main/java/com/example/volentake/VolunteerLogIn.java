@@ -3,11 +3,20 @@ package com.example.volentake;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 
@@ -20,6 +29,8 @@ public class VolunteerLogIn extends AppCompatActivity {
     // insert details for user signIn
     private TextView volunteerEmailEditText;
     private TextView volunteerPasswordEditText;
+//    firebase connect
+private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +46,18 @@ public class VolunteerLogIn extends AppCompatActivity {
         volunteerEmailEditText = (TextView) findViewById(R.id.volunteeruseremail);
         volunteerPasswordEditText = (TextView) findViewById(R.id.volunteeruserpassword);
 
+//        firebase
+        mAuth = FirebaseAuth.getInstance();
         volunteerLoginBtn.setOnClickListener(view -> {
 
-            // checking validate of user details with firebase database - email + password
-            // ***
             String email = volunteerEmailEditText.getText().toString();
             String password = volunteerPasswordEditText.getText().toString();
-            // LIEL - add some checking validation of the input in email and password...
-            // like: email need to contains @ and after . with text like @example.com
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+                Toast.makeText(VolunteerLogIn.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
+            } else {
+                loginUser(email , password);
+            }
 
-            // LIEL check if - user is exists in the firebase
-
-            Intent intent = new Intent(VolunteerLogIn.this, VolunteerPage.class);
-            startActivity(intent);
         });
 
         volunteerCreateUser.setOnClickListener(view -> {
@@ -59,5 +69,26 @@ public class VolunteerLogIn extends AppCompatActivity {
             Intent intent = new Intent(VolunteerLogIn.this, MainActivity.class);
             startActivity(intent);
         });
+    }
+    private void loginUser(String email, String password) {
+
+        mAuth.signInWithEmailAndPassword(email , password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(VolunteerLogIn.this, "successfully log in " , Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(VolunteerLogIn.this, VolunteerPage.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(VolunteerLogIn.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
