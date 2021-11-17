@@ -9,92 +9,85 @@
 
     <TextView
         android:id="@+id/passwordtext2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="292dp"
+        android:layout_width="60dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="36dp"
         android:text="סיסמה:"
-        app:layout_constraintBottom_toTopOf="@+id/associationloginbtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toEndOf="@+id/associationpassword"
+        app:layout_constraintTop_toBottomOf="@+id/emailtext2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/emailtext2"
-        android:layout_width="48dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="60dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="116dp"
         android:text="@string/emailText"
-        app:layout_constraintBottom_toTopOf="@+id/passwordtext2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.766"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/associationuseremail"
         app:layout_constraintTop_toBottomOf="@+id/associationloglntitle"
-        app:layout_constraintVertical_bias="0.196"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/associationuseremail"
-        android:layout_width="191dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="100dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="104dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/associationpassword"
-        app:layout_constraintEnd_toStartOf="@+id/emailtext2"
-        app:layout_constraintHorizontal_bias="0.702"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/associationloglntitle"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/associationpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="292dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/associationloginbtn"
-        app:layout_constraintEnd_toStartOf="@+id/passwordtext2"
-        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/associationuseremail"
+        app:layout_constraintVertical_bias="0.131"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/associationloginbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="28dp"
         android:text="@string/LogIn"
         app:layout_constraintBottom_toTopOf="@+id/associationcreateuser"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/associationcreateuser"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="130dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/CreateUser"
         app:layout_constraintBottom_toTopOf="@+id/associationloginback"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/associationloginback"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/backToMainMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -106,8 +99,10 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/associationuseremail"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
 </androidx.constraintlayout.widget.ConstraintLayout>

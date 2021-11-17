@@ -41,6 +41,11 @@ public class VolunteerLogIn extends AppCompatActivity {
             // ***
             String email = volunteerEmailEditText.getText().toString();
             String password = volunteerPasswordEditText.getText().toString();
+            // LIEL - add some checking validation of the input in email and password...
+            // like: email need to contains @ and after . with text like @example.com
+
+            // LIEL check if - user is exists in the firebase
+
             Intent intent = new Intent(VolunteerLogIn.this, VolunteerPage.class);
             startActivity(intent);
         });

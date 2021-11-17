@@ -24,7 +24,6 @@ public class AssociationLogIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_association_log_in);
 
-
         associationLoginBtn = (Button) findViewById(R.id.associationloginbtn);
         associationCreateUser = (Button) findViewById(R.id.associationcreateuser);
         associationLoginBack = (Button) findViewById(R.id.associationloginback);
