@@ -1,10 +1,15 @@
 package com.example.volentake;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+
 
 public class VolunteerLogIn extends AppCompatActivity {
 
@@ -12,13 +17,14 @@ public class VolunteerLogIn extends AppCompatActivity {
     private Button volunteerLoginBtn;
     private Button volunteerCreateUser;
     private Button volunteerLoginBack;
-
     // insert details for user signIn
     private TextView volunteerEmailEditText;
     private TextView volunteerPasswordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_log_in);
 
@@ -26,8 +32,8 @@ public class VolunteerLogIn extends AppCompatActivity {
         volunteerCreateUser = (Button) findViewById(R.id.volunteercreateuser);
         volunteerLoginBack = (Button) findViewById(R.id.volunteerloginback);
 
-        volunteerEmailEditText = (TextView) findViewById(R.id.emailtext);
-        volunteerPasswordEditText = (TextView) findViewById(R.id.passwordtext);
+        volunteerEmailEditText = (TextView) findViewById(R.id.volunteeruseremail);
+        volunteerPasswordEditText = (TextView) findViewById(R.id.volunteeruserpassword);
 
         volunteerLoginBtn.setOnClickListener(view -> {
 
@@ -35,7 +41,6 @@ public class VolunteerLogIn extends AppCompatActivity {
             // ***
             String email = volunteerEmailEditText.getText().toString();
             String password = volunteerPasswordEditText.getText().toString();
-
             Intent intent = new Intent(VolunteerLogIn.this, VolunteerPage.class);
             startActivity(intent);
         });

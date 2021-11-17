@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:276392989258:android:e62b1753b1eb6d162c4cb3",
+        "mobilesdk_app_id": "1:276392989258:android:af2d1e29d77db4212c4cb3",
         "android_client_info": {
-          "package_name": "volentake.app1"
+          "package_name": "com.example.volentake"
         }
       },
       "oauth_client": [

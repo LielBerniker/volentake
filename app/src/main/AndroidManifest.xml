@@ -19,6 +19,9 @@
             android:name=".GuestUser"
             android:exported="false" />
         <activity
+            android:name=".VolunteerUserSignUp"
+            android:exported="false" />
+        <activity
             android:name=".AssociationLogIn"
             android:exported="false" />
         <activity

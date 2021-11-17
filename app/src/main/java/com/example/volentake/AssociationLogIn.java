@@ -1,10 +1,12 @@
 package com.example.volentake;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AssociationLogIn extends AppCompatActivity {
 
@@ -27,8 +29,8 @@ public class AssociationLogIn extends AppCompatActivity {
         associationCreateUser = (Button) findViewById(R.id.associationcreateuser);
         associationLoginBack = (Button) findViewById(R.id.associationloginback);
 
-        associationEmailEditText = (TextView) findViewById(R.id.emailtext);
-        associationPasswordEditText = (TextView) findViewById(R.id.passwordtext);
+        associationEmailEditText = (TextView) findViewById(R.id.associationuseremail);
+        associationPasswordEditText = (TextView) findViewById(R.id.volunteeruserpassword);
 
         associationLoginBtn.setOnClickListener(view -> {
 
