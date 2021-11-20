@@ -41,6 +41,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
     private EditText inputPassword2;
     private EditText inputMail;
     private Button register;
+    private Button logInVolunteer;
 //    firebase
     private FirebaseAuth mAuth;
     private DatabaseReference mRootRef;
@@ -55,10 +56,12 @@ public class VolunteerUserSignUp extends AppCompatActivity {
         inputFirstName = (EditText) findViewById(R.id.inputFirstName);
         inputLastName =(EditText)  findViewById(R.id.inputLastName);
         inputAddress = (EditText) findViewById(R.id.inputAddress);
+        inputBirthday = (EditText) findViewById(R.id.inputDate);
         inputMail = (EditText) findViewById(R.id.inputMail);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
         inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
         register = (Button)findViewById(R.id.register);
+        logInVolunteer = (Button)findViewById(R.id.backForLogIn);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -72,6 +75,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 String txtPassword1 = inputPassword1.getText().toString();
                 String txtPassword2 = inputPassword2.getText().toString();
                 String txtaddrress = inputAddress.getText().toString();
+                String txtBirthDay = inputBirthday.getText().toString();
 
                 if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtaddrress)
                         || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword1) || TextUtils.isEmpty(txtPassword2)){
@@ -84,6 +88,11 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                     registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtaddrress);
                 }
             }
+        });
+
+        logInVolunteer.setOnClickListener(view -> {
+            Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerLogIn.class);
+            startActivity(intent);
         });
     }
     private void registerUser(final String firstName, final String lastName, final String email, String password,final String add) {

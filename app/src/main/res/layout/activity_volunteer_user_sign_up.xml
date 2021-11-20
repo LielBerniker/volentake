@@ -38,15 +38,28 @@
 
             <Button
                 android:id="@+id/register"
-                android:layout_width="103dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="183dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="68dp"
                 android:text="צור מתנדב"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintHorizontal_bias="0.853"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleCreate"
+                app:layout_constraintTop_toBottomOf="@+id/inputMail"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/backForLogIn"
+                android:layout_width="183dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="40dp"
+                android:text="לדף התחברות"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.853"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -57,20 +70,20 @@
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.948"
+                app:layout_constraintHorizontal_bias="0.918"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleCreate"
-                app:layout_constraintVertical_bias="0.01" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/titleCreate"
                 android:layout_width="208dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:text="יצירת מתנדב"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintHorizontal_bias="0.599"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,11 +91,11 @@
                 android:id="@+id/txtLastName"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:text="שם משפחה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.945"
+                app:layout_constraintHorizontal_bias="0.91"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputFirstName" />
 
@@ -90,11 +103,11 @@
                 android:id="@+id/txtAddress"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:text="כתובת"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.942"
+                app:layout_constraintHorizontal_bias="0.922"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
 
@@ -102,23 +115,23 @@
                 android:id="@+id/txtPassword1"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:text="סיסמה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.918"
+                app:layout_constraintHorizontal_bias="0.916"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/inputDate" />
 
             <TextView
                 android:id="@+id/txtPassword2"
                 android:layout_width="159dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="16dp"
                 android:text="סיסמה בשנית"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.909"
+                app:layout_constraintHorizontal_bias="0.916"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
@@ -126,23 +139,35 @@
                 android:id="@+id/textView"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:text="מייל"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.915"
+                app:layout_constraintHorizontal_bias="0.943"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
 
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="127dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="20dp"
+                android:text="תאריך לידה"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.925"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputAddress" />
+
             <EditText
                 android:id="@+id/inputLastName"
-                android:layout_width="254dp"
+                android:layout_width="264dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.877"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
 
@@ -162,37 +187,49 @@
                 android:id="@+id/inputMail"
                 android:layout_width="254dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.816"
+                app:layout_constraintHorizontal_bias="0.904"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <EditText
                 android:id="@+id/inputPassword1"
-                android:layout_width="241dp"
+                android:layout_width="261dp"
                 android:layout_height="52dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:ems="10"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.873"
+                app:layout_constraintHorizontal_bias="0.893"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtPassword1" />
 
             <EditText
                 android:id="@+id/inputPassword2"
-                android:layout_width="241dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="259dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
                 android:ems="10"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.868"
+                app:layout_constraintHorizontal_bias="0.911"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
+
+            <EditText
+                android:id="@+id/inputDate"
+                android:layout_width="262dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.903"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
