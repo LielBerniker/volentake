@@ -54,7 +54,10 @@ private FirebaseAuth mAuth;
             String password = volunteerPasswordEditText.getText().toString();
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
                 Toast.makeText(VolunteerLogIn.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
-            } else {
+            }else if (password.length() < 6){
+                Toast.makeText(VolunteerLogIn.this, "Password too short!", Toast.LENGTH_SHORT).show();
+            }
+            else {
                 loginUser(email , password);
             }
 
