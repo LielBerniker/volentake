@@ -56,10 +56,10 @@ public class AssociationLogIn extends AppCompatActivity {
 
         });
 
-//        associationCreateUser.setOnClickListener(view -> {
-//            Intent intent = new Intent(associationLogIn.this, associationUserSignUp.class);
-//            startActivity(intent);
-//        });
+        associationCreateUser.setOnClickListener(view -> {
+            Intent intent = new Intent(AssociationLogIn.this, AssociationSignUp.class);
+            startActivity(intent);
+        });
 
         associationLoginBack.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationLogIn.this, MainActivity.class);
