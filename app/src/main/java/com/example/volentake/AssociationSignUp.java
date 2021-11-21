@@ -9,15 +9,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Address;
-import com.example.myapplication.Vol_user;
-import com.example.myapplication.Volunteer_user;
+import com.example.myapplication.Assoc_user;
+import com.example.myapplication.Association_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,7 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Date;
-import java.util.HashMap;
+
 
 
 public class AssociationSignUp extends AppCompatActivity {
@@ -95,36 +94,36 @@ public class AssociationSignUp extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    private void registerUser(final String Name, final String address, final String phone,final String about,final String email, String password) {
-//
-//
-//        mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-//            @Override
-//            public void onSuccess(AuthResult authResult) {
-//                Address address = new Address(add,"zohar",4);
-//                Date date = new Date();
-//                Volunteer_user cur_user = new Vol_user(firstName,lastName,address,"05424234",date,email);
-//
-//                mRootRef.child("vol_users").child(mAuth.getCurrentUser().getUid()).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        if (task.isSuccessful()){
-//                            Toast.makeText(VolunteerUserSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-//                            Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerLogIn.class);
-//                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                            startActivity(intent);
-//                            finish();
-//                        }
-//                    }
-//                });
-//
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                Toast.makeText(VolunteerUserSignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+    private void registerUser(final String Name, final String add, final String phone,final String about,final String email, String password) {
+
+
+        mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Address address = new Address(add,"zohar",4);
+                Date date = new Date();
+                Association_user cur_user = new Assoc_user(phone,address,Name,email,about);
+
+                mRootRef.child("assoc_users").child(mAuth.getCurrentUser().getUid()).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(AssociationSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(AssociationSignUp.this, AssociationPage.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AssociationSignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
