@@ -100,6 +100,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Address address = new Address(add,"zohar",4);
+
                 Date date = new Date();
                 Volunteer_user cur_user = new Vol_user(firstName,lastName,address,"05424234",date,email);
 

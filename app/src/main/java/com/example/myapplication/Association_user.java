@@ -39,4 +39,13 @@ public interface Association_user {
      * @return
      */
     public void setEmail(String email);
+    /**
+     * @return  return the Association information description ,
+     */
+    public String getAbout();
+    /**
+     * @param about - new association  Association information description
+     * @return
+     */
+    public void setAbout(String about);
 }

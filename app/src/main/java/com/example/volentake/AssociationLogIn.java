@@ -50,6 +50,8 @@ public class AssociationLogIn extends AppCompatActivity {
             String password = associationPasswordEditText.getText().toString();
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
                 Toast.makeText(AssociationLogIn.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
+            }else if (password.length() < 6){
+                Toast.makeText(AssociationLogIn.this, "Password too short!", Toast.LENGTH_SHORT).show();
             } else {
                 loginUser(email , password);
             }
