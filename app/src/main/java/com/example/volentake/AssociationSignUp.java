@@ -51,7 +51,7 @@ public class AssociationSignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_volunteer_user_sign_up);
+        setContentView(R.layout.activity_association_sign_up);
 
         inputName = (EditText) findViewById(R.id.inputName);
         inputAddress = (EditText) findViewById(R.id.inputAdd);
