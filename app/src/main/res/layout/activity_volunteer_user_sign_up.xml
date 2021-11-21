@@ -50,7 +50,7 @@
                 tools:ignore="MissingConstraints" />
 
             <Button
-                android:id="@+id/backForLogIn"
+                android:id="@+id/logOut"
                 android:layout_width="183dp"
                 android:layout_height="61dp"
                 android:layout_marginTop="40dp"
@@ -70,20 +70,20 @@
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.918"
+                app:layout_constraintHorizontal_bias="0.93"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleCreate"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.011" />
 
             <TextView
                 android:id="@+id/titleCreate"
                 android:layout_width="208dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:text="יצירת מתנדב"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.599"
+                app:layout_constraintHorizontal_bias="0.699"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,7 +27,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Date;
-import java.util.HashMap;
 
 
 public class VolunteerUserSignUp extends AppCompatActivity {
@@ -61,7 +59,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
         inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
         register = (Button)findViewById(R.id.register);
-        logInVolunteer = (Button)findViewById(R.id.backForLogIn);
+        logInVolunteer = (Button)findViewById(R.id.logOut);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
