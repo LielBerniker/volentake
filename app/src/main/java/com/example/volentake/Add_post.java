@@ -2,6 +2,7 @@ package com.example.volentake;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -56,10 +57,14 @@ public class Add_post extends AppCompatActivity {
 
             }
         });
+        backToAssoc.setOnClickListener(view -> {
+            Intent intent = new Intent(Add_post.this, AssociationPage.class);
+            startActivity(intent);
+        });
 
     }
     public void add_post_info(String txtName , String txtPhone ,String txtDescription ,String txtType,String txtaddrress,String txtnumofpar)
     {
-        
+
     }
 }

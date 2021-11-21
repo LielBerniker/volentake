@@ -57,8 +57,8 @@ public class AssociationSignUp extends AppCompatActivity {
         inputPhone = (EditText) findViewById(R.id.inputPhone);
         inputAbout = (EditText) findViewById(R.id.inputAbout);
         inputMail = (EditText) findViewById(R.id.inputEmail);
-        inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
-        inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
+        inputPassword1 = (EditText) findViewById(R.id.inputPass1);
+        inputPassword2 =(EditText)  findViewById(R.id.inputPass2);
         register = (Button)findViewById(R.id.btnRegister);
         logInAssociation = (Button)findViewById(R.id.backLogIn);
 
