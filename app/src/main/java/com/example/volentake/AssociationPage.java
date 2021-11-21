@@ -35,16 +35,14 @@ public class AssociationPage extends AppCompatActivity {
             startActivity(intent);
         });
 
-//        addPost.setOnClickListener(view -> {
-//            Intent intent = new Intent(AssociationPage.this, Add_post.class);
-//            startActivity(intent);
-//        });
+        addPost.setOnClickListener(view -> {
+            Intent intent = new Intent(AssociationPage.this, Add_post.class);
+            startActivity(intent);
+        });
 
         logOut.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, AssociationLogIn.class);
             startActivity(intent);
         });
-
-
     }
 }
