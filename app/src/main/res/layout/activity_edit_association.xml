@@ -26,13 +26,13 @@
 
             <TextView
                 android:id="@+id/titleCreate"
-                android:layout_width="208dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="24dp"
-                android:text="יצירת עמותה"
+                android:layout_width="391dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="16dp"
+                android:text="עריכת פרטי עמותה"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.831"
+                app:layout_constraintHorizontal_bias="0.788"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,13 +40,14 @@
                 android:id="@+id/txtName"
                 android:layout_width="144dp"
                 android:layout_height="53dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:text="שם העמותה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.903"
+                app:layout_constraintHorizontal_bias="0.951"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
+
 
             <TextView
                 android:id="@+id/txtPhone"
@@ -56,20 +57,19 @@
                 android:text="טלפון"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.901"
+                app:layout_constraintHorizontal_bias="0.948"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputAdd" />
-
 
             <TextView
                 android:id="@+id/txtAbout"
                 android:layout_width="196dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="28dp"
                 android:text="אודות העמותה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.888"
+                app:layout_constraintHorizontal_bias="0.941"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPhone" />
 
@@ -77,23 +77,47 @@
                 android:id="@+id/txtMail"
                 android:layout_width="196dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:text="מייל"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.888"
+                app:layout_constraintHorizontal_bias="0.936"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+
+            <TextView
+                android:id="@+id/txtPassW1"
+                android:layout_width="196dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="16dp"
+                android:text="סיסמה"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.941"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+
+            <TextView
+                android:id="@+id/txtPassW2"
+                android:layout_width="196dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="24dp"
+                android:text="סיסמה"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPassW1" />
 
             <TextView
                 android:id="@+id/txtAdd"
                 android:layout_width="144dp"
                 android:layout_height="53dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:text="כתובת"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.901"
+                app:layout_constraintHorizontal_bias="0.949"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
@@ -101,11 +125,11 @@
                 android:id="@+id/inputName"
                 android:layout_width="306dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.847"
+                app:layout_constraintHorizontal_bias="0.932"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
@@ -117,7 +141,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.847"
+                app:layout_constraintHorizontal_bias="0.918"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtAdd" />
 
@@ -125,11 +149,11 @@
                 android:id="@+id/inputPhone"
                 android:layout_width="304dp"
                 android:layout_height="47dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="28dp"
                 android:ems="10"
                 android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.848"
+                app:layout_constraintHorizontal_bias="0.918"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
 
@@ -137,12 +161,12 @@
                 android:id="@+id/editTextTextMultiLine2"
                 android:layout_width="413dp"
                 android:layout_height="232dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:ems="10"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintHorizontal_bias="0.858"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtAbout" />
 
@@ -152,8 +176,26 @@
                 android:layout_height="47dp"
                 android:ems="10"
                 android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="243dp"
+                tools:layout_editor_absoluteY="939dp" />
+
+            <EditText
+                android:id="@+id/inputPassW1"
+                android:layout_width="307dp"
+                android:layout_height="44dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                tools:layout_editor_absoluteX="248dp"
+                tools:layout_editor_absoluteY="1078dp" />
+
+            <EditText
+                android:id="@+id/inputPassW2"
+                android:layout_width="307dp"
+                android:layout_height="44dp"
+                android:ems="10"
+                android:inputType="textPassword"
                 tools:layout_editor_absoluteX="252dp"
-                tools:layout_editor_absoluteY="929dp" />
+                tools:layout_editor_absoluteY="1224dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
