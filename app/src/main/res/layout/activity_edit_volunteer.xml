@@ -40,11 +40,11 @@
                 android:id="@+id/update"
                 android:layout_width="183dp"
                 android:layout_height="61dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="168dp"
                 android:text="עדכן"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.852"
+                app:layout_constraintHorizontal_bias="0.85"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword2"
                 tools:ignore="MissingConstraints" />
@@ -123,12 +123,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/emailtxt3"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="12dp"
-                android:text="מייל"
+                android:layout_marginTop="32dp"
+                android:text="דואר אלקטרוני"
                 android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.962"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
 
@@ -136,13 +138,10 @@
                 android:id="@+id/txtDate"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
-                android:layout_marginTop="16dp"
                 android:text="תאריך לידה"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.957"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAddress" />
+                tools:layout_editor_absoluteX="714dp"
+                tools:layout_editor_absoluteY="510dp" />
 
             <EditText
                 android:id="@+id/inputLastName"
@@ -157,16 +156,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
 
             <EditText
-                android:id="@+id/inputAddress"
-                android:layout_width="263dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
+                android:id="@+id/inputcity"
+                android:layout_width="146dp"
+                android:layout_height="44dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.96"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+                tools:layout_editor_absoluteX="612dp"
+                tools:layout_editor_absoluteY="394dp" />
 
             <EditText
                 android:id="@+id/inputPassword1"
@@ -203,6 +199,41 @@
                 app:layout_constraintHorizontal_bias="0.956"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
+            <TextView
+                android:id="@+id/emailinsert3"
+                android:layout_width="246dp"
+                android:layout_height="42dp"
+                android:text="_____________________"
+                tools:layout_editor_absoluteX="595dp"
+                tools:layout_editor_absoluteY="980dp" />
+
+            <TextView
+                android:id="@+id/citytxt"
+                android:layout_width="62dp"
+                android:layout_height="25dp"
+                android:text="עיר"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="774dp"
+                tools:layout_editor_absoluteY="405dp" />
+
+            <TextView
+                android:id="@+id/streettxt"
+                android:layout_width="69dp"
+                android:layout_height="33dp"
+                android:text="רחוב"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="506dp"
+                tools:layout_editor_absoluteY="403dp" />
+
+            <TextView
+                android:id="@+id/streetinsert"
+                android:layout_width="162dp"
+                android:layout_height="40dp"
+                android:text="________________"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="327dp"
+                tools:layout_editor_absoluteY="394dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

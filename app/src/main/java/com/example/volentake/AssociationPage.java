@@ -3,12 +3,21 @@ package com.example.volentake;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Assoc_user;
+import com.example.myapplication.Vol_user;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Activity Association Home Page
@@ -17,21 +26,57 @@ public class AssociationPage extends AppCompatActivity {
     private Button edit;
     private Button addPost;
     private Button logOut;
+    private TextView Nametxt;
+    private TextView PhoneNumbertxt;
+    private TextView Emailtxt;
+    private TextView NameInsert;
+    private TextView PhoneNumberInsert;
+    private TextView EmailInsert;
+    String assoc_id ;
     //    firebase
-    private FirebaseAuth mAuth;
-    private DatabaseReference mRootRef;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_association_page);
+//        firebase code
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+//        get information bundle
+        Bundle bun = null;
 
+        bun = getIntent().getExtras();
+        if(bun != null)
+        {
+            assoc_id = bun.getString("id");
+        }
         edit = (Button)findViewById(R.id.btnEdit);
         addPost = (Button)findViewById(R.id.addPost);
         logOut = (Button)findViewById(R.id.logOut);
+        Nametxt = (TextView)findViewById(R.id.nametxt2);
+        PhoneNumbertxt = (TextView)findViewById(R.id.phonenumbertxt2);
+        Emailtxt = (TextView)findViewById(R.id.emailtxt2);
+        NameInsert = (TextView)findViewById(R.id.nameinsert2);
+        PhoneNumberInsert = (TextView)findViewById(R.id.phonenumberinsert2);
+        EmailInsert = (TextView)findViewById(R.id.emailinsert2);
+        mDatabase.child("assoc_users").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+                    Assoc_user cure_user =  task.getResult().getValue(Assoc_user.class);
+                    NameInsert.setText(cure_user.getName());
+                    PhoneNumberInsert.setText(cure_user.getPhone_num());
+                    EmailInsert.setText(cure_user.getEmail());
 
+                }
+            }
+        });
         edit.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, EditAssociation.class);
+            intent.putExtra("id",assoc_id);
             startActivity(intent);
         });
 

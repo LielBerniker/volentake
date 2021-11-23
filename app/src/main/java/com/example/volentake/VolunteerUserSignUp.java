@@ -53,7 +53,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
 
         inputFirstName = (EditText) findViewById(R.id.inputFirstName);
         inputLastName =(EditText)  findViewById(R.id.inputLastName);
-        inputAddress = (EditText) findViewById(R.id.inputAddress);
+        inputAddress = (EditText) findViewById(R.id.inputcity);
         inputBirthday = (EditText) findViewById(R.id.inputDate);
         inputMail = (EditText) findViewById(R.id.inputMail);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
@@ -103,14 +103,15 @@ public class VolunteerUserSignUp extends AppCompatActivity {
 
                 Date date = new Date();
                 Volunteer_user cur_user = new Vol_user(firstName,lastName,address,"05424234",date,email);
-
+                String id = mAuth.getCurrentUser().getUid();
                 mRootRef.child("vol_users").child(mAuth.getCurrentUser().getUid()).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(VolunteerUserSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerLogIn.class);
+                            Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerPage.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
                             startActivity(intent);
                             finish();
                         }

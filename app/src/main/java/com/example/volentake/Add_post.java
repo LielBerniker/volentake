@@ -10,9 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-
 public class Add_post extends AppCompatActivity {
     private EditText inputName;
     private EditText inputAddress;
@@ -30,7 +27,7 @@ public class Add_post extends AppCompatActivity {
         setContentView(R.layout.activity_add_post);
 
         inputName =(EditText)  findViewById(R.id.inputPostName);
-        inputAddress = (EditText) findViewById(R.id.inputAddress);
+        inputAddress = (EditText) findViewById(R.id.inputcity);
         inputPhone = (EditText) findViewById(R.id.InputPhoneNum);
         inputDescription = (EditText) findViewById(R.id.InputDescreption);
         inputType = (EditText) findViewById(R.id.InputType);

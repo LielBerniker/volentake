@@ -111,6 +111,7 @@ public class AssociationSignUp extends AppCompatActivity {
                             Toast.makeText(AssociationSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(AssociationSignUp.this, AssociationPage.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
                             startActivity(intent);
                             finish();
                         }

@@ -18,6 +18,9 @@ public class Vol_user implements Volunteer_user {
         this.birth_date = birthdate;
         this.Email = email;
     }
+    public Vol_user() {
+
+    }
 
     public String getFirst_name() {
         return first_name;

@@ -10,6 +10,11 @@ public Address(String city, String street, int num )
     this.street = street;
     this.number = num;
 }
+    public Address( )
+    {
+
+    }
+
 
     public String getStreet() {
         return street;

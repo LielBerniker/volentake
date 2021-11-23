@@ -82,6 +82,7 @@ private FirebaseAuth mAuth;
                     Toast.makeText(VolunteerLogIn.this, "successfully log in " , Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(VolunteerLogIn.this, VolunteerPage.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra("id",mAuth.getCurrentUser().getUid());
                     startActivity(intent);
                     finish();
                 }

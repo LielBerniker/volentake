@@ -18,6 +18,9 @@ public class Assoc_user implements Association_user {
         this.about = about;
        this.posts = new HashMap<String, Association_post>();
     }
+    public Assoc_user() {
+
+    }
     public void add_post(Association_post post)
     {
         posts.put(post.getId(),post);
