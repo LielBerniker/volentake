@@ -53,7 +53,7 @@ public class AssociationSignUp extends AppCompatActivity {
         setContentView(R.layout.activity_association_sign_up);
 
         inputName = (EditText) findViewById(R.id.inputName);
-        inputAddress = (EditText) findViewById(R.id.inputAdd);
+        inputAddress = (EditText) findViewById(R.id.cityinsert2);
         inputPhone = (EditText) findViewById(R.id.inputPhone);
         inputAbout = (EditText) findViewById(R.id.inputAbout);
         inputMail = (EditText) findViewById(R.id.inputEmail);

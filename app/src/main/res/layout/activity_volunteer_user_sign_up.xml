@@ -37,7 +37,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtfirstName" />
 
             <Button
-                android:id="@+id/update"
+                android:id="@+id/btnupdate"
                 android:layout_width="183dp"
                 android:layout_height="61dp"
                 android:layout_marginTop="68dp"
@@ -59,7 +59,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.853"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/update"
+                app:layout_constraintTop_toBottomOf="@+id/btnupdate"
                 tools:ignore="MissingConstraints" />
 
             <TextView

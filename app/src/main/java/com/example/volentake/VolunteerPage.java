@@ -24,10 +24,6 @@ public class VolunteerPage extends AppCompatActivity {
     private Button edit;
     private Button addPost;
     private Button logOut;
-    private TextView FirstNametxt;
-    private TextView LastNametxt;
-    private TextView PhoneNumbertxt;
-    private TextView Emailtxt;
     private TextView FirstNameInsert;
     private TextView LastNameInsert;
     private TextView PhoneNumberInsert;
@@ -50,12 +46,8 @@ public class VolunteerPage extends AppCompatActivity {
         }
         edit = (Button)findViewById(R.id.btnEditVol);
         logOut = (Button)findViewById(R.id.btnLogOut);
-        FirstNametxt = (TextView)findViewById(R.id.firstnametxt);
-        LastNametxt = (TextView)findViewById(R.id.lastnametxt);
-        PhoneNumbertxt = (TextView)findViewById(R.id.phonenumbertxt);
-        Emailtxt = (TextView)findViewById(R.id.emailtxt);
         FirstNameInsert = (TextView)findViewById(R.id.firstnameinsert);
-        LastNameInsert = (TextView)findViewById(R.id.emailinsert);
+        LastNameInsert = (TextView)findViewById(R.id.lastnameinsert);
         PhoneNumberInsert = (TextView)findViewById(R.id.phonenumberinsert);
         EmailInsert = (TextView)findViewById(R.id.emailinsert);
         mDatabase.child("vol_users").child(user_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {

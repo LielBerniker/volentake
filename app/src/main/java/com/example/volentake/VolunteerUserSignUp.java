@@ -58,7 +58,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
         inputMail = (EditText) findViewById(R.id.inputMail);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
         inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
-        register = (Button)findViewById(R.id.update);
+        register = (Button)findViewById(R.id.btnupdate);
         logInVolunteer = (Button)findViewById(R.id.logOut);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
