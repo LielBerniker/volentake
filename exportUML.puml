@@ -1,0 +1,246 @@
+@startuml
+class com.example.volentake.ExampleInstrumentedTest {
++ void useAppContext()
+}
+class com.example.volentake.AssociationSignUp {
+- EditText inputName
+- EditText inputAddress
+- EditText inputPhone
+- EditText inputAbout
+- EditText inputMail
+- EditText inputPassword1
+- EditText inputPassword2
+- Button register
+- Button logInAssociation
+- FirebaseAuth mAuth
+- DatabaseReference mRootRef
+# void onCreate(Bundle)
+- void registerUser(String,String,String,String,String,String)
+}
+interface com.example.myapplication.Request {
++ Association_post getPost()
++ void setPost(Association_post)
++ Volunteer_user getVol()
++ void setVolunteer(Volunteer_user)
+}
+class com.example.myapplication.Assoc_user {
+~ String phone_num
+~ Address address
+~ String name
+~ String Email
+~ String about
+~ HashMap<String,Association_post> posts
++ void add_post(Association_post)
++ void add_post(String,Address,int,String,String)
++ String getPhone_num()
++ void setPhone_num(String)
++ Address getAddress()
++ void setAddress(Address)
++ String getName()
++ String getAbout()
++ void setAbout(String)
++ void setName(String)
++ String getEmail()
++ void setEmail(String)
+}
+class com.example.volentake.Add_post {
+- EditText inputName
+- EditText inputAddress
+- EditText inputPhone
+- EditText inputDescription
+- EditText inputType
+- EditText inputNumOfParticipants
+- Button addPost
+- Button backToAssoc
+# void onCreate(Bundle)
++ void add_post_info(String,String,String,String,String,String)
+}
+class com.example.volentake.EditVolunteer {
+# void onCreate(Bundle)
+}
+class com.example.volentake.VolunteerPage {
+- Button edit
+- Button addPost
+- Button logOut
+- FirebaseAuth mAuth
+- DatabaseReference mRootRef
+# void onCreate(Bundle)
+}
+class com.example.myapplication.Vol_user {
+~ String first_name
+~ String last_name
+~ Address address
+~ String phone_num
+~ Date birth_date
+~ String Email
++ String getFirst_name()
++ void setFirst_name(String)
++ String getLast_name()
++ void setLast_name(String)
++ Address getAddress()
++ Date getBirth_date()
++ void setBirth_date(Date)
++ String getEmail()
++ void setEmail(String)
++ void setAddress(Address)
++ String getPhone_num()
++ void setPhone_num(String)
+}
+interface com.example.myapplication.Volunteer_user {
++ String getFirst_name()
++ void setFirst_name(String)
++ String getLast_name()
++ void setLast_name(String)
++ Address getAddress()
++ void setAddress(Address)
++ String getPhone_num()
++ void setPhone_num(String)
++ Date getBirth_date()
++ void setBirth_date(Date)
++ String getEmail()
++ void setEmail(String)
+}
+class com.example.volentake.VolunteerUserSignUp {
+- EditText inputFirstName
+- EditText inputLastName
+- EditText inputAddress
+- EditText inputBirthday
+- EditText inputPassword1
+- EditText inputPassword2
+- EditText inputMail
+- Button register
+- Button logInVolunteer
+- FirebaseAuth mAuth
+- DatabaseReference mRootRef
+# void onCreate(Bundle)
+- void registerUser(String,String,String,String,String)
+}
+class com.example.volentake.VolunteerLogIn {
+- Button volunteerLoginBtn
+- Button volunteerCreateUser
+- Button volunteerLoginBack
+- TextView volunteerEmailEditText
+- TextView volunteerPasswordEditText
+- FirebaseAuth mAuth
+# void onCreate(Bundle)
+- void loginUser(String,String)
+}
+class com.example.myapplication.Request_vol {
+~ Volunteer_user person
+~ Association_post post
++ Association_post getPost()
++ void setPost(Association_post)
++ Volunteer_user getVol()
++ void setVolunteer(Volunteer_user)
+}
+interface com.example.myapplication.Association_user {
++ String getPhone_num()
++ void setPhone_num(String)
++ Address getAddress()
++ void setAddress(Address)
++ String getName()
++ void setName(String)
++ String getEmail()
++ void setEmail(String)
++ String getAbout()
++ void setAbout(String)
+}
+class com.example.volentake.EditAssociation {
+# void onCreate(Bundle)
+}
+class com.example.volentake.GuestUser {
+# void onCreate(Bundle)
+}
+class com.example.volentake.ExampleUnitTest {
++ void addition_isCorrect()
+}
+class com.example.myapplication.Address {
+~ String city
+~ String street
+~ int number
++ String getStreet()
++ void setStreet(String)
++ int getNumber()
++ void setNumber(int)
++ String getCity()
++ void setCity(String)
+}
+class com.example.volentake.AssociationLogIn {
+- Button associationLoginBtn
+- Button associationCreateUser
+- Button associationLoginBack
+- TextView associationEmailEditText
+- TextView associationPasswordEditText
+- FirebaseAuth mAuth
+# void onCreate(Bundle)
+- void loginUser(String,String)
+}
+interface com.example.myapplication.Association_post {
++ String getId()
++ String getName()
++ void setName(String)
++ Address getLocation()
++ void setLocation(Address)
++ int getNum_of_participants()
++ void setNum_of_participants(int)
++ String getType()
++ void setType(String)
++ String getPhone_number()
++ void setPhone_number(String)
++ String getDescription()
++ void setDescription(String)
+}
+class com.example.volentake.AssociationPage {
+- Button edit
+- Button addPost
+- Button logOut
+- FirebaseAuth mAuth
+- DatabaseReference mRootRef
+# void onCreate(Bundle)
+}
+class com.example.myapplication.Assoc_post {
+~ String id
+~ String name
+~ Address location
+~ int num_of_participants
+~ String type
+~ String phone_number
+~ String description
++ String getId()
++ String getName()
++ void setName(String)
++ Address getLocation()
++ void setLocation(Address)
++ int getNum_of_participants()
++ void setNum_of_participants(int)
++ String getType()
++ void setType(String)
++ String getDescription()
++ void setDescription(String)
++ String getPhone_number()
++ void setPhone_number(String)
+}
+class com.example.volentake.MainActivity {
+- Button volunteerLoginBtn
+- Button associationLoginBtn
+- Button guestLoginBtn
+# void onCreate(Bundle)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.AssociationSignUp
+com.example.myapplication.Association_user <|.. com.example.myapplication.Assoc_user
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.Add_post
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.EditVolunteer
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.VolunteerPage
+com.example.myapplication.Volunteer_user <|.. com.example.myapplication.Vol_user
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.VolunteerUserSignUp
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.VolunteerLogIn
+com.example.myapplication.Request <|.. com.example.myapplication.Request_vol
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.EditAssociation
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.GuestUser
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.AssociationLogIn
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.AssociationPage
+com.example.myapplication.Association_post <|.. com.example.myapplication.Assoc_post
+androidx.appcompat.app.AppCompatActivity <|-- com.example.volentake.MainActivity
+@enduml
