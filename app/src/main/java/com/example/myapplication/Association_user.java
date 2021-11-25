@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public interface Association_user {
 
     /**
@@ -48,4 +51,8 @@ public interface Association_user {
      * @return
      */
     public void setAbout(String about);
+    /**
+     * @return  return the Association posts ,
+     */
+    public ArrayList<String> getPosts();
 }

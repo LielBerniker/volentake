@@ -24,18 +24,18 @@
             android:gravity="center"
             android:orientation="vertical">
 
+
             <TextView
                 android:id="@+id/titleCreate"
-                android:layout_width="391dp"
-                android:layout_height="73dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="299dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
                 android:text="עריכת פרטי עמותה"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.788"
+                app:layout_constraintHorizontal_bias="0.539"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <TextView
                 android:id="@+id/txtName"

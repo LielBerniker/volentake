@@ -52,13 +52,13 @@
 
             <TextView
                 android:id="@+id/titleCreate"
-                android:layout_width="341dp"
-                android:layout_height="61dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="279dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="24dp"
                 android:text="עריכת פרטי מתנדב"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.851"
+                app:layout_constraintHorizontal_bias="0.689"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

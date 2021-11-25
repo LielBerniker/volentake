@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -73,27 +73,29 @@
                 app:layout_constraintTop_toBottomOf="@+id/inputPostName" />
 
             <EditText
-                android:id="@+id/InputAddress"
-                android:layout_width="271dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="20dp"
+                android:id="@+id/inputcity3"
+                android:layout_width="210dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="172dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="1dp"
                 android:ems="10"
                 android:inputType="textPostalAddress"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/citytxt3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textAddress" />
 
             <TextView
                 android:id="@+id/txtNumOfPartic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_width="246dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="18dp"
                 android:text="מספר מתנדבים דרוש"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.616"
+                app:layout_constraintHorizontal_bias="0.661"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/InputAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/addressnuminput3" />
 
             <EditText
                 android:id="@+id/InputNumOfPartic"
@@ -198,6 +200,63 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/InputDescreption" />
+
+            <TextView
+                android:id="@+id/citytxt3"
+                android:layout_width="65dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="108dp"
+                android:text="עיר"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textAddress" />
+
+            <TextView
+                android:id="@+id/streettxt3"
+                android:layout_width="69dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="104dp"
+                android:text="רחוב"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/citytxt3" />
+
+            <EditText
+                android:id="@+id/inputstreet3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="172dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="1dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toStartOf="@+id/streettxt3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputcity3" />
+
+            <TextView
+                android:id="@+id/addressnumber3"
+                android:layout_width="71dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="104dp"
+                android:text="מספר"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/streettxt3" />
+
+            <EditText
+                android:id="@+id/addressnuminput3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="172dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toStartOf="@+id/addressnumber3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputstreet3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

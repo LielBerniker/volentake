@@ -82,6 +82,7 @@ public class AssociationPage extends AppCompatActivity {
 
         addPost.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, Add_post.class);
+            intent.putExtra("id",assoc_id);
             startActivity(intent);
         });
 
