@@ -9,13 +9,14 @@ public class Assoc_post implements Association_post {
    private String phone_number;
    private String description;
 
-    public Assoc_post(String name, Address location, int num_of_participants, String type, String phone_number,String user_id) {
+    public Assoc_post(String name, Address location, int num_of_participants, String type, String phone_number,String user_id,String description) {
         this.name = name;
         this.location = location;
         this.num_of_participants = num_of_participants;
         this.type = type;
         this.phone_number = phone_number;
         this.user_id = user_id;
+        this.description = description;
     }
 
     @Override

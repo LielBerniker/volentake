@@ -25,7 +25,6 @@ public class EditAssociation extends AppCompatActivity {
     private Button add_changes;
     private EditText NameInsert;
     private EditText PhoneNumberInsert;
-    private EditText EmailInsert;
     private EditText addresscityinsert;
     private EditText addressstreetinsert;
     private EditText addressnuminsert;
@@ -48,6 +47,7 @@ public class EditAssociation extends AppCompatActivity {
         }
         add_changes = (Button)findViewById(R.id.btnaddchanges2);
         NameInsert = (EditText)findViewById(R.id.inputName);
+
         PhoneNumberInsert = (EditText)findViewById(R.id.inputPhone);
         addresscityinsert = (EditText)findViewById(R.id.cityinsert2);
         addressstreetinsert = (EditText)findViewById(R.id.streetinsert2);
@@ -63,7 +63,6 @@ public class EditAssociation extends AppCompatActivity {
                     assoc_user =  task.getResult().getValue(Assoc_user.class);
                     NameInsert.setText(assoc_user.getName());
                     PhoneNumberInsert.setText(assoc_user.getPhone_num());
-                    EmailInsert.setText(assoc_user.getEmail());
                     addresscityinsert.setText(assoc_user.getAddress().getCity());
                     addressstreetinsert.setText(assoc_user.getAddress().getStreet());
                     addressnuminsert.setText(Integer.toString(assoc_user.getAddress().getNumber()));
