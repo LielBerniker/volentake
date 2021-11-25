@@ -77,6 +77,7 @@ public class AssociationLogIn extends AppCompatActivity {
                     Toast.makeText(AssociationLogIn.this, "successfully log in " , Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AssociationLogIn.this, AssociationPage.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra("id",mAuth.getCurrentUser().getUid());
                     startActivity(intent);
                     finish();
                 }

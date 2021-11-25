@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,15 +24,26 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/phonenumbertxt2"
+                android:layout_width="111dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="10dp"
+                android:text="מספר טלפון"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.726"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailinsert2" />
+
             <Button
                 android:id="@+id/logOut"
                 android:layout_width="212dp"
                 android:layout_height="66dp"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="18dp"
                 android:text="התנתק"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addPost"
                 tools:ignore="MissingConstraints" />
@@ -41,11 +52,10 @@
                 android:id="@+id/addPost"
                 android:layout_width="212dp"
                 android:layout_height="66dp"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="23dp"
                 android:text="הוסף התנדבות"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEdit"
                 tools:ignore="MissingConstraints" />
@@ -54,14 +64,81 @@
                 android:id="@+id/btnEdit"
                 android:layout_width="213dp"
                 android:layout_height="66dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="36dp"
                 android:text="ערוך פרטי עמותה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.434"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert2"
                 tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/nametxt2"
+                android:layout_width="46dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                android:text="שם"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.775"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assoctitle" />
+
+            <TextView
+                android:id="@+id/nameinsert2"
+                android:layout_width="195dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.62"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nametxt2" />
+
+            <TextView
+                android:id="@+id/emailtxt2"
+                android:layout_width="128dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="16dp"
+                android:text="דואר אלקטרוני"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.71"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameinsert2" />
+
+            <TextView
+                android:id="@+id/emailinsert2"
+                android:layout_width="195dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.62"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailtxt2" />
+
+            <TextView
+                android:id="@+id/phonenumberinsert2"
+                android:layout_width="187dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.633"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phonenumbertxt2" />
+
+            <TextView
+                android:id="@+id/assoctitle"
+                android:layout_width="115dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:text="דף עמותה"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

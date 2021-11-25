@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,15 +24,16 @@
             android:gravity="center"
             android:orientation="vertical">
 
+
             <TextView
                 android:id="@+id/titleCreate"
-                android:layout_width="391dp"
-                android:layout_height="73dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="299dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="32dp"
                 android:text="עריכת פרטי עמותה"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.788"
+                app:layout_constraintHorizontal_bias="0.539"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,36 +41,35 @@
                 android:id="@+id/txtName"
                 android:layout_width="144dp"
                 android:layout_height="53dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="4dp"
                 android:text="שם העמותה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.951"
+                app:layout_constraintHorizontal_bias="0.955"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
-
 
             <TextView
                 android:id="@+id/txtPhone"
                 android:layout_width="144dp"
                 android:layout_height="53dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="36dp"
                 android:text="טלפון"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.948"
+                app:layout_constraintHorizontal_bias="0.951"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAdd" />
+                app:layout_constraintTop_toBottomOf="@+id/streetnumtxt2" />
 
             <TextView
                 android:id="@+id/txtAbout"
                 android:layout_width="196dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="24dp"
                 android:text="אודות העמותה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.941"
+                app:layout_constraintHorizontal_bias="0.92"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPhone" />
 
@@ -77,13 +77,13 @@
                 android:id="@+id/txtPassW1"
                 android:layout_width="196dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="28dp"
                 android:text="סיסמה"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.935"
+                app:layout_constraintHorizontal_bias="0.92"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+                app:layout_constraintTop_toBottomOf="@+id/associnfoinsert" />
 
             <TextView
                 android:id="@+id/txtPassW2"
@@ -101,11 +101,11 @@
                 android:id="@+id/txtAdd"
                 android:layout_width="144dp"
                 android:layout_height="53dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="4dp"
                 android:text="כתובת"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintHorizontal_bias="0.955"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
@@ -113,23 +113,22 @@
                 android:id="@+id/inputName"
                 android:layout_width="306dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.932"
+                app:layout_constraintHorizontal_bias="0.847"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
             <EditText
-                android:id="@+id/inputAdd"
-                android:layout_width="306dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="24dp"
+                android:id="@+id/cityinsert2"
+                android:layout_width="275dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="352dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.94"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtAdd" />
 
@@ -137,16 +136,16 @@
                 android:id="@+id/inputPhone"
                 android:layout_width="304dp"
                 android:layout_height="47dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
                 android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintHorizontal_bias="0.859"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
 
             <EditText
-                android:id="@+id/editTextTextMultiLine2"
+                android:id="@+id/associnfoinsert"
                 android:layout_width="413dp"
                 android:layout_height="232dp"
                 android:layout_marginTop="36dp"
@@ -183,7 +182,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtPassW2" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnaddchanges2"
                 android:layout_width="184dp"
                 android:layout_height="99dp"
                 android:layout_marginTop="76dp"
@@ -193,6 +192,67 @@
                 app:layout_constraintHorizontal_bias="0.685"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassW2" />
+
+            <TextView
+                android:id="@+id/citytxt2"
+                android:layout_width="63dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="32dp"
+                android:text="עיר"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cityinsert2"
+                app:layout_constraintTop_toBottomOf="@+id/txtAdd" />
+
+            <TextView
+                android:id="@+id/streettxt2"
+                android:layout_width="49dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="28dp"
+                android:text="רחוב"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/streetinsert2"
+                app:layout_constraintTop_toBottomOf="@+id/citytxt2" />
+
+            <TextView
+                android:id="@+id/streetnumtxt2"
+                android:layout_width="103dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:text="מספר בית"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/streetnuminsert2"
+                app:layout_constraintTop_toBottomOf="@+id/streettxt2" />
+
+            <EditText
+                android:id="@+id/streetinsert2"
+                android:layout_width="256dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="368dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityinsert2" />
+
+            <EditText
+                android:id="@+id/streetnuminsert2"
+                android:layout_width="235dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="380dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/streetinsert2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

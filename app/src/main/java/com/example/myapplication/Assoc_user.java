@@ -1,14 +1,15 @@
 package com.example.myapplication;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Assoc_user implements Association_user {
-    String phone_num;
-    Address address;
-    String name;
-    String Email;
-    String about;
-    HashMap<String, Association_post> posts ;
+   private String phone_num;
+    private Address address;
+    private String name;
+    private String Email;
+    private String about;
+   public ArrayList<String> posts ;
 
     public Assoc_user(String phone_num, Address address, String name,String email,String about) {
         this.phone_num = phone_num;
@@ -16,18 +17,13 @@ public class Assoc_user implements Association_user {
         this.name = name;
         this.Email = email;
         this.about = about;
-       this.posts = new HashMap<String, Association_post>();
+       this.posts = new ArrayList<>();
+       posts.add("0");
     }
-    public void add_post(Association_post post)
-    {
-        posts.put(post.getId(),post);
+    public Assoc_user() {
+
     }
 
-    public void add_post(String name, Address location, int num_of_participants, String type, String phone_number)
-    {
-      Association_post cur_post = new Assoc_post(name,location,num_of_participants,type,phone_number);
-      posts.put(name,cur_post);
-    }
     public String getPhone_num() {
         return phone_num;
     }
@@ -50,6 +46,10 @@ public class Assoc_user implements Association_user {
 
     public String getAbout() {
         return about;
+    }
+
+    public ArrayList<String> getPosts() {
+        return posts;
     }
 
     public void setAbout(String about) {

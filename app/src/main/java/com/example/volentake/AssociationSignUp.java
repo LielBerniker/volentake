@@ -53,12 +53,12 @@ public class AssociationSignUp extends AppCompatActivity {
         setContentView(R.layout.activity_association_sign_up);
 
         inputName = (EditText) findViewById(R.id.inputName);
-        inputAddress = (EditText) findViewById(R.id.inputAdd);
+        inputAddress = (EditText) findViewById(R.id.cityinsert2);
         inputPhone = (EditText) findViewById(R.id.inputPhone);
         inputAbout = (EditText) findViewById(R.id.inputAbout);
         inputMail = (EditText) findViewById(R.id.inputEmail);
-        inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
-        inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
+        inputPassword1 = (EditText) findViewById(R.id.inputPass1);
+        inputPassword2 =(EditText)  findViewById(R.id.inputPass2);
         register = (Button)findViewById(R.id.btnRegister);
         logInAssociation = (Button)findViewById(R.id.backLogIn);
 
@@ -111,6 +111,7 @@ public class AssociationSignUp extends AppCompatActivity {
                             Toast.makeText(AssociationSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(AssociationSignUp.this, AssociationPage.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
                             startActivity(intent);
                             finish();
                         }

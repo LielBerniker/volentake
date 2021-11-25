@@ -37,7 +37,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtfirstName" />
 
             <Button
-                android:id="@+id/update"
+                android:id="@+id/btnupdate"
                 android:layout_width="183dp"
                 android:layout_height="61dp"
                 android:layout_marginTop="68dp"
@@ -59,7 +59,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.853"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/update"
+                app:layout_constraintTop_toBottomOf="@+id/btnupdate"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -136,7 +136,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/emailtxt3"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="12dp"
@@ -157,7 +157,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.925"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/inputcity" />
 
             <EditText
                 android:id="@+id/inputLastName"
@@ -172,7 +172,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
 
             <EditText
-                android:id="@+id/inputAddress"
+                android:id="@+id/inputcity"
                 android:layout_width="263dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
@@ -193,7 +193,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.904"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/emailtxt3" />
 
             <EditText
                 android:id="@+id/inputPassword1"

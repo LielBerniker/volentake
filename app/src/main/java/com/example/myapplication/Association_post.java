@@ -59,4 +59,9 @@ public interface Association_post {
      * @return
      */
     public void setDescription(String description);
+    /**
+     * @param user_id - new user id
+     * @return
+     */
+    public void setId(String user_id);
 }

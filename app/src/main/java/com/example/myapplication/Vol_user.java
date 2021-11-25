@@ -3,12 +3,12 @@ package com.example.myapplication;
 import java.util.Date;
 
 public class Vol_user implements Volunteer_user {
-    String first_name;
-    String last_name;
-    Address address;
-    String phone_num;
-    Date birth_date;
-    String Email;
+   private String first_name;
+    private String last_name;
+  private Address address;
+   private String phone_num;
+   private Date birth_date;
+   private String Email;
 
     public Vol_user(String first_name, String last_name, Address address, String phone_num,Date birthdate, String email) {
         this.first_name = first_name;
@@ -17,6 +17,9 @@ public class Vol_user implements Volunteer_user {
         this.phone_num = phone_num;
         this.birth_date = birthdate;
         this.Email = email;
+    }
+    public Vol_user() {
+
     }
 
     public String getFirst_name() {
