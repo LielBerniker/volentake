@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.Address;
 import com.example.myapplication.Assoc_user;
 import com.example.myapplication.Association_user;
+import com.example.myapplication.Request;
+import com.example.myapplication.Request_vol;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,8 +28,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.List;
 
 
 public class AssociationSignUp extends AppCompatActivity {
@@ -102,18 +105,30 @@ public class AssociationSignUp extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 Address address = new Address(add,"zohar",4);
                 Date date = new Date();
+                String user_id = mAuth.getCurrentUser().getUid();
                 Association_user cur_user = new Assoc_user(phone,address,Name,email,about);
 
-                mRootRef.child("assoc_users").child(mAuth.getCurrentUser().getUid()).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                mRootRef.child("assoc_users").child(user_id).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(AssociationSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(AssociationSignUp.this, AssociationPage.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
-                            startActivity(intent);
-                            finish();
+                            String con = "hello and welcome to Volentake, thank for joining us";
+                            Request req = new Request_vol(user_id,"_",con);
+                            List<Request> all_req = new ArrayList<>();
+                            all_req.add(req);
+                            mRootRef.child("massages").child(user_id).setValue(all_req).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(AssociationSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(AssociationSignUp.this, AssociationPage.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        intent.putExtra("id",mAuth.getCurrentUser().getUid());
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }
+                            });
                         }
                     }
                 });

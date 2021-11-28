@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Address;
+import com.example.myapplication.Request;
+import com.example.myapplication.Request_vol;
 import com.example.myapplication.Vol_user;
 import com.example.myapplication.Volunteer_user;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +28,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class VolunteerUserSignUp extends AppCompatActivity {
@@ -102,18 +106,30 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 Address address = new Address(add,"zohar",4);
 
                 Date date = new Date();
+                String user_id = mAuth.getCurrentUser().getUid();
                 Volunteer_user cur_user = new Vol_user(firstName,lastName,address,"05424234",date,email);
-                String id = mAuth.getCurrentUser().getUid();
-                mRootRef.child("vol_users").child(mAuth.getCurrentUser().getUid()).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                mRootRef.child("vol_users").child(user_id).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(VolunteerUserSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerPage.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
-                            startActivity(intent);
-                            finish();
+                            String con = "hello and welcome to Volentake, thank for joining us";
+                            Request req = new Request_vol(user_id,"_",con);
+                            List<Request> all_req = new ArrayList<>();
+                            all_req.add(req);
+                            mRootRef.child("massages").child(user_id).setValue(all_req).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+
+                                        Toast.makeText(VolunteerUserSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerPage.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        intent.putExtra("id",mAuth.getCurrentUser().getUid());
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }
+                            });
                         }
                     }
                 });

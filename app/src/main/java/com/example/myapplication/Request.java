@@ -1,22 +1,33 @@
 package com.example.myapplication;
 
 public interface Request {
+
+
     /**
-     * @return  return the post ,
+     * @return  return the volunteer id,
      */
-    public Association_post getPost();
+    public String getVol_user_id();
     /**
-     * @param post - new post
+     * @param vol_user_id - new volunteer
      * @return
      */
-    public void setPost(Association_post post);
+    public void setVol_user_id(String vol_user_id);
     /**
-     * @return  return the volunteer ,
+     * @return  return the post id ,
      */
-    public Volunteer_user getVol();
+    public String getPost_id() ;
     /**
-     * @param vol - new volunteer
+     * @param post_id - new post
      * @return
      */
-    public void setVolunteer(Volunteer_user vol);
+    public void setPost_id(String post_id);
+    /**
+     * @return  return the content ,
+     */
+    public String getContent();
+    /**
+     * @param content - new content
+     * @return
+     */
+    public void setContent(String content);
 }
