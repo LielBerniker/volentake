@@ -12,10 +12,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,48 +27,49 @@
 
             <Button
                 android:id="@+id/btnLogOut"
-                android:layout_width="212dp"
-                android:layout_height="66dp"
-                android:layout_marginTop="16dp"
-                android:text="התנתק"
-                android:textSize="24sp"
+                android:layout_width="139dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:text="logout"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.57"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEditVol"
                 tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/btnEditVol"
-                android:layout_width="213dp"
-                android:layout_height="66dp"
-                android:layout_marginTop="14dp"
-                android:text="ערוך פרטי מתנדב"
-                android:textSize="24sp"
+                android:layout_width="144dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:text="edit detailes"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnaddpic"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="113dp" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/firstnametxt"
                 android:layout_width="92dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="43dp"
-                android:text="שם פרטי"
+                android:layout_marginTop="19dp"
+                android:text="first name"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.691"
+                app:layout_constraintHorizontal_bias="0.285"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/voltitle" />
+                app:layout_constraintTop_toBottomOf="@+id/imagevolprofile" />
 
             <TextView
                 android:id="@+id/firstnameinsert"
                 android:layout_width="250dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="4dp"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.558"
+                app:layout_constraintHorizontal_bias="0.552"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firstnametxt" />
 
@@ -76,11 +77,11 @@
                 android:id="@+id/lastnametxt"
                 android:layout_width="149dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="12dp"
-                android:text="שם משפחה"
+                android:layout_marginTop="4dp"
+                android:text="last name"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.677"
+                app:layout_constraintHorizontal_bias="0.339"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
 
@@ -88,10 +89,10 @@
                 android:id="@+id/lastnameinsert"
                 android:layout_width="249dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="4dp"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.56"
+                app:layout_constraintHorizontal_bias="0.555"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lastnametxt" />
 
@@ -99,11 +100,11 @@
                 android:id="@+id/emailtxt"
                 android:layout_width="137dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="20dp"
-                android:text="דואר אלקטרוני"
+                android:layout_marginTop="8dp"
+                android:text="email address"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.687"
+                app:layout_constraintHorizontal_bias="0.332"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lastnameinsert" />
 
@@ -111,10 +112,10 @@
                 android:id="@+id/emailinsert"
                 android:layout_width="242dp"
                 android:layout_height="29dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.57"
+                app:layout_constraintHorizontal_bias="0.538"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailtxt" />
 
@@ -122,11 +123,11 @@
                 android:id="@+id/phonenumbertxt"
                 android:layout_width="119dp"
                 android:layout_height="29dp"
-                android:layout_marginTop="20dp"
-                android:text="מספר טלפון"
+                android:layout_marginTop="4dp"
+                android:text="phone number"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.701"
+                app:layout_constraintHorizontal_bias="0.311"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailinsert" />
 
@@ -134,10 +135,10 @@
                 android:id="@+id/phonenumberinsert"
                 android:layout_width="239dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="8dp"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.575"
+                app:layout_constraintHorizontal_bias="0.529"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phonenumbertxt" />
 
@@ -146,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="פרטי מתנדב"
+                android:text="volunteer detailes"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.54"
@@ -155,13 +156,23 @@
 
             <Button
                 android:id="@+id/btnaddpic"
-                android:layout_width="126dp"
-                android:layout_height="52dp"
+                android:layout_width="147dp"
+                android:layout_height="41dp"
                 android:layout_marginTop="18dp"
                 android:text="add picture"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert" />
+
+            <ImageView
+                android:id="@+id/imagevolprofile"
+                android:layout_width="157dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voltitle"
+                tools:srcCompat="@tools:sample/avatars" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

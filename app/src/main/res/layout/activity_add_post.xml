@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="הוספת התנדבות"
+                android:text="add volunteer"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="כתובת"
+                android:text="address"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.779"
@@ -76,13 +76,11 @@
                 android:id="@+id/inputcity3"
                 android:layout_width="210dp"
                 android:layout_height="38dp"
-                android:layout_marginStart="172dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="64dp"
                 android:ems="10"
                 android:inputType="textPostalAddress"
-                app:layout_constraintEnd_toStartOf="@+id/citytxt3"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textAddress" />
 
             <TextView
@@ -205,11 +203,12 @@
                 android:id="@+id/citytxt3"
                 android:layout_width="65dp"
                 android:layout_height="38dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="108dp"
-                android:text="עיר"
+                android:layout_marginTop="12dp"
+                android:text="city"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/inputcity3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textAddress" />
 
             <TextView
@@ -255,6 +254,7 @@
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toStartOf="@+id/addressnumber3"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputstreet3" />
 

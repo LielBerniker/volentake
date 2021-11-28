@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
-            android:name=".searchPosts"
+            android:name=".picture_edit_post"
             android:exported="false" />
         <activity
             android:name=".picture_edit_vol"
