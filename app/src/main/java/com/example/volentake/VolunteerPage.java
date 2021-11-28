@@ -24,6 +24,7 @@ public class VolunteerPage extends AppCompatActivity {
     private Button edit;
     private Button addPost;
     private Button logOut;
+    private Button edit_pic;
     private TextView FirstNameInsert;
     private TextView LastNameInsert;
     private TextView PhoneNumberInsert;
@@ -44,6 +45,7 @@ public class VolunteerPage extends AppCompatActivity {
         {
              user_id = bun.getString("id");
         }
+        edit_pic = (Button)findViewById(R.id.btnaddpic);
         edit = (Button)findViewById(R.id.btnEditVol);
         logOut = (Button)findViewById(R.id.btnLogOut);
         FirstNameInsert = (TextView)findViewById(R.id.firstnameinsert);
@@ -70,6 +72,11 @@ public class VolunteerPage extends AppCompatActivity {
 
         edit.setOnClickListener(view -> {
             Intent intent = new Intent(VolunteerPage.this, EditVolunteer.class);
+            intent.putExtra("id",user_id);
+            startActivity(intent);
+        });
+        edit_pic.setOnClickListener(view -> {
+            Intent intent = new Intent(VolunteerPage.this, picture_edit_vol.class);
             intent.putExtra("id",user_id);
             startActivity(intent);
         });

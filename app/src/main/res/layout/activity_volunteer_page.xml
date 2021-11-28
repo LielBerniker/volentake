@@ -42,14 +42,12 @@
                 android:id="@+id/btnEditVol"
                 android:layout_width="213dp"
                 android:layout_height="66dp"
-                android:layout_marginTop="84dp"
+                android:layout_marginTop="14dp"
                 android:text="ערוך פרטי מתנדב"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.569"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toBottomOf="@+id/btnaddpic"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="113dp" />
 
             <TextView
                 android:id="@+id/firstnametxt"
@@ -154,6 +152,16 @@
                 app:layout_constraintHorizontal_bias="0.54"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnaddpic"
+                android:layout_width="126dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="18dp"
+                android:text="add picture"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
