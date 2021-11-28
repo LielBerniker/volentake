@@ -90,6 +90,7 @@ public class Add_post extends AppCompatActivity {
         });
         backToAssoc.setOnClickListener(view -> {
             Intent intent = new Intent(Add_post.this, AssociationPage.class);
+            intent.putExtra("id",assoc_id);
             startActivity(intent);
         });
 
@@ -97,12 +98,13 @@ public class Add_post extends AppCompatActivity {
     public void add_post_info(String txtName , String txtPhone ,String txtDescription ,String txtType,String txtcity,String txtstreet,String txtnum,String txtnumofpar)
     {
         Address address = new Address(txtcity,txtstreet,Integer.parseInt(txtnum));
-       Association_post cur_post = new Assoc_post(txtName,address,Integer.parseInt(txtnumofpar),txtType,txtPhone,assoc_id);
-        mDatabase.child("posts").push().setValue(cur_post).addOnCompleteListener(new OnCompleteListener<Void>() {
+       Association_post cur_post = new Assoc_post(txtName,address,Integer.parseInt(txtnumofpar),txtType,txtPhone,assoc_id,txtDescription);
+        String post_id =  mDatabase.child("posts").push().getKey();
+        mDatabase.child("posts").child(post_id).setValue(cur_post).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    String post_id = mDatabase.getKey();
+
                     mDatabase.child("assoc_users").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DataSnapshot> task) {

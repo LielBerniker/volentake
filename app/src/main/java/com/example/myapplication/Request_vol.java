@@ -1,26 +1,37 @@
 package com.example.myapplication;
 
 public class Request_vol implements Request{
-    Volunteer_user person;
-    Association_post post;
+    String vol_user_id;
+    String post_id;
+    String content;
 
-    @Override
-    public Association_post getPost() {
-        return post;
+    public Request_vol(String vol_user_id, String post_id, String content) {
+        this.vol_user_id = vol_user_id;
+        this.post_id = post_id;
+        this.content = content;
     }
 
-    @Override
-    public void setPost(Association_post post) {
-        this.post=post;
+    public String getVol_user_id() {
+        return vol_user_id;
     }
 
-    @Override
-    public Volunteer_user getVol() {
-        return person;
+    public String getContent() {
+        return content;
     }
 
-    @Override
-    public void setVolunteer(Volunteer_user vol) {
-        this.person=vol;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setVol_user_id(String vol_user_id) {
+        this.vol_user_id = vol_user_id;
+    }
+
+    public String getPost_id() {
+        return post_id;
+    }
+
+    public void setPost_id(String post_id) {
+        this.post_id = post_id;
     }
 }
