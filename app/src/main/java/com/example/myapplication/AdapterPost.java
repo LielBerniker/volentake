@@ -52,6 +52,10 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyViewHolder> 
         return 0;
     }
 
+    public void setPosts(ArrayList<Assoc_post> posts){
+        this.listPosts = posts;
+        notifyDataSetChanged();
+    }
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         public MyViewHolder(@NonNull View itemView) {
