@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,25 +15,22 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyViewHolder> {
-    Context context;
+public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
     ArrayList<Assoc_post> listPosts= new ArrayList<>();
-    private DatabaseReference postref;
 
     public AdapterPost(Context context, ArrayList<Assoc_post> listPosts){
-        this.context = context;
         this.listPosts = listPosts;
-        postref = FirebaseDatabase.getInstance().getReference().child("Posts");
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_search_posts, parent, false);
-        return new MyViewHolder(view);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_post_shape, parent, false);
+        ViewHolder holder= new ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 //        final String uid = modelPosts.get(position).getUid();
 //        String nameh = modelPosts.get(position).getUname();
 //        final String titlee = modelPosts.get(position).getTitle();
@@ -49,16 +47,17 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyViewHolder> 
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listPosts.size();
     }
 
     public void setPosts(ArrayList<Assoc_post> posts){
         this.listPosts = posts;
         notifyDataSetChanged();
     }
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        private TextView txtNameAssociation, txtNumVol;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
     }
