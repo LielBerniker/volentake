@@ -34,7 +34,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtNameAssociation.setText(listPosts.get(position).getName());
-        holder.txtNumVol.setText(listPosts.get(position).getNum_of_participants());
+        holder.txtNumVol.setText(String.valueOf(listPosts.get(position).getNum_of_participants()));
 
     }
 
