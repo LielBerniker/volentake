@@ -27,12 +27,13 @@ public class searchPosts extends AppCompatActivity {
         posts.add(new Assoc_post("Dvir", null, 5, "", "", "", ""));
         posts.add(new Assoc_post("Liel", null, 8, "", "", "", ""));
         posts.add(new Assoc_post("Kfir", null, 12, "", "", "", ""));
-
+        posts.add(new Assoc_post("Avi", null, 17, "", "", "", ""));
+        posts.add(new Assoc_post("Moshe", null, 12, "", "", "", ""));
         AdapterPost adapter = new AdapterPost(this);
         adapter.setPosts(posts);
 
         postsRecycle.setAdapter(adapter);
-        postsRecycle.setLayoutManager(new GridLayoutManager(this,2));
+        postsRecycle.setLayoutManager(new GridLayoutManager(this,1));
 
 
     }
