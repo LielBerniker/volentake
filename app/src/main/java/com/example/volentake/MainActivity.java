@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button volunteerLoginBtn;
     private Button associationLoginBtn;
     private Button guestLoginBtn;
-
+    private Button forMe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,12 @@ public class MainActivity extends AppCompatActivity {
         volunteerLoginBtn = (Button) findViewById(R.id.volunteerloginbtn);
         associationLoginBtn = (Button) findViewById(R.id.associationloginbtn);
         guestLoginBtn = (Button) findViewById(R.id.guestloginbtn);
+        forMe = (Button) findViewById(R.id.forme);
+
+        forMe.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, searchPosts.class);
+            startActivity(intent);
+        });
 
         volunteerLoginBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, VolunteerLogIn.class);
