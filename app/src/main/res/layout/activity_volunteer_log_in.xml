@@ -13,102 +13,125 @@
         android:layout_height="wrap_content"
         android:text="@string/volunteerLogInTitle"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textColor="#268BBC"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <Button
         android:id="@+id/volunteerloginbtn"
         android:layout_width="130dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="#268BBC"
         android:text="@string/LogIn"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/volunteercreateuser"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/volunteercreateuser"
         android:layout_width="130dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="#268BBC"
         android:text="@string/CreateUser"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/volunteerloginback"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/volunteerloginbtn"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/volunteerloginback"
         android:layout_width="130dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#268BBC"
         android:text="@string/backToMainMenu"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/volunteercreateuser"
-        app:layout_constraintVertical_bias="0.25" />
-
-    <EditText
-        android:id="@+id/volunteeruseremail"
-        android:layout_width="230dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="36dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/volunteeruserpassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
-        app:layout_constraintVertical_bias="0.765"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/volunteeruserpassword"
         android:layout_width="230dp"
         android:layout_height="50dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="65dp"
         android:ems="10"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@+id/passwordtext"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/volunteeruseremail"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="36dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/volunteeruserpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toEndOf="@+id/emailtext"
+        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
+        app:layout_constraintVertical_bias="0.791"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/emailtext"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="116dp"
-        android:text="@string/emailText"
-        android:textAlignment="textEnd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toEndOf="@+id/volunteeruseremail"
-        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
+        android:id="@+id/passwordtext"
+        android:layout_width="85dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="65dp"
+        android:text="@string/passwordText"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/passwordtext"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
-        android:text="@string/passwordText"
-        android:textAlignment="textEnd"
-        app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toEndOf="@+id/volunteeruserpassword"
-        app:layout_constraintTop_toBottomOf="@+id/emailtext"
-        app:layout_constraintVertical_bias="0.326"
+        android:id="@+id/emailtext"
+        android:layout_width="85dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:text="@string/emailText"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/passwordtext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
+        app:layout_constraintVertical_bias="0.755"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/volunteerloglntitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logovector_02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
