@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -26,210 +27,225 @@
 
             <EditText
                 android:id="@+id/inputFirstName"
-                android:layout_width="267dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.884"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtfirstName" />
+                app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
 
             <Button
                 android:id="@+id/btnupdate"
-                android:layout_width="183dp"
-                android:layout_height="61dp"
-                android:layout_marginTop="68dp"
-                android:text="צור מתנדב"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="60dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/CreateUser"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.853"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputMail"
                 tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/logOut"
-                android:layout_width="183dp"
-                android:layout_height="61dp"
-                android:layout_marginTop="40dp"
-                android:text="לדף התחברות"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="68dp"
+                android:layout_marginBottom="60dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/backToMainMenu"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.853"
+                app:layout_constraintHorizontal_bias="0.499"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnupdate"
+                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/txtfirstName"
-                android:layout_width="111dp"
-                android:layout_height="36dp"
-                android:text="שם פרטי"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.93"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/firstNameText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/inputFirstName"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleCreate"
-                app:layout_constraintVertical_bias="0.011" />
+                app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
 
             <TextView
                 android:id="@+id/titleCreate"
-                android:layout_width="208dp"
+                android:layout_width="230dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="16dp"
-                android:text="יצירת מתנדב"
-                android:textSize="34sp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/createVolunteerTXT"
+                android:textAlignment="center"
+                android:textColor="#268BBC"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.699"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txtLastName"
-                android:layout_width="127dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="16dp"
-                android:text="שם משפחה"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.91"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/lastNameText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/inputLastName"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputFirstName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtfirstName" />
 
             <TextView
                 android:id="@+id/txtAddress"
-                android:layout_width="127dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="20dp"
-                android:text="כתובת"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.922"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
-
-            <TextView
-                android:id="@+id/txtPassword1"
-                android:layout_width="127dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="20dp"
-                android:text="סיסמה"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.916"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputDate" />
-
-            <TextView
-                android:id="@+id/txtPassword2"
-                android:layout_width="159dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="16dp"
-                android:text="סיסמה בשנית"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.916"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
-
-            <TextView
-                android:id="@+id/emailtxt3"
-                android:layout_width="127dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="12dp"
-                android:text="מייל"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.943"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
-
-            <TextView
-                android:id="@+id/txtDate"
-                android:layout_width="127dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="20dp"
-                android:text="תאריך לידה"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.925"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputcity" />
-
-            <EditText
-                android:id="@+id/inputLastName"
-                android:layout_width="264dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.877"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/addressText"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
 
-            <EditText
-                android:id="@+id/inputcity"
-                android:layout_width="263dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.891"
+            <TextView
+                android:id="@+id/txtPassword1"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/passwordText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/inputPassword1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
+            <TextView
+                android:id="@+id/txtPassword2"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/confirmPasswordTXT"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/inputPassword2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPassword1" />
+
+            <TextView
+                android:id="@+id/emailtxt3"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/emailText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/inputMail"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/birthOfDateText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/inputDate"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <EditText
-                android:id="@+id/inputMail"
-                android:layout_width="254dp"
+                android:id="@+id/inputLastName"
+                android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputFirstName" />
+
+            <EditText
+                android:id="@+id/inputcity"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
+
+            <EditText
+                android:id="@+id/inputMail"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.904"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailtxt3" />
+                app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
 
             <EditText
                 android:id="@+id/inputPassword1"
-                android:layout_width="261dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.893"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPassword1" />
+                app:layout_constraintTop_toBottomOf="@+id/inputDate" />
 
             <EditText
                 android:id="@+id/inputPassword2"
-                android:layout_width="259dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.911"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
+                app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
             <EditText
                 android:id="@+id/inputDate"
-                android:layout_width="262dp"
-                android:layout_height="51dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:inputType="date"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.903"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+                app:layout_constraintTop_toBottomOf="@+id/inputcity" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
