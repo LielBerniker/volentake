@@ -19,6 +19,10 @@ public class Assoc_post implements Association_post {
         this.description = description;
     }
 
+    public Assoc_post() {
+
+    }
+
     @Override
     public String getId() { return user_id; }
     public void setId(String user_id) {

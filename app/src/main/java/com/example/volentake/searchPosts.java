@@ -8,27 +8,40 @@ import android.os.Bundle;
 
 import com.example.myapplication.AdapterPost;
 import com.example.myapplication.Assoc_post;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class searchPosts extends AppCompatActivity {
 
     private RecyclerView postsRecycle;
-
+    private DatabaseReference mRootRef;
+    ArrayList<Assoc_post> posts = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_posts);
 
         postsRecycle = findViewById(R.id.recyclePosts);
+        mRootRef = FirebaseDatabase.getInstance().getReference();
 
-        ArrayList<Assoc_post> posts = new ArrayList<>();
-        posts.add(new Assoc_post("Dvir", null, 5, "", "", "", ""));
-        posts.add(new Assoc_post("Liel", null, 8, "", "", "", ""));
-        posts.add(new Assoc_post("Kfir", null, 12, "", "", "", ""));
-        posts.add(new Assoc_post("Avi", null, 17, "", "", "", ""));
-        posts.add(new Assoc_post("Moshe", null, 12, "", "", "", ""));
+        mRootRef.child("posts")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
+                            Assoc_post cur_post = dataSnap.getValue(Assoc_post.class);
+                            posts.add(cur_post);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
         AdapterPost adapter = new AdapterPost(this);
         adapter.setPosts(posts);
 
