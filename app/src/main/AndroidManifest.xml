@@ -49,6 +49,9 @@
             android:name=".VolunteerLogIn"
             android:exported="false" />
         <activity
+            android:name=".searchPosts"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
