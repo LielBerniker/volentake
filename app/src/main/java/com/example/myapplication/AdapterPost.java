@@ -11,8 +11,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.volentake.R;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -35,7 +33,8 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtNameAssociation.setText(listPosts.get(position).getName());
         holder.txtNumVol.setText(String.valueOf(listPosts.get(position).getNum_of_participants()));
-
+        holder.txtType.setText(listPosts.get(position).getType());
+        holder.txtCity.setText(listPosts.get(position).getLocation().getCity());
     }
 
     @Override
@@ -48,13 +47,15 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
         notifyDataSetChanged();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtNameAssociation, txtNumVol;
+        private TextView txtNameAssociation, txtNumVol,txtType,txtCity;
         private CardView parent;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtNameAssociation = itemView.findViewById(R.id.nameAss);
-            txtNumVol = itemView.findViewById(R.id.numVol);
+            txtNumVol = itemView.findViewById(R.id.numVolpostinsert);
+            txtType = itemView.findViewById(R.id.typepostinsert);
+            txtCity = itemView.findViewById(R.id.citypostinsert);
             parent = itemView.findViewById(R.id.parent);
 
         }

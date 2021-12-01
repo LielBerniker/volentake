@@ -113,7 +113,7 @@ public class AssociationSignUp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             String con = "hello and welcome to Volentake, thank for joining us";
-                            Request req = new Request_vol(user_id,"_",con);
+                            Request req = new Request_vol(user_id,"_",con,0);
                             List<Request> all_req = new ArrayList<>();
                             all_req.add(req);
                             mRootRef.child("massages").child(user_id).setValue(all_req).addOnCompleteListener(new OnCompleteListener<Void>() {
