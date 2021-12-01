@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".RequestAssociation"
+            android:exported="false" />
+        <activity
             android:name=".postShape"
             android:exported="false" />
         <activity
