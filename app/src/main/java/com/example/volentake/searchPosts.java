@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class searchPosts extends AppCompatActivity {
 
@@ -33,21 +34,26 @@ public class searchPosts extends AppCompatActivity {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot dataSnap : dataSnapshot.getChildren()) {
-                            Assoc_post cur_post = dataSnap.getValue(Assoc_post.class);
-                            posts.add(cur_post);
-                        }
+                      for (DataSnapshot data1 : dataSnapshot.getChildren() )
+                      {
+                          Assoc_post cur_post1 = data1.getValue(Assoc_post.class);
+                          Assoc_post cur_post2 = new Assoc_post(cur_post1.getName(),cur_post1.getLocation(),cur_post1.getNum_of_participants(),cur_post1.getType(),cur_post1.getPhone_number(), cur_post1.getId(),cur_post1.getDescription());
+                          posts.add(cur_post2);
+
+                      }
+                        AdapterPost adapter = new AdapterPost( searchPosts.this);
+                        adapter.setPosts(posts);
+
+                        postsRecycle.setAdapter(adapter);
+                        postsRecycle.setLayoutManager(new GridLayoutManager(searchPosts.this,1));
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
-        AdapterPost adapter = new AdapterPost(this);
-        adapter.setPosts(posts);
 
-        postsRecycle.setAdapter(adapter);
-        postsRecycle.setLayoutManager(new GridLayoutManager(this,1));
 
 
     }
+
 }

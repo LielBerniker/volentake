@@ -30,4 +30,13 @@ public interface Request {
      * @return
      */
     public void setContent(String content);
+    /**
+     * @return  return num of vol ,
+     */
+    public int getNum_of_vol();
+    /**
+     * @param num_of_vol - new num of vol
+     * @return
+     */
+    public void setNum_of_vol(int num_of_vol);
 }

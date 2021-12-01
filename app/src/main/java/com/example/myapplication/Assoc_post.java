@@ -18,7 +18,15 @@ public class Assoc_post implements Association_post {
         this.user_id = user_id;
         this.description = description;
     }
-
+    public Assoc_post(Assoc_post post2) {
+        this.name = post2.getName();
+        this.location = post2.getLocation();
+        this.num_of_participants = post2.getNum_of_participants();
+        this.type = post2.getType();
+        this.phone_number = post2.getPhone_number();
+        this.user_id = post2.getId();
+        this.description = post2.getDescription();
+    }
     public Assoc_post() {
 
     }
