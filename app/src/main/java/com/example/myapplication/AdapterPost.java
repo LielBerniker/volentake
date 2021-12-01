@@ -52,10 +52,10 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtNameAssociation = itemView.findViewById(R.id.nameAss);
-            txtNumVol = itemView.findViewById(R.id.numVolpostinsert);
-            txtType = itemView.findViewById(R.id.typepostinsert);
-            txtCity = itemView.findViewById(R.id.citypostinsert);
+            txtNameAssociation = itemView.findViewById(R.id.nameMessage);
+            txtNumVol = itemView.findViewById(R.id.locationPost);
+            txtType = itemView.findViewById(R.id.numVolOfPost);
+            txtCity = itemView.findViewById(R.id.mailVolunteer);
             parent = itemView.findViewById(R.id.parent);
 
         }

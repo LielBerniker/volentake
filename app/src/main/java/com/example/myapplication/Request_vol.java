@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 public class Request_vol implements Request{
    private String vol_user_id;
+   private Volunteer_user vol_user;
    private String post_id;
    private String content;
    private int num_of_vol;
@@ -11,6 +12,10 @@ public class Request_vol implements Request{
         this.post_id = post_id;
         this.content = content;
         this.num_of_vol = num_vol;
+    }
+
+    public Volunteer_user getVol_user(){
+        return vol_user;
     }
 
     public int getNum_of_vol() {
