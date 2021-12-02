@@ -39,4 +39,7 @@ public interface Request {
      * @return
      */
     public void setNum_of_vol(int num_of_vol);
+    public Status getStatus();
+
+    public void setStatus(Status status);
 }

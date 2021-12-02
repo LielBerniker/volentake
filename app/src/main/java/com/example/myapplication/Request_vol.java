@@ -2,20 +2,25 @@ package com.example.myapplication;
 
 public class Request_vol implements Request{
    private String vol_user_id;
-   private Volunteer_user vol_user;
    private String post_id;
    private String content;
    private int num_of_vol;
+   private Status status;
 
     public Request_vol(String vol_user_id, String post_id, String content,int num_vol) {
         this.vol_user_id = vol_user_id;
         this.post_id = post_id;
         this.content = content;
         this.num_of_vol = num_vol;
+        this.status = Status.WAITING;
     }
 
-    public Volunteer_user getVol_user(){
-        return vol_user;
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public int getNum_of_vol() {
