@@ -119,6 +119,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="add picture"
                 android:textColor="#FFFFFF"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
@@ -179,12 +180,28 @@
                 android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Saved Volunteering Posts:"
                 android:textColor="#000000"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchPostBTN" />
+
+            <Button
+                android:id="@+id/searchPostBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
+                android:drawableLeft="@drawable/search_icon_foreground"
+                android:text="Search for volunteering"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEditVol" />
 
