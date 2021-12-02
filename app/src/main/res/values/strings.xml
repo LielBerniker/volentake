@@ -20,4 +20,10 @@
     <string name="associationNameTXT">Association Name</string>
     <string name="aboutAssociation">About Association:</string>
     <string name="confirmPasswordTXT">Confirm Password:</string>
+    <string name="logOutText">Log Out</string>
+    <string name="addVolunteeringPostTXT">Add Volunteering Post</string>
+    <string name="EditAssociation">Edit Association Details</string>
+    <string name="AssociationPageTXT">Association Page</string>
+    <string name="plusBTN">+</string>
+    <string name="VolunteerPageTXT">Volunteer Page</string>
 </resources>

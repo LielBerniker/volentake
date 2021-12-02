@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -24,49 +24,79 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="420dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/page_back_01"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
             <TextView
                 android:id="@+id/phonenumbertxt2"
-                android:layout_width="111dp"
-                android:layout_height="26dp"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
-                android:text="מספר טלפון"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.726"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/phoneText"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailinsert2" />
+                app:layout_constraintTop_toBottomOf="@+id/emailtxt2" />
 
             <Button
                 android:id="@+id/logOut"
-                android:layout_width="212dp"
-                android:layout_height="66dp"
-                android:layout_marginTop="18dp"
-                android:text="התנתק"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addPost"
-                tools:ignore="MissingConstraints" />
-
-            <Button
-                android:id="@+id/addPost"
-                android:layout_width="212dp"
-                android:layout_height="66dp"
-                android:layout_marginTop="23dp"
-                android:text="הוסף התנדבות"
-                android:textSize="24sp"
+                android:layout_width="215dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/logOutText"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEdit"
                 tools:ignore="MissingConstraints" />
 
             <Button
-                android:id="@+id/btnEdit"
-                android:layout_width="213dp"
-                android:layout_height="66dp"
-                android:layout_marginTop="36dp"
-                android:text="ערוך פרטי עמותה"
+                android:id="@+id/addPost"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/button_background"
+                android:backgroundTint="#268BBC"
+                android:text="@string/plusBTN"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logOut"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="215dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="60dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/EditAssociation"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert2"
@@ -74,71 +104,88 @@
 
             <TextView
                 android:id="@+id/nametxt2"
-                android:layout_width="46dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="4dp"
-                android:text="שם"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.775"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/associationNameTXT"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/assoctitle" />
 
             <TextView
                 android:id="@+id/nameinsert2"
-                android:layout_width="195dp"
-                android:layout_height="23dp"
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.62"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/nametxt2"
+                app:layout_constraintTop_toBottomOf="@+id/assoctitle" />
+
+            <TextView
+                android:id="@+id/emailtxt2"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/emailText"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nametxt2" />
 
             <TextView
-                android:id="@+id/emailtxt2"
-                android:layout_width="128dp"
-                android:layout_height="27dp"
-                android:layout_marginTop="16dp"
-                android:text="דואר אלקטרוני"
-                android:textSize="20sp"
+                android:id="@+id/emailinsert2"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.71"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/emailtxt2"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2" />
 
             <TextView
-                android:id="@+id/emailinsert2"
-                android:layout_width="195dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="4dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.62"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailtxt2" />
-
-            <TextView
                 android:id="@+id/phonenumberinsert2"
-                android:layout_width="187dp"
-                android:layout_height="29dp"
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.633"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phonenumbertxt2" />
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/phonenumbertxt2"
+                app:layout_constraintTop_toBottomOf="@+id/emailinsert2" />
 
             <TextView
                 android:id="@+id/assoctitle"
-                android:layout_width="115dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="16dp"
-                android:text="דף עמותה"
-                android:textSize="24sp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/AssociationPageTXT"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.helper.widget.Layer
+                android:id="@+id/layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                tools:ignore="MissingConstraints" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

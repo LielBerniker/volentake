@@ -24,14 +24,31 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="420dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/page_back_01"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
 
             <Button
                 android:id="@+id/btnLogOut"
-                android:layout_width="139dp"
-                android:layout_height="33dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
                 android:text="logout"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEditVol"
@@ -39,11 +56,14 @@
 
             <Button
                 android:id="@+id/btnEditVol"
-                android:layout_width="144dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
                 android:text="edit detailes"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.511"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,104 +71,51 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/firstnametxt"
-                android:layout_width="92dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="19dp"
-                android:text="first name"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.285"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imagevolprofile" />
-
-            <TextView
                 android:id="@+id/firstnameinsert"
-                android:layout_width="250dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="4dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.552"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firstnametxt" />
-
-            <TextView
-                android:id="@+id/lastnametxt"
-                android:layout_width="149dp"
+                android:layout_width="130dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="4dp"
-                android:text="last name"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.339"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
-
-            <TextView
-                android:id="@+id/lastnameinsert"
-                android:layout_width="249dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="4dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.555"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lastnametxt" />
-
-            <TextView
-                android:id="@+id/emailtxt"
-                android:layout_width="137dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="8dp"
-                android:text="email address"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.332"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lastnameinsert" />
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/oswald_font_wght"
+                app:layout_constraintStart_toEndOf="@+id/imagevolprofile"
+                app:layout_constraintTop_toBottomOf="@+id/voltitle" />
 
             <TextView
                 android:id="@+id/emailinsert"
-                android:layout_width="242dp"
-                android:layout_height="29dp"
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.538"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailtxt" />
-
-            <TextView
-                android:id="@+id/phonenumbertxt"
-                android:layout_width="119dp"
-                android:layout_height="29dp"
-                android:layout_marginTop="4dp"
-                android:text="phone number"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.311"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailinsert" />
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                android:fontFamily="@font/oswald_font_wght"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
 
             <TextView
                 android:id="@+id/phonenumberinsert"
-                android:layout_width="239dp"
+                android:layout_width="150dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="8dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.529"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phonenumbertxt" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                android:fontFamily="@font/oswald_font_wght"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/emailinsert" />
 
             <TextView
                 android:id="@+id/voltitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="volunteer detailes"
-                android:textSize="34sp"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/VolunteerPageTXT"
+                android:textAlignment="center"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.54"
                 app:layout_constraintStart_toStartOf="parent"
@@ -156,23 +123,47 @@
 
             <Button
                 android:id="@+id/btnaddpic"
-                android:layout_width="147dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="18dp"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="#268BBC"
                 android:text="add picture"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert" />
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
             <ImageView
                 android:id="@+id/imagevolprofile"
-                android:layout_width="157dp"
-                android:layout_height="148dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_background"
+                app:layout_constraintStart_toStartOf="@+id/frameLayout"
                 app:layout_constraintTop_toBottomOf="@+id/voltitle"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toEndOf="@+id/imagevolprofile"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameinsert"
+                app:srcCompat="@drawable/icon_03" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toEndOf="@+id/imagevolprofile"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                app:srcCompat="@drawable/icon_04" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

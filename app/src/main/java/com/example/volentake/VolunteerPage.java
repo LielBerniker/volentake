@@ -66,7 +66,7 @@ public class VolunteerPage extends AppCompatActivity {
         edit = (Button)findViewById(R.id.btnEditVol);
         logOut = (Button)findViewById(R.id.btnLogOut);
         FirstNameInsert = (TextView)findViewById(R.id.firstnameinsert);
-        LastNameInsert = (TextView)findViewById(R.id.lastnameinsert);
+//        LastNameInsert = (TextView)findViewById(R.id.lastnameinsert);
         PhoneNumberInsert = (TextView)findViewById(R.id.phonenumberinsert);
         EmailInsert = (TextView)findViewById(R.id.emailinsert);
         profile_pic = (ImageView)findViewById(R.id.imagevolprofile);
