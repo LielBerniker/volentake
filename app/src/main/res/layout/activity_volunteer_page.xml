@@ -32,68 +32,29 @@
 
                 <ImageView
                     android:layout_width="420dp"
-                    android:layout_height="200dp"
+                    android:layout_height="160dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/page_back_01"
+                    android:src="@drawable/page_back_03"
                     tools:visibility="visible" />
+
+
             </FrameLayout>
 
 
             <Button
                 android:id="@+id/btnLogOut"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
                 android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="logout"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnEditVol"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
                 tools:ignore="MissingConstraints" />
-
-            <Button
-                android:id="@+id/btnEditVol"
-                android:layout_width="150dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="#268BBC"
-                android:text="edit detailes"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.511"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnaddpic"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/firstnameinsert"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/oswald_font_wght"
-                app:layout_constraintStart_toEndOf="@+id/imagevolprofile"
-                app:layout_constraintTop_toBottomOf="@+id/voltitle" />
-
-            <TextView
-                android:id="@+id/emailinsert"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:textAlignment="viewStart"
-                android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
-                app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
 
             <TextView
                 android:id="@+id/phonenumberinsert"
@@ -101,70 +62,131 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/emailinsert" />
 
             <TextView
-                android:id="@+id/voltitle"
-                android:layout_width="200dp"
+                android:id="@+id/emailinsert"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
+
+            <Button
+                android:id="@+id/btnEditVol"
+                android:layout_width="100dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/VolunteerPageTXT"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.54"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="edit detailes"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnLogOut"
+                app:layout_constraintStart_toEndOf="@+id/btnaddpic"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/firstnameinsert"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toTopOf="@+id/frameLayout" />
 
             <Button
                 android:id="@+id/btnaddpic"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="add picture"
                 android:textColor="#FFFFFF"
-                android:fontFamily="@font/oswald_font_wght"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
-            <ImageView
-                android:id="@+id/imagevolprofile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/button_background"
-                app:layout_constraintStart_toStartOf="@+id/frameLayout"
-                app:layout_constraintTop_toBottomOf="@+id/voltitle"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:elevation="10dp"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.42000002"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/imagevolprofile"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/frameLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/voltitle"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                app:layout_constraintStart_toEndOf="@+id/imagevolprofile"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert"
-                app:srcCompat="@drawable/icon_03" />
+                app:srcCompat="@drawable/icon_03"
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                app:layout_constraintStart_toEndOf="@+id/imagevolprofile"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6"
-                app:srcCompat="@drawable/icon_04" />
+                app:srcCompat="@drawable/icon_04"
+                tools:ignore="MissingConstraints" />
 
+            <TextView
+                android:id="@+id/titlePosts"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Saved Volunteering Posts:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEditVol" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
