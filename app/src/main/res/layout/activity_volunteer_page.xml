@@ -35,7 +35,8 @@
                     android:layout_height="160dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/page_back_03"
-                    tools:visibility="visible" />
+                    tools:visibility="visible"
+                android:contentDescription="@string/detailsbackground" />
 
 
             </FrameLayout>
@@ -49,7 +50,7 @@
                 android:layout_marginEnd="40dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="logout"
+                android:text="@string/logOutText"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +88,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="edit detailes"
+                android:text="@string/edit_details"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/btnLogOut"
@@ -117,7 +118,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="add picture"
+                android:text="Add Picture"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"

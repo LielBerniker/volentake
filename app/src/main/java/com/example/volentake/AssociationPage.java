@@ -11,10 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,9 +24,9 @@ public class AssociationPage extends AppCompatActivity {
     private Button edit;
     private Button addPost;
     private Button logOut;
-    private TextView Nametxt;
-    private TextView PhoneNumbertxt;
-    private TextView Emailtxt;
+//    private TextView Nametxt;
+//    private TextView PhoneNumbertxt;
+//    private TextView Emailtxt;
     private TextView NameInsert;
     private TextView PhoneNumberInsert;
     private TextView EmailInsert;

@@ -26,4 +26,8 @@
     <string name="AssociationPageTXT">Association Page</string>
     <string name="plusBTN">+</string>
     <string name="VolunteerPageTXT">Volunteer Page</string>
+    <string name="phoneicon">PhoneIcon</string>
+    <string name="edit_details">Edit Details</string>
+    <string name="change_picture">Change Picture</string>
+    <string name="detailsbackground">detailsBackground</string>
 </resources>
