@@ -78,8 +78,9 @@ public class VolunteerPage extends AppCompatActivity {
                 }
                 else {
                     Vol_user cure_user =  task.getResult().getValue(Vol_user.class);
+                    assert cure_user != null;
                     FirstNameInsert.setText(cure_user.getFirst_name());
-                    LastNameInsert.setText(cure_user.getLast_name());
+//                    LastNameInsert.setText(cure_user.getLast_name());
                     PhoneNumberInsert.setText(cure_user.getPhone_num());
                     EmailInsert.setText(cure_user.getEmail());
 
