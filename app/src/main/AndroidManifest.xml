@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".EditPost"
+            android:exported="false" />
+        <activity
+            android:name=".SubmitRequest"
+            android:exported="false" />
+        <activity
+            android:name=".DetailsPost"
+            android:exported="false" />
+        <activity
             android:name=".InboxAssociation"
             android:exported="false" />
         <activity

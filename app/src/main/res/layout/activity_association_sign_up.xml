@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/titleCreate"
+                android:id="@+id/txtTitleUpdatePost"
                 android:layout_width="230dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="60dp"
@@ -51,7 +51,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/inputName"
                 app:layout_constraintHorizontal_bias="0.142"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
             <TextView
                 android:id="@+id/txtPhone"
@@ -146,7 +146,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
             <EditText
                 android:id="@+id/cityinsert2"

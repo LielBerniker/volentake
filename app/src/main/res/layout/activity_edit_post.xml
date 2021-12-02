@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout31"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VolunteerUserSignUp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btnUpdatePost"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="UPDATE"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="793dp" />
+
+
+            <TextView
+                android:id="@+id/txtUpdateNamePost"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Name Association"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/editPostName"
+                app:layout_constraintHorizontal_bias="0.301"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
+
+            <EditText
+                android:id="@+id/editPostName"
+                android:layout_width="194dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text=""
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.815"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
+
+            <EditText
+                android:id="@+id/editPostLocation"
+                android:layout_width="194dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text=""
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.815"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPostName" />
+
+            <EditText
+                android:id="@+id/editPostNumVol"
+                android:layout_width="194dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text=""
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.815"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPostLocation" />
+
+            <EditText
+                android:id="@+id/editPostType"
+                android:layout_width="194dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text=""
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.815"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPostNumVol" />
+
+            <EditText
+                android:id="@+id/editPostPhone"
+                android:layout_width="194dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text=""
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.815"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPostType" />
+
+            <EditText
+                android:id="@+id/editPostDescription"
+                android:layout_width="200dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text=""
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.815"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPostPhone" />
+
+            <TextView
+                android:id="@+id/txtTitleUpdatePost"
+                android:layout_width="230dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Edit Post"
+                android:textAlignment="center"
+                android:textColor="#268BBC"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtUpdateLocationPost"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Location"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/editPostLocation"
+                app:layout_constraintHorizontal_bias="0.307"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePost" />
+
+            <TextView
+                android:id="@+id/txtUpdatePostNumParticipants"
+                android:layout_width="109dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Num Of Participants"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/editPostNumVol"
+                app:layout_constraintHorizontal_bias="0.282"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
+
+            <TextView
+                android:id="@+id/txtUpdateTypePost"
+                android:layout_width="109dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="type"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/editPostType"
+                app:layout_constraintHorizontal_bias="0.266"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
+
+            <TextView
+                android:id="@+id/txtUpdatePhonePost"
+                android:layout_width="109dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Phone Number"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/editPostPhone"
+                app:layout_constraintHorizontal_bias="0.266"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateTypePost" />
+
+            <TextView
+                android:id="@+id/txtUpdateDescriptionPost"
+                android:layout_width="109dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Description"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/editPostDescription"
+                app:layout_constraintHorizontal_bias="0.276"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePhonePost" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.Address;
@@ -19,8 +18,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Date;
 
 public class EditVolunteer extends AppCompatActivity {
     private Button add_changes;
@@ -47,7 +44,7 @@ public class EditVolunteer extends AppCompatActivity {
         {
             user_id = bun.getString("id");
         }
-        add_changes = (Button)findViewById(R.id.btnupdate);
+        add_changes = (Button)findViewById(R.id.btnPageRequst);
         FirstNameInsert = (EditText)findViewById(R.id.firstnameinsert3);
         LastNameInsert = (EditText)findViewById(R.id.inputLastName2);
         PhoneNumberInsert = (EditText)findViewById(R.id.phunenumberinsert3);

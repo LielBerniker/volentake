@@ -26,7 +26,7 @@
 
 
             <Button
-                android:id="@+id/btnupdate"
+                android:id="@+id/btnPageRequst"
                 android:layout_width="183dp"
                 android:layout_height="61dp"
                 android:layout_marginTop="55dp"
@@ -39,7 +39,7 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/txtfirstName"
+                android:id="@+id/txtUpdateNamePost"
                 android:layout_width="111dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="8dp"
@@ -48,10 +48,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.894"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
             <TextView
-                android:id="@+id/titleCreate"
+                android:id="@+id/txtTitleUpdatePost"
                 android:layout_width="279dp"
                 android:layout_height="54dp"
                 android:layout_marginTop="24dp"
@@ -63,7 +63,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtLastName"
+                android:id="@+id/txtUpdateLocationPost"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="8dp"
@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert3" />
 
             <TextView
-                android:id="@+id/txtAddress"
+                android:id="@+id/txtUpdatePostNumParticipants"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="8dp"
@@ -146,7 +146,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.212"
                 app:layout_constraintStart_toEndOf="@+id/streettxt"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
 
             <EditText
                 android:id="@+id/inputPassword1"
@@ -194,7 +194,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/inputcity"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
 
             <TextView
                 android:id="@+id/streettxt"
@@ -207,7 +207,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/streetinsert"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
 
             <TextView
                 android:id="@+id/addressnumbertxt"
@@ -234,7 +234,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.864"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtfirstName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePost" />
 
             <EditText
                 android:id="@+id/inputLastName2"
@@ -247,7 +247,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.86"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
 
             <EditText
                 android:id="@+id/streetinsert"
@@ -260,7 +260,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
 
             <EditText
                 android:id="@+id/addressnumberinsert"

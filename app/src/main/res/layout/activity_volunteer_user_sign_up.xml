@@ -26,7 +26,7 @@
 
 
             <EditText
-                android:id="@+id/inputFirstName"
+                android:id="@+id/detailName"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="48dp"
@@ -34,10 +34,10 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
             <Button
-                android:id="@+id/btnupdate"
+                android:id="@+id/btnPageRequst"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="60dp"
@@ -52,7 +52,7 @@
                 tools:ignore="MissingConstraints" />
 
             <Button
-                android:id="@+id/logOut"
+                android:id="@+id/btnBackToFeedOfPosts"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="68dp"
@@ -66,12 +66,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.499"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnupdate"
+                app:layout_constraintTop_toBottomOf="@+id/btnPageRequst"
                 app:layout_constraintVertical_bias="0.0"
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/txtfirstName"
+                android:id="@+id/txtUpdateNamePost"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
@@ -79,13 +79,13 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/firstNameText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/inputFirstName"
+                app:layout_constraintEnd_toStartOf="@+id/detailName"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleCreate" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
             <TextView
-                android:id="@+id/titleCreate"
+                android:id="@+id/txtTitleUpdatePost"
                 android:layout_width="230dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="60dp"
@@ -100,7 +100,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtLastName"
+                android:id="@+id/txtUpdateLocationPost"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
@@ -111,10 +111,10 @@
                 app:layout_constraintEnd_toStartOf="@+id/inputLastName"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtfirstName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePost" />
 
             <TextView
-                android:id="@+id/txtAddress"
+                android:id="@+id/txtUpdatePostNumParticipants"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
@@ -123,7 +123,7 @@
                 android:text="@string/addressText"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
 
             <TextView
                 android:id="@+id/txtPassword1"
@@ -179,7 +179,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/inputDate"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
 
             <EditText
                 android:id="@+id/inputLastName"
@@ -190,7 +190,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputFirstName" />
+                app:layout_constraintTop_toBottomOf="@+id/detailName" />
 
             <EditText
                 android:id="@+id/inputcity"
