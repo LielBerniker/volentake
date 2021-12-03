@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/requestMailVolunteer" />
 
-    <EditText
+    <TextView
         android:id="@+id/requestMailVolunteer"
         android:layout_width="154dp"
         android:layout_height="62dp"
