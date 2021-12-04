@@ -21,12 +21,19 @@ public class searchPosts extends AppCompatActivity {
 
     private RecyclerView postsRecycle;
     private DatabaseReference mRootRef;
+    String vol_user_id = "";
     ArrayList<Assoc_post> posts = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_posts);
-
+//        get information bundle
+        Bundle bun = null;
+        bun = getIntent().getExtras();
+        if(bun != null)
+        {
+            vol_user_id = bun.getString("id");
+        }
         postsRecycle = findViewById(R.id.recyclePosts);
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -41,7 +48,7 @@ public class searchPosts extends AppCompatActivity {
                           posts.add(cur_post2);
 
                       }
-                        AdapterPost adapter = new AdapterPost( searchPosts.this);
+                        AdapterPost adapter = new AdapterPost( searchPosts.this,vol_user_id);
                         adapter.setPosts(posts);
 
                         postsRecycle.setAdapter(adapter);

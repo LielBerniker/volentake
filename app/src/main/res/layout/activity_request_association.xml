@@ -31,7 +31,7 @@
                 android:layout_height="19dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="nameMessage"
+                android:text="volunteer request"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.476"
@@ -40,29 +40,15 @@
 
             <TextView
                 android:id="@+id/mailVolunteer"
-                android:layout_width="91dp"
-                android:layout_height="16dp"
+                android:layout_width="140dp"
+                android:layout_height="23dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="mailVolunteer"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintHorizontal_bias="0.56"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameMessage" />
-
-            <TextView
-                android:id="@+id/numVolOfPost"
-                android:layout_width="87dp"
-                android:layout_height="17dp"
-                android:layout_marginTop="12dp"
-                android:gravity="center"
-                android:text="numVolOfPost"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.509"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mailVolunteer" />
 
             <TextView
                 android:id="@+id/txtMailVol"
@@ -71,74 +57,93 @@
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="mail"
-                android:textSize="8sp"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toStartOf="@+id/mailVolunteer"
-                app:layout_constraintHorizontal_bias="0.366"
+                app:layout_constraintHorizontal_bias="0.428"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameMessage" />
 
             <TextView
                 android:id="@+id/txtNumVolOfPost"
-                android:layout_width="74dp"
-                android:layout_height="16dp"
+                android:layout_width="93dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="27dp"
                 android:gravity="center"
                 android:text="num of Volunteers"
-                android:textSize="8sp"
-                app:layout_constraintEnd_toStartOf="@+id/numVolOfPost"
-                app:layout_constraintHorizontal_bias="0.369"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtMailVol" />
-
-            <TextView
-                android:id="@+id/txtLocationPost"
-                android:layout_width="97dp"
-                android:layout_height="19dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="location"
-                android:textSize="8sp"
-                app:layout_constraintEnd_toStartOf="@+id/locationPost"
-                app:layout_constraintHorizontal_bias="0.49"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNumVolOfPost" />
 
             <TextView
                 android:id="@+id/txtContentMessage"
                 android:layout_width="97dp"
                 android:layout_height="19dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="25dp"
                 android:gravity="center"
                 android:text="content"
-                android:textSize="8sp"
-                app:layout_constraintEnd_toStartOf="@+id/contentMessage"
-                app:layout_constraintHorizontal_bias="0.464"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@+id/contantinsert"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLocationPost" />
+                app:layout_constraintTop_toBottomOf="@+id/txtNumVolOfPost" />
 
-            <TextView
-                android:id="@+id/locationPost"
-                android:layout_width="140dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="104dp"
-                android:gravity="center"
-                android:text="locationPost"
-                android:textSize="10sp"
+            <Button
+                android:id="@+id/btnbackrequest"
+                android:layout_width="67dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
+                android:text="back"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/numVolOfPost" />
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contantinsert" />
 
-            <TextView
-                android:id="@+id/contentMessage"
-                android:layout_width="143dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="100dp"
-                android:gravity="center"
-                android:text="content"
-                android:textSize="10sp"
+            <Button
+                android:id="@+id/btnsendrequest"
+                android:layout_width="114dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="10dp"
+                android:text="send request"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnbackrequest"
+                app:layout_constraintHorizontal_bias="0.812"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contantinsert"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/contantinsert"
+                android:layout_width="153dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/locationPost" />
+                app:layout_constraintHorizontal_bias="0.589"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="144dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="7dp"
+                android:ems="10"
+                android:inputType="number"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.569"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mailVolunteer" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

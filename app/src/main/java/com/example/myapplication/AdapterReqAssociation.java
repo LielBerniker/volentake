@@ -55,7 +55,7 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
             txtMailVolunteer = itemView.findViewById(R.id.mailVolunteer);
             txtNumVolOfPost = itemView.findViewById(R.id.numVolOfPost);
             txtLocationPost = itemView.findViewById(R.id.locationPost);
-            txtContent = itemView.findViewById(R.id.contentMessage);
+//            txtContent = itemView.findViewById(R.id.contentMessage);
             parent = itemView.findViewById(R.id.parentReqAss);
 
         }
