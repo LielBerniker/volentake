@@ -16,7 +16,7 @@
             android:name=".SubmitRequest"
             android:exported="false" />
         <activity
-            android:name=".DetailsPost"
+            android:name=".DetailsPostUser"
             android:exported="false" />
         <activity
             android:name=".InboxAssociation"

@@ -1,10 +1,7 @@
 package com.example.myapplication;
 
 public interface Association_post {
-    /**
-     * @return  return the post id ,
-     */
-    public String getuserId();
+
     /**
      * @return  return the post name ,
      */
@@ -59,9 +56,5 @@ public interface Association_post {
      * @return
      */
     public void setDescription(String description);
-    /**
-     * @param user_id - new user id
-     * @return
-     */
-    public void setId(String user_id);
+
 }

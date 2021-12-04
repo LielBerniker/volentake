@@ -1,7 +1,7 @@
 package com.example.myapplication;
 
 public class Assoc_post implements Association_post {
-   private String user_id;
+   public String userId;
    private String name;
    private Address location;
    private int num_of_participants;
@@ -15,27 +15,15 @@ public class Assoc_post implements Association_post {
         this.num_of_participants = num_of_participants;
         this.type = type;
         this.phone_number = phone_number;
-        this.user_id = user_id;
+        this.userId = user_id;
         this.description = description;
     }
-    public Assoc_post(Assoc_post post2) {
-        this.name = post2.getName();
-        this.location = post2.getLocation();
-        this.num_of_participants = post2.getNum_of_participants();
-        this.type = post2.getType();
-        this.phone_number = post2.getPhone_number();
-        this.user_id = post2.getuserId();
-        this.description = post2.getDescription();
-    }
+
     public Assoc_post() {
 
     }
 
-    @Override
-    public String getuserId() { return user_id; }
-    public void setId(String user_id) {
-        this.user_id = user_id;
-    }
+
 
     public String getName() {
         return name;

@@ -137,8 +137,8 @@
 
             <EditText
                 android:id="@+id/numofvolinsert"
-                android:layout_width="144dp"
-                android:layout_height="24dp"
+                android:layout_width="136dp"
+                android:layout_height="31dp"
                 android:layout_marginTop="7dp"
                 android:ems="10"
                 android:inputType="number"

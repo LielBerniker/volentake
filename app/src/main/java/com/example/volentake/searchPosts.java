@@ -46,7 +46,7 @@ public class searchPosts extends AppCompatActivity {
                       {
                           String post_id = data1.getKey();
                           Assoc_post cur_post1 = data1.getValue(Assoc_post.class);
-                          Assoc_post cur_post2 = new Assoc_post(cur_post1.getName(),cur_post1.getLocation(),cur_post1.getNum_of_participants(),cur_post1.getType(),cur_post1.getPhone_number(), cur_post1.getuserId(),cur_post1.getDescription());
+                          Assoc_post cur_post2 = new Assoc_post(cur_post1.getName(),cur_post1.getLocation(),cur_post1.getNum_of_participants(),cur_post1.getType(),cur_post1.getPhone_number(), cur_post1.userId,cur_post1.getDescription());
                           Pair<Assoc_post,String> pair1 =new Pair<>(cur_post2,post_id);
                           posts.add(pair1);
 

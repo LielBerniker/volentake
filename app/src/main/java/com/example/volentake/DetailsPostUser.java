@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.Assoc_post;
-import com.example.myapplication.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,7 +28,7 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 
-public class DetailsPost extends AppCompatActivity {
+public class DetailsPostUser extends AppCompatActivity {
     private TextView PostName,PostCity,PostStreet,Poststnum,NumOfVol,PostType,PostPhoneNum, PostDescription;
     private Button back, btnPageRequest;
     private ImageView post_pic;
@@ -38,10 +37,11 @@ public class DetailsPost extends AppCompatActivity {
     private StorageReference mystorge;
     String vol_user_id = "";
     String post_id = "";
+    String assoc_id = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details_post);
+        setContentView(R.layout.activity_details_post_user);
 //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -57,7 +57,7 @@ public class DetailsPost extends AppCompatActivity {
         back = (Button) findViewById(R.id.btnBackToFeedOfPosts);
         btnPageRequest =  (Button) findViewById(R.id.btnPageRequest);
         PostName = (TextView)findViewById(R.id.detailPostName);
-        NumOfVol = (TextView)findViewById(R.id.numVolOfPost);
+        NumOfVol = (TextView)findViewById(R.id.detailNumVolPost);
         PostPhoneNum = (TextView)findViewById(R.id.detailPhoneNumberPost);
         PostDescription = (TextView)findViewById(R.id.detailDescriptionPost);
         PostType = (TextView)findViewById(R.id.detailTypePost);
@@ -72,10 +72,12 @@ public class DetailsPost extends AppCompatActivity {
                     Assoc_post cur_post =  task.getResult().getValue(Assoc_post.class);
                     assert cur_post != null;
                     PostName.setText(cur_post.getName());
-                    NumOfVol.setText(cur_post.getNum_of_participants());
+                    NumOfVol.setText(String.valueOf(cur_post.getNum_of_participants()));
                     PostPhoneNum.setText(cur_post.getPhone_number());
                     PostDescription.setText(cur_post.getDescription());
                     PostType.setText(cur_post.getType());
+                    assoc_id = cur_post.userId;
+                    System.out.println("this id the user id in the post" + assoc_id);
                 }
             }
         });
@@ -110,14 +112,15 @@ public class DetailsPost extends AppCompatActivity {
         });
 
         back.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsPost.this, searchPosts.class);
+            Intent intent = new Intent(DetailsPostUser.this, searchPosts.class);
             intent.putExtra("vol_id",vol_user_id);
             startActivity(intent);
         });
         btnPageRequest.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsPost.this, RequestAssociation.class);
+            Intent intent = new Intent(DetailsPostUser.this, RequestAssociation.class);
             intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",post_id);
+            intent.putExtra("assoc_id",assoc_id);
             startActivity(intent);
         });
     }
