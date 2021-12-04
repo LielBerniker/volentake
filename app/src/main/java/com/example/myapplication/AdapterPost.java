@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
     Context context;
     String vol_user_id;
-    ArrayList<Assoc_post> listPosts= new ArrayList<>();
+    ArrayList<Pair<Assoc_post,String>> listPosts= new ArrayList<>();
 
     public AdapterPost(Context context,String vol_user_id){
         this.context = context;
@@ -41,14 +42,14 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtNameAssociation.setText(listPosts.get(position).getName());
-        holder.txtNumVol.setText(String.valueOf(listPosts.get(position).getNum_of_participants()));
-        holder.txtType.setText(listPosts.get(position).getType());
-        holder.txtCity.setText(listPosts.get(position).getLocation().getCity());
+        holder.txtNameAssociation.setText(listPosts.get(position).first.getName());
+        holder.txtNumVol.setText(String.valueOf(listPosts.get(position).first.getNum_of_participants()));
+        holder.txtType.setText(listPosts.get(position).first.getType());
+        holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
             Intent intent = new Intent(context, RequestAssociation.class);
             intent.putExtra("vol_id",vol_user_id);
-            intent.putExtra("post_id","dfdf");
+            intent.putExtra("post_id",listPosts.get(position).second);
             context.startActivity(intent);
         });
     }
@@ -58,7 +59,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
         return listPosts.size();
     }
 
-    public void setPosts(ArrayList<Assoc_post> posts){
+    public void setPosts(ArrayList<Pair<Assoc_post,String>> posts){
         this.listPosts = posts;
         notifyDataSetChanged();
     }

@@ -17,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.Address;
 import com.example.myapplication.Request;
 import com.example.myapplication.Request_vol;
+import com.example.myapplication.Response;
+import com.example.myapplication.Response_Interface;
+import com.example.myapplication.Status;
 import com.example.myapplication.Vol_user;
 import com.example.myapplication.Volunteer_user;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -113,10 +116,10 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             String con = "hello and welcome to Volentake, thank for joining us";
-                            Request req = new Request_vol(user_id,"_",con,0);
-                            List<Request> all_req = new ArrayList<>();
-                            all_req.add(req);
-                            mRootRef.child("massages").child(user_id).setValue(all_req).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            Response_Interface res = new Response(user_id,"","","welcome to voluntake", Status.APPROVED,con);
+                            List< Response_Interface> all_res = new ArrayList<>();
+                            all_res.add(res);
+                            mRootRef.child("massages").child(user_id).setValue(all_res).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){

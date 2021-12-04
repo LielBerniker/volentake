@@ -32,8 +32,8 @@ public class InboxAssociation extends AppCompatActivity {
         recycleMessages = findViewById(R.id.recycleMessages);
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
-        messages.add(new Request_vol("","","", 8));
-        messages.add(new Request_vol("","","", 19));
+//        messages.add(new Request_vol("","","",4,));
+//        messages.add(new Request_vol("","","", 19));
 
 
         AdapterReqAssociation adapter = new AdapterReqAssociation( InboxAssociation.this);

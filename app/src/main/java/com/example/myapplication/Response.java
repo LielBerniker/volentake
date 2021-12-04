@@ -4,8 +4,19 @@ public class Response implements Response_Interface{
 
     private String vol_user_id;
     private String association_user_id;
+    private String post_id;
+    private String post_name;
     private Status status;
     private String content;
+
+    public Response(String vol_user_id, String association_user_id, String post_id, String post_name, Status status, String content) {
+        this.vol_user_id = vol_user_id;
+        this.association_user_id = association_user_id;
+        this.post_id = post_id;
+        this.post_name = post_name;
+        this.status = status;
+        this.content = content;
+    }
 
     @Override
     public String getVol_user_id() {
@@ -17,33 +28,52 @@ public class Response implements Response_Interface{
         this.vol_user_id = vol_user_id;
     }
 
-    @Override
     public String getAssociation_user_id() {
         return association_user_id;
     }
 
     @Override
-    public void getAssociation_user_id(String association_user_id) {
+    public void setAssociation_user_id(String association_user_id) {
         this.association_user_id = association_user_id;
     }
 
     @Override
-    public String getContent() {
-        return this.content;
+    public String getPost_id() {
+        return post_id;
     }
 
     @Override
-    public void setContent(String content) {
+    public void setPost_id(String post_id) {
+        this.post_id = post_id;
+    }
 
+    @Override
+    public String getPost_name() {
+        return post_name;
+    }
+
+    @Override
+    public void setPost_name(String post_name) {
+        this.post_name = post_name;
     }
 
     @Override
     public Status getStatus() {
-        return this.status;
+        return status;
     }
 
     @Override
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    @Override
+    public String getContent() {
+        return content;
+    }
+
+    @Override
+    public void setContent(String content) {
+        this.content = content;
     }
 }

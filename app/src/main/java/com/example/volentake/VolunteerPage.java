@@ -35,9 +35,9 @@ import java.io.IOException;
  */
 public class VolunteerPage extends AppCompatActivity {
     private Button edit;
-    private Button addPost;
     private Button logOut;
     private Button edit_pic;
+    private Button SerchPost;
     private TextView FirstNameInsert;
     private TextView LastNameInsert;
     private TextView PhoneNumberInsert;
@@ -63,6 +63,7 @@ public class VolunteerPage extends AppCompatActivity {
         }
         mystorge = FirebaseStorage.getInstance().getReference().child("vol_profile_pic/"+user_id);
         edit_pic = (Button)findViewById(R.id.btnaddpic);
+        SerchPost = (Button)findViewById(R.id.searchPostBTN);
         edit = (Button)findViewById(R.id.btnEditVol);
         logOut = (Button)findViewById(R.id.btnLogOut);
         FirstNameInsert = (TextView)findViewById(R.id.firstnameinsert);
@@ -124,6 +125,11 @@ public class VolunteerPage extends AppCompatActivity {
 
         edit.setOnClickListener(view -> {
             Intent intent = new Intent(VolunteerPage.this, EditVolunteer.class);
+            intent.putExtra("id",user_id);
+            startActivity(intent);
+        });
+        SerchPost.setOnClickListener(view -> {
+            Intent intent = new Intent(VolunteerPage.this, searchPosts.class);
             intent.putExtra("id",user_id);
             startActivity(intent);
         });

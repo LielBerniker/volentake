@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Pair;
 
 import com.example.myapplication.AdapterPost;
 import com.example.myapplication.Assoc_post;
@@ -22,7 +23,7 @@ public class searchPosts extends AppCompatActivity {
     private RecyclerView postsRecycle;
     private DatabaseReference mRootRef;
     String vol_user_id = "";
-    ArrayList<Assoc_post> posts = new ArrayList<>();
+    ArrayList<Pair<Assoc_post,String>> posts = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +44,11 @@ public class searchPosts extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                       for (DataSnapshot data1 : dataSnapshot.getChildren() )
                       {
+                          String post_id = data1.getKey();
                           Assoc_post cur_post1 = data1.getValue(Assoc_post.class);
                           Assoc_post cur_post2 = new Assoc_post(cur_post1.getName(),cur_post1.getLocation(),cur_post1.getNum_of_participants(),cur_post1.getType(),cur_post1.getPhone_number(), cur_post1.getId(),cur_post1.getDescription());
-                          posts.add(cur_post2);
+                          Pair<Assoc_post,String> pair1 =new Pair<>(cur_post2,post_id);
+                          posts.add(pair1);
 
                       }
                         AdapterPost adapter = new AdapterPost( searchPosts.this,vol_user_id);

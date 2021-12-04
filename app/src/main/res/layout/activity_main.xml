@@ -74,22 +74,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/forme"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#8E2020"
-        android:fontFamily="@font/oswald_font_wght"
-        android:text="TestButton"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guestloginbtn"
-        app:layout_constraintVertical_bias="0.384" />
-
-    <Button
         android:id="@+id/btnMessage"
         android:layout_width="120dp"
         android:layout_height="50dp"
@@ -119,5 +103,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left"
-        app:constraint_referenced_ids="forme" />
+        tools:layout_editor_absoluteX="146dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
