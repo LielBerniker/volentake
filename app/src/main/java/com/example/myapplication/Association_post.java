@@ -4,7 +4,7 @@ public interface Association_post {
     /**
      * @return  return the post id ,
      */
-    public String getId();
+    public String getuserId();
     /**
      * @return  return the post name ,
      */

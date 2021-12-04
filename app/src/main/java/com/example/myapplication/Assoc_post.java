@@ -24,7 +24,7 @@ public class Assoc_post implements Association_post {
         this.num_of_participants = post2.getNum_of_participants();
         this.type = post2.getType();
         this.phone_number = post2.getPhone_number();
-        this.user_id = post2.getId();
+        this.user_id = post2.getuserId();
         this.description = post2.getDescription();
     }
     public Assoc_post() {
@@ -32,7 +32,7 @@ public class Assoc_post implements Association_post {
     }
 
     @Override
-    public String getId() { return user_id; }
+    public String getuserId() { return user_id; }
     public void setId(String user_id) {
         this.user_id = user_id;
     }
