@@ -6,4 +6,249 @@
     android:layout_height="match_parent"
     tools:context=".DetailsPostAssociation">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btnPageEditPostsAss"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="ADMIT REQUEST"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/btnBackToFeedOfPostsAss"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostAss"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btnBackToFeedOfPostsAss"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/backToMainMenu"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/txtUpdateNamePostAss"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Name:"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PostImage2Ass" />
+
+            <TextView
+                android:id="@+id/detailPostNameAss"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Name"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PostImage2Ass" />
+
+            <TextView
+                android:id="@+id/detailLocationPostAss"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="location"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailPostNameAss" />
+
+            <TextView
+                android:id="@+id/detailNumVolPostAss"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="numVol"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailLocationPostAss" />
+
+            <TextView
+                android:id="@+id/detailTypePostAss"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="type"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailNumVolPostAss" />
+
+            <TextView
+                android:id="@+id/detailPhoneNumberPostAss"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Phone Number"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailTypePostAss" />
+
+            <TextView
+                android:id="@+id/detailDescriptionPostAss"
+                android:layout_width="180dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="description"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailPhoneNumberPostAss" />
+
+            <TextView
+                android:id="@+id/txtTitleUpdatePostAss"
+                android:layout_width="232dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Post Details"
+                android:textAlignment="center"
+                android:textColor="#268BBC"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtUpdateLocationPostAss"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/addressText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/detailLocationPostAss"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePostAss" />
+
+            <TextView
+                android:id="@+id/cityInsertVol1Ass"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/num_of_participantsText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/detailNumVolPostAss"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostAss" />
+
+            <TextView
+                android:id="@+id/txtUpdateTypePostAss"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/typeText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/detailTypePostAss"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1Ass" />
+
+            <TextView
+                android:id="@+id/txtUpdatePhonePostAss"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/phoneText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/detailPhoneNumberPostAss"
+                app:layout_constraintHorizontal_bias="0.018"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateTypePostAss" />
+
+            <TextView
+                android:id="@+id/txtUpdateDescriptionPostAss"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="Description"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/detailDescriptionPostAss"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePhonePostAss" />
+
+            <ImageView
+                android:id="@+id/PostImage2Ass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePostAss"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
