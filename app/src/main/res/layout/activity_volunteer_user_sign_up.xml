@@ -40,7 +40,7 @@
                 android:id="@+id/btnPageRequst"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/CreateUser"
@@ -48,7 +48,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputMail"
+                app:layout_constraintTop_toBottomOf="@+id/inputPassword2"
                 tools:ignore="MissingConstraints" />
 
             <Button
@@ -85,7 +85,7 @@
             <TextView
                 android:id="@+id/txtTitleUpdatePost"
                 android:layout_width="230dp"
-                android:layout_height="55dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="60dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/createVolunteerTXT"
@@ -115,20 +115,20 @@
                 android:id="@+id/cityInsertVol1"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/cityText"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
+                app:layout_constraintTop_toBottomOf="@+id/addressTextCreateVol1" />
 
             <TextView
                 android:id="@+id/streetInsertVol"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/streetText"
                 app:layout_constraintStart_toStartOf="parent"
@@ -138,8 +138,8 @@
                 android:id="@+id/textView"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/numberText"
                 app:layout_constraintStart_toStartOf="parent"
@@ -150,14 +150,12 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="56dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/passwordText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/inputPassword1"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+                app:layout_constraintTop_toBottomOf="@+id/emailtxt3" />
 
             <TextView
                 android:id="@+id/txtPassword2"
@@ -182,10 +180,8 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/emailText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/inputMail"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
+                app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
             <TextView
                 android:id="@+id/txtDate"
@@ -214,8 +210,8 @@
                 android:id="@+id/inputcity"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginTop="85dp"
+                android:layout_marginEnd="50dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -225,8 +221,8 @@
                 android:id="@+id/insertStreet2"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
                 android:ems="10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputcity" />
@@ -240,7 +236,7 @@
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
+                app:layout_constraintTop_toBottomOf="@+id/inputDate" />
 
             <EditText
                 android:id="@+id/inputPassword1"
@@ -251,7 +247,7 @@
                 android:ems="10"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputDate" />
+                app:layout_constraintTop_toBottomOf="@+id/inputMail" />
 
             <EditText
                 android:id="@+id/inputPassword2"
@@ -279,12 +275,26 @@
                 android:id="@+id/insertHouseNumber2"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/insertStreet2" />
+
+            <TextView
+                android:id="@+id/addressTextCreateVol1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/addressText"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

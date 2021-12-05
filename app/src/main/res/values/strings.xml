@@ -9,7 +9,7 @@
     <string name="firstNameText">First Name:</string>
     <string name="lastNameText">Last Name:</string>
     <string name="addressText">Address:</string>
-    <string name="phoneText">Phone:</string>
+    <string name="phoneText">Phone Number:</string>
     <string name="birthOfDateText">Birth Date:</string>
     <string name="passwordText">Password:</string>
     <string name="mainActivityVolunteerBTN">Volunteer</string>
@@ -21,7 +21,7 @@
     <string name="aboutAssociation">About Association:</string>
     <string name="confirmPasswordTXT">Confirm Password:</string>
     <string name="logOutText">Log Out</string>
-    <string name="addVolunteeringPostTXT">Add Volunteering Post</string>
+    <string name="addVolunteeringPostTXT">Add Volunteering</string>
     <string name="EditAssociation">Edit Association Details</string>
     <string name="AssociationPageTXT">Association Page</string>
     <string name="plusBTN">+</string>
