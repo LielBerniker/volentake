@@ -18,14 +18,14 @@ import com.example.volentake.R;
 
 import java.util.ArrayList;
 
-public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
+public class AdapterPostAssociation extends RecyclerView.Adapter<AdapterPostAssociation.ViewHolder> {
     Context context;
-    String vol_user_id;
+    String association_user_id;
     ArrayList<Pair<Assoc_post,String>> listPosts= new ArrayList<>();
 
-    public AdapterPost(Context context,String vol_user_id){
+    public AdapterPostAssociation(Context context, String association_user_id){
         this.context = context;
-        this.vol_user_id = vol_user_id;
+        this.association_user_id = association_user_id;
     }
 
     @Override
@@ -43,8 +43,9 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
         holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
             Intent intent = new Intent(context, DetailsPostVol.class);
-            intent.putExtra("vol_id",vol_user_id);
-            intent.putExtra("post_id",listPosts.get(position).second);
+            ///////////////line 47-48: will be edit by Liel
+//            intent.putExtra("vol_id",vol_user_id);
+//            intent.putExtra("post_id",listPosts.get(position).second);
             context.startActivity(intent);
         });
 

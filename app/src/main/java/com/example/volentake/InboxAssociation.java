@@ -6,15 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.myapplication.AdapterPost;
 import com.example.myapplication.AdapterReqAssociation;
-import com.example.myapplication.Assoc_post;
 import com.example.myapplication.Request_vol;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
