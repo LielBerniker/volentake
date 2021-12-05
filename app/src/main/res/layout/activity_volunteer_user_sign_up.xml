@@ -86,7 +86,7 @@
                 android:id="@+id/txtTitleUpdatePost"
                 android:layout_width="230dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/createVolunteerTXT"
                 android:textAlignment="center"
