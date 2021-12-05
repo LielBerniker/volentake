@@ -16,9 +16,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-public class searchPosts extends AppCompatActivity {
+public class FeedPostsVol extends AppCompatActivity {
 
     private RecyclerView postsRecycle;
     private DatabaseReference mRootRef;
@@ -27,7 +26,7 @@ public class searchPosts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_posts);
+        setContentView(R.layout.activity_feed_posts_vol);
 //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
@@ -51,11 +50,11 @@ public class searchPosts extends AppCompatActivity {
                           posts.add(pair1);
 
                       }
-                        AdapterPost adapter = new AdapterPost( searchPosts.this,vol_user_id);
+                        AdapterPost adapter = new AdapterPost( FeedPostsVol.this,vol_user_id);
                         adapter.setPosts(posts);
 
                         postsRecycle.setAdapter(adapter);
-                        postsRecycle.setLayoutManager(new GridLayoutManager(searchPosts.this,1));
+                        postsRecycle.setLayoutManager(new GridLayoutManager(FeedPostsVol.this,1));
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {

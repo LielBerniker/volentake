@@ -40,7 +40,9 @@ public class VolunteerUserSignUp extends AppCompatActivity {
 
     private EditText inputFirstName;
     private EditText inputLastName;
-    private EditText inputAddress;
+    private EditText inputCity;
+    private EditText inputStreet;
+    private EditText inputHouseNumber;
     private EditText inputBirthday;
     private EditText inputPassword1;
     private EditText inputPassword2;
@@ -60,7 +62,9 @@ public class VolunteerUserSignUp extends AppCompatActivity {
 
         inputFirstName = (EditText) findViewById(R.id.detailName);
         inputLastName =(EditText)  findViewById(R.id.inputLastName);
-        inputAddress = (EditText) findViewById(R.id.inputcity);
+        inputCity = (EditText) findViewById(R.id.inputcity);
+        inputStreet = (EditText) findViewById(R.id.insertStreet2);
+        inputHouseNumber = (EditText) findViewById(R.id.insertHouseNumber2);
         inputBirthday = (EditText) findViewById(R.id.inputDate);
         inputMail = (EditText) findViewById(R.id.inputMail);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
@@ -79,10 +83,12 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 String txtEmail = inputMail.getText().toString();
                 String txtPassword1 = inputPassword1.getText().toString();
                 String txtPassword2 = inputPassword2.getText().toString();
-                String txtaddrress = inputAddress.getText().toString();
+                String txtCity = inputCity.getText().toString();
+                String txtStreet = inputCity.getText().toString();
+                String txtHouseNumber = inputCity.getText().toString();
                 String txtBirthDay = inputBirthday.getText().toString();
 
-                if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtaddrress)
+                if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtCity)
                         || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword1) || TextUtils.isEmpty(txtPassword2)){
                     Toast.makeText(VolunteerUserSignUp.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
                 } else if (!(txtPassword1.equals(txtPassword2))){
@@ -90,7 +96,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 } else if (txtPassword1.length() < 6){
                     Toast.makeText(VolunteerUserSignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
                 } else {
-                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtaddrress);
+                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtCity);
                 }
             }
         });

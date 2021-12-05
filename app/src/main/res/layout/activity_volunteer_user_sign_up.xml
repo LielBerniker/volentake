@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,8 +55,8 @@
                 android:id="@+id/btnBackToFeedOfPosts"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="68dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/backToMainMenu"
@@ -64,10 +64,8 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.499"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnPageRequst"
-                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -114,16 +112,38 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePost" />
 
             <TextView
-                android:id="@+id/txtUpdatePostNumParticipants"
+                android:id="@+id/cityInsertVol1"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="56dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/addressText"
+                android:text="@string/cityText"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
+
+            <TextView
+                android:id="@+id/streetInsertVol"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/streetText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/numberText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/streetInsertVol" />
 
             <TextView
                 android:id="@+id/txtPassword1"
@@ -172,14 +192,12 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/birthOfDateText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/inputDate"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <EditText
                 android:id="@+id/inputLastName"
@@ -202,6 +220,16 @@
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
+
+            <EditText
+                android:id="@+id/insertStreet2"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                android:ems="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputcity" />
 
             <EditText
                 android:id="@+id/inputMail"
@@ -245,7 +273,18 @@
                 android:ems="10"
                 android:inputType="date"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputcity" />
+                app:layout_constraintTop_toBottomOf="@+id/insertHouseNumber2" />
+
+            <EditText
+                android:id="@+id/insertHouseNumber2"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/insertStreet2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

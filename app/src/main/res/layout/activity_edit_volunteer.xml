@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert3" />
 
             <TextView
-                android:id="@+id/txtUpdatePostNumParticipants"
+                android:id="@+id/cityInsertVol1"
                 android:layout_width="127dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="8dp"
@@ -146,7 +146,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.212"
                 app:layout_constraintStart_toEndOf="@+id/streettxt"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
+                app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1" />
 
             <EditText
                 android:id="@+id/inputPassword1"
@@ -194,7 +194,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/inputcity"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
+                app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1" />
 
             <TextView
                 android:id="@+id/streettxt"
@@ -207,7 +207,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/streetinsert"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
+                app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1" />
 
             <TextView
                 android:id="@+id/addressnumbertxt"
@@ -260,7 +260,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdatePostNumParticipants" />
+                app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1" />
 
             <EditText
                 android:id="@+id/addressnumberinsert"

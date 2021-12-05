@@ -34,6 +34,7 @@
                 android:textAlignment="center"
                 android:textColor="#268BBC"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,10 +63,8 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/phoneText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/inputPhone"
-                app:layout_constraintHorizontal_bias="0.142"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAdd" />
+                app:layout_constraintTop_toBottomOf="@+id/countryAssociationInputTXT" />
 
             <TextView
                 android:id="@+id/txtAbout"
@@ -123,18 +122,43 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtPass1" />
 
             <TextView
-                android:id="@+id/txtAdd"
+                android:id="@+id/cityAssociationInputTXT1"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="56dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/addressText"
+                android:text="@string/cityText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/cityinsert2"
-                app:layout_constraintHorizontal_bias="0.142"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+            <TextView
+                android:id="@+id/streetAssociationInputTXT1"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/streetText"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityAssociationInputTXT1" />
+
+            <TextView
+                android:id="@+id/countryAssociationInputTXT"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/countryText"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/streetAssociationInputTXT1" />
+
 
             <EditText
                 android:id="@+id/inputName"
@@ -161,6 +185,28 @@
                 app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
             <EditText
+                android:id="@+id/inputStreet1"
+                android:layout_width="200dp"
+
+                android:layout_height="45dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityinsert2" />
+
+            <EditText
+                android:id="@+id/houseNumberInput1"
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                android:ems="10"
+                android:fontFamily="@font/oswald_font_wght"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputStreet1" />
+
+            <EditText
                 android:id="@+id/inputPhone"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
@@ -170,7 +216,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cityinsert2" />
+                app:layout_constraintTop_toBottomOf="@+id/houseNumberInput1" />
 
             <EditText
                 android:id="@+id/inputAbout"
@@ -243,7 +289,7 @@
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="40dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/backToMainMenu"

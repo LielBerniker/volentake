@@ -28,7 +28,7 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 
-public class DetailsPostUser extends AppCompatActivity {
+public class DetailsPostVol extends AppCompatActivity {
     private TextView PostName,PostCity,PostStreet,Poststnum,NumOfVol,PostType,PostPhoneNum, PostDescription;
     private Button back, btnPageRequest;
     private ImageView post_pic;
@@ -41,7 +41,7 @@ public class DetailsPostUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details_post_user);
+        setContentView(R.layout.activity_details_post_vol);
 //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -112,12 +112,12 @@ public class DetailsPostUser extends AppCompatActivity {
         });
 
         back.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsPostUser.this, searchPosts.class);
+            Intent intent = new Intent(DetailsPostVol.this, FeedPostsVol.class);
             intent.putExtra("vol_id",vol_user_id);
             startActivity(intent);
         });
         btnPageRequest.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsPostUser.this, RequestAssociation.class);
+            Intent intent = new Intent(DetailsPostVol.this, RequestAssociation.class);
             intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",post_id);
             intent.putExtra("assoc_id",assoc_id);

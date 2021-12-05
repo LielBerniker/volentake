@@ -13,10 +13,10 @@
             android:name=".EditPost"
             android:exported="false" />
         <activity
-            android:name=".SubmitRequest"
+            android:name=".MessageRequest"
             android:exported="false" />
         <activity
-            android:name=".DetailsPostUser"
+            android:name=".DetailsPostVol"
             android:exported="false" />
         <activity
             android:name=".InboxAssociation"
@@ -64,7 +64,7 @@
             android:name=".VolunteerLogIn"
             android:exported="false" />
         <activity
-            android:name=".searchPosts"
+            android:name=".FeedPostsVol"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

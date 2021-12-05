@@ -35,7 +35,9 @@ import java.util.List;
 public class AssociationSignUp extends AppCompatActivity {
 
     private EditText inputName;
-    private EditText inputAddress;
+    private EditText inputCity;
+    private EditText inputStreet;
+    private EditText inputHouseNumber;
     private EditText inputPhone;
     private EditText inputAbout;
     private EditText inputMail;
@@ -55,7 +57,9 @@ public class AssociationSignUp extends AppCompatActivity {
         setContentView(R.layout.activity_association_sign_up);
 
         inputName = (EditText) findViewById(R.id.inputName);
-        inputAddress = (EditText) findViewById(R.id.cityinsert2);
+        inputCity = (EditText) findViewById(R.id.cityinsert2);
+        inputStreet = (EditText) findViewById(R.id.inputStreet1);
+        inputHouseNumber = (EditText) findViewById(R.id.houseNumberInput1);
         inputPhone = (EditText) findViewById(R.id.inputPhone);
         inputAbout = (EditText) findViewById(R.id.inputAbout);
         inputMail = (EditText) findViewById(R.id.inputEmail);
@@ -71,14 +75,18 @@ public class AssociationSignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String txtName = inputName.getText().toString();
-                String txtAddress = inputAddress.getText().toString();
+                String txtCity = inputCity.getText().toString();
+
+                String txtStreet = inputStreet.getText().toString();
+                String txtHouseNumber = inputHouseNumber.getText().toString();
+
                 String txtPhone = inputPhone.getText().toString();
                 String txtEmail = inputMail.getText().toString();
                 String txtAbout = inputAbout.getText().toString();
                 String txtPassword1 = inputPassword1.getText().toString();
                 String txtPassword2 = inputPassword2.getText().toString();
 
-                if (TextUtils.isEmpty(txtName) || TextUtils.isEmpty(txtPhone ) || TextUtils.isEmpty(txtAddress)
+                if (TextUtils.isEmpty(txtName) || TextUtils.isEmpty(txtPhone ) || TextUtils.isEmpty(txtCity)
                         || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtAbout) || TextUtils.isEmpty(txtPassword1) || TextUtils.isEmpty(txtPassword2)){
                     Toast.makeText(AssociationSignUp.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
                 } else if (!(txtPassword1.equals(txtPassword2))){
@@ -86,7 +94,7 @@ public class AssociationSignUp extends AppCompatActivity {
                 } else if (txtPassword1.length() < 6){
                     Toast.makeText(AssociationSignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
                 } else {
-                    registerUser(txtName , txtAddress , txtPhone , txtAbout , txtEmail , txtPassword1);
+                    registerUser(txtName , txtCity , txtPhone , txtAbout , txtEmail , txtPassword1);
                 }
             }
         });

@@ -17,7 +17,7 @@
     <string name="MainActivityGuestBTN">Guest</string>
     <string name="createAssociationTXT">Create Association User</string>
     <string name="createVolunteerTXT">Create Volunteer User</string>
-    <string name="associationNameTXT">Association Name</string>
+    <string name="associationNameTXT">Association Name:</string>
     <string name="aboutAssociation">About Association:</string>
     <string name="confirmPasswordTXT">Confirm Password:</string>
     <string name="logOutText">Log Out</string>
@@ -30,4 +30,8 @@
     <string name="edit_details">Edit Details</string>
     <string name="change_picture">Change Picture</string>
     <string name="detailsbackground">detailsBackground</string>
+    <string name="countryText">Country:</string>
+    <string name="streetText">Street:</string>
+    <string name="cityText">City:</string>
+    <string name="numberText">Number:</string>
 </resources>

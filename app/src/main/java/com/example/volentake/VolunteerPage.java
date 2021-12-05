@@ -10,7 +10,6 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -129,7 +128,7 @@ public class VolunteerPage extends AppCompatActivity {
             startActivity(intent);
         });
         SerchPost.setOnClickListener(view -> {
-            Intent intent = new Intent(VolunteerPage.this, searchPosts.class);
+            Intent intent = new Intent(VolunteerPage.this, FeedPostsVol.class);
             intent.putExtra("id",user_id);
             startActivity(intent);
         });

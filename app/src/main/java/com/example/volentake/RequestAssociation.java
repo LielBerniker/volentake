@@ -9,30 +9,19 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.Address;
-import com.example.myapplication.Assoc_post;
-import com.example.myapplication.Association_post;
 import com.example.myapplication.Request;
 import com.example.myapplication.Request_vol;
-import com.example.myapplication.Response;
-import com.example.myapplication.Response_Interface;
-import com.example.myapplication.Status;
 import com.example.myapplication.Vol_user;
-import com.example.myapplication.Volunteer_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class RequestAssociation extends AppCompatActivity {
     private Button SendRequest;
@@ -80,7 +69,7 @@ public class RequestAssociation extends AppCompatActivity {
                 else {
                     Vol_user cure_user =  task.getResult().getValue(Vol_user.class);
                     assert cure_user != null;
-                    volName.setText(cure_user.getFirst_name());
+                    volName.setText(cure_user.getFirst_name()+" " + cure_user.getLast_name());
                     volEmail.setText(cure_user.getEmail());
                 }
             }
@@ -116,7 +105,7 @@ public class RequestAssociation extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(RequestAssociation.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RequestAssociation.this, searchPosts.class);
+                                Intent intent = new Intent(RequestAssociation.this, FeedPostsVol.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intent.putExtra("id",vol_user_id);
                                 startActivity(intent);

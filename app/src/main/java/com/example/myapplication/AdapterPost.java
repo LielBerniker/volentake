@@ -13,14 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.volentake.DetailsPostUser;
-import com.example.volentake.MainActivity;
+import com.example.volentake.DetailsPostVol;
 import com.example.volentake.R;
-import com.example.volentake.RequestAssociation;
-import com.example.volentake.VolunteerLogIn;
-import com.example.volentake.VolunteerPage;
-import com.example.volentake.picture_edit_vol;
-import com.example.volentake.postShape;
 
 import java.util.ArrayList;
 
@@ -48,7 +42,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
         holder.txtType.setText(listPosts.get(position).first.getType());
         holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetailsPostUser.class);
+            Intent intent = new Intent(context, DetailsPostVol.class);
             intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",listPosts.get(position).second);
             context.startActivity(intent);
