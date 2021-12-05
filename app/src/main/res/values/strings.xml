@@ -34,4 +34,19 @@
     <string name="streetText">Street:</string>
     <string name="cityText">City:</string>
     <string name="numberText">Number:</string>
+    <string name="chooseText">Choose</string>
+    <string name="uploadText">Upload</string>
+    <string name="volunteer_pictureText">Change Volunteering Picture</string>
+    <string name="updateText">UPDATE</string>
+    <string name="locationText">Location:</string>
+    <string name="num_of_participantsText">Number of Participants:</string>
+    <string name="edit_volunteeringText">Edit Volunteering</string>
+    <string name="typeText">Type:</string>
+    <string name="descriptionText">Description:</string>
+    <string name="nameText">Name:</string>
+    <string name="contentText">Content:</string>
+    <string name="titleText">Title:</string>
+    <string name="create_volunteeringText">Create Volunteering</string>
+    <string name="required_number_of_volunteersText">Required Number of Volunteers:</string>
+    <string name="type_of_volunteeringText">Type of Volunteering:</string>
 </resources>

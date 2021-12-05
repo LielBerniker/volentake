@@ -32,11 +32,11 @@
 
                 <ImageView
                     android:layout_width="420dp"
-                    android:layout_height="200dp"
+                    android:layout_height="180dp"
+                    android:contentDescription="@string/detailsbackground"
                     android:scaleType="centerCrop"
                     android:src="@drawable/page_back_03"
-                    tools:visibility="visible"
-                    android:contentDescription="@string/detailsbackground" />
+                    tools:visibility="visible" />
             </FrameLayout>
 
             <Button
@@ -48,7 +48,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/logOutText"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEdit"
@@ -85,7 +85,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/EditAssociation"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert2"
@@ -96,7 +96,7 @@
                 android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textColor="#000000"
                 android:textSize="16sp"
@@ -129,8 +129,8 @@
             <TextView
                 android:id="@+id/assoctitle"
                 android:layout_width="200dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/AssociationPageTXT"
                 android:textAlignment="center"
@@ -166,7 +166,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="40dp"
                 android:text="@string/addVolunteeringPostTXT"
