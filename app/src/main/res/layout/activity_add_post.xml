@@ -76,6 +76,7 @@
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtpostname" />
 
