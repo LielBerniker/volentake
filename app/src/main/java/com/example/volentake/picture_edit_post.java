@@ -38,7 +38,7 @@ public class picture_edit_post extends AppCompatActivity {
     // instance for firebase storage and StorageReference
     FirebaseStorage storage;
     StorageReference storageReference;
-
+String assoc_id = "";
     String post_id = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,8 @@ public class picture_edit_post extends AppCompatActivity {
         bun = getIntent().getExtras();
         if(bun != null)
         {
-           post_id = bun.getString("id");
+           post_id = bun.getString("post_id");
+            assoc_id = bun.getString("assoc_id");
         }
         ActionBar actionBar;
         actionBar = getSupportActionBar();
@@ -175,8 +176,9 @@ public class picture_edit_post extends AppCompatActivity {
                                                     "Image Uploaded!!",
                                                     Toast.LENGTH_SHORT)
                                             .show();
-                                    Intent intent1 = new Intent(picture_edit_post.this, AssociationPage.class);
-                                    intent1.putExtra("id",post_id);
+                                    Intent intent1 = new Intent(picture_edit_post.this, DetailsPostAssociation.class);
+                                    intent1.putExtra("post_id",post_id);
+                                    intent1.putExtra("assoc_id",assoc_id);
                                     startActivity(intent1);
                                 }
                             })

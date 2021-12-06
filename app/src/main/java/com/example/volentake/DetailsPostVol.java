@@ -113,7 +113,7 @@ public class DetailsPostVol extends AppCompatActivity {
 
         back.setOnClickListener(view -> {
             Intent intent = new Intent(DetailsPostVol.this, FeedPostsVol.class);
-            intent.putExtra("vol_id",vol_user_id);
+            intent.putExtra("id",vol_user_id);
             startActivity(intent);
         });
         btnPageRequest.setOnClickListener(view -> {
