@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".DetailsPostGuest"
+            android:exported="false" />
+        <activity
+            android:name=".FeedPostGuest"
+            android:exported="false" />
+        <activity
             android:name=".DetailsPostAssociation"
             android:exported="false" />
         <activity
