@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.volentake.DetailsPostAssociation;
 import com.example.volentake.DetailsPostVol;
 import com.example.volentake.R;
 
@@ -42,10 +43,9 @@ public class AdapterPostAssociation extends RecyclerView.Adapter<AdapterPostAsso
         holder.txtType.setText(listPosts.get(position).first.getType());
         holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetailsPostVol.class);
-            ///////////////line 47-48: will be edit by Liel
-//            intent.putExtra("vol_id",vol_user_id);
-//            intent.putExtra("post_id",listPosts.get(position).second);
+            Intent intent = new Intent(context, DetailsPostAssociation.class);
+            intent.putExtra("assoc_id",association_user_id);
+            intent.putExtra("post_id",listPosts.get(position).second);
             context.startActivity(intent);
         });
 

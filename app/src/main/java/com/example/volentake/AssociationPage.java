@@ -24,6 +24,7 @@ public class AssociationPage extends AppCompatActivity {
     private Button edit;
     private Button addPost;
     private Button logOut;
+    private Button see_posts;
 //    private TextView Nametxt;
 //    private TextView PhoneNumbertxt;
 //    private TextView Emailtxt;
@@ -51,6 +52,7 @@ public class AssociationPage extends AppCompatActivity {
         edit = (Button)findViewById(R.id.btnEdit);
         addPost = (Button)findViewById(R.id.addPost);
         logOut = (Button)findViewById(R.id.btnBackToFeedOfPosts);
+        see_posts = (Button)findViewById(R.id.btnseeallposts);
 //        Nametxt = (TextView)findViewById(R.id.nametxt2);
 //        PhoneNumbertxt = (TextView)findViewById(R.id.phonenumbertxt2);
 //        Emailtxt = (TextView)findViewById(R.id.emailtxt2);
@@ -86,6 +88,11 @@ public class AssociationPage extends AppCompatActivity {
 
         logOut.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, AssociationLogIn.class);
+            startActivity(intent);
+        });
+        see_posts.setOnClickListener(view -> {
+            Intent intent = new Intent(AssociationPage.this, FeedPostsAssociation.class);
+            intent.putExtra("id",assoc_id);
             startActivity(intent);
         });
     }

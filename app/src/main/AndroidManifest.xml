@@ -13,7 +13,7 @@
             android:name=".DetailsPostAssociation"
             android:exported="false" />
         <activity
-            android:name=".FeedPostsAssociations"
+            android:name=".FeedPostsAssociation"
             android:exported="false" />
         <activity
             android:name=".EditPost"
