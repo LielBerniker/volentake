@@ -5,7 +5,8 @@
     android:id="@+id/linearLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#E6F1F4"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".GuestUser">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_width="85dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/emailText"
         android:textAlignment="textStart"
@@ -26,7 +27,7 @@
         android:layout_width="85dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
         android:layout_marginBottom="65dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/passwordText"
@@ -41,7 +42,7 @@
         android:id="@+id/associationuseremail"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:fontFamily="@font/oswald_font_wght"
@@ -75,11 +76,11 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginBottom="28dp"
+        android:backgroundTint="#268BBC"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/LogIn"
-        android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#268BBC"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/associationcreateuser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -106,7 +107,7 @@
         android:id="@+id/associationloginback"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="200dp"
         android:backgroundTint="#268BBC"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/backToMainMenu"
@@ -122,6 +123,7 @@
         android:id="@+id/associationloglntitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/associationLogInTitle"
         android:textAlignment="center"
@@ -130,10 +132,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -144,4 +146,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logovector_02" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/vol_background_02" />
 </androidx.constraintlayout.widget.ConstraintLayout>
