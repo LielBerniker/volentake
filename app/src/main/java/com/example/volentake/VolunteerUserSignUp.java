@@ -84,8 +84,8 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 String txtPassword1 = inputPassword1.getText().toString();
                 String txtPassword2 = inputPassword2.getText().toString();
                 String txtCity = inputCity.getText().toString();
-                String txtStreet = inputCity.getText().toString();
-                String txtHouseNumber = inputCity.getText().toString();
+                String txtStreet = inputStreet.getText().toString();
+                String txtHouseNumber = inputHouseNumber.getText().toString();
                 String txtBirthDay = inputBirthday.getText().toString();
 
                 if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtCity)
@@ -96,7 +96,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 } else if (txtPassword1.length() < 6){
                     Toast.makeText(VolunteerUserSignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
                 } else {
-                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtCity);
+                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtCity,txtStreet,txtHouseNumber);
                 }
             }
         });
@@ -106,13 +106,13 @@ public class VolunteerUserSignUp extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    private void registerUser(final String firstName, final String lastName, final String email, String password,final String add) {
+    private void registerUser(final String firstName, final String lastName, final String email, String password,final String city,final String street,final String numhouse) {
 
 
         mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                Address address = new Address(add,"zohar",4);
+                Address address = new Address(city,street,Integer.parseInt(numhouse));
 
                 Date date = new Date();
                 String user_id = mAuth.getCurrentUser().getUid();

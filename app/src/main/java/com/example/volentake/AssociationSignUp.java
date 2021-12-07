@@ -94,7 +94,7 @@ public class AssociationSignUp extends AppCompatActivity {
                 } else if (txtPassword1.length() < 6){
                     Toast.makeText(AssociationSignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
                 } else {
-                    registerUser(txtName , txtCity , txtPhone , txtAbout , txtEmail , txtPassword1);
+                    registerUser(txtName , txtCity, txtStreet,txtHouseNumber , txtPhone , txtAbout , txtEmail , txtPassword1);
                 }
             }
         });
@@ -104,13 +104,13 @@ public class AssociationSignUp extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    private void registerUser(final String Name, final String add, final String phone,final String about,final String email, String password) {
+    private void registerUser(final String Name, final String city,final String street,final String housenum, final String phone,final String about,final String email, String password) {
 
 
         mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                Address address = new Address(add,"zohar",4);
+                Address address = new Address(city,street,Integer.parseInt(housenum));
                 Date date = new Date();
                 String user_id = mAuth.getCurrentUser().getUid();
                 Association_user cur_user = new Assoc_user(phone,address,Name,email,about);
