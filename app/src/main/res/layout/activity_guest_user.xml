@@ -7,4 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".AssociationLogIn">
 
+    <TextView
+        android:id="@+id/txttitleguest"
+        android:layout_width="100dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="48dp"
+        android:text="Guest"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnbackmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnpostjustforview"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <Button
+        android:id="@+id/btnpostjustforview"
+        android:layout_width="262dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="119dp"
+        android:text="available volunteer events"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txttitleguest" />
 </androidx.constraintlayout.widget.ConstraintLayout>

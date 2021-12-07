@@ -51,12 +51,12 @@ public class DetailsPostGuest extends AppCompatActivity {
         }
         mystorge = FirebaseStorage.getInstance().getReference().child("post_pic/"+post_id);
         back = (Button) findViewById(R.id.btnBackToFeedOfPostsGuest);
-        PostName = (TextView)findViewById(R.id.detailPostName);
-        NumOfVol = (TextView)findViewById(R.id.detailNumVolPost);
-        PostPhoneNum = (TextView)findViewById(R.id.detailPhoneNumberPost);
-        PostDescription = (TextView)findViewById(R.id.detailDescriptionPost);
-        PostType = (TextView)findViewById(R.id.detailTypePost);
-        post_pic = (ImageView)findViewById(R.id.PostImage2);
+        PostName = (TextView)findViewById(R.id.detailPostNameGuest);
+        NumOfVol = (TextView)findViewById(R.id.detailNumVolPostGuest);
+        PostPhoneNum = (TextView)findViewById(R.id.detailPhoneNumberPostGuest);
+        PostDescription = (TextView)findViewById(R.id.detailDescriptionPostGuest);
+        PostType = (TextView)findViewById(R.id.detailTypePostGuest);
+        post_pic = (ImageView)findViewById(R.id.PostImage2Guest);
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {

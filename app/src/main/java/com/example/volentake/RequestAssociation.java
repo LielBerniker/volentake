@@ -74,7 +74,7 @@ public class RequestAssociation extends AppCompatActivity {
                 }
             }
         });
-        System.out.println("this is the assoc id:" + Assoc_id);
+
         SendRequest.setOnClickListener(view -> {
             String txtvolName = volName.getText().toString();
             String txtvolemail = volEmail.getText().toString();
@@ -84,6 +84,12 @@ public class RequestAssociation extends AppCompatActivity {
                 Toast.makeText(RequestAssociation.this, "Empty credentials!", Toast.LENGTH_SHORT).show();}
             else {
                 send_request(txtvolName,txtvolemail,txtcontant,txtnumpar);}
+        });
+        Back.setOnClickListener(view -> {
+            Intent intent = new Intent(RequestAssociation.this, DetailsPostVol.class);
+            intent.putExtra("vol_id",vol_user_id);
+            intent.putExtra("post_id",post_id);
+            startActivity(intent);
         });
     }
     private void send_request(String name,String email,String content,String numpar)
