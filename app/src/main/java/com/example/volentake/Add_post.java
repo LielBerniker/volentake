@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.myapplication.Address;
@@ -33,10 +35,10 @@ public class Add_post extends AppCompatActivity {
     private EditText inputNum;
     private EditText inputPhone;
     private EditText inputDescription;
-    private EditText inputType;
     private EditText inputNumOfParticipants;
     private Button addPost;
     private Button backToAssoc;
+    private Spinner spintype;
     //    firebase
     private DatabaseReference mDatabase;
 
@@ -62,10 +64,16 @@ public class Add_post extends AppCompatActivity {
         inputNum = (EditText) findViewById(R.id.addressnuminput3);
         inputPhone = (EditText) findViewById(R.id.InputPhoneNum);
         inputDescription = (EditText) findViewById(R.id.InputDescreption);
-        inputType = (EditText) findViewById(R.id.InputType);
         inputNumOfParticipants = (EditText) findViewById(R.id.InputNumOfPartic);
         addPost = (Button)findViewById(R.id.btnCreatePost);
         backToAssoc = (Button)findViewById(R.id.btnBackToAssoc);
+
+        spintype = (Spinner) findViewById(R.id.spinnerporttype);
+        ArrayAdapter<String> typeadapter = new ArrayAdapter<String>(Add_post.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.types));
+        typeadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spintype.setAdapter(typeadapter);
+
 
         addPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +84,7 @@ public class Add_post extends AppCompatActivity {
                 String txtcity = inputCity.getText().toString();
                 String txtstreet = inputStreet.getText().toString();
                 String txtnum = inputNum.getText().toString();
-                String txtType = inputType.getText().toString();
+                String txtType = spintype.getSelectedItem().toString();
                 String txtnumofpar = inputNumOfParticipants.getText().toString();
 
                 if (TextUtils.isEmpty(txtName) || TextUtils.isEmpty(txtPhone ) || TextUtils.isEmpty(txtcity)|| TextUtils.isEmpty(txtstreet)|| TextUtils.isEmpty(txtnum)

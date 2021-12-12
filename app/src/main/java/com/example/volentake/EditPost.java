@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.myapplication.Address;
@@ -28,9 +30,9 @@ public class EditPost extends AppCompatActivity {
     private EditText addresscityinsert;
     private EditText addressstreetinsert;
     private EditText addressnuminsert;
-    private EditText posttype;
     private EditText postnumofvol;
     private EditText postdescreption;
+    private Spinner spintype;
     private DatabaseReference mDatabase;
     String assoc_id = "";
     String post_id = "";
@@ -54,10 +56,16 @@ public class EditPost extends AppCompatActivity {
         PhoneNumberInsert = (EditText)findViewById(R.id.editPostPhone);
         addresscityinsert = (EditText)findViewById(R.id.editPostLocation);
         postnumofvol= (EditText)findViewById(R.id.editPostNumVol);
-        posttype= (EditText)findViewById(R.id.editPostType);
 //        addressstreetinsert = (EditText)findViewById(R.id.streetinsert2);
 //        addressnuminsert = (EditText)findViewById(R.id.streetnuminsert2);
         postdescreption= (EditText)findViewById(R.id.editPostDescription);
+
+        spintype = (Spinner) findViewById(R.id.spinnerpostedittype);
+        ArrayAdapter<String> typeadapter = new ArrayAdapter<String>(EditPost.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.types));
+        typeadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spintype.setAdapter(typeadapter);
+
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -70,7 +78,8 @@ public class EditPost extends AppCompatActivity {
                     PhoneNumberInsert.setText(post_n.getPhone_number());
                     addresscityinsert.setText(post_n.getLocation().getCity());
                     postnumofvol.setText(Integer.toString(post_n.getNum_of_participants()));
-                    posttype.setText(post_n.getType());
+                    int spinnerPosition = typeadapter.getPosition(post_n.getType());
+                    spintype.setSelection(spinnerPosition);
                     postdescreption.setText(post_n.getDescription());
                 }
             }
@@ -79,7 +88,7 @@ public class EditPost extends AppCompatActivity {
             String txtName = NameInsert.getText().toString();
             String txtaddrresscity = addresscityinsert.getText().toString();
             String txtphonenum = PhoneNumberInsert.getText().toString();
-            String txttype = posttype.getText().toString();
+            String txttype = spintype.getSelectedItem().toString();
             String txtpostnumofvol = postnumofvol.getText().toString();
             String txtpostdesc = postdescreption.getText().toString();
             update_post(txtName,txtaddrresscity,txtphonenum,txttype,txtpostnumofvol,txtpostdesc);
