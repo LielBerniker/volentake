@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".InboxResponses"
+            android:exported="false" />
+        <activity
+            android:name=".responseShape"
+            android:exported="false" />
+        <activity
             android:name=".requestShape"
             android:exported="false" />
         <activity

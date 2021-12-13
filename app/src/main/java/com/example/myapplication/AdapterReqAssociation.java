@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
 import android.content.Context;
+<<<<<<< HEAD
+=======
 import android.content.Intent;
 import android.util.Log;
+>>>>>>> 8b8099e44f874e7a60d3397fbfab39ed0ba679df
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
+=======
 import com.example.volentake.DetailsPostAssociation;
 import com.example.volentake.DetailsRequest;
+>>>>>>> 8b8099e44f874e7a60d3397fbfab39ed0ba679df
 import com.example.volentake.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -98,11 +104,17 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
         private DatabaseReference mDatabase;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+<<<<<<< HEAD
+            txtMailVolRequestToAss = itemView.findViewById(R.id.txtMailVolRequestToAss);
+            namePost = itemView.findViewById(R.id.nameResponse);
+            txtFullNameRequestToAss = itemView.findViewById(R.id.txtFullNameRequestToAss);
+=======
             //        firebase code
             mDatabase = FirebaseDatabase.getInstance().getReference();
             MailVolRequestToAss = itemView.findViewById(R.id.mailVolunteerRequestToAss);
             namePost = itemView.findViewById(R.id.nameMessageRequestToAss);
             txtFullNameRequestToAss = itemView.findViewById(R.id.fullNameRequestToAss);
+>>>>>>> 8b8099e44f874e7a60d3397fbfab39ed0ba679df
             btnSeeDetailsRequestToAss = itemView.findViewById(R.id.btnSeeDetailsRequestToAss);
             parentRequestToAss = itemView.findViewById(R.id.parentRequestToAss);
 

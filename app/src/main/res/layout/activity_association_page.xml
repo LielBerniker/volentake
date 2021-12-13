@@ -191,7 +191,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <Button
-                android:id="@+id/btnInboxRequests"
+                android:id="@+id/btnInboxResponses"
                 android:layout_width="194dp"
                 android:layout_height="41dp"
                 android:layout_marginEnd="128dp"
