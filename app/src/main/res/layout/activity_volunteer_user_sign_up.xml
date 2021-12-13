@@ -29,8 +29,8 @@
                 android:id="@+id/detailName"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="52dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/firstNameText"
                 android:textSize="14sp"
@@ -102,7 +102,7 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/lastNameText"
                 android:textSize="14sp"
@@ -115,8 +115,8 @@
                 android:id="@+id/cityInsertVol1"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/cityText"
                 android:textSize="14sp"
@@ -176,21 +176,9 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/emailText"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDate" />
-
-            <TextView
-                android:id="@+id/txtDate"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="40dp"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/birthOfDateText"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -198,9 +186,9 @@
             <EditText
                 android:id="@+id/inputLastName"
                 android:layout_width="200dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="48dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -210,12 +198,12 @@
                 android:id="@+id/inputcity"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="85dp"
-                android:layout_marginEnd="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="48dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
+                app:layout_constraintTop_toBottomOf="@+id/birthdateselector" />
 
             <EditText
                 android:id="@+id/insertStreet2"
@@ -231,12 +219,12 @@
                 android:id="@+id/inputMail"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="48dp"
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputDate" />
+                app:layout_constraintTop_toBottomOf="@+id/insertHouseNumber2" />
 
             <EditText
                 android:id="@+id/inputPassword1"
@@ -261,17 +249,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
             <EditText
-                android:id="@+id/inputDate"
-                android:layout_width="200dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
-                android:ems="10"
-                android:inputType="date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/insertHouseNumber2" />
-
-            <EditText
                 android:id="@+id/insertHouseNumber2"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
@@ -284,15 +261,36 @@
 
             <TextView
                 android:id="@+id/addressTextCreateVol1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="69dp"
+                android:layout_height="19dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="11dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/addressText"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.254"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/birthdatetxt3" />
+
+            <TextView
+                android:id="@+id/birthdateselector"
+                android:layout_width="186dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="64dp"
+                android:text="select birth date"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
+
+            <TextView
+                android:id="@+id/birthdatetxt3"
+                android:layout_width="108dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="16dp"
+                android:text="birth date"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
 

@@ -43,12 +43,12 @@ public interface Volunteer_user {
     /**
      * @return  return the birth date of user,
      */
-    public Date getBirth_date() ;
+    public String  getBirth_date() ;
     /**
      * @param birth_date - new birth date
      * @return
      */
-    public void setBirth_date(Date birth_date);
+    public void setBirth_date(String birth_date);
     /**
      * @return  return email address of user,
      */

@@ -149,13 +149,13 @@
                 android:id="@+id/inputPassword1"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="44dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:inputType="textPassword"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputDate" />
+                app:layout_constraintTop_toBottomOf="@+id/inputdateselector2" />
 
             <EditText
                 android:id="@+id/inputPassword2"
@@ -168,17 +168,6 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
-
-            <EditText
-                android:id="@+id/inputDate"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
-                android:ems="10"
-                android:inputType="date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addressnumberinsert" />
 
             <TextView
                 android:id="@+id/streettxt"
@@ -247,8 +236,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="50dp"
                 android:ems="10"
-                android:textSize="14sp"
                 android:inputType="number"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetinsert" />
 
@@ -297,6 +286,16 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtPhoneNumber" />
+
+            <TextView
+                android:id="@+id/inputdateselector2"
+                android:layout_width="143dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="76dp"
+                android:text="select date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressnumberinsert" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

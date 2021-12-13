@@ -3,12 +3,17 @@ package com.example.volentake;
 
 
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,6 +37,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -49,10 +55,13 @@ public class VolunteerUserSignUp extends AppCompatActivity {
     private EditText inputMail;
     private Button register;
     private Button logInVolunteer;
+    private TextView mDisplayDate;
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
 //    firebase
     private FirebaseAuth mAuth;
     private DatabaseReference mRootRef;
 
+    String BirthDay;
 
 
     @Override
@@ -65,16 +74,41 @@ public class VolunteerUserSignUp extends AppCompatActivity {
         inputCity = (EditText) findViewById(R.id.inputcity);
         inputStreet = (EditText) findViewById(R.id.insertStreet2);
         inputHouseNumber = (EditText) findViewById(R.id.insertHouseNumber2);
-        inputBirthday = (EditText) findViewById(R.id.inputDate);
         inputMail = (EditText) findViewById(R.id.inputMail);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
         inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
         register = (Button)findViewById(R.id.btnPageRequst);
         logInVolunteer = (Button)findViewById(R.id.btnBackToFeedOfPosts);
+        mDisplayDate = (TextView) findViewById(R.id.birthdateselector);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
 
+                DatePickerDialog dialog = new DatePickerDialog(
+                        VolunteerUserSignUp.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                BirthDay = day + "/" + month + "/" + year;
+                mDisplayDate.setText(BirthDay);
+            }
+        };
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,17 +120,17 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 String txtCity = inputCity.getText().toString();
                 String txtStreet = inputStreet.getText().toString();
                 String txtHouseNumber = inputHouseNumber.getText().toString();
-                String txtBirthDay = inputBirthday.getText().toString();
+                String txtBirthDay = BirthDay;
 
-                if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtCity)
-                        || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword1) || TextUtils.isEmpty(txtPassword2)){
+                if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtCity) || TextUtils.isEmpty(txtStreet) || TextUtils.isEmpty(txtHouseNumber)
+                        || TextUtils.isEmpty(txtBirthDay)  || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword1) || TextUtils.isEmpty(txtPassword2)){
                     Toast.makeText(VolunteerUserSignUp.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
                 } else if (!(txtPassword1.equals(txtPassword2))){
                     Toast.makeText(VolunteerUserSignUp.this, "Incompatible Passwords!", Toast.LENGTH_SHORT).show();
                 } else if (txtPassword1.length() < 6){
                     Toast.makeText(VolunteerUserSignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
                 } else {
-                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtCity,txtStreet,txtHouseNumber);
+                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtCity,txtStreet,txtHouseNumber,txtBirthDay);
                 }
             }
         });
@@ -106,7 +140,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    private void registerUser(final String firstName, final String lastName, final String email, String password,final String city,final String street,final String numhouse) {
+    private void registerUser(final String firstName, final String lastName, final String email, String password,final String city,final String street,final String numhouse,final String Birthdaycur) {
 
 
         mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -114,9 +148,8 @@ public class VolunteerUserSignUp extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 Address address = new Address(city,street,Integer.parseInt(numhouse));
 
-                Date date = new Date();
                 String user_id = mAuth.getCurrentUser().getUid();
-                Volunteer_user cur_user = new Vol_user(firstName,lastName,address,"05424234",date,email);
+                Volunteer_user cur_user = new Vol_user(firstName,lastName,address,"05424234",Birthdaycur,email);
                 mRootRef.child("vol_users").child(user_id).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

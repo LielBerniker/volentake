@@ -7,10 +7,10 @@ public class Vol_user implements Volunteer_user {
     private String last_name;
   private Address address;
    private String phone_num;
-   private Date birth_date;
+   private String birth_date;
    private String Email;
 
-    public Vol_user(String first_name, String last_name, Address address, String phone_num,Date birthdate, String email) {
+    public Vol_user(String first_name, String last_name, Address address, String phone_num,String birthdate, String email) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.address = address;
@@ -42,11 +42,11 @@ public class Vol_user implements Volunteer_user {
         return address;
     }
 
-    public Date getBirth_date() {
+    public String getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(Date birth_date) {
+    public void setBirth_date(String birth_date) {
         this.birth_date = birth_date;
     }
 
