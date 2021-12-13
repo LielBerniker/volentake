@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Assoc_post;
 import com.example.myapplication.Request;
 import com.example.myapplication.Request_vol;
 import com.example.myapplication.Vol_user;
@@ -76,14 +77,12 @@ public class RequestAssociation extends AppCompatActivity {
         });
 
         SendRequest.setOnClickListener(view -> {
-            String txtvolName = volName.getText().toString();
-            String txtvolemail = volEmail.getText().toString();
             String txtcontant = content.getText().toString();
             String txtnumpar = numParticipant.getText().toString();
             if (TextUtils.isEmpty(txtnumpar) || TextUtils.isEmpty(txtcontant) ){
                 Toast.makeText(RequestAssociation.this, "Empty credentials!", Toast.LENGTH_SHORT).show();}
             else {
-                send_request(txtvolName,txtvolemail,txtcontant,txtnumpar);}
+                send_request(txtcontant,txtnumpar);}
         });
         Back.setOnClickListener(view -> {
             Intent intent = new Intent(RequestAssociation.this, DetailsPostVol.class);
@@ -92,11 +91,11 @@ public class RequestAssociation extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    private void send_request(String name,String email,String content,String numpar)
+    private void send_request(String content,String numpar)
     {
 
-        cur_req = new Request_vol(vol_user_id,post_id,content,Integer.valueOf(numpar),email,name);
-        mDatabase.child("massages").child(Assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        cur_req = new Request_vol(vol_user_id,post_id,content,Integer.valueOf(numpar));
+        mDatabase.child("assoc_massages").child(Assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
@@ -106,7 +105,7 @@ public class RequestAssociation extends AppCompatActivity {
                     ArrayList<Request> cur_massages  = (ArrayList<Request>)task.getResult().getValue();
                     cur_massages.add(cur_req);
 
-                    mDatabase.child("massages").child(Assoc_id).setValue(cur_massages).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDatabase.child("assoc_massages").child(Assoc_id).setValue(cur_massages).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){

@@ -6,34 +6,20 @@ public class Request_vol implements Request{
    private String content;
    private int num_of_vol;
    private Status status;
-   private String user_email;
-   private String user_first_name;
 
-    public Request_vol(String vol_user_id, String post_id, String content,int num_vol,String user_email,String user_first_name) {
+
+    public Request_vol(String vol_user_id, String post_id, String content,int num_vol) {
         this.vol_user_id = vol_user_id;
         this.post_id = post_id;
         this.content = content;
         this.num_of_vol = num_vol;
-        this.user_email = user_email;
-        this.user_first_name = user_first_name;
         this.status = Status.WAITING;
     }
+    public Request_vol() {
 
-    public String getUser_email() {
-        return user_email;
     }
 
-    public void setUser_email(String user_email) {
-        this.user_email = user_email;
-    }
 
-    public String getUser_first_name() {
-        return user_first_name;
-    }
-
-    public void setUser_first_name(String user_first_name) {
-        this.user_first_name = user_first_name;
-    }
 
     public Status getStatus() {
         return status;

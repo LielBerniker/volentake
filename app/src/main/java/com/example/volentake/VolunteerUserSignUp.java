@@ -155,10 +155,10 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             String con = "hello and welcome to Volentake, thank for joining us";
-                            Response_Interface res = new Response(user_id,"","","welcome to voluntake", Status.APPROVED,con);
+                            Response_Interface res = new Response(user_id,"","", Status.APPROVED,con);
                             List< Response_Interface> all_res = new ArrayList<>();
                             all_res.add(res);
-                            mRootRef.child("massages").child(user_id).setValue(all_res).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            mRootRef.child("vol_massages").child(user_id).setValue(all_res).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
