@@ -14,7 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.volentake.DetailsPostAssociation;
-import com.example.volentake.DetailsPostVol;
+
 import com.example.volentake.R;
 
 import java.util.ArrayList;

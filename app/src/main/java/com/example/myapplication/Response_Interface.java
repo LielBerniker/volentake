@@ -49,14 +49,6 @@ public interface Response_Interface {
      * @return
      */
     public void setPost_id(String post_id);
-    /**
-     * @return  return post name
-     */
-    public String getPost_name();
-    /**
-     * @param post_name - new post name
-     * @return
-     */
-    public void setPost_name(String post_name);
+
 
 }

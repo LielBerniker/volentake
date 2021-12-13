@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,18 +15,24 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.volentake.DetailsPostAssociation;
+import com.example.volentake.DetailsRequest;
 import com.example.volentake.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssociation.ViewHolder> {
     Context context;
-    String request_id;
-    ArrayList<Pair<Request_vol,String>> listRequests= new ArrayList<>();
+    String assoc_id;
+    ArrayList<Pair<Request,Integer>> listRequests= new ArrayList<>();
 
-    public AdapterReqAssociation(Context context, String request_id){
+    public AdapterReqAssociation(Context context, String assoc_id){
         this.context = context;
-        this.request_id = request_id;
+        this.assoc_id =assoc_id;
     }
 
     @Override
@@ -37,16 +44,41 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        /////////////for Liel
-//        holder.txtNameAssociation.setText(listPosts.get(position).first.getName());
-//        holder.txtNumVol.setText(String.valueOf(listPosts.get(position).first.getNum_of_participants()));
-//        holder.txtType.setText(listPosts.get(position).first.getType());
-//        holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
-//        holder.btnSeeMoreDetails.setOnClickListener(view -> {
-//            Intent intent = new Intent(context, DetailsPostAssociation.class);
-//            intent.putExtra("request_id",request_id);
-//            intent.putExtra("post_id",listPosts.get(position).second);
-//            context.startActivity(intent);
+        String vol_id = listRequests.get(position).first.getVol_user_id();
+        String post_id = listRequests.get(position).first.getPost_id();
+        holder.mDatabase.child("vol_users").child(vol_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+                    Vol_user cure_user =  task.getResult().getValue(Vol_user.class);
+                  holder.txtFullNameRequestToAss.setText(cure_user.getFirst_name()+" "+cure_user.getLast_name());
+                    holder.MailVolRequestToAss.setText(cure_user.getEmail());
+
+                }
+            }
+        });
+        holder.mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+                    Assoc_post cure_post =  task.getResult().getValue(Assoc_post.class);
+                    holder.namePost.setText(cure_post.getName());
+                }
+            }
+        });
+
+        holder.btnSeeDetailsRequestToAss.setOnClickListener(view -> {
+            Intent intent = new Intent(context, DetailsRequest.class);
+            intent.putExtra("request_pos",listRequests.get(position).second);
+            intent.putExtra("assoc_id",assoc_id);
+            context.startActivity(intent);
+                });
     }
 
     @Override
@@ -54,20 +86,23 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
         return listRequests.size();
     }
 
-    public void setListRequests(ArrayList<Pair<Request_vol,String>> listRequests){
+    public void setListRequests(ArrayList<Pair<Request,Integer>> listRequests){
         this.listRequests = listRequests;
         notifyDataSetChanged();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtMailVolRequestToAss, namePost,txtFullNameRequestToAss;
+        private TextView MailVolRequestToAss, namePost,txtFullNameRequestToAss;
         private Button btnSeeDetailsRequestToAss;
         private CardView parentRequestToAss;
-
+        //    firebase
+        private DatabaseReference mDatabase;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtMailVolRequestToAss = itemView.findViewById(R.id.txtMailVolRequestToAss);
+            //        firebase code
+            mDatabase = FirebaseDatabase.getInstance().getReference();
+            MailVolRequestToAss = itemView.findViewById(R.id.mailVolunteerRequestToAss);
             namePost = itemView.findViewById(R.id.nameMessageRequestToAss);
-            txtFullNameRequestToAss = itemView.findViewById(R.id.txtFullNameRequestToAss);
+            txtFullNameRequestToAss = itemView.findViewById(R.id.fullNameRequestToAss);
             btnSeeDetailsRequestToAss = itemView.findViewById(R.id.btnSeeDetailsRequestToAss);
             parentRequestToAss = itemView.findViewById(R.id.parentRequestToAss);
 

@@ -48,22 +48,7 @@ public interface Request {
      * @return
      */
     public void setStatus(Status status);
-    /**
-     * @return  return user email ,
-     */
-    public String getUser_email();
-    /**
-     * @param user_email - new user email
-     * @return
-     */
-    public void setUser_email(String user_email);
-    /**
-     * @return  return user name ,
-     */
-    public String getUser_first_name();
-    /**
-     * @param user_first_name - new user name
-     * @return
-     */
-    public void setUser_first_name(String user_first_name);
+
+
+
 }

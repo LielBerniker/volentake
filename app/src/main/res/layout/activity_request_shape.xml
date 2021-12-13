@@ -13,10 +13,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="371dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
@@ -32,7 +32,7 @@
                 android:id="@+id/nameMessageRequestToAss"
                 android:layout_width="172dp"
                 android:layout_height="19dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="4dp"
                 android:gravity="center"
                 android:text="nameRequestToAss"
                 android:textAlignment="center"
@@ -40,16 +40,16 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <TextView
                 android:id="@+id/mailVolunteerRequestToAss"
                 android:layout_width="153dp"
                 android:layout_height="17dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:text="mailVolunteerRequestToAss"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
@@ -61,8 +61,8 @@
                 android:id="@+id/fullNameRequestToAss"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:text="fullNameRequestToAss"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
@@ -75,7 +75,7 @@
                 android:layout_width="100dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:text="Mail"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
@@ -86,8 +86,8 @@
                 android:id="@+id/txtFullNameRequestToAss"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
                 android:text="Name"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
@@ -96,14 +96,15 @@
 
             <Button
                 android:id="@+id/btnSeeDetailsRequestToAss"
-                android:layout_width="150dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="40dp"
+                android:layout_width="136dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
                 android:backgroundTint="#FFFFFF"
                 android:text="See More Details"
                 android:textColor="#268BBC"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.436"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fullNameRequestToAss" />
 
