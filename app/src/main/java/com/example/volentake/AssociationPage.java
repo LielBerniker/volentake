@@ -54,7 +54,7 @@ public class AssociationPage extends AppCompatActivity {
         addPost = (Button)findViewById(R.id.addPost);
         logOut = (Button)findViewById(R.id.btnBackToFeedOfPosts);
         see_posts = (Button)findViewById(R.id.btnseeallposts);
-        inboxRequests = (Button)findViewById(R.id.btnInboxRequests);
+        inboxRequests = (Button)findViewById(R.id.btnInboxResponses);
 //        Nametxt = (TextView)findViewById(R.id.nametxt2);
 //        PhoneNumbertxt = (TextView)findViewById(R.id.phonenumbertxt2);
 //        Emailtxt = (TextView)findViewById(R.id.emailtxt2);
