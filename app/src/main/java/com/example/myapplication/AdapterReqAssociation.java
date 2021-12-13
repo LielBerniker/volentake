@@ -1,62 +1,75 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.volentake.DetailsPostAssociation;
 import com.example.volentake.R;
 
 import java.util.ArrayList;
 
 public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssociation.ViewHolder> {
     Context context;
-    ArrayList<Request_vol> listMessages= new ArrayList<>();
+    String request_id;
+    ArrayList<Pair<Request_vol,String>> listRequests= new ArrayList<>();
 
-    public AdapterReqAssociation(Context context){
+    public AdapterReqAssociation(Context context, String request_id){
         this.context = context;
+        this.request_id = request_id;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_request_association, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_request_shape, parent, false);
         ViewHolder holder= new ViewHolder(view);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//        holder.txtMailVolunteer.setText(listMessages.get(position).getVol_user().getEmail());
-        holder.txtNumVolOfPost.setText(String.valueOf(listMessages.get(position).getNum_of_vol()));
-        holder.txtContent.setText(listMessages.get(position).getContent());
-//        holder.txtLocationPost.setText(listMessages.get(position).getLocation().getCity());
+        /////////////for Liel
+//        holder.txtNameAssociation.setText(listPosts.get(position).first.getName());
+//        holder.txtNumVol.setText(String.valueOf(listPosts.get(position).first.getNum_of_participants()));
+//        holder.txtType.setText(listPosts.get(position).first.getType());
+//        holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
+//        holder.btnSeeMoreDetails.setOnClickListener(view -> {
+//            Intent intent = new Intent(context, DetailsPostAssociation.class);
+//            intent.putExtra("request_id",request_id);
+//            intent.putExtra("post_id",listPosts.get(position).second);
+//            context.startActivity(intent);
     }
 
     @Override
     public int getItemCount() {
-        return listMessages.size();
+        return listRequests.size();
     }
 
-    public void setListMessages(ArrayList<Request_vol> listMessages){
-        this.listMessages = listMessages;
+    public void setListRequests(ArrayList<Pair<Request_vol,String>> listRequests){
+        this.listRequests = listRequests;
         notifyDataSetChanged();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtMailVolunteer, txtNumVolOfPost,txtLocationPost, txtContent;
-        private CardView parent;
+        private TextView txtMailVolRequestToAss, namePost,txtFullNameRequestToAss;
+        private Button btnSeeDetailsRequestToAss;
+        private CardView parentRequestToAss;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtMailVolunteer = itemView.findViewById(R.id.mailVolunteer);
-            txtNumVolOfPost = itemView.findViewById(R.id.numVolOfPost);
-            txtLocationPost = itemView.findViewById(R.id.locationPost);
-//            txtContent = itemView.findViewById(R.id.contentMessage);
-            parent = itemView.findViewById(R.id.parentReqAss);
+            txtMailVolRequestToAss = itemView.findViewById(R.id.txtMailVolRequestToAss);
+            namePost = itemView.findViewById(R.id.nameMessageRequestToAss);
+            txtFullNameRequestToAss = itemView.findViewById(R.id.txtFullNameRequestToAss);
+            btnSeeDetailsRequestToAss = itemView.findViewById(R.id.btnSeeDetailsRequestToAss);
+            parentRequestToAss = itemView.findViewById(R.id.parentRequestToAss);
 
         }
     }
