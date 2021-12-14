@@ -7,15 +7,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Pair;
+
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.AdapterReqAssociation;
-import com.example.myapplication.Assoc_post;
-import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Request;
+
 import com.example.myapplication.Request_vol;
 import com.example.myapplication.Response;
 import com.example.myapplication.Response_Interface;
@@ -27,8 +24,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class DetailsRequest extends AppCompatActivity {
     private TextView PostName,volfullname,volemail,numofvol,content;
@@ -96,7 +91,7 @@ public class DetailsRequest extends AppCompatActivity {
         });
         approvebtn.setOnClickListener(view -> {
             cur_req.setStatus(Status.APPROVED);
-      update_information();
+            update_information();
         });
         rejectbtn.setOnClickListener(view -> {
             cur_req.setStatus(Status.REJECTED);
@@ -104,53 +99,53 @@ public class DetailsRequest extends AppCompatActivity {
         });
     }
     public void update_information()
-        {
-            mRootRef.child("massage_assoc").child(request_id).setValue(cur_req).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()){
-                        Response_Interface cur_res = new Response(cur_req.getVol_user_id(),assoc_id,cur_req.getPost_id(),Status.APPROVED);
-                        String res_id = mRootRef.child("massage_vol").push().getKey();
-                        String vol_user_id = cur_req.getVol_user_id();
-                        mRootRef.child("massage_vol").child(res_id).setValue(cur_res).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    mRootRef.child("vol_users").child(vol_user_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<DataSnapshot> task) {
-                                            if (!task.isSuccessful()) {
-                                                Log.e("firebase", "Error getting data", task.getException());
-                                            }
-                                            else {
-                                                Vol_user vol_user1 =  task.getResult().getValue(Vol_user.class);
-                                                vol_user1.massages_res.add(res_id);
-                                                mRootRef.child("vol_users").child(vol_user_id).setValue(vol_user1).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
-                                                        if (task.isSuccessful()){
-                                                            Toast.makeText(DetailsRequest.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                                            Intent intent = new Intent(DetailsRequest.this, InboxAssociation.class);
-                                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                            intent.putExtra("id", assoc_id);
-                                                            startActivity(intent);
-                                                            finish();
-                                                        }
-                                                    }
-                                                });
-
-                                            }
+    {
+        mRootRef.child("massage_assoc").child(request_id).setValue(cur_req).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Response_Interface cur_res = new Response(cur_req.getVol_user_id(),assoc_id,cur_req.getPost_id(),Status.APPROVED);
+                    String res_id = mRootRef.child("massage_vol").push().getKey();
+                    String vol_user_id = cur_req.getVol_user_id();
+                    mRootRef.child("massage_vol").child(res_id).setValue(cur_res).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                mRootRef.child("vol_users").child(vol_user_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                        if (!task.isSuccessful()) {
+                                            Log.e("firebase", "Error getting data", task.getException());
                                         }
-                                    });
+                                        else {
+                                            Vol_user vol_user1 =  task.getResult().getValue(Vol_user.class);
+                                            vol_user1.massages_res.add(res_id);
+                                            mRootRef.child("vol_users").child(vol_user_id).setValue(vol_user1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()){
+                                                        Toast.makeText(DetailsRequest.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(DetailsRequest.this, InboxAssociation.class);
+                                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                        intent.putExtra("id", assoc_id);
+                                                        startActivity(intent);
+                                                        finish();
+                                                    }
+                                                }
+                                            });
 
-                                }
+                                        }
+                                    }
+                                });
 
                             }
 
-                        });
-                    }
-                }
-            });
+                        }
 
-        }
+                    });
+                }
+            }
+        });
+
     }
+}
