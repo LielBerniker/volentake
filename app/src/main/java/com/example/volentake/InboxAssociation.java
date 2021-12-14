@@ -13,6 +13,7 @@ import com.example.myapplication.AdapterPostAssociation;
 import com.example.myapplication.AdapterPostVol;
 import com.example.myapplication.AdapterReqAssociation;
 import com.example.myapplication.Assoc_post;
+import com.example.myapplication.Assoc_user;
 import com.example.myapplication.Request;
 import com.example.myapplication.Request_vol;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,8 +32,9 @@ public class InboxAssociation extends AppCompatActivity {
     private RecyclerView recycleRequests;
     private DatabaseReference mRootRef;
     String assoc_id = "";
-    ArrayList<Pair<Request, Integer>> requests = new ArrayList<>();
-
+    ArrayList<String> cur_requests ;
+    ArrayList<Pair<Request_vol,String>> requests = new ArrayList<>();
+    int num_of_requests;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,27 +49,45 @@ public class InboxAssociation extends AppCompatActivity {
         recycleRequests = findViewById(R.id.recycleRequests);
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
-        mRootRef.child("assoc_massages").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        mRootRef.child("assoc_users").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
                 }
                 else {
-                    ArrayList<HashMap<String,String >> cur_massages1  = (ArrayList<HashMap<String,String>>)task.getResult().getValue();
-                    ArrayList<HashMap<String, Long>> cur_massages2  = (ArrayList<HashMap<String, Long>>)task.getResult().getValue();
-                    for (int i = 1; i <cur_massages1.size(); i++) {
-                        Request cur_req = new Request_vol(cur_massages1.get(i).get("vol_user_id"),cur_massages1.get(i).get("post_id"),cur_massages1.get(i).get("content"),cur_massages2.get(i).get("num_of_vol").intValue());
-                        Pair<Request,Integer> pair1 =new Pair<>(cur_req,i);
-                        requests.add(pair1);
+                    Assoc_user cure_user =  task.getResult().getValue(Assoc_user.class);
+                    cur_requests = cure_user.getMassages_req();
+
+                    num_of_requests = cur_requests.size();
+                    for (int i = 1; i <num_of_requests ; i++) {
+                        int count = i;
+                        String req_id = cur_requests.get(count);
+                        mRootRef.child("massage_assoc").child(req_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                if (!task.isSuccessful()) {
+                                    Log.e("firebase", "Error getting data", task.getException());
+                                }
+                                else {
+                                    Request_vol cur_req1 =  task.getResult().getValue(Request_vol.class);
+                                    Request_vol cur_req2 = new Request_vol(cur_req1.getVol_user_id(),cur_req1.getPost_id(),cur_req1.getContent(),cur_req1.getNum_of_vol(),cur_req1.getStatus());
+                                    Pair<Request_vol,String> pair1 =new Pair<>(cur_req2,req_id);
+                                    requests.add(pair1);
+                                    if(count+1==num_of_requests)
+                                    {
+                                        AdapterReqAssociation adapter = new AdapterReqAssociation( InboxAssociation.this,assoc_id);
+                                        adapter.setListRequests(requests);
+
+                                        recycleRequests.setAdapter(adapter);
+                                        recycleRequests.setLayoutManager(new GridLayoutManager(InboxAssociation.this,1));}
+                                }
+                            }
+                        });
                     }
 
-                        AdapterReqAssociation adapter = new AdapterReqAssociation( InboxAssociation.this,assoc_id);
-                        adapter.setListRequests(requests);
 
-                    recycleRequests.setAdapter(adapter);
-                    recycleRequests.setLayoutManager(new GridLayoutManager(InboxAssociation.this,1));}
-
+                }
             }
         });
 

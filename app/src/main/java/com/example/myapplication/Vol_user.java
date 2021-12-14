@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Vol_user implements Volunteer_user {
@@ -9,6 +10,7 @@ public class Vol_user implements Volunteer_user {
    private String phone_num;
    private String birth_date;
    private String Email;
+    public ArrayList<String> massages_res;
 
     public Vol_user(String first_name, String last_name, Address address, String phone_num,String birthdate, String email) {
         this.first_name = first_name;
@@ -17,9 +19,16 @@ public class Vol_user implements Volunteer_user {
         this.phone_num = phone_num;
         this.birth_date = birthdate;
         this.Email = email;
+        this.massages_res = new ArrayList<>();
+        massages_res.add("0");
+
     }
     public Vol_user() {
 
+    }
+
+    public ArrayList<String> getMassages_res() {
+        return massages_res;
     }
 
     public String getFirst_name() {

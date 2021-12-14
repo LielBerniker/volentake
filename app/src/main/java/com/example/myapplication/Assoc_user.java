@@ -9,7 +9,8 @@ public class Assoc_user implements Association_user {
     private String name;
     private String Email;
     private String about;
-   public ArrayList<String> posts ;
+   public ArrayList<String> posts;
+    public ArrayList<String> massages_req;
 
     public Assoc_user(String phone_num, Address address, String name,String email,String about) {
         this.phone_num = phone_num;
@@ -19,6 +20,8 @@ public class Assoc_user implements Association_user {
         this.about = about;
        this.posts = new ArrayList<>();
        posts.add("0");
+        this.massages_req = new ArrayList<>();
+        massages_req.add("0");
     }
     public Assoc_user() {
 
@@ -42,6 +45,10 @@ public class Assoc_user implements Association_user {
 
     public String getName() {
         return name;
+    }
+
+    public ArrayList<String> getMassages_req() {
+        return massages_req;
     }
 
     public String getAbout() {

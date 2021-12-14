@@ -13,8 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.Assoc_post;
+import com.example.myapplication.Assoc_user;
 import com.example.myapplication.Request;
 import com.example.myapplication.Request_vol;
+import com.example.myapplication.Status;
 import com.example.myapplication.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -94,34 +96,43 @@ public class RequestAssociation extends AppCompatActivity {
     private void send_request(String content,String numpar)
     {
 
-        cur_req = new Request_vol(vol_user_id,post_id,content,Integer.valueOf(numpar));
-        mDatabase.child("assoc_massages").child(Assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        cur_req = new Request_vol(vol_user_id,post_id,content,Integer.valueOf(numpar), Status.WAITING);
+        String req_id =  mDatabase.child("massage_assoc").push().getKey();
+        mDatabase.child("massage_assoc").child(req_id).setValue(cur_req).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-                    ArrayList<Request> cur_massages  = (ArrayList<Request>)task.getResult().getValue();
-                    cur_massages.add(cur_req);
-
-                    mDatabase.child("assoc_massages").child(Assoc_id).setValue(cur_massages).addOnCompleteListener(new OnCompleteListener<Void>() {
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    mDatabase.child("assoc_users").child(Assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                         @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
-                                Toast.makeText(RequestAssociation.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RequestAssociation.this, FeedPostsVol.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                intent.putExtra("id",vol_user_id);
-                                startActivity(intent);
-                                finish();
+                        public void onComplete(@NonNull Task<DataSnapshot> task) {
+                            if (!task.isSuccessful()) {
+                                Log.e("firebase", "Error getting data", task.getException());
+                            }
+                            else {
+                                Assoc_user assoc_user2 =  task.getResult().getValue(Assoc_user.class);
+                                assoc_user2.massages_req.add(req_id);
+                                mDatabase.child("assoc_users").child(Assoc_id).setValue(assoc_user2).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()){
+                                            Toast.makeText(RequestAssociation.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(RequestAssociation.this, FeedPostsVol.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            intent.putExtra("id", vol_user_id);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    }
+                                });
+
                             }
                         }
                     });
 
+                }
 
                 }
-            }
+
         });
 
     }

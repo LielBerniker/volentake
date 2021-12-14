@@ -120,23 +120,12 @@ public class AssociationSignUp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            String con = "hello and welcome to Volentake, thank for joining us";
-                            Request req = new Request_vol(user_id,"",con,0);
-                            List<Request> all_req = new ArrayList<>();
-                            all_req.add(req);
-                            mRootRef.child("assoc_massages").child(user_id).setValue(all_req).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(AssociationSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(AssociationSignUp.this, AssociationPage.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                        intent.putExtra("id",mAuth.getCurrentUser().getUid());
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                }
-                            });
+                            Toast.makeText(AssociationSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(AssociationSignUp.this, AssociationPage.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
+                            startActivity(intent);
+                            finish();
                         }
                     }
                 });

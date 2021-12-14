@@ -22,15 +22,6 @@ public interface Response_Interface {
      */
     public String getAssociation_user_id();
     /**
-     * @return  return the content ,
-     */
-    public String getContent();
-    /**
-     * @param content - new content
-     * @return
-     */
-    public void setContent(String content);
-    /**
      * @return  return the status ,
      */
     public Status getStatus();

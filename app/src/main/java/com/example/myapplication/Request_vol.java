@@ -8,12 +8,12 @@ public class Request_vol implements Request{
    private Status status;
 
 
-    public Request_vol(String vol_user_id, String post_id, String content,int num_vol) {
+    public Request_vol(String vol_user_id, String post_id, String content,int num_vol,Status stat) {
         this.vol_user_id = vol_user_id;
         this.post_id = post_id;
         this.content = content;
         this.num_of_vol = num_vol;
-        this.status = Status.WAITING;
+        this.status = stat;
     }
     public Request_vol() {
 

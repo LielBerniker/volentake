@@ -6,14 +6,12 @@ public class Response implements Response_Interface{
     private String association_user_id;
     private String post_id;
     private Status status;
-    private String content;
 
-    public Response(String vol_user_id, String association_user_id, String post_id, Status status, String content) {
+    public Response(String vol_user_id, String association_user_id, String post_id, Status status) {
         this.vol_user_id = vol_user_id;
         this.association_user_id = association_user_id;
         this.post_id = post_id;
         this.status = status;
-        this.content = content;
     }
 
     @Override
@@ -56,13 +54,5 @@ public class Response implements Response_Interface{
         this.status = status;
     }
 
-    @Override
-    public String getContent() {
-        return content;
-    }
 
-    @Override
-    public void setContent(String content) {
-        this.content = content;
-    }
 }
