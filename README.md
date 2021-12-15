@@ -2,9 +2,7 @@
 
 ### <i> Android Studio Application Project of Software Engineering Course (third year of computer science) </i>
 
-<p align="center">
 ![logo](app/src/main/res/drawable/logo_01.jpg)
-</p>
 
 ## Collaborators:
 
