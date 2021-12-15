@@ -50,6 +50,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
     private EditText inputStreet;
     private EditText inputHouseNumber;
     private EditText inputBirthday;
+    private EditText inputPhone;
     private EditText inputPassword1;
     private EditText inputPassword2;
     private EditText inputMail;
@@ -75,6 +76,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
         inputStreet = (EditText) findViewById(R.id.insertStreet2);
         inputHouseNumber = (EditText) findViewById(R.id.insertHouseNumber2);
         inputMail = (EditText) findViewById(R.id.inputMail);
+        inputPhone = (EditText) findViewById(R.id.inputPhoneVolSU);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
         inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
         register = (Button)findViewById(R.id.btnPageRequst);
@@ -114,6 +116,9 @@ public class VolunteerUserSignUp extends AppCompatActivity {
             public void onClick(View v) {
                 String txtFirstName = inputFirstName.getText().toString();
                 String txtLastName = inputLastName.getText().toString();
+
+                // liel - add this phone number to user details in the firebase when creating the user
+                String txtPhoneNumber = inputPhone.getText().toString();
                 String txtEmail = inputMail.getText().toString();
                 String txtPassword1 = inputPassword1.getText().toString();
                 String txtPassword2 = inputPassword2.getText().toString();
