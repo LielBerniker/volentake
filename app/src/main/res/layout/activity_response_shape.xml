@@ -12,12 +12,12 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="465dp"
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="371dp"
+            android:layout_height="136dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="40dp"
@@ -32,25 +32,23 @@
                 android:id="@+id/nameResponse2Vol"
                 android:layout_width="172dp"
                 android:layout_height="19dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:text="nameRequestToAss"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <TextView
                 android:id="@+id/mailVolunteerResponse2Vol"
                 android:layout_width="153dp"
-                android:layout_height="17dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="mailAss"
+                android:layout_height="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -58,39 +56,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/nameResponse2Vol" />
 
             <TextView
-                android:id="@+id/fullNameResponse2Vol"
-                android:layout_width="145dp"
-                android:layout_height="23dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="nameAss"
-                android:textAlignment="viewStart"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/txtFullNameResponse2Vol"
-                app:layout_constraintTop_toBottomOf="@+id/mailVolunteerResponse2Vol" />
-
-            <TextView
-                android:id="@+id/postNameResponse2Vol"
+                android:id="@+id/assocNameResponse2Vol"
                 android:layout_width="137dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:text="namePost"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/txtPostNameResponse2Vol"
-                app:layout_constraintTop_toBottomOf="@+id/fullNameResponse2Vol" />
+                tools:layout_editor_absoluteY="69dp" />
 
             <TextView
                 android:id="@+id/txtMailVolResponse2Vol"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:text="Mail"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
@@ -98,42 +81,28 @@
                 app:layout_constraintTop_toBottomOf="@+id/nameResponse2Vol" />
 
             <TextView
-                android:id="@+id/txtFullNameResponse2Vol"
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:text="Name"
-                android:textAlignment="viewStart"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtMailVolResponse2Vol" />
-
-            <TextView
                 android:id="@+id/txtPostNameResponse2Vol"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="8dp"
-                android:text="Name Post"
+                android:text="Association name"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtFullNameResponse2Vol" />
+                tools:layout_editor_absoluteY="69dp" />
 
             <Button
                 android:id="@+id/btnSeeDetailsResponse2Vol"
-                android:layout_width="150dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="137dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="#FFFFFF"
                 android:text="See More Details"
                 android:textColor="#268BBC"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/postNameResponse2Vol" />
+                app:layout_constraintTop_toBottomOf="@+id/assocNameResponse2Vol" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
