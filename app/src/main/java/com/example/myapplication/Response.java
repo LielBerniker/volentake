@@ -13,6 +13,8 @@ public class Response implements Response_Interface{
         this.post_id = post_id;
         this.status = status;
     }
+    public Response() {
+    }
 
     @Override
     public String getVol_user_id() {
