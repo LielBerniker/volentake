@@ -2,7 +2,6 @@ package com.example.volentake;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,10 +54,10 @@ public class DetailsRequest extends AppCompatActivity {
         rejectbtn = (Button) findViewById(R.id.btnrejectrequest);
         seevoldetails = (Button) findViewById(R.id.voldetailsfullforrequest);
         PostName = (TextView) findViewById(R.id.volnameforrequest);
-        volfullname = (TextView) findViewById(R.id.fullNameDetailsRequest);
+        volfullname = (TextView) findViewById(R.id.nameAssDRes);
         numofvol = (TextView) findViewById(R.id.numberofparicerequestdetails);
-        volemail = (TextView) findViewById(R.id.requestMailVolunteer);
-        content = (TextView) findViewById(R.id.cntantofrequestdetails);
+        volemail = (TextView) findViewById(R.id.mailAssDRes);
+        content = (TextView) findViewById(R.id.statusDres);
         PostName.setText(post_name);
         volemail.setText(vol_user_email);
         volfullname.setText(vol_user_name);
