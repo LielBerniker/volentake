@@ -33,6 +33,7 @@ public class DetailsRequest extends AppCompatActivity {
     String post_name = "";
     String vol_user_name = "";
     String vol_user_email = "";
+    String vol_user_id="";
     Request_vol cur_req;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +55,10 @@ public class DetailsRequest extends AppCompatActivity {
         rejectbtn = (Button) findViewById(R.id.btnrejectrequest);
         seevoldetails = (Button) findViewById(R.id.voldetailsfullforrequest);
         PostName = (TextView) findViewById(R.id.volnameforrequest);
-        volfullname = (TextView) findViewById(R.id.nameAssDRes);
+        volfullname = (TextView) findViewById(R.id.fullNameDetailsRequest);
         numofvol = (TextView) findViewById(R.id.numberofparicerequestdetails);
-        volemail = (TextView) findViewById(R.id.mailAssDRes);
-        content = (TextView) findViewById(R.id.statusDres);
+        volemail = (TextView) findViewById(R.id.requestMailVolunteer);
+        content = (TextView) findViewById(R.id.cntantofrequestdetails);
         PostName.setText(post_name);
         volemail.setText(vol_user_email);
         volfullname.setText(vol_user_name);
@@ -70,6 +71,7 @@ public class DetailsRequest extends AppCompatActivity {
                     cur_req = task.getResult().getValue(Request_vol.class);
                     numofvol.setText(Integer.toString(cur_req.getNum_of_vol()));
                     content.setText(cur_req.getContent());
+                    vol_user_id = cur_req.getVol_user_id();
                 }
             }
         });
@@ -80,12 +82,13 @@ public class DetailsRequest extends AppCompatActivity {
             startActivity(intent);
         });
         seevoldetails.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsRequest.this, InboxAssociation.class);
+            Intent intent = new Intent(DetailsRequest.this, VolunteerDetailsForAssoc.class);
             intent.putExtra("request_id", request_id);
             intent.putExtra("assoc_id", assoc_id);
             intent.putExtra("post_name", post_name);
             intent.putExtra("vol_user_name", vol_user_name);
             intent.putExtra("vol_user_email", vol_user_email);
+            intent.putExtra("vol_user_id", vol_user_id);
             startActivity(intent);
         });
         approvebtn.setOnClickListener(view -> {
