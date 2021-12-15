@@ -32,17 +32,18 @@
 
                 <ImageView
                     android:layout_width="420dp"
-                    android:layout_height="180dp"
+                    android:layout_height="140dp"
                     android:contentDescription="@string/detailsbackground"
                     android:scaleType="centerCrop"
                     android:src="@drawable/page_back_03"
                     tools:visibility="visible" />
+
             </FrameLayout>
 
             <Button
                 android:id="@+id/btnBackToFeedOfPosts"
-                android:layout_width="215dp"
-                android:layout_height="60dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
@@ -58,7 +59,7 @@
                 android:id="@+id/addPost"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button_background"
                 android:backgroundTint="#268BBC"
                 android:text="@string/plusBTN"
@@ -67,15 +68,15 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.849"
+                app:layout_constraintHorizontal_bias="0.868"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnBackToFeedOfPosts"
+                app:layout_constraintTop_toBottomOf="@+id/btnInboxResponses"
                 tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/btnEdit"
                 android:layout_width="215dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
@@ -102,10 +103,10 @@
 
             <TextView
                 android:id="@+id/emailinsert2"
-                android:layout_width="160dp"
+                android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="14dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
@@ -113,14 +114,14 @@
 
             <TextView
                 android:id="@+id/phonenumberinsert2"
-                android:layout_width="160dp"
+                android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="14dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/emailinsert2" />
+                app:layout_constraintTop_toBottomOf="@+id/nameinsert2" />
 
             <TextView
                 android:id="@+id/assoctitle"
@@ -151,11 +152,11 @@
                 android:id="@+id/imageView5"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
                 android:contentDescription="@string/phoneicon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/emailinsert2"
+                app:layout_constraintTop_toBottomOf="@+id/nameinsert2"
                 app:srcCompat="@drawable/icon_04" />
 
             <TextView
@@ -175,30 +176,32 @@
             <Button
                 android:id="@+id/btnseeallposts"
                 android:layout_width="215dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
                 android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="My Volunteering Events"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:fontFamily="@font/oswald_font_wght"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnInboxResponses" />
-
-            <Button
-                android:id="@+id/btnInboxResponses"
-                android:layout_width="215dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="40dp"
-                android:backgroundTint="#268BBC"
-                android:text="inbox"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+            <Button
+                android:id="@+id/btnInboxResponses"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
+                android:drawableLeft="@drawable/ic_inbox"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="inbox"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBackToFeedOfPosts" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

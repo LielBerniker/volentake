@@ -126,13 +126,16 @@
 
             <Button
                 android:id="@+id/btnInboxResponses"
-                android:layout_width="152dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="56dp"
-                android:text="inbox responses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
+                android:fontFamily="@font/oswald_font_wght"
+                android:drawableLeft="@drawable/ic_inbox"
+                android:text="inbox"
+                android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.842"
-                app:layout_constraintStart_toEndOf="@+id/titlePosts"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/searchPostBTN" />
 
             <androidx.cardview.widget.CardView
@@ -191,15 +194,16 @@
                 android:id="@+id/titlePosts"
                 android:layout_width="200dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Saved Volunteering Posts:"
                 android:textColor="#000000"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.189"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/searchPostBTN" />
+                app:layout_constraintTop_toBottomOf="@+id/btnInboxResponses" />
 
             <Button
                 android:id="@+id/searchPostBTN"
@@ -208,10 +212,11 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:drawableLeft="@drawable/search_icon_foreground"
-                android:text="Search for volunteering"
+                android:text="Search Volunteering Events"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
