@@ -15,12 +15,13 @@
 
     <Button
         android:id="@+id/btnChoose2"
-        android:layout_width="160dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
         android:layout_weight="1"
         android:backgroundTint="#268BBC"
+        android:drawableLeft="@drawable/ic_image_1"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/chooseText"
         android:textColor="#FFFFFF"
@@ -30,12 +31,13 @@
 
     <Button
         android:id="@+id/btnUpload2"
-        android:layout_width="160dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="40dp"
         android:layout_weight="1"
         android:backgroundTint="#268BBC"
+        android:drawableLeft="@drawable/ic_uplode_2"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/uploadText"
         android:textColor="#F8F8F8"

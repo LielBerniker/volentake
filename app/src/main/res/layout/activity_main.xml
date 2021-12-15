@@ -60,9 +60,10 @@
 
     <TextView
         android:id="@+id/mainactivitysubtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
+        android:drawableLeft="@drawable/ic_login_2"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/LogIn"
         android:textAlignment="center"
