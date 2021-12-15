@@ -1,13 +1,19 @@
 package com.example.volentake;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.myapplication.Request_vol;
+import com.example.myapplication.Response;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -47,12 +53,25 @@ public class DetailsResponse extends AppCompatActivity {
         postName.setText(post_name);
         mailAss.setText(ass_user_email);
         nameAss.setText(ass_user_name);
-                ///////for Liel
+        mRootRef.child("massage_assoc").child(response_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                } else {
+//                    cur_res = task.getResult().getValue(Response.class);
+//                    numofvol.setText(Integer.toString(cur_res.getNum_of_vol()));
+//                    content.setText(cur_req.getContent());
+                    ///////for Liel
 //        case (status):
 //        case 1:
 //            contentStatus.setText("Accepted");
 //        case 2:
 //        contentStatus.setText("Rejected");
+                }
+            }
+        });
+
         back.setOnClickListener(view -> {
             Intent intent = new Intent(DetailsResponse.this, InboxResponses.class);
             intent.putExtra("id", vol_id);
