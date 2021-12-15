@@ -26,12 +26,13 @@
 
             <Button
                 android:id="@+id/btnPageEditPostsAss"
-                android:layout_width="234dp"
-                android:layout_height="66dp"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="40dp"
                 android:backgroundTint="#268BBC"
+                android:drawableLeft="@drawable/ic_edit_1"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="edit volunteering details"
+                android:text="edit volunteering"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,10 +42,12 @@
 
             <Button
                 android:id="@+id/btnBackToFeedOfPostsAss"
-                android:layout_width="157dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
                 android:backgroundTint="#268BBC"
+                android:drawableLeft="@drawable/ic_back_1"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/backToMainMenu"
                 android:textColor="#FFFFFF"
@@ -84,13 +87,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/PostImage2Ass" />
 
             <TextView
-                android:id="@+id/detailLocationPostAss"
+                android:id="@+id/cityEditPostAssoc"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="50dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="location"
+                android:text="@string/cityText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -101,15 +104,13 @@
                 android:id="@+id/detailNumVolPostAss"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="numVol"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailLocationPostAss" />
+                app:layout_constraintTop_toBottomOf="@+id/numberHouseEditPostAssoc" />
 
             <TextView
                 android:id="@+id/detailTypePostAss"
@@ -142,8 +143,8 @@
             <TextView
                 android:id="@+id/detailDescriptionPostAss"
                 android:layout_width="180dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="34dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="description"
@@ -157,12 +158,12 @@
                 android:id="@+id/txtTitleUpdatePostAss"
                 android:layout_width="232dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Post Details"
                 android:textAlignment="center"
                 android:textColor="#268BBC"
-                android:textSize="16sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -177,7 +178,8 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/addressText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/detailLocationPostAss"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/cityEditPostAssoc"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePostAss" />
@@ -187,14 +189,12 @@
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="56dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/num_of_participantsText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/detailNumVolPostAss"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostAss" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <TextView
                 android:id="@+id/txtUpdateTypePostAss"
@@ -250,13 +250,70 @@
 
             <Button
                 android:id="@+id/btneditpostpic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
+                android:drawableLeft="@drawable/ic_image_1"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="edit picture"
+                android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnPageEditPostsAss" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/cityText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostAss" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/streetText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/numberText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/streetEditPostAssoc"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/streetText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityEditPostAssoc" />
+
+            <TextView
+                android:id="@+id/numberHouseEditPostAssoc"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/numberText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/streetEditPostAssoc" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
