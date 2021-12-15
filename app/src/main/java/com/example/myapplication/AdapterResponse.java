@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.volentake.DetailsRequest;
+import com.example.volentake.DetailsResponse;
 import com.example.volentake.InboxResponses;
 import com.example.volentake.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,6 +47,13 @@ public class AdapterResponse extends RecyclerView.Adapter<AdapterResponse.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String assoc_id = listResponse.get(position).first.getAssociation_user_id();
         String post_id = listResponse.get(position).first.getPost_id();
+        Status cur_status = listResponse.get(position).first.getStatus();
+        String status;
+        if(cur_status == Status.APPROVED)
+            status  = "approved";
+        else
+            status  = "rejected";
+
         holder.mDatabase.child("assoc_users").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -74,12 +82,12 @@ public class AdapterResponse extends RecyclerView.Adapter<AdapterResponse.ViewHo
         });
 
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
-            Intent intent = new Intent(context, InboxResponses.class);
-            intent.putExtra("response_id",listResponse.get(position).second);
+            Intent intent = new Intent(context, DetailsResponse.class);
             intent.putExtra("vol_id",vol_id);
             intent.putExtra("post_name",holder.txtNamePost.getText().toString());
             intent.putExtra("assoc_name",holder.txtNameAssociation.getText().toString());
             intent.putExtra("assoc_email",holder.txtMailAssociation.getText().toString());
+            intent.putExtra("status",status);
             context.startActivity(intent);
         });
 

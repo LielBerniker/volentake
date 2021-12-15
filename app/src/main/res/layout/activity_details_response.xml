@@ -8,9 +8,9 @@
 
     <TextView
         android:id="@+id/namePostDRes"
-        android:layout_width="180dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="252dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/oswald_font_wght"
         android:gravity="center"
         android:textColor="#268BBC"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/statusDres" />
 
     <TextView
         android:id="@+id/txtNameAssDRes"
@@ -45,21 +45,6 @@
         app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNameAssDRes" />
-
-    <TextView
-        android:id="@+id/txtStatusDres"
-        android:layout_width="110dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="33dp"
-        android:fontFamily="@font/oswald_font_wght"
-        android:text="@string/contentText"
-        android:textAlignment="viewStart"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/statusDres"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMailAssDRes" />
 
     <TextView
         android:id="@+id/mailAssDRes"
@@ -93,25 +78,25 @@
         android:id="@+id/btnBackToSmallResponseDRes"
         android:layout_width="117dp"
         android:layout_height="48dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#268BBC"
         android:text="BACK"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtStatusDres" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMailAssDRes" />
 
     <TextView
         android:id="@+id/statusDres"
-        android:layout_width="195dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="370dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="16dp"
         android:text=" "
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mailAssDRes" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

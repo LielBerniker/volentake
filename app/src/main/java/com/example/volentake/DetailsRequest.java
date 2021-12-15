@@ -93,20 +93,25 @@ public class DetailsRequest extends AppCompatActivity {
         });
         approvebtn.setOnClickListener(view -> {
             cur_req.setStatus(Status.APPROVED);
-            update_information();
+            update_information(0);
         });
         rejectbtn.setOnClickListener(view -> {
             cur_req.setStatus(Status.REJECTED);
-            update_information();
+            update_information(1);
         });
     }
-    public void update_information()
+    public void update_information(int cur_status)
     {
         mRootRef.child("massage_assoc").child(request_id).setValue(cur_req).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Response_Interface cur_res = new Response(cur_req.getVol_user_id(),assoc_id,cur_req.getPost_id(),Status.APPROVED);
+                    Status status1;
+                    if(cur_status == 0)
+                        status1 = Status.APPROVED;
+                    else
+                        status1 = Status.REJECTED;
+                    Response_Interface cur_res = new Response(cur_req.getVol_user_id(),assoc_id,cur_req.getPost_id(),status1);
                     String res_id = mRootRef.child("massage_vol").push().getKey();
                     String vol_user_id = cur_req.getVol_user_id();
                     mRootRef.child("massage_vol").child(res_id).setValue(cur_res).addOnCompleteListener(new OnCompleteListener<Void>() {

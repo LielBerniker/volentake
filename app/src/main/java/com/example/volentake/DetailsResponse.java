@@ -21,12 +21,11 @@ public class DetailsResponse extends AppCompatActivity {
     private TextView postName,nameAss,mailAss, contentStatus;
     private Button back;
     private DatabaseReference mRootRef;
-    String  response_id ;
     String vol_id = "";
     String post_name = "";
-    String ass_user_name = "";
-    String ass_user_email = "";
-    Request_vol cur_res;
+    String assoc_name = "";
+    String assoc_email = "";
+    String status="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +36,12 @@ public class DetailsResponse extends AppCompatActivity {
         Bundle bun = null;
         bun = getIntent().getExtras();
         if (bun != null) {
-            response_id = bun.getString("response_id");
             vol_id = bun.getString("vol_id");
             post_name = bun.getString("post_name");
-            ass_user_name = bun.getString("ass_user_name");
-            ass_user_email = bun.getString("ass_user_email");
-            //////for Liel
-            /////////status
+            assoc_name = bun.getString("assoc_name");
+            assoc_email = bun.getString("assoc_email");
+            status = bun.getString("status");
+
         }
         back = (Button) findViewById(R.id.btnBackToSmallResponseDRes);
         postName = (TextView) findViewById(R.id.namePostDRes);
@@ -51,26 +49,14 @@ public class DetailsResponse extends AppCompatActivity {
         mailAss = (TextView) findViewById(R.id.mailAssDRes);
         contentStatus = (TextView) findViewById(R.id.statusDres);
         postName.setText(post_name);
-        mailAss.setText(ass_user_email);
-        nameAss.setText(ass_user_name);
-        mRootRef.child("massage_assoc").child(response_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                } else {
-//                    cur_res = task.getResult().getValue(Response.class);
-//                    numofvol.setText(Integer.toString(cur_res.getNum_of_vol()));
-//                    content.setText(cur_req.getContent());
-                    ///////for Liel
-//        case (status):
-//        case 1:
-//            contentStatus.setText("Accepted");
-//        case 2:
-//        contentStatus.setText("Rejected");
-                }
-            }
-        });
+        mailAss.setText(assoc_email);
+        nameAss.setText(assoc_name);
+        String show_massage;
+        if(status.equals("approved")==true)
+            show_massage = "the request to join this volunteering has been approved congratulations! ";
+        else
+            show_massage = "the request to join this volunteering has been rejected , were sorry, please try a different volunteering ";
+        contentStatus.setText(show_massage);
 
         back.setOnClickListener(view -> {
             Intent intent = new Intent(DetailsResponse.this, InboxResponses.class);
