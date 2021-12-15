@@ -32,9 +32,9 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/createAssociationTXT"
                 android:textAlignment="center"
-                android:textColor="#268BBC"
+                android:textColor="@color/dark_blue"
                 android:textSize="24sp"
-                android:textStyle="bold"
+                android:textStyle="bold|italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -278,7 +278,7 @@
 
             <Button
                 android:id="@+id/btnRegister"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:backgroundTint="#268BBC"
@@ -293,7 +293,7 @@
 
             <Button
                 android:id="@+id/backLogIn"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"

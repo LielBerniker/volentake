@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     private Button volunteerLoginBtn;
     private Button associationLoginBtn;
     private Button guestLoginBtn;
-    private Button  btnMessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +20,7 @@ public class MainActivity extends AppCompatActivity {
         volunteerLoginBtn = (Button) findViewById(R.id.volunteerloginbtn);
         associationLoginBtn = (Button) findViewById(R.id.associationloginbtn);
         guestLoginBtn = (Button) findViewById(R.id.guestloginbtn);
-        btnMessage = (Button) findViewById(R.id.btnMessage);
 
-        btnMessage.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, InboxAssociation.class);
-            startActivity(intent);
-        });
 
         volunteerLoginBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, VolunteerLogIn.class);

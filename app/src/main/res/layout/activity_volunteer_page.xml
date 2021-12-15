@@ -46,7 +46,7 @@
                 android:id="@+id/btnLogOut"
                 android:layout_width="100dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="40dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
@@ -65,6 +65,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
+                android:textColor="@color/dark_blue2"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/emailinsert" />
@@ -77,6 +78,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
+                android:textColor="@color/dark_blue2"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
@@ -85,7 +87,7 @@
                 android:id="@+id/btnEditVol"
                 android:layout_width="100dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/edit_details"
@@ -104,8 +106,8 @@
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="16sp"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toTopOf="@+id/frameLayout" />
@@ -115,7 +117,7 @@
                 android:layout_width="100dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Add Picture"
@@ -126,17 +128,19 @@
 
             <Button
                 android:id="@+id/btnInboxResponses"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
-                android:fontFamily="@font/oswald_font_wght"
                 android:drawableLeft="@drawable/ic_inbox"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="inbox"
                 android:textColor="#FFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/searchPostBTN"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/searchPostBTN" />
+                app:layout_constraintTop_toBottomOf="@+id/btnaddpic" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -176,7 +180,7 @@
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert"
-                app:srcCompat="@drawable/icon_03"
+                app:srcCompat="@drawable/ic_email_2"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
@@ -187,7 +191,7 @@
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6"
-                app:srcCompat="@drawable/icon_04"
+                app:srcCompat="@drawable/ic_phone_2"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -195,11 +199,13 @@
                 android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Saved Volunteering Posts:"
-                android:textColor="#000000"
+                android:textColor="@color/dark_blue"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.189"
                 app:layout_constraintStart_toStartOf="parent"
@@ -207,18 +213,19 @@
 
             <Button
                 android:id="@+id/searchPostBTN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="215dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:drawableLeft="@drawable/search_icon_foreground"
-                android:text="Search Volunteering Events"
+                android:fontFamily="@font/oswald_font_wght"
+                android:paddingRight="30dp"
+                android:text="Search Volunteering"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.797"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnEditVol" />
 

@@ -46,14 +46,15 @@
 
     <TextView
         android:id="@+id/txtpictureaditor2"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="@string/volunteer_pictureText"
-        android:textColor="#268BBC"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:fontFamily="@font/oswald_font_wght"
+        android:text="@string/volunteer_pictureText"
+        android:textAlignment="center"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -32,7 +32,7 @@
 
                 <ImageView
                     android:layout_width="420dp"
-                    android:layout_height="140dp"
+                    android:layout_height="80dp"
                     android:contentDescription="@string/detailsbackground"
                     android:scaleType="centerCrop"
                     android:src="@drawable/page_back_03"
@@ -92,23 +92,23 @@
             <TextView
                 android:id="@+id/nameinsert2"
                 android:layout_width="160dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="40dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:textColor="#000000"
-                android:textSize="18sp"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/assoctitle" />
+                app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
 
             <TextView
                 android:id="@+id/emailinsert2"
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="7dp"
                 android:fontFamily="@font/oswald_font_wght"
+                android:textColor="@color/dark_blue2"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2" />
@@ -118,25 +118,12 @@
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="7dp"
                 android:fontFamily="@font/oswald_font_wght"
+                android:textColor="@color/dark_blue2"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2" />
-
-            <TextView
-                android:id="@+id/assoctitle"
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/AssociationPageTXT"
-                android:textAlignment="center"
-                android:textColor="#153A59"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
 
             <ImageView
@@ -144,7 +131,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2"
                 app:srcCompat="@drawable/ic_email_2" />
@@ -154,7 +141,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:contentDescription="@string/phoneicon"
                 app:layout_constraintStart_toEndOf="@+id/emailinsert2"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2"
@@ -178,7 +165,7 @@
                 android:id="@+id/btnseeallposts"
                 android:layout_width="215dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="60dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="My Volunteering Events"
