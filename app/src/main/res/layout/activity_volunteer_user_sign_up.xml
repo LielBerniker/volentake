@@ -39,10 +39,11 @@
 
             <Button
                 android:id="@+id/btnPageRequst"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:backgroundTint="#268BBC"
+                android:drawableLeft="@drawable/ic_signup_2"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/CreateUser"
                 android:textColor="#FFFFFF"
@@ -54,11 +55,12 @@
 
             <Button
                 android:id="@+id/btnBackToFeedOfPosts"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="#268BBC"
+                android:drawableLeft="@drawable/ic_back_1"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/backToMainMenu"
                 android:textColor="#FFFFFF"
@@ -87,7 +89,7 @@
                 android:id="@+id/txtTitleUpdatePost"
                 android:layout_width="230dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/createVolunteerTXT"
                 android:textAlignment="center"
