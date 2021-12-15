@@ -55,4 +55,8 @@ public interface Association_user {
      * @return  return the Association posts ,
      */
     public ArrayList<String> getPosts();
+    /**
+     * @return  return the Association massages ,
+     */
+    public ArrayList<String> getMassages_req();
 }

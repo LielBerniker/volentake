@@ -33,10 +33,10 @@
                 <ImageView
                     android:layout_width="420dp"
                     android:layout_height="160dp"
+                    android:contentDescription="@string/detailsbackground"
                     android:scaleType="centerCrop"
                     android:src="@drawable/page_back_03"
-                    tools:visibility="visible"
-                android:contentDescription="@string/detailsbackground" />
+                    tools:visibility="visible" />
 
 
             </FrameLayout>
@@ -123,6 +123,17 @@
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+            <Button
+                android:id="@+id/btnInboxResponses"
+                android:layout_width="152dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="56dp"
+                android:text="inbox responses"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.842"
+                app:layout_constraintStart_toEndOf="@+id/titlePosts"
+                app:layout_constraintTop_toBottomOf="@+id/searchPostBTN" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"

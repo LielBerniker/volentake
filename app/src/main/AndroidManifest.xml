@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".InboxResponses"
+            android:exported="false" />
+        <activity
+            android:name=".responseShape"
+            android:exported="false" />
+        <activity
+            android:name=".requestShape"
+            android:exported="false" />
+        <activity
             android:name=".DetailsPostGuest"
             android:exported="false" />
         <activity
@@ -25,7 +34,7 @@
             android:name=".EditPost"
             android:exported="false" />
         <activity
-            android:name=".MessageRequest"
+            android:name=".DetailsRequest"
             android:exported="false" />
         <activity
             android:name=".DetailsPostVol"

@@ -22,15 +22,6 @@ public interface Response_Interface {
      */
     public String getAssociation_user_id();
     /**
-     * @return  return the content ,
-     */
-    public String getContent();
-    /**
-     * @param content - new content
-     * @return
-     */
-    public void setContent(String content);
-    /**
      * @return  return the status ,
      */
     public Status getStatus();
@@ -49,14 +40,6 @@ public interface Response_Interface {
      * @return
      */
     public void setPost_id(String post_id);
-    /**
-     * @return  return post name
-     */
-    public String getPost_name();
-    /**
-     * @param post_name - new post name
-     * @return
-     */
-    public void setPost_name(String post_name);
+
 
 }

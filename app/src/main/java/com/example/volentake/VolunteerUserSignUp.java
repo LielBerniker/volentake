@@ -154,24 +154,12 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            String con = "hello and welcome to Volentake, thank for joining us";
-                            Response_Interface res = new Response(user_id,"","","welcome to voluntake", Status.APPROVED,con);
-                            List< Response_Interface> all_res = new ArrayList<>();
-                            all_res.add(res);
-                            mRootRef.child("massages").child(user_id).setValue(all_res).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
-
-                                        Toast.makeText(VolunteerUserSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerPage.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                        intent.putExtra("id",mAuth.getCurrentUser().getUid());
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                }
-                            });
+                            Toast.makeText(VolunteerUserSignUp.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(VolunteerUserSignUp.this, VolunteerPage.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
+                            startActivity(intent);
+                            finish();
                         }
                     }
                 });

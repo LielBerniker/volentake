@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentRequestToAss"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    tools:context=".AssociationPage">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="#A3C9D7"
+            android:backgroundTint="#A3C9D7"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/nameResponse"
+                android:layout_width="172dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="nameRequestToAss"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mailVolunteerRequestToAss"
+                android:layout_width="153dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="mailVolunteerRequestToAss"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/txtMailVolRequestToAss"
+                app:layout_constraintTop_toBottomOf="@+id/nameResponse" />
+
+            <TextView
+                android:id="@+id/fullNameRequestToAss"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="fullNameRequestToAss"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/txtFullNameRequestToAss"
+                app:layout_constraintTop_toBottomOf="@+id/mailVolunteerRequestToAss" />
+
+            <TextView
+                android:id="@+id/txtMailVolRequestToAss"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:text="Mail"
+                android:textAlignment="viewStart"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameResponse" />
+
+            <TextView
+                android:id="@+id/txtFullNameRequestToAss"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Name"
+                android:textAlignment="viewStart"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMailVolRequestToAss" />
+
+            <Button
+                android:id="@+id/btnSeeDetailsRequestToAss"
+                android:layout_width="136dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="See More Details"
+                android:textColor="#268BBC"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.436"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fullNameRequestToAss" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+    <!--    </ScrollView>-->
+
+</androidx.cardview.widget.CardView>

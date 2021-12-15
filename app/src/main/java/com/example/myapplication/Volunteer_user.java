@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public interface Volunteer_user {
@@ -58,4 +59,8 @@ public interface Volunteer_user {
      * @return
      */
     public void setEmail(String email);
+    /**
+     * @return  return user massages,
+     */
+    public ArrayList<String> getMassages_res();
     }
