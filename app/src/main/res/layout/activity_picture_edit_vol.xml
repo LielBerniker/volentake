@@ -17,12 +17,13 @@
 
     <Button
         android:id="@+id/btnChoose"
-        android:layout_width="160dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
         android:layout_weight="1"
         android:backgroundTint="#268BBC"
+        android:drawableLeft="@drawable/ic_image_1"
         android:fontFamily="@font/oswald_font_wght"
         android:text="Choose"
         android:textColor="#FFFFFF"
@@ -32,7 +33,7 @@
 
     <Button
         android:id="@+id/btnUpload"
-        android:layout_width="160dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="40dp"
@@ -40,6 +41,7 @@
         android:backgroundTint="#268BBC"
         android:fontFamily="@font/oswald_font_wght"
         android:text="Upload"
+        android:drawableLeft="@drawable/ic_uplode_2"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

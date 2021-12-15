@@ -9,11 +9,13 @@
 
     <TextView
         android:id="@+id/txttitleguest"
-        android:layout_width="100dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/oswald_font_wght"
         android:text="Guest"
-        android:textSize="34sp"
+        android:textColor="#268BBC"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,21 +24,28 @@
         android:id="@+id/btnbackmain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#268BBC"
+        android:fontFamily="@font/oswald_font_wght"
         android:text="back"
+        android:drawableLeft="@drawable/ic_back_1"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnpostjustforview"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnpostjustforview"
-        android:layout_width="262dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="119dp"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#268BBC"
+        android:fontFamily="@font/oswald_font_wght"
         android:text="available volunteer events"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttitleguest" />

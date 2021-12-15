@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/titleDetailsRequest"
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/oswald_font_wght"
@@ -23,10 +23,10 @@
 
     <TextView
         android:id="@+id/txtRequestNumVol"
-        android:layout_width="192dp"
+        android:layout_width="180dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="29dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/required_number_of_volunteersText"
@@ -42,12 +42,12 @@
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="21dp"
         android:text="name"
         android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/fullNameDetailsRequest"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voluntreengnamerequest" />
 
@@ -56,12 +56,12 @@
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="21dp"
         android:text="email"
         android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/requestMailVolunteer"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFullNnameDetailsRequest" />
 
@@ -70,13 +70,14 @@
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="33dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/contentText"
         android:textAlignment="viewStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/cntantofrequestdetails"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRequestNumVol" />
 
@@ -84,7 +85,7 @@
         android:id="@+id/requestMailVolunteer"
         android:layout_width="180dp"
         android:layout_height="45dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:fontFamily="@font/oswald_font_wght"
@@ -98,7 +99,7 @@
         android:id="@+id/fullNameDetailsRequest"
         android:layout_width="180dp"
         android:layout_height="45dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:fontFamily="@font/oswald_font_wght"
@@ -110,94 +111,104 @@
 
     <Button
         android:id="@+id/btnBackToSmallRequestDetailsRequest"
-        android:layout_width="117dp"
+        android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#268BBC"
-        android:text="BACK"
+        android:drawableLeft="@drawable/ic_back_1"
+        android:text="@string/backToMainMenu"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voldetailsfullforrequest" />
 
     <TextView
         android:id="@+id/numberofparicerequestdetails"
-        android:layout_width="103dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
         android:text=" "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/requestMailVolunteer" />
 
     <TextView
         android:id="@+id/cntantofrequestdetails"
         android:layout_width="195dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
         android:text=" "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberofparicerequestdetails" />
 
     <Button
         android:id="@+id/btnaprovereuest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="#318734"
+        android:drawableLeft="@drawable/ic_check_1"
         android:text="approve"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cntantofrequestdetails" />
 
     <Button
         android:id="@+id/btnrejectrequest"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#9A1F1F"
+        android:drawableLeft="@drawable/ic_cancel_1"
         android:text="reject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnaprovereuest" />
+        app:layout_constraintTop_toBottomOf="@+id/cntantofrequestdetails" />
 
     <Button
         android:id="@+id/voldetailsfullforrequest"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="63dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#268BBC"
         android:text="volunteer details"
-        app:layout_constraintEnd_toStartOf="@+id/btnaprovereuest"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cntantofrequestdetails" />
+        app:layout_constraintTop_toBottomOf="@+id/btnrejectrequest" />
 
     <TextView
         android:id="@+id/voluntreengnamerequest"
         android:layout_width="125dp"
         android:layout_height="29dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="26dp"
         android:text="volunteering name "
         app:layout_constraintEnd_toStartOf="@+id/volnameforrequest"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleDetailsRequest" />
 
     <TextView
         android:id="@+id/volnameforrequest"
-        android:layout_width="165dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:text=" "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleDetailsRequest" />
 </androidx.constraintlayout.widget.ConstraintLayout>
