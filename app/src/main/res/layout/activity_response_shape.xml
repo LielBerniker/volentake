@@ -60,23 +60,25 @@
                 android:layout_width="137dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/txtPostNameResponse2Vol"
-                tools:layout_editor_absoluteY="69dp" />
+                app:layout_constraintTop_toBottomOf="@+id/mailVolunteerResponse2Vol" />
 
             <TextView
                 android:id="@+id/txtMailVolResponse2Vol"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
                 android:text="Mail"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.147"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameResponse2Vol" />
 
@@ -84,12 +86,14 @@
                 android:id="@+id/txtPostNameResponse2Vol"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="40dp"
+                android:layout_marginTop="4dp"
                 android:text="Association name"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.147"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="69dp" />
+                app:layout_constraintTop_toBottomOf="@+id/txtMailVolResponse2Vol" />
 
             <Button
                 android:id="@+id/btnSeeDetailsResponse2Vol"
