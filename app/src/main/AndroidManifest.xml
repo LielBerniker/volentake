@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".VolunteerDetailsForAssoc"
+            android:exported="false" />
+        <activity
             android:name=".DetailsResponse"
             android:exported="false" />
         <activity
