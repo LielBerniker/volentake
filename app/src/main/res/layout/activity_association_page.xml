@@ -61,7 +61,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_background"
-                android:backgroundTint="#268BBC"
+                android:backgroundTint="#153A59"
                 android:text="@string/plusBTN"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
@@ -145,11 +145,9 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
-                android:alpha="0.9"
-                android:background="#153A59"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2"
-                app:srcCompat="@drawable/ic_email_1" />
+                app:srcCompat="@drawable/ic_email_2" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -157,12 +155,10 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
-                android:alpha="0.9"
-                android:background="#153A59"
                 android:contentDescription="@string/phoneicon"
                 app:layout_constraintStart_toEndOf="@+id/emailinsert2"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2"
-                app:srcCompat="@drawable/ic_phone_1" />
+                app:srcCompat="@drawable/ic_phone_2" />
 
             <TextView
                 android:id="@+id/textView2"
