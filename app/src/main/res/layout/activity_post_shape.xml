@@ -49,7 +49,7 @@
                 android:textAlignment="viewStart"
                 android:textColor="#000000"
                 android:textSize="24sp"
-                android:textStyle="bold"
+                android:textStyle="bold|italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -57,13 +57,13 @@
             <TextView
                 android:id="@+id/locationPost"
                 android:layout_width="100dp"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="numVol"
                 android:textAlignment="viewStart"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/txtLocationPost"
                 app:layout_constraintTop_toBottomOf="@+id/numVolOfPost" />
@@ -71,13 +71,13 @@
             <TextView
                 android:id="@+id/mailVolunteer"
                 android:layout_width="100dp"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="city"
                 android:textAlignment="viewStart"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/txtMailVol"
                 app:layout_constraintTop_toBottomOf="@+id/nameMessage" />
@@ -85,13 +85,13 @@
             <TextView
                 android:id="@+id/numVolOfPost"
                 android:layout_width="100dp"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="typePost"
                 android:textAlignment="viewStart"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/txtNumVolOfPost"
                 app:layout_constraintTop_toBottomOf="@+id/mailVolunteer" />
@@ -99,42 +99,39 @@
             <TextView
                 android:id="@+id/txtMailVol"
                 android:layout_width="50dp"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/cityText"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameMessage" />
 
             <TextView
                 android:id="@+id/txtNumVolOfPost"
                 android:layout_width="50dp"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/typeText"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtMailVol" />
 
             <TextView
                 android:id="@+id/txtLocationPost"
                 android:layout_width="50dp"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Volunteers:"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtNumVolOfPost" />
 
