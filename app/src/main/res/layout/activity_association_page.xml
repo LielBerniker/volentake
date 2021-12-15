@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,9 +25,9 @@
             android:orientation="vertical">
 
             <FrameLayout
+                android:id="@+id/frameLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="60dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -43,7 +43,7 @@
                 android:id="@+id/btnBackToFeedOfPosts"
                 android:layout_width="215dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/logOutText"
@@ -58,9 +58,7 @@
                 android:id="@+id/addPost"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/button_background"
                 android:backgroundTint="#268BBC"
                 android:text="@string/plusBTN"
@@ -68,19 +66,17 @@
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.849"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnBackToFeedOfPosts"
-                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/btnEdit"
                 android:layout_width="215dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="#268BBC"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/EditAssociation"
@@ -88,7 +84,7 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phonenumberinsert2"
+                app:layout_constraintTop_toBottomOf="@+id/btnseeallposts"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -96,10 +92,10 @@
                 android:layout_width="160dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textColor="#000000"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/assoctitle" />
@@ -134,8 +130,8 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/AssociationPageTXT"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="20sp"
+                android:textColor="#153A59"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -157,10 +153,10 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
+                android:contentDescription="@string/phoneicon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                app:srcCompat="@drawable/icon_04"
-                android:contentDescription="@string/phoneicon" />
+                app:srcCompat="@drawable/icon_04" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -178,30 +174,31 @@
 
             <Button
                 android:id="@+id/btnseeallposts"
-                android:layout_width="194dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginEnd="128dp"
-                android:text="view volunteerings"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="215dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#268BBC"
+                android:text="My Volunteering Events"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.619"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnBackToFeedOfPosts"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/btnInboxResponses" />
 
             <Button
                 android:id="@+id/btnInboxResponses"
-                android:layout_width="194dp"
-                android:layout_height="41dp"
-                android:layout_marginEnd="128dp"
-                android:text="inbox requests"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="215dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#268BBC"
+                android:text="inbox"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.617"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnseeallposts"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
