@@ -91,6 +91,7 @@ public class DetailsRequest extends AppCompatActivity {
             intent.putExtra("vol_user_name", vol_user_name);
             intent.putExtra("vol_user_email", vol_user_email);
             intent.putExtra("vol_user_id", vol_user_id);
+            intent.putExtra("status_def",0);
             startActivity(intent);
         });
         approvebtn.setOnClickListener(view -> {
@@ -131,7 +132,7 @@ public class DetailsRequest extends AppCompatActivity {
                                             vol_user1.massages_res.add(res_id);
                                             if(cur_status == 0)
                                             {
-                                                vol_user1.getActive_posts().add(post_id);
+                                                vol_user1.active_posts.add(post_id);
                                             }
                                             mRootRef.child("vol_users").child(vol_user_id).setValue(vol_user1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override

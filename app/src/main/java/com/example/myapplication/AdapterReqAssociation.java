@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.volentake.DetailsRequest;
 import com.example.volentake.R;
+import com.example.volentake.details_request_afterans;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -75,14 +76,26 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
         });
 
         holder.btnSeeDetailsRequestToAss.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetailsRequest.class);
-            intent.putExtra("request_id",listRequests.get(position).second);
-            intent.putExtra("assoc_id",assoc_id);
-            intent.putExtra("post_name",holder.namePost.getText().toString());
-            intent.putExtra("vol_user_name",holder.txtFullNameRequestToAss.getText().toString());
-            intent.putExtra("vol_user_email",holder.MailVolRequestToAss.getText().toString());
-            intent.putExtra("post_id",post_id);
-            context.startActivity(intent);
+            if(listRequests.get(position).first.getStatus() == Status.APPROVED || listRequests.get(position).first.getStatus() == Status.REJECTED)
+            {            Intent intent = new Intent(context, details_request_afterans.class);
+                intent.putExtra("request_id",listRequests.get(position).second);
+                intent.putExtra("assoc_id",assoc_id);
+                intent.putExtra("post_name",holder.namePost.getText().toString());
+                intent.putExtra("vol_user_name",holder.txtFullNameRequestToAss.getText().toString());
+                intent.putExtra("vol_user_email",holder.MailVolRequestToAss.getText().toString());
+                intent.putExtra("post_id",post_id);
+                context.startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(context, DetailsRequest.class);
+                intent.putExtra("request_id", listRequests.get(position).second);
+                intent.putExtra("assoc_id", assoc_id);
+                intent.putExtra("post_name", holder.namePost.getText().toString());
+                intent.putExtra("vol_user_name", holder.txtFullNameRequestToAss.getText().toString());
+                intent.putExtra("vol_user_email", holder.MailVolRequestToAss.getText().toString());
+                intent.putExtra("post_id", post_id);
+                context.startActivity(intent);
+            }
                 });
     }
 

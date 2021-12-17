@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".details_request_afterans">
+
+    <TextView
+        android:id="@+id/titleDetailsRequestafterans"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:gravity="center"
+        android:text="Request"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusupdateinformforreq" />
+
+    <TextView
+        android:id="@+id/txtRequestNumVolafterans"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text="@string/required_number_of_volunteersText"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailVolDetailsRequestafterans" />
+
+    <TextView
+        android:id="@+id/txtFullNnameDetailsRequestafterans"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="name"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleDetailsRequestafterans" />
+
+    <TextView
+        android:id="@+id/emailVolDetailsRequestafterans"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="email"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFullNnameDetailsRequestafterans" />
+
+    <TextView
+        android:id="@+id/txtRequestContentafterans"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text="@string/contentText"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/voluntreengnamerequestafterans" />
+
+    <TextView
+        android:id="@+id/requestMailVolunteerafterans"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/oswald_font_wght"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullNameDetailsRequestafterans" />
+
+    <TextView
+        android:id="@+id/fullNameDetailsRequestafterans"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/oswald_font_wght"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleDetailsRequestafterans" />
+
+    <Button
+        android:id="@+id/btnBackToSmallRequestDetailsRequestafterans"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#268BBC"
+        android:drawableLeft="@drawable/ic_back_1"
+        android:text="@string/backToMainMenu"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cntantofrequestdetailsafterans"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <TextView
+        android:id="@+id/numberofparicerequestdetailsafterans"
+        android:layout_width="98dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requestMailVolunteerafterans" />
+
+    <TextView
+        android:id="@+id/cntantofrequestdetailsafterans"
+        android:layout_width="195dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volnameforrequestafterans" />
+
+    <Button
+        android:id="@+id/voldetailsfullforrequestafterans"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#268BBC"
+        android:text="volunteer details"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnBackToSmallRequestDetailsRequestafterans"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cntantofrequestdetailsafterans"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <TextView
+        android:id="@+id/voluntreengnamerequestafterans"
+        android:layout_width="125dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="20dp"
+        android:text="volunteering name "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRequestNumVolafterans" />
+
+    <TextView
+        android:id="@+id/volnameforrequestafterans"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberofparicerequestdetailsafterans" />
+
+    <TextView
+        android:id="@+id/statusupdateinformforreq"
+        android:layout_width="318dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
