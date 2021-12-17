@@ -49,7 +49,7 @@ public class DetailsPostGuest extends AppCompatActivity {
         if(bun != null) {
             post_id = bun.getString("post_id");
         }
-        mystorge = FirebaseStorage.getInstance().getReference().child("post_pic/"+post_id);
+        mystorge = FirebaseStorage.getInstance().getReference().child("post_description_pic/"+post_id);
         back = (Button) findViewById(R.id.btnBackToFeedOfPostsGuest);
         PostName = (TextView)findViewById(R.id.detailPostNameGuest);
         NumOfVol = (TextView)findViewById(R.id.detailNumVolPostGuest);

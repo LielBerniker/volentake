@@ -2,6 +2,7 @@ package com.example.volentake;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,11 +10,15 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.myapplication.AdapterActivePostVol;
 import com.example.myapplication.Assoc_post;
+import com.example.myapplication.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,14 +35,14 @@ import java.io.IOException;
 
 public class DetailsActivePostVol extends AppCompatActivity {
     private TextView PostName,PostCity,PostStreet,Poststnum,NumOfVol,PostType,PostPhoneNum, PostDescription;
-    private Button quit;
+    private Button quit,back;
     private ImageView post_pic;
     //    firebase
     private DatabaseReference mDatabase;
     private StorageReference mystorge;
     String vol_user_id = "";
     String post_id = "";
-    String assoc_id = "";
+    int post_position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +58,10 @@ public class DetailsActivePostVol extends AppCompatActivity {
         {
             vol_user_id = bun.getString("vol_id");
             post_id = bun.getString("post_id");
+            post_position = bun.getInt("post_position");
         }
         mystorge = FirebaseStorage.getInstance().getReference().child("post_pic/"+post_id);
+        back = (Button) findViewById(R.id.backtoactiveposts);
         quit = (Button) findViewById(R.id.quitVolunteeringActivePostVol);
         PostName = (TextView)findViewById(R.id.detailPostNameActivePostVol);
         NumOfVol = (TextView)findViewById(R.id.detailNumVolPostActivePostVol);
@@ -76,8 +83,6 @@ public class DetailsActivePostVol extends AppCompatActivity {
                     PostPhoneNum.setText(cur_post.getPhone_number());
                     PostDescription.setText(cur_post.getDescription());
                     PostType.setText(cur_post.getType());
-                    assoc_id = cur_post.userId;
-                    System.out.println("this id the user id in the post" + assoc_id);
                 }
             }
         });
@@ -112,6 +117,33 @@ public class DetailsActivePostVol extends AppCompatActivity {
         });
 
         quit.setOnClickListener(view -> {
+            mDatabase.child("vol_users").child(vol_user_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if (!task.isSuccessful()) {
+                        Log.e("firebase", "Error getting data", task.getException());
+                    } else {
+                        Vol_user cure_user = task.getResult().getValue(Vol_user.class);
+                        cure_user.getActive_posts().remove(post_position);
+                        mDatabase.child("vol_users").child(vol_user_id).setValue(cure_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Toast.makeText(DetailsActivePostVol.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(DetailsActivePostVol.this, FeedActivePostsVol.class);
+                                    intent.putExtra("id",vol_user_id);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        });
+
+                    }
+                }
+            });
+        });
+        back.setOnClickListener(view -> {
             Intent intent = new Intent(DetailsActivePostVol.this, FeedActivePostsVol.class);
             intent.putExtra("id",vol_user_id);
             startActivity(intent);

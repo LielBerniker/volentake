@@ -53,7 +53,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
             association_user_id = bun.getString("assoc_id");
             post_id = bun.getString("post_id");
         }
-        mystorge = FirebaseStorage.getInstance().getReference().child("post_pic/"+post_id);
+        mystorge = FirebaseStorage.getInstance().getReference().child("post_description_pic/"+post_id);
         back = (Button) findViewById(R.id.btnBackToFeedOfPostsAss);
         editpic = (Button) findViewById(R.id.btneditpostpic);
         btnForEditPost =  (Button) findViewById(R.id.btnPageEditPostsAss);

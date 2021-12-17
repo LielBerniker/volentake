@@ -81,6 +81,7 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
             intent.putExtra("post_name",holder.namePost.getText().toString());
             intent.putExtra("vol_user_name",holder.txtFullNameRequestToAss.getText().toString());
             intent.putExtra("vol_user_email",holder.MailVolRequestToAss.getText().toString());
+            intent.putExtra("post_id",post_id);
             context.startActivity(intent);
                 });
     }

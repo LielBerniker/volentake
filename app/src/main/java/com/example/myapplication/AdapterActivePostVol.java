@@ -46,6 +46,7 @@ public class AdapterActivePostVol extends RecyclerView.Adapter<AdapterActivePost
             Intent intent = new Intent(context, DetailsActivePostVol.class);
             intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",listPosts.get(position).second);
+            intent.putExtra("post_position",position+1);
             context.startActivity(intent);
         });
 

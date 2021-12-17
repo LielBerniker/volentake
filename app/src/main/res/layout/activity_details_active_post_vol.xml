@@ -8,8 +8,8 @@
     tools:context=".DetailsActivePostVol">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="402dp"
+        android:layout_height="778dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -29,7 +29,8 @@
                 android:id="@+id/quitVolunteeringActivePostVol"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="96dp"
                 android:backgroundTint="#268BBC"
                 android:drawableLeft="@drawable/ic_back_1"
                 android:fontFamily="@font/oswald_font_wght"
@@ -37,11 +38,8 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.167"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateDescriptionPostActivePostVol"
-                app:layout_constraintVertical_bias="0.7"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -49,7 +47,7 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Name:"
                 android:textSize="14sp"
@@ -62,7 +60,7 @@
                 android:id="@+id/detailPostNameActivePostVol"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Name"
@@ -74,9 +72,9 @@
 
             <TextView
                 android:id="@+id/detailLocationPostActivePostVol"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="181dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="location"
@@ -88,23 +86,23 @@
 
             <TextView
                 android:id="@+id/detailNumVolPostActivePostVol"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="181dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="numVol"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.994"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailLocationPostActivePostVol" />
 
             <TextView
                 android:id="@+id/detailTypePostActivePostVol"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="182dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="type"
@@ -117,7 +115,7 @@
             <TextView
                 android:id="@+id/detailPhoneNumberPostActivePostVol"
                 android:layout_width="180dp"
-                android:layout_height="45dp"
+                android:layout_height="36dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
@@ -130,8 +128,8 @@
 
             <TextView
                 android:id="@+id/detailDescriptionPostActivePostVol"
-                android:layout_width="180dp"
-                android:layout_height="150dp"
+                android:layout_width="192dp"
+                android:layout_height="99dp"
                 android:layout_marginTop="34dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
@@ -162,12 +160,12 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/addressText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/detailLocationPostActivePostVol"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.406"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePostActivePostVol" />
 
@@ -176,7 +174,7 @@
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/num_of_participantsText"
                 android:textSize="14sp"
@@ -190,12 +188,12 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/typeText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/detailTypePostActivePostVol"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.433"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1ActivePostVol" />
 
@@ -204,12 +202,12 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/phoneText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/detailPhoneNumberPostActivePostVol"
-                app:layout_constraintHorizontal_bias="0.018"
+                app:layout_constraintHorizontal_bias="0.406"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateTypePostActivePostVol" />
 
@@ -229,13 +227,25 @@
 
             <ImageView
                 android:id="@+id/PostImage2ActivePostVol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="180dp"
+                android:layout_height="114dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePostActivePostVol"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <Button
+                android:id="@+id/backtoactiveposts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.646"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostActivePostVol" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -34,6 +34,7 @@ public class DetailsRequest extends AppCompatActivity {
     String vol_user_name = "";
     String vol_user_email = "";
     String vol_user_id="";
+    String post_id="";
     Request_vol cur_req;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class DetailsRequest extends AppCompatActivity {
             post_name = bun.getString("post_name");
             vol_user_name = bun.getString("vol_user_name");
             vol_user_email = bun.getString("vol_user_email");
+            post_id = bun.getString("post_id");
         }
         back = (Button) findViewById(R.id.btnBackToSmallRequestDetailsRequest);
         approvebtn = (Button) findViewById(R.id.btnaprovereuest);
@@ -127,6 +129,10 @@ public class DetailsRequest extends AppCompatActivity {
                                         else {
                                             Vol_user vol_user1 =  task.getResult().getValue(Vol_user.class);
                                             vol_user1.massages_res.add(res_id);
+                                            if(cur_status == 0)
+                                            {
+                                                vol_user1.getActive_posts().add(post_id);
+                                            }
                                             mRootRef.child("vol_users").child(vol_user_id).setValue(vol_user1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {

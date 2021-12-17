@@ -53,7 +53,7 @@ public class DetailsPostVol extends AppCompatActivity {
             vol_user_id = bun.getString("vol_id");
             post_id = bun.getString("post_id");
         }
-        mystorge = FirebaseStorage.getInstance().getReference().child("post_pic/"+post_id);
+        mystorge = FirebaseStorage.getInstance().getReference().child("post_description_pic/"+post_id);
         back = (Button) findViewById(R.id.btnBackToFeedOfPosts);
         btnPageRequest =  (Button) findViewById(R.id.btnPageRequest);
         PostName = (TextView)findViewById(R.id.detailPostName);

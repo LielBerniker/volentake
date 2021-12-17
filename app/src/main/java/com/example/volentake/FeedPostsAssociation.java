@@ -59,7 +59,6 @@ public class FeedPostsAssociation extends AppCompatActivity {
                     for (int i = 1; i <num_of_posts ; i++) {
                         int count = i;
                         String post_id = cur_posts.get(count);
-                        System.out.println(post_id);
                         mRootRef.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DataSnapshot> task) {

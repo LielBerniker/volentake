@@ -63,4 +63,8 @@ public interface Volunteer_user {
      * @return  return user massages,
      */
     public ArrayList<String> getMassages_res();
+    /**
+     * @return  return user active posts,
+     */
+    public ArrayList<String> getActive_posts();
     }
