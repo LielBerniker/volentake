@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
+import android.widget.Button;
 
 import com.example.myapplication.AdapterPostAssociation;
 import com.example.myapplication.AdapterPostVol;
@@ -28,7 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class InboxAssociation extends AppCompatActivity {
-
+    private Button back;
     private RecyclerView recycleRequests;
     private DatabaseReference mRootRef;
     String assoc_id = "";
@@ -48,7 +50,7 @@ public class InboxAssociation extends AppCompatActivity {
 
         recycleRequests = findViewById(R.id.recycleRequests);
         mRootRef = FirebaseDatabase.getInstance().getReference();
-
+        back = (Button) findViewById(R.id.backtoassocuserfrominbox);
         mRootRef.child("assoc_users").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -91,7 +93,11 @@ public class InboxAssociation extends AppCompatActivity {
             }
         });
 
-
+        back.setOnClickListener(view -> {
+            Intent intent = new Intent(InboxAssociation.this,AssociationPage.class);
+            intent.putExtra("id", assoc_id);
+            startActivity(intent);
+        });
 
     }
 }

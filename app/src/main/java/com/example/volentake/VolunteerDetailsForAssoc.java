@@ -34,6 +34,7 @@ public class VolunteerDetailsForAssoc extends AppCompatActivity {
     String vol_user_name = "";
     String vol_user_email = "";
     String vol_user_id = "";
+    String post_id = "";
     int status_def;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class VolunteerDetailsForAssoc extends AppCompatActivity {
             vol_user_email = bun.getString("vol_user_email");
             vol_user_id = bun.getString("vol_user_id");
             status_def =  bun.getInt("status_def");
+            post_id =  bun.getString("post_id");
         }
         back = (Button)findViewById(R.id.backtoassocmassagespc);
         FirstName = (TextView) findViewById(R.id.VolunteerDetailsForAssocFirstName);
@@ -85,6 +87,7 @@ public class VolunteerDetailsForAssoc extends AppCompatActivity {
                 intent.putExtra("post_name", post_name);
                 intent.putExtra("vol_user_name", vol_user_name);
                 intent.putExtra("vol_user_email", vol_user_email);
+                intent.putExtra("post_id", post_id);
                 startActivity(intent);
             }
             else
@@ -95,6 +98,7 @@ public class VolunteerDetailsForAssoc extends AppCompatActivity {
                 intent.putExtra("post_name", post_name);
                 intent.putExtra("vol_user_name", vol_user_name);
                 intent.putExtra("vol_user_email", vol_user_email);
+                intent.putExtra("post_id", post_id);
                 startActivity(intent);
             }
         });

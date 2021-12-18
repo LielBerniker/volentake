@@ -56,7 +56,7 @@
         <entry key="..\:/Software Engineering/volentake/app/src/main/res/layout/activity_volunteer_user_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18072916666666666" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18072916666666666" />
-        <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_add_post.xml" value="0.25" />
+        <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_add_post.xml" value="0.33" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_association_log_in.xml" value="0.22" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_association_page.xml" value="0.25" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_association_sign_up.xml" value="0.18" />
@@ -70,6 +70,7 @@
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_details_request_afterans.xml" value="0.25" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_details_response.xml" value="0.25" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_edit_association.xml" value="0.33" />
+        <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_edit_num_of_volunteers_request.xml" value="0.25" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_edit_post.xml" value="0.25" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_edit_volunteer.xml" value="0.25" />
         <entry key="..\:/Users/PC/Desktop/COMPUTER_SCIENCE/year_3/semester_A/program engineering/volentake/app/src/main/res/layout/activity_feed_posts_associations.xml" value="0.20416666666666666" />

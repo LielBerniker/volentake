@@ -29,13 +29,14 @@ public class DetailsRequest extends AppCompatActivity {
     private Button back,approvebtn,rejectbtn,seevoldetails;
     private DatabaseReference mRootRef;
     String  request_id ;
-    String assoc_id = "";
-    String post_name = "";
-    String vol_user_name = "";
-    String vol_user_email = "";
-    String vol_user_id="";
-    String post_id="";
+    String assoc_id ;
+    String post_name ;
+    String vol_user_name ;
+    String vol_user_email ;
+    String vol_user_id;
+    String post_id;
     Request_vol cur_req;
+    int numofvolreq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,7 @@ public class DetailsRequest extends AppCompatActivity {
                     Log.e("firebase", "Error getting data", task.getException());
                 } else {
                     cur_req = task.getResult().getValue(Request_vol.class);
+                    numofvolreq = cur_req.getNum_of_vol();
                     numofvol.setText(Integer.toString(cur_req.getNum_of_vol()));
                     content.setText(cur_req.getContent());
                     vol_user_id = cur_req.getVol_user_id();
@@ -88,6 +90,7 @@ public class DetailsRequest extends AppCompatActivity {
             intent.putExtra("request_id", request_id);
             intent.putExtra("assoc_id", assoc_id);
             intent.putExtra("post_name", post_name);
+            intent.putExtra("post_id", post_id);
             intent.putExtra("vol_user_name", vol_user_name);
             intent.putExtra("vol_user_email", vol_user_email);
             intent.putExtra("vol_user_id", vol_user_id);
@@ -138,12 +141,28 @@ public class DetailsRequest extends AppCompatActivity {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()){
-                                                        Toast.makeText(DetailsRequest.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                                        Intent intent = new Intent(DetailsRequest.this, InboxAssociation.class);
-                                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                        intent.putExtra("id", assoc_id);
-                                                        startActivity(intent);
-                                                        finish();
+                                                        if(cur_status==0)
+                                                        {
+                                                            Toast.makeText(DetailsRequest.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                                            Intent intent = new Intent(DetailsRequest.this, edit_num_of_volunteers_request.class);
+                                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                            intent.putExtra("id", assoc_id);
+                                                            intent.putExtra("vol_user_name", vol_user_name);
+                                                            intent.putExtra("post_id", post_id);
+                                                            intent.putExtra("post_name", post_name);
+                                                            intent.putExtra("numofvolreq", numofvolreq);
+                                                            startActivity(intent);
+                                                            finish();
+                                                        }
+                                                        else
+                                                        {
+                                                            Toast.makeText(DetailsRequest.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                                            Intent intent = new Intent(DetailsRequest.this, InboxAssociation.class);
+                                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                            intent.putExtra("id", assoc_id);
+                                                            startActivity(intent);
+                                                            finish();
+                                                        }
                                                     }
                                                 }
                                             });

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".edit_num_of_volunteers_request"
+            android:exported="false" />
+        <activity
             android:name=".details_request_afterans"
             android:exported="false" />
         <activity
