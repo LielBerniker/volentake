@@ -28,13 +28,10 @@
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="29dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/required_number_of_volunteersText"
         android:textAlignment="viewStart"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/numberofparicerequestdetails"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailVolDetailsRequest" />
 
@@ -44,11 +41,10 @@
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="21dp"
-        android:text="name"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text="@string/nameText"
         android:textAlignment="viewStart"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/fullNameDetailsRequest"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voluntreengnamerequest" />
 
@@ -58,11 +54,10 @@
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="21dp"
-        android:text="email"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text="@string/emailText"
         android:textAlignment="viewStart"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/requestMailVolunteer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFullNnameDetailsRequest" />
 
@@ -71,14 +66,11 @@
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginTop="18dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/contentText"
         android:textAlignment="viewStart"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/cntantofrequestdetails"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRequestNumVol" />
 
@@ -112,12 +104,13 @@
 
     <Button
         android:id="@+id/btnBackToSmallRequestDetailsRequest"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="#268BBC"
         android:drawableLeft="@drawable/ic_back_1"
+        android:fontFamily="@font/oswald_font_wght"
         android:text="@string/backToMainMenu"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -141,12 +134,12 @@
 
     <TextView
         android:id="@+id/cntantofrequestdetails"
-        android:layout_width="195dp"
+        android:layout_width="180dp"
         android:layout_height="120dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
-        android:text=" "
         android:fontFamily="@font/oswald_font_wght"
+        android:text=" "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,12 +147,13 @@
 
     <Button
         android:id="@+id/btnaprovereuest"
-        android:layout_width="130dp"
-        android:layout_height="0dp"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="60dp"
         android:backgroundTint="@color/green"
         android:drawableLeft="@drawable/ic_check_1"
+        android:fontFamily="@font/oswald_font_wght"
         android:text="approve"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -167,13 +161,14 @@
 
     <Button
         android:id="@+id/btnrejectrequest"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/red"
         android:drawableLeft="@drawable/ic_cancel_1"
         android:text="reject"
+        android:fontFamily="@font/oswald_font_wght"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cntantofrequestdetails" />
@@ -181,10 +176,12 @@
     <Button
         android:id="@+id/voldetailsfullforrequest"
         android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#268BBC"
-        android:text="volunteer details"
+        android:drawableLeft="@drawable/ic_signup_2"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text="Volunteer Details"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -198,7 +195,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="26dp"
-        android:text="volunteering name "
+        android:text="Volunteering Name:"
+        android:fontFamily="@font/oswald_font_wght"
         app:layout_constraintEnd_toStartOf="@+id/volnameforrequest"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleDetailsRequest" />

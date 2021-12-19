@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/volunteerloginbtn"
-        android:layout_width="130dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginBottom="252dp"
         android:backgroundTint="#268BBC"
@@ -26,7 +26,7 @@
 
     <Button
         android:id="@+id/associationloginbtn"
-        android:layout_width="130dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:backgroundTint="#268BBC"
@@ -43,7 +43,7 @@
 
     <Button
         android:id="@+id/guestloginbtn"
-        android:layout_width="130dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:backgroundTint="#268BBC"

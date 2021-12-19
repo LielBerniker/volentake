@@ -77,7 +77,7 @@
     <EditText
         android:id="@+id/volunteeruserpassword"
         android:layout_width="230dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="65dp"
@@ -96,7 +96,7 @@
     <EditText
         android:id="@+id/volunteeruseremail"
         android:layout_width="230dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
@@ -115,7 +115,7 @@
     <TextView
         android:id="@+id/passwordtext"
         android:layout_width="85dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="65dp"
@@ -131,7 +131,7 @@
     <TextView
         android:id="@+id/emailtext"
         android:layout_width="85dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
         android:fontFamily="@font/oswald_font_wght"

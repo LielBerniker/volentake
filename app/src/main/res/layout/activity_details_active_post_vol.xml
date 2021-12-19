@@ -12,10 +12,10 @@
         android:layout_height="778dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.51">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,84 +29,79 @@
                 android:id="@+id/quitVolunteeringActivePostVol"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="96dp"
-                android:backgroundTint="#268BBC"
-                android:drawableLeft="@drawable/ic_back_1"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/red"
+                android:drawableLeft="@drawable/ic_cancel_1"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="quit"
+                android:text="@string/quitText"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateDescriptionPostActivePostVol"
+                app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostActivePostVol"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/txtUpdateNamePostActivePostVol"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Name:"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PostImage2ActivePostVol" />
 
             <TextView
                 android:id="@+id/detailPostNameActivePostVol"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Name"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PostImage2ActivePostVol" />
 
             <TextView
-                android:id="@+id/detailLocationPostActivePostVol"
-                android:layout_width="181dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="8dp"
+                android:id="@+id/detailCityPostActivePostVol"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="location"
-                android:textSize="14sp"
+                android:text="city"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailPostNameActivePostVol" />
 
             <TextView
                 android:id="@+id/detailNumVolPostActivePostVol"
-                android:layout_width="181dp"
-                android:layout_height="33dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="numVol"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.994"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailLocationPostActivePostVol" />
+                app:layout_constraintTop_toBottomOf="@+id/detailHouseNumberPostActivePostVol" />
 
             <TextView
                 android:id="@+id/detailTypePostActivePostVol"
-                android:layout_width="182dp"
-                android:layout_height="33dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="type"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,13 +109,13 @@
 
             <TextView
                 android:id="@+id/detailPhoneNumberPostActivePostVol"
-                android:layout_width="180dp"
-                android:layout_height="36dp"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Phone Number"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -128,9 +123,9 @@
 
             <TextView
                 android:id="@+id/detailDescriptionPostActivePostVol"
-                android:layout_width="192dp"
-                android:layout_height="99dp"
-                android:layout_marginTop="34dp"
+                android:layout_width="160dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="description"
@@ -157,66 +152,59 @@
 
             <TextView
                 android:id="@+id/txtUpdateLocationPostActivePostVol"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/addressText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/detailLocationPostActivePostVol"
-                app:layout_constraintHorizontal_bias="0.406"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePostActivePostVol" />
 
             <TextView
                 android:id="@+id/cityInsertVol1ActivePostVol"
                 android:layout_width="130dp"
-                android:layout_height="30dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/num_of_participantsText"
+                android:text="@string/required_number_of_volunteersText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/detailNumVolPostActivePostVol"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostActivePostVol" />
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
             <TextView
                 android:id="@+id/txtUpdateTypePostActivePostVol"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/typeText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/detailTypePostActivePostVol"
-                app:layout_constraintHorizontal_bias="0.433"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cityInsertVol1ActivePostVol" />
 
             <TextView
                 android:id="@+id/txtUpdatePhonePostActivePostVol"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/phoneText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/detailPhoneNumberPostActivePostVol"
-                app:layout_constraintHorizontal_bias="0.406"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateTypePostActivePostVol" />
 
             <TextView
                 android:id="@+id/txtUpdateDescriptionPostActivePostVol"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Description"
                 android:textSize="14sp"
@@ -239,13 +227,74 @@
                 android:id="@+id/backtoactiveposts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/blue"
+                android:drawableLeft="@drawable/ic_back_1"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="back"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.646"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostActivePostVol" />
+
+            <TextView
+                android:id="@+id/detailStreetPostActivePostVol"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="street"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailCityPostActivePostVol" />
+
+            <TextView
+                android:id="@+id/detailHouseNumberPostActivePostVol"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="number"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailStreetPostActivePostVol" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/cityText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostActivePostVol" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/streetText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/numberText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

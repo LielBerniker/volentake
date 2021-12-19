@@ -50,6 +50,7 @@
     <string name="required_number_of_volunteersText">Required Number of Volunteers:</string>
     <string name="type_of_volunteeringText">Type of Volunteering:</string>
     <string name="ageText">Age:</string>
+    <string name="quitText">Quit</string>
     <string-array name="types">
         <item>animals</item>
         <item>cleaning</item>

@@ -100,16 +100,15 @@
 
             <Button
                 android:id="@+id/btnActivePosts"
-                android:layout_width="151dp"
-                android:layout_height="41dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="84dp"
-                android:backgroundTint="#268BBC"
+                android:backgroundTint="@color/green"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="active volunteerings"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.884"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/searchPostBTN"
                 tools:ignore="MissingConstraints" />
@@ -209,23 +208,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView6"
                 app:srcCompat="@drawable/ic_phone_2"
                 tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/titlePosts"
-                android:layout_width="200dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="40dp"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="Saved Volunteering Posts:"
-                android:textColor="@color/dark_blue"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.189"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnInboxResponses" />
 
             <Button
                 android:id="@+id/searchPostBTN"
