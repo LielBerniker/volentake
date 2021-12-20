@@ -60,7 +60,7 @@ public class DetailsActivePostVol extends AppCompatActivity {
             post_id = bun.getString("post_id");
             post_position = bun.getInt("post_position");
         }
-        mystorge = FirebaseStorage.getInstance().getReference().child("post_pic/"+post_id);
+        mystorge = FirebaseStorage.getInstance().getReference().child("post_description_pic/"+post_id);
         back = (Button) findViewById(R.id.backtoactiveposts);
         quit = (Button) findViewById(R.id.quitVolunteeringActivePostVol);
         PostName = (TextView)findViewById(R.id.detailPostNameActivePostVol);

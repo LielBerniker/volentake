@@ -38,6 +38,8 @@ public class DetailsPostVol extends AppCompatActivity {
     String vol_user_id = "";
     String post_id = "";
     String assoc_id = "";
+    String search_keyword;
+    int state;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,8 @@ public class DetailsPostVol extends AppCompatActivity {
         {
             vol_user_id = bun.getString("vol_id");
             post_id = bun.getString("post_id");
+            state= bun.getInt("state");
+            search_keyword = bun.getString("search_keyword");
         }
         mystorge = FirebaseStorage.getInstance().getReference().child("post_description_pic/"+post_id);
         back = (Button) findViewById(R.id.btnBackToFeedOfPosts);
@@ -112,15 +116,34 @@ public class DetailsPostVol extends AppCompatActivity {
         });
 
         back.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsPostVol.this, FeedPostsVol.class);
-            intent.putExtra("id",vol_user_id);
-            startActivity(intent);
+            if(state == 0) {
+                Intent intent = new Intent(DetailsPostVol.this, FeedPostsVolByCity.class);
+                intent.putExtra("id", vol_user_id);
+                intent.putExtra("city", search_keyword);
+                startActivity(intent);
+            }
+            else if(state == 1)
+            {
+                Intent intent = new Intent(DetailsPostVol.this,FeedPostsVolByType.class);
+                intent.putExtra("id", vol_user_id);
+                intent.putExtra("type", search_keyword);
+                startActivity(intent);
+            }
+            else
+            {
+                Intent intent = new Intent(DetailsPostVol.this, FeedPostsVol.class);
+                intent.putExtra("id", vol_user_id);
+                intent.putExtra("no_word", search_keyword);
+                startActivity(intent);
+            }
         });
         btnPageRequest.setOnClickListener(view -> {
             Intent intent = new Intent(DetailsPostVol.this, RequestAssociation.class);
             intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",post_id);
             intent.putExtra("assoc_id",assoc_id);
+            intent.putExtra("search_keyword",search_keyword);
+            intent.putExtra("state",state);
             startActivity(intent);
         });
     }

@@ -21,11 +21,15 @@ import java.util.ArrayList;
 public class AdapterPostVol extends RecyclerView.Adapter<AdapterPostVol.ViewHolder> {
     Context context;
     String vol_user_id;
+    String search_keyword;
+    int state;
     ArrayList<Pair<Assoc_post,String>> listPosts= new ArrayList<>();
 
-    public AdapterPostVol(Context context, String vol_user_id){
+    public AdapterPostVol(Context context, String vol_user_id,String search_keyword,int state){
         this.context = context;
         this.vol_user_id = vol_user_id;
+        this.search_keyword = search_keyword;
+        this.state = state;
     }
 
     @Override
@@ -45,6 +49,8 @@ public class AdapterPostVol extends RecyclerView.Adapter<AdapterPostVol.ViewHold
             Intent intent = new Intent(context, DetailsPostVol.class);
             intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",listPosts.get(position).second);
+            intent.putExtra("search_keyword",search_keyword);
+            intent.putExtra("state",state);
             context.startActivity(intent);
         });
 

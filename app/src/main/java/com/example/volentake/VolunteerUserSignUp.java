@@ -117,7 +117,6 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 String txtFirstName = inputFirstName.getText().toString();
                 String txtLastName = inputLastName.getText().toString();
 
-                // liel - add this phone number to user details in the firebase when creating the user
                 String txtPhoneNumber = inputPhone.getText().toString();
                 String txtEmail = inputMail.getText().toString();
                 String txtPassword1 = inputPassword1.getText().toString();
@@ -128,14 +127,14 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 String txtBirthDay = BirthDay;
 
                 if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtCity) || TextUtils.isEmpty(txtStreet) || TextUtils.isEmpty(txtHouseNumber)
-                        || TextUtils.isEmpty(txtBirthDay)  || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword1) || TextUtils.isEmpty(txtPassword2)){
+                        || TextUtils.isEmpty(txtBirthDay) || TextUtils.isEmpty(txtPhoneNumber)  || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword1) || TextUtils.isEmpty(txtPassword2)){
                     Toast.makeText(VolunteerUserSignUp.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
                 } else if (!(txtPassword1.equals(txtPassword2))){
                     Toast.makeText(VolunteerUserSignUp.this, "Incompatible Passwords!", Toast.LENGTH_SHORT).show();
                 } else if (txtPassword1.length() < 6){
                     Toast.makeText(VolunteerUserSignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
                 } else {
-                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtCity,txtStreet,txtHouseNumber,txtBirthDay);
+                    registerUser(txtFirstName , txtLastName , txtEmail , txtPassword1,txtCity,txtStreet,txtHouseNumber,txtBirthDay,txtPhoneNumber);
                 }
             }
         });
@@ -145,7 +144,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    private void registerUser(final String firstName, final String lastName, final String email, String password,final String city,final String street,final String numhouse,final String Birthdaycur) {
+    private void registerUser(final String firstName, final String lastName, final String email, String password,final String city,final String street,final String numhouse,final String Birthdaycur,final String phonenum) {
 
 
         mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -154,7 +153,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 Address address = new Address(city,street,Integer.parseInt(numhouse));
 
                 String user_id = mAuth.getCurrentUser().getUid();
-                Volunteer_user cur_user = new Vol_user(firstName,lastName,address,"05424234",Birthdaycur,email);
+                Volunteer_user cur_user = new Vol_user(firstName,lastName,address,phonenum,Birthdaycur,email);
                 mRootRef.child("vol_users").child(user_id).setValue(cur_user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

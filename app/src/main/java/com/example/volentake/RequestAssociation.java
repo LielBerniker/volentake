@@ -38,6 +38,8 @@ public class RequestAssociation extends AppCompatActivity {
     String vol_user_id = "";
     String post_id = "";
     String Assoc_id ="";
+    String search_keyword;
+    int state;
     Request cur_req;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +56,10 @@ public class RequestAssociation extends AppCompatActivity {
             vol_user_id = bun.getString("vol_id");
             post_id = bun.getString("post_id");
             Assoc_id = bun.getString("assoc_id");
+            search_keyword = bun.getString("search_keyword");
+            state = bun.getInt("state");
         }
-        System.out.println("this is the user id" + vol_user_id);
-        System.out.println("the post id is:" + post_id);
+
         SendRequest = (Button)findViewById(R.id.btnsendrequest);
         Back = (Button)findViewById(R.id.btnbackrequest);
         volName = (TextView)findViewById(R.id.volfirstnamereq);
@@ -90,6 +93,8 @@ public class RequestAssociation extends AppCompatActivity {
             Intent intent = new Intent(RequestAssociation.this, DetailsPostVol.class);
             intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",post_id);
+            intent.putExtra("search_keyword",search_keyword);
+            intent.putExtra("state",state);
             startActivity(intent);
         });
     }
@@ -116,10 +121,30 @@ public class RequestAssociation extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()){
                                             Toast.makeText(RequestAssociation.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(RequestAssociation.this, FeedPostsVol.class);
-                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                            intent.putExtra("id", vol_user_id);
-                                            startActivity(intent);
+                                            if(state==0)
+                                            {
+                                                Intent intent = new Intent(RequestAssociation.this, FeedPostsVolByCity.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                intent.putExtra("id", vol_user_id);
+                                                intent.putExtra("city", search_keyword);
+                                                startActivity(intent);
+                                            }
+                                            else if(state==1)
+                                            {
+                                                Intent intent = new Intent(RequestAssociation.this, FeedPostsVolByType.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                intent.putExtra("id", vol_user_id);
+                                                intent.putExtra("type", search_keyword);
+                                                startActivity(intent);
+                                            }
+                                            else
+                                            {
+                                                Intent intent = new Intent(RequestAssociation.this, FeedPostsVol.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                intent.putExtra("id", vol_user_id);
+                                                intent.putExtra("no_word", search_keyword);
+                                                startActivity(intent);
+                                            }
                                             finish();
                                         }
                                     }

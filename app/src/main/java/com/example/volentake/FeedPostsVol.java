@@ -50,7 +50,7 @@ public class FeedPostsVol extends AppCompatActivity {
                           posts.add(pair1);
 
                       }
-                        AdapterPostVol adapter = new AdapterPostVol( FeedPostsVol.this,vol_user_id);
+                        AdapterPostVol adapter = new AdapterPostVol( FeedPostsVol.this,vol_user_id,"",2);
                         adapter.setPosts(posts);
 
                         postsRecycle.setAdapter(adapter);

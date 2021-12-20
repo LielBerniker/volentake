@@ -40,7 +40,6 @@ public class VolunteerPage extends AppCompatActivity {
     private Button inboxResponse;
     private Button activePosts;
     private TextView FirstNameInsert;
-    private TextView LastNameInsert;
     private TextView PhoneNumberInsert;
     private TextView EmailInsert;
     private ImageView profile_pic;
@@ -70,7 +69,7 @@ public class VolunteerPage extends AppCompatActivity {
         inboxResponse = (Button)findViewById(R.id.btnInboxResponses);
         activePosts = (Button)findViewById(R.id.btnActivePosts);
         FirstNameInsert = (TextView)findViewById(R.id.firstnameinsert);
-//        LastNameInsert = (TextView)findViewById(R.id.lastnameinsert);
+//
         PhoneNumberInsert = (TextView)findViewById(R.id.phonenumberinsert);
         EmailInsert = (TextView)findViewById(R.id.emailinsert);
         profile_pic = (ImageView)findViewById(R.id.imagevolprofile);
@@ -83,8 +82,7 @@ public class VolunteerPage extends AppCompatActivity {
                 else {
                     Vol_user cure_user =  task.getResult().getValue(Vol_user.class);
                     assert cure_user != null;
-                    FirstNameInsert.setText(cure_user.getFirst_name());
-//                    LastNameInsert.setText(cure_user.getLast_name());
+                    FirstNameInsert.setText(cure_user.getFirst_name()+" " + cure_user.getLast_name());
                     PhoneNumberInsert.setText(cure_user.getPhone_num());
                     EmailInsert.setText(cure_user.getEmail());
 
