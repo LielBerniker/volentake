@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/volunteerloginbtn"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginBottom="252dp"
         android:backgroundTint="#268BBC"
@@ -26,9 +26,9 @@
 
     <Button
         android:id="@+id/associationloginbtn"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#268BBC"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/mainActivityAssociationBTN"
@@ -39,13 +39,13 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/volunteerloginbtn"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/guestloginbtn"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#268BBC"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/MainActivityGuestBTN"
@@ -56,7 +56,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/associationloginbtn"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/mainactivitysubtitle"
@@ -79,8 +79,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="273dp"
-        android:layout_height="124dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         app:layout_constraintBottom_toTopOf="@+id/mainactivitysubtitle"
         app:layout_constraintEnd_toEndOf="parent"

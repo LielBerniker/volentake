@@ -24,13 +24,13 @@
 
     <Button
         android:id="@+id/btnbackmain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="#268BBC"
+        android:drawableLeft="@drawable/ic_back_1"
         android:fontFamily="@font/oswald_font_wght"
         android:text="back"
-        android:drawableLeft="@drawable/ic_back_1"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +41,7 @@
     <Button
         android:id="@+id/btnpostjustforview"
         android:layout_width="220dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="#268BBC"
         android:fontFamily="@font/oswald_font_wght"

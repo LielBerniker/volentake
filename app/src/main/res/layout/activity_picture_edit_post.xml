@@ -43,6 +43,7 @@
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/uploadText"
         android:textColor="#F8F8F8"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -63,11 +64,16 @@
 
     <Button
         android:id="@+id/btnbacktoassocphoto"
-        android:layout_width="98dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
-        android:text="back"
+        android:backgroundTint="@color/blue"
+        android:drawableLeft="@drawable/ic_back_1"
+        android:text="@string/backToMainMenu"
+        android:fontFamily="@font/oswald_font_wght"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

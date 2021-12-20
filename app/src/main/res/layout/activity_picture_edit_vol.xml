@@ -19,9 +19,7 @@
         android:id="@+id/btnChoose"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="40dp"
         android:layout_weight="1"
         android:backgroundTint="#268BBC"
         android:drawableLeft="@drawable/ic_image_1"
@@ -31,7 +29,6 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnUpload"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnbacktovolphoto" />
 
     <Button
@@ -67,11 +64,16 @@
 
     <Button
         android:id="@+id/btnbacktovolphoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
-        android:text="back"
+        android:backgroundTint="@color/blue"
+        android:drawableLeft="@drawable/ic_back_1"
+        android:fontFamily="@font/oswald_font_wght"
+        android:text="@string/backToMainMenu"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

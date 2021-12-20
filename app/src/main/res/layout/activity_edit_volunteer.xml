@@ -27,7 +27,7 @@
 
             <Button
                 android:id="@+id/btnPageRequst"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="40dp"
@@ -153,7 +153,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phunenumberinsert3" />
 
@@ -164,9 +164,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
-                android:inputType="textPassword"
-                android:textSize="14sp"
                 android:fontFamily="@font/oswald_font_wght"
+                android:inputType="textPassword"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputdateselector2" />
 
@@ -177,9 +177,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
-                android:inputType="textPassword"
-                android:textSize="14sp"
                 android:fontFamily="@font/oswald_font_wght"
+                android:inputType="textPassword"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
@@ -216,7 +216,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
@@ -229,7 +229,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -244,7 +244,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputcity" />
 
@@ -255,9 +255,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="50dp"
                 android:ems="10"
-                android:inputType="number"
-                android:textSize="14sp"
                 android:fontFamily="@font/oswald_font_wght"
+                android:inputType="number"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetinsert" />
 
@@ -282,7 +282,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="phone"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputLastName2" />
 
@@ -293,9 +293,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
-                android:inputType="textEmailAddress"
-                android:textSize="14sp"
                 android:fontFamily="@font/oswald_font_wght"
+                android:inputType="textEmailAddress"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
 
