@@ -28,7 +28,7 @@ import java.io.IOException;
 
 public class picture_edit_post extends AppCompatActivity {
     // views for button
-    private Button btnSelect, btnUpload;
+    private Button btnSelect, btnUpload,backtovol;
     // view for image view
     private ImageView imageView;
     // Uri indicates, where the image will be picked from
@@ -62,6 +62,7 @@ String assoc_id = "";
         // initialise views
         btnSelect = findViewById(R.id.btnChoose2);
         btnUpload = findViewById(R.id.btnUpload2);
+        backtovol = findViewById(R.id.btnbacktoassocphoto);
         imageView = findViewById(R.id.imgView2);
 
         // get the Firebase  storage reference
@@ -82,6 +83,16 @@ String assoc_id = "";
             public void onClick(View v)
             {
                 uploadImage();
+            }
+        });
+        backtovol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent1 = new Intent(picture_edit_post.this, DetailsPostAssociation.class);
+                intent1.putExtra("post_id",post_id);
+                intent1.putExtra("assoc_id",assoc_id);
+                startActivity(intent1);
             }
         });
     }

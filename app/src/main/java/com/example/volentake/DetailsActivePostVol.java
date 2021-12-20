@@ -1,9 +1,11 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -43,11 +45,12 @@ public class DetailsActivePostVol extends AppCompatActivity {
     String vol_user_id = "";
     String post_id = "";
     int post_position;
-
+    AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_active_post_vol);
+        builder = new AlertDialog.Builder(this);
         //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -117,31 +120,48 @@ public class DetailsActivePostVol extends AppCompatActivity {
         });
 
         quit.setOnClickListener(view -> {
-            mDatabase.child("vol_users").child(vol_user_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                    if (!task.isSuccessful()) {
-                        Log.e("firebase", "Error getting data", task.getException());
-                    } else {
-                        Vol_user cure_user = task.getResult().getValue(Vol_user.class);
-                        cure_user.getActive_posts().remove(post_position);
-                        mDatabase.child("vol_users").child(vol_user_id).setValue(cure_user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
-                                    Toast.makeText(DetailsActivePostVol.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(DetailsActivePostVol.this, FeedActivePostsVol.class);
-                                    intent.putExtra("id",vol_user_id);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                        });
+            builder.setTitle("quit")
+                    .setMessage("are you sure you want to quit this volunteering event?")
+                    .setCancelable(true)
+                    .setPositiveButton("quit now", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            mDatabase.child("vol_users").child(vol_user_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    if (!task.isSuccessful()) {
+                                        Log.e("firebase", "Error getting data", task.getException());
+                                    } else {
+                                        Vol_user cure_user = task.getResult().getValue(Vol_user.class);
+                                        cure_user.getActive_posts().remove(post_position);
+                                        mDatabase.child("vol_users").child(vol_user_id).setValue(cure_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()){
+                                                    Toast.makeText(DetailsActivePostVol.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(DetailsActivePostVol.this, FeedActivePostsVol.class);
+                                                    intent.putExtra("id",vol_user_id);
+                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            }
+                                        });
 
-                    }
-                }
-            });
+                                    }
+                                }
+                            });
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alterdialod = builder.create();
+            alterdialod.show();
+
         });
         back.setOnClickListener(view -> {
             Intent intent = new Intent(DetailsActivePostVol.this, FeedActivePostsVol.class);

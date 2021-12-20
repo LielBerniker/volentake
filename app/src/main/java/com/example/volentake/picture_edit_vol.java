@@ -29,7 +29,7 @@ import java.util.UUID;
 
 public class picture_edit_vol extends AppCompatActivity {
     // views for button
-    private Button btnSelect, btnUpload;
+    private Button btnSelect, btnUpload,backtovol;
     // view for image view
     private ImageView imageView;
     // Uri indicates, where the image will be picked from
@@ -61,6 +61,7 @@ public class picture_edit_vol extends AppCompatActivity {
         actionBar.setBackgroundDrawable(colorDrawable);
         // initialise views
         btnSelect = findViewById(R.id.btnChoose);
+        btnSelect = findViewById(R.id.btnbacktovolphoto);
         btnUpload = findViewById(R.id.btnUpload);
         imageView = findViewById(R.id.imgView);
 
@@ -82,6 +83,15 @@ public class picture_edit_vol extends AppCompatActivity {
             public void onClick(View v)
             {
                 uploadImage();
+            }
+        });
+        btnUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent1 = new Intent(picture_edit_vol.this, VolunteerPage.class);
+                intent1.putExtra("id",user_id);
+                startActivity(intent1);
             }
         });
     }

@@ -1,14 +1,17 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,11 +42,13 @@ public class DetailsPostVol extends AppCompatActivity {
     String post_id = "";
     String assoc_id = "";
     String search_keyword;
+    AlertDialog.Builder builder;
     int state;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_post_vol);
+        builder = new AlertDialog.Builder(this);
 //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -138,13 +143,30 @@ public class DetailsPostVol extends AppCompatActivity {
             }
         });
         btnPageRequest.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsPostVol.this, RequestAssociation.class);
-            intent.putExtra("vol_id",vol_user_id);
-            intent.putExtra("post_id",post_id);
-            intent.putExtra("assoc_id",assoc_id);
-            intent.putExtra("search_keyword",search_keyword);
-            intent.putExtra("state",state);
-            startActivity(intent);
+            builder.setTitle("apply request")
+                    .setMessage("you are about to send a volunteering request")
+                    .setCancelable(true)
+                    .setPositiveButton("proceed to request", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent1 = new Intent(DetailsPostVol.this, RequestAssociation.class);
+                            intent1.putExtra("post_id",post_id);
+                            intent1.putExtra("vol_id",vol_user_id);
+                            intent1.putExtra("assoc_id",assoc_id);
+                            intent1.putExtra("search_keyword",search_keyword);
+                            intent1.putExtra("state",state);
+                            startActivity(intent1);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+         dialog.cancel();
+                        }
+                    });
+AlertDialog alterdialod = builder.create();
+alterdialod.show();
+
         });
     }
 }
