@@ -12,8 +12,8 @@
 
 ## How the app is made:
 
-* Made with java via android studio
-* Database is made with firebase
+* Made with java via android studio.
+* Database is made with firebase.
 
 ## Purpose:
 
@@ -34,5 +34,5 @@ The main purpose is to match between volunteers and associations.
 
 ### Volunteers Can:
 
-* Search for Volunteering Events posts (can search by filters of location, type and more)
-* Sent requests for volunteering
+* Search for Volunteering Events posts (can search by filters of location, type and more).
+* Sent requests for volunteering.
