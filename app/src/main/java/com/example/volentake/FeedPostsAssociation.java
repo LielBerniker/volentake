@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -35,6 +36,11 @@ public class FeedPostsAssociation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_associations);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
 //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
@@ -77,6 +83,7 @@ public class FeedPostsAssociation extends AppCompatActivity {
 
                                         postsRecycle.setAdapter(adapter);
                                         postsRecycle.setLayoutManager(new GridLayoutManager(FeedPostsAssociation.this,1));}
+                                    progressDialog.dismiss();
                                 }
                             }
                         });

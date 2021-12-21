@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Pair;
 
@@ -29,7 +30,11 @@ public class FeedPostGuest extends AppCompatActivity {
         setContentView(R.layout.activity_feed_post_guest);
         postsRecycle = findViewById(R.id.recyclePostsGuest);
         mRootRef = FirebaseDatabase.getInstance().getReference();
-
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
         mRootRef.child("posts")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -47,6 +52,7 @@ public class FeedPostGuest extends AppCompatActivity {
 
                         postsRecycle.setAdapter(adapter);
                         postsRecycle.setLayoutManager(new GridLayoutManager(FeedPostGuest.this, 1));
+                        progressDialog.dismiss();
                     }
 
                     @Override

@@ -1,6 +1,7 @@
 package com.example.volentake;
 
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -57,7 +58,11 @@ public class VolunteerPage extends AppCompatActivity {
         builder = new AlertDialog.Builder(this);
 //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
 //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
@@ -106,10 +111,12 @@ public class VolunteerPage extends AppCompatActivity {
 
                                     final Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                                     profile_pic.setImageBitmap(bitmap);
+                                    progressDialog.dismiss();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
                         }
                     });
                 }
@@ -121,6 +128,7 @@ public class VolunteerPage extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // File not found
+                progressDialog.dismiss();
             }
         });
 

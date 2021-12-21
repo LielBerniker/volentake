@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Pair;
 
@@ -29,7 +30,11 @@ public class FeedPostsVolByCity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_vol_by_city);
-        // for Liel - get information bundle: vol_id and city!!!!!!!
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
         Bundle bun = null;
         bun = getIntent().getExtras();
         if(bun != null)
@@ -60,6 +65,7 @@ public class FeedPostsVolByCity extends AppCompatActivity {
 
                         recyclePostsVolByCity.setAdapter(adapter);
                         recyclePostsVolByCity.setLayoutManager(new GridLayoutManager(FeedPostsVolByCity.this,1));
+                        progressDialog.dismiss();
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {

@@ -1,6 +1,7 @@
 package com.example.volentake;
 
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,6 +47,11 @@ public class AssociationPage extends AppCompatActivity {
         builder = new AlertDialog.Builder(this);
 //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
 //        get information bundle
         Bundle bun = null;
 
@@ -76,7 +82,7 @@ public class AssociationPage extends AppCompatActivity {
                     NameInsert.setText(cure_user.getName());
                     PhoneNumberInsert.setText(cure_user.getPhone_num());
                     EmailInsert.setText(cure_user.getEmail());
-
+                    progressDialog.dismiss();
                 }
             }
         });

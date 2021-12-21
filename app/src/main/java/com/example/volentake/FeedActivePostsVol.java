@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -37,6 +38,11 @@ public class FeedActivePostsVol extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_active_posts_vol);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
         //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
@@ -75,6 +81,7 @@ public class FeedActivePostsVol extends AppCompatActivity {
 
                                         postsActiveRecycle.setAdapter(adapter);
                                         postsActiveRecycle.setLayoutManager(new GridLayoutManager(FeedActivePostsVol.this, 1));
+                                        progressDialog.dismiss();
                                     }
                                 }
                             }
