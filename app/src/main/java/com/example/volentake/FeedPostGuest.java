@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
+import android.widget.Button;
 
 import com.example.myapplication.AdapterPostGuest;
 import com.example.myapplication.AdapterPostVol;
@@ -23,11 +25,14 @@ public class FeedPostGuest extends AppCompatActivity {
 
     private RecyclerView postsRecycle;
     private DatabaseReference mRootRef;
-    ArrayList<Pair<Assoc_post,String>> posts = new ArrayList<>();
+    private Button backBtn;
+    ArrayList<Pair<Assoc_post, String>> posts = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_post_guest);
+        backBtn = findViewById(R.id.back_activity_feed_post_guest);
         postsRecycle = findViewById(R.id.recyclePostsGuest);
         mRootRef = FirebaseDatabase.getInstance().getReference();
         ProgressDialog progressDialog
@@ -59,6 +64,10 @@ public class FeedPostGuest extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(FeedPostGuest.this, GuestUser.class);
+            startActivity(intent);
+        });
     }
 
 }

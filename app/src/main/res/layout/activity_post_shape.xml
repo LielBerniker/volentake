@@ -28,9 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/post_back_3"
             android:gravity="center"
             android:orientation="vertical">
@@ -41,11 +41,11 @@
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="nameAss"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -59,12 +59,14 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="numVol"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/txtLocationPost"
                 app:layout_constraintTop_toBottomOf="@+id/numVolOfPost" />
 
@@ -143,7 +145,7 @@
                 android:id="@+id/btnseedetails"
                 android:layout_width="130dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/dark_blue3"
                 android:fontFamily="@font/oswald_font_wght"
@@ -153,8 +155,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLocationPost" />
+                app:layout_constraintTop_toBottomOf="@+id/nameMessage"
+                app:layout_constraintVertical_bias="1.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
