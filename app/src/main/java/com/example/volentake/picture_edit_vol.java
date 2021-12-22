@@ -61,7 +61,7 @@ public class picture_edit_vol extends AppCompatActivity {
         actionBar.setBackgroundDrawable(colorDrawable);
         // initialise views
         btnSelect = findViewById(R.id.btnChoose);
-        btnSelect = findViewById(R.id.btnbacktovolphoto);
+        backtovol = findViewById(R.id.btnbacktovolphoto);
         btnUpload = findViewById(R.id.btnUpload);
         imageView = findViewById(R.id.imgView);
 
@@ -85,7 +85,7 @@ public class picture_edit_vol extends AppCompatActivity {
                 uploadImage();
             }
         });
-        btnUpload.setOnClickListener(new View.OnClickListener() {
+        backtovol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {

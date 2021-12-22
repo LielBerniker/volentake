@@ -1,10 +1,13 @@
 package com.example.volentake;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
 
@@ -22,6 +25,7 @@ public class FeedPostsVolByCity extends AppCompatActivity {
 
     private RecyclerView recyclePostsVolByCity;
     private DatabaseReference mRootRef;
+    AlertDialog.Builder builder;
     String vol_user_id = "";
     String search_city = "";
     ArrayList<Pair<Assoc_post,String>> posts = new ArrayList<>();
@@ -30,6 +34,7 @@ public class FeedPostsVolByCity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_vol_by_city);
+        builder = new AlertDialog.Builder(this);
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
@@ -59,6 +64,23 @@ public class FeedPostsVolByCity extends AppCompatActivity {
                                 posts.add(pair1);
                             }
 
+                        }
+                        if(posts.size()==0)
+                        {
+                            progressDialog.dismiss();
+                            builder.setTitle("volunteering events")
+                                    .setMessage("there is not any volunteering events in the city: " + search_city)
+                                    .setCancelable(true)
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent1 = new Intent(FeedPostsVolByCity.this, VolunteerPage.class);
+                                            intent1.putExtra("id",vol_user_id);
+                                            startActivity(intent1);
+                                        }
+                                    });
+                            AlertDialog alterdialod = builder.create();
+                            alterdialod.show();
                         }
                         AdapterPostVol adapter = new AdapterPostVol( FeedPostsVolByCity.this,vol_user_id,search_city,0);
                         adapter.setPosts(posts);
