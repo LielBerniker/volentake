@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".MainSearchPostsVol"
+            android:exported="false" />
+        <activity
             android:name=".FeedPostsVolByType"
             android:exported="false" />
         <activity

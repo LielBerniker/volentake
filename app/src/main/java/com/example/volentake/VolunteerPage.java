@@ -146,7 +146,7 @@ public class VolunteerPage extends AppCompatActivity {
             startActivity(intent);
         });
         SerchPost.setOnClickListener(view -> {
-            Intent intent = new Intent(VolunteerPage.this, FeedPostsVol.class);
+            Intent intent = new Intent(VolunteerPage.this, MainSearchPostsVol.class);
             intent.putExtra("id",user_id);
             startActivity(intent);
         });
