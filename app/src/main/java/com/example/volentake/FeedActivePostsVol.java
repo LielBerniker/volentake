@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
+import android.widget.Button;
 
 import com.example.myapplication.AdapterActivePostVol;
 import com.example.myapplication.AdapterPostAssociation;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
 public class FeedActivePostsVol extends AppCompatActivity {
     private RecyclerView postsActiveRecycle;
     private DatabaseReference mRootRef;
+    private Button backBtn;
     AlertDialog.Builder builder;
     String vol_user_id = "";
     ArrayList<Pair<Assoc_post, String>> posts = new ArrayList<>();
@@ -43,6 +45,7 @@ public class FeedActivePostsVol extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_active_posts_vol);
         builder = new AlertDialog.Builder(this);
+        backBtn = findViewById(R.id.back_activity_feed_posts_vol_by_city);
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
@@ -67,8 +70,7 @@ public class FeedActivePostsVol extends AppCompatActivity {
                     cur_active_posts = cure_user.getActive_posts();
 
                     num_of_posts = cur_active_posts.size();
-                    if(num_of_posts==1)
-                    {
+                    if (num_of_posts == 1) {
                         progressDialog.dismiss();
                         builder.setTitle("volunteering events")
                                 .setMessage("this user do not have any active volunteering events")
@@ -77,7 +79,7 @@ public class FeedActivePostsVol extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         Intent intent1 = new Intent(FeedActivePostsVol.this, VolunteerPage.class);
-                                        intent1.putExtra("id",vol_user_id);
+                                        intent1.putExtra("id", vol_user_id);
                                         startActivity(intent1);
                                     }
                                 });
@@ -113,6 +115,11 @@ public class FeedActivePostsVol extends AppCompatActivity {
                     }
                 }
             }
+        });
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(FeedActivePostsVol.this, DetailsActivePostVol.class);
+            intent.putExtra("id", vol_user_id);
+            startActivity(intent);
         });
     }
 }

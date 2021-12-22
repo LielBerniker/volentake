@@ -65,7 +65,7 @@ public class FeedPostGuest extends AppCompatActivity {
                     }
                 });
         backBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(FeedPostGuest.this, GuestUser.class);
+            Intent intent = new Intent(FeedPostGuest.this, DetailsPostGuest.class);
             startActivity(intent);
         });
     }
