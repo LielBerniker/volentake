@@ -144,11 +144,11 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/vol_background_02" />
+        app:srcCompat="@drawable/logo_01" />
 </androidx.constraintlayout.widget.ConstraintLayout>

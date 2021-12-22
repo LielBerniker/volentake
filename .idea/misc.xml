@@ -12,6 +12,7 @@
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/volentake/app/src/main/res/layout/activity_volunteer_user_sign_up.xml" value="0.264" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/volentake/app/src/main/res/layout/activity_volunteer_user_sign_up2.xml" value="0.6" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/drawable-anydpi/ic_back_1.xml" value="0.30625" />
+        <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/drawable-anydpi/ic_check_1.xml" value="0.26614583333333336" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/drawable-anydpi/ic_edit_1.xml" value="0.30625" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/drawable-anydpi/ic_edit_3.xml" value="0.37864583333333335" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/drawable-anydpi/ic_email_1.xml" value="0.30625" />
@@ -36,7 +37,7 @@
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/drawable/search_icon_background.xml" value="0.11875" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/drawable/search_icon_foreground.xml" value="0.11875" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_add_post.xml" value="0.40688437775816416" />
-        <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_association_log_in.xml" value="0.4" />
+        <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_association_log_in.xml" value="0.264" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_association_page.xml" value="0.4" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_association_sign_up.xml" value="0.1703601108033241" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_details_active_post_vol.xml" value="0.35913978494623655" />
@@ -44,7 +45,7 @@
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_details_post_guest.xml" value="0.5403726708074534" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_details_post_vol.xml" value="0.4" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_details_request.xml" value="0.72" />
-        <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_details_request_afterans.xml" value="0.536" />
+        <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_details_request_afterans.xml" value="0.264" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_details_response.xml" value="0.4" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_edit_association.xml" value="0.264" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_edit_num_of_volunteers_request.xml" value="0.3625" />
@@ -58,7 +59,7 @@
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_feed_posts_vol_by_city.xml" value="0.3625" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_feed_posts_vol_by_type.xml" value="0.3625" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_guest_user.xml" value="0.29010416666666666" />
-        <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_inbox_association.xml" value="0.29010416666666666" />
+        <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_inbox_association.xml" value="0.264" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_inbox_responses.xml" value="0.29010416666666666" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_main.xml" value="0.29010416666666666" />
         <entry key="..\:/Projects/Development/Courses/Java/Software Engineer/voluntake/app/src/main/res/layout/activity_picture_edit_post.xml" value="0.264" />
