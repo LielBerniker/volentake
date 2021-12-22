@@ -160,6 +160,7 @@ public class picture_edit_vol extends AppCompatActivity {
             ProgressDialog progressDialog
                     = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
+            progressDialog.setCancelable(false);
             progressDialog.show();
 
             // Defining the child of storageReference

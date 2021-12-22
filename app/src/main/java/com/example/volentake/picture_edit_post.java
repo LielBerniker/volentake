@@ -161,6 +161,7 @@ String assoc_id = "";
             ProgressDialog progressDialog
                     = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
+            progressDialog.setCancelable(false);
             progressDialog.show();
 
             // Defining the child of storageReference

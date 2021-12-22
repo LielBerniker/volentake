@@ -42,6 +42,7 @@ public class FeedPostsVolByCity extends AppCompatActivity {
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
+        progressDialog.setCancelable(false);
         progressDialog.setIcon(R.drawable.logovector_01);
         progressDialog.show();
         Bundle bun = null;

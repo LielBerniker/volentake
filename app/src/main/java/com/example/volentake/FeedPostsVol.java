@@ -1,10 +1,12 @@
 package com.example.volentake;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
@@ -26,6 +28,7 @@ public class FeedPostsVol extends AppCompatActivity {
     private RecyclerView postsRecycle;
     private DatabaseReference mRootRef;
     private Button backBtn;
+    AlertDialog.Builder builder;
     String vol_user_id = "";
     ArrayList<Pair<Assoc_post, String>> posts = new ArrayList<>();
 
@@ -33,6 +36,7 @@ public class FeedPostsVol extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_vol);
+        builder = new AlertDialog.Builder(this);
         backBtn = findViewById(R.id.back_activity_feed_posts_vol);
 //        get information bundle
         Bundle bun = null;
@@ -45,6 +49,7 @@ public class FeedPostsVol extends AppCompatActivity {
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
+        progressDialog.setCancelable(false);
         progressDialog.setIcon(R.drawable.logovector_01);
         progressDialog.show();
         mRootRef.child("posts")
@@ -60,6 +65,22 @@ public class FeedPostsVol extends AppCompatActivity {
 
 
                       }
+                        if (posts.size() == 0) {
+                            progressDialog.dismiss();
+                            builder.setTitle("volunteering events")
+                                    .setMessage("there is not any volunteering events ")
+                                    .setCancelable(true)
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent1 = new Intent(FeedPostsVol.this,MainSearchPostsVol.class);
+                                            intent1.putExtra("id", vol_user_id);
+                                            startActivity(intent1);
+                                        }
+                                    });
+                            AlertDialog alterdialod = builder.create();
+                            alterdialod.show();
+                        }
                         Collections.reverse(posts);
                         AdapterPostVol adapter = new AdapterPostVol( FeedPostsVol.this,vol_user_id,"",2);
                         adapter.setPosts(posts);
