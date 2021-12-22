@@ -1,10 +1,14 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -29,6 +33,7 @@ public class InboxResponses extends AppCompatActivity {
 
     private RecyclerView recycleResponses;
     private DatabaseReference mRootRef;
+    AlertDialog.Builder builder;
     String vol_id = "";
     ArrayList<String> cur_responses ;
     ArrayList<Pair<Response,String>> responses = new ArrayList<>();
@@ -37,6 +42,12 @@ public class InboxResponses extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox_responses);
+        builder = new AlertDialog.Builder(this);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
         Bundle bun = null;
         bun = getIntent().getExtras();
         if(bun != null)
@@ -58,6 +69,23 @@ public class InboxResponses extends AppCompatActivity {
                     cur_responses= cure_user.getMassages_res();
 
                     num_of_responses = cur_responses.size();
+                    if(num_of_responses==1)
+                    {
+                        progressDialog.dismiss();
+                        builder.setTitle("inbox")
+                                .setMessage("you do not have any massages")
+                                .setCancelable(true)
+                                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent1 = new Intent(InboxResponses.this, VolunteerPage.class);
+                                        intent1.putExtra("id",vol_id);
+                                        startActivity(intent1);
+                                    }
+                                });
+                        AlertDialog alterdialod = builder.create();
+                        alterdialod.show();
+                    }
                     for (int i = 1; i <num_of_responses ; i++) {
                         int count = i;
                         String res_id = cur_responses.get(count);
@@ -78,7 +106,9 @@ public class InboxResponses extends AppCompatActivity {
                                         adapter.setResponses(responses);
 
                                         recycleResponses.setAdapter(adapter);
-                                        recycleResponses.setLayoutManager(new GridLayoutManager(InboxResponses.this,1));}
+                                        recycleResponses.setLayoutManager(new GridLayoutManager(InboxResponses.this,1));
+                                        progressDialog.dismiss();}
+
                                 }
                             }
                         });

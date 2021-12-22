@@ -1,11 +1,14 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -29,6 +32,7 @@ import java.util.ArrayList;
 public class FeedActivePostsVol extends AppCompatActivity {
     private RecyclerView postsActiveRecycle;
     private DatabaseReference mRootRef;
+    AlertDialog.Builder builder;
     String vol_user_id = "";
     ArrayList<Pair<Assoc_post, String>> posts = new ArrayList<>();
     ArrayList<String> cur_active_posts;
@@ -38,6 +42,7 @@ public class FeedActivePostsVol extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_active_posts_vol);
+        builder = new AlertDialog.Builder(this);
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
@@ -62,6 +67,23 @@ public class FeedActivePostsVol extends AppCompatActivity {
                     cur_active_posts = cure_user.getActive_posts();
 
                     num_of_posts = cur_active_posts.size();
+                    if(num_of_posts==1)
+                    {
+                        progressDialog.dismiss();
+                        builder.setTitle("volunteering events")
+                                .setMessage("this user do not have any active volunteering events")
+                                .setCancelable(true)
+                                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent1 = new Intent(FeedActivePostsVol.this, VolunteerPage.class);
+                                        intent1.putExtra("id",vol_user_id);
+                                        startActivity(intent1);
+                                    }
+                                });
+                        AlertDialog alterdialod = builder.create();
+                        alterdialod.show();
+                    }
                     for (int i = 1; i < num_of_posts; i++) {
                         int count = i;
                         String post_id = cur_active_posts.get(count);

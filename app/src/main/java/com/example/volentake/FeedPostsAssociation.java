@@ -1,11 +1,14 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -28,6 +31,7 @@ public class FeedPostsAssociation extends AppCompatActivity {
 
     private RecyclerView postsRecycle;
     private DatabaseReference mRootRef;
+    AlertDialog.Builder builder;
     String association_user_id = "";
     ArrayList<String> cur_posts ;
     ArrayList<Pair<Assoc_post,String>> posts = new ArrayList<>();
@@ -36,6 +40,7 @@ public class FeedPostsAssociation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_associations);
+        builder = new AlertDialog.Builder(this);
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
@@ -62,6 +67,23 @@ public class FeedPostsAssociation extends AppCompatActivity {
                      cur_posts = cure_user.getPosts();
 
                      num_of_posts = cur_posts.size();
+                     if(num_of_posts==1)
+                     {
+                         progressDialog.dismiss();
+                         builder.setTitle("volunteering events")
+                                 .setMessage("this association do not have any volunteering events")
+                                 .setCancelable(true)
+                                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                     @Override
+                                     public void onClick(DialogInterface dialog, int which) {
+                                         Intent intent1 = new Intent(FeedPostsAssociation.this, AssociationPage.class);
+                                         intent1.putExtra("id",association_user_id);
+                                         startActivity(intent1);
+                                     }
+                                 });
+                         AlertDialog alterdialod = builder.create();
+                         alterdialod.show();
+                     }
                     for (int i = 1; i <num_of_posts ; i++) {
                         int count = i;
                         String post_id = cur_posts.get(count);
@@ -94,7 +116,7 @@ public class FeedPostsAssociation extends AppCompatActivity {
             }
         });
 
-
+        progressDialog.dismiss();
 
     }
 

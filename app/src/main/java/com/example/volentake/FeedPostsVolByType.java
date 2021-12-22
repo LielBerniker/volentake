@@ -1,10 +1,13 @@
 package com.example.volentake;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
 
@@ -22,6 +25,7 @@ public class FeedPostsVolByType extends AppCompatActivity {
 
     private RecyclerView recyclePostsVolByType;
     private DatabaseReference mRootRef;
+    AlertDialog.Builder builder;
     String vol_user_id = "";
     String search_type = "";
     ArrayList<Pair<Assoc_post,String>> posts = new ArrayList<>();
@@ -30,6 +34,7 @@ public class FeedPostsVolByType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_vol_by_type);
+        builder = new AlertDialog.Builder(this);
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
@@ -59,6 +64,23 @@ public class FeedPostsVolByType extends AppCompatActivity {
                                 posts.add(pair1);
                             }
 
+                        }
+                        if(posts.size()==0)
+                        {
+                            progressDialog.dismiss();
+                            builder.setTitle("volunteering events")
+                                    .setMessage("there is not any volunteering events with the type: "+ search_type)
+                                    .setCancelable(true)
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent1 = new Intent(FeedPostsVolByType.this, VolunteerPage.class);
+                                            intent1.putExtra("id",vol_user_id);
+                                            startActivity(intent1);
+                                        }
+                                    });
+                            AlertDialog alterdialod = builder.create();
+                            alterdialod.show();
                         }
                         AdapterPostVol adapter = new AdapterPostVol( FeedPostsVolByType.this,vol_user_id,search_type,1);
                         adapter.setPosts(posts);
