@@ -8,83 +8,127 @@
 
     <TextView
         android:id="@+id/titleMainSearchPostsVol"
-        android:layout_width="94dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="254dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="Search Posts"
+        android:text="Search volunteering events"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewCityMainSearchPostsVol"
-        android:layout_width="72dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="28dp"
-        android:text="insert city"
+        android:id="@+id/txtlocationsearchmain"
+        android:layout_width="161dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:text="search by location"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleMainSearchPostsVol" />
+
+    <Button
+        android:id="@+id/btnTypeMainSearchPostsVol"
+        android:layout_width="108dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="6dp"
+        android:text="search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spineroftypepost" />
 
     <TextView
         android:id="@+id/textViewTypeMainSearchPostsVol"
         android:layout_width="72dp"
         android:layout_height="23dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="8dp"
         android:text="insert type"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCityMainSearchPostsVol" />
+        app:layout_constraintTop_toBottomOf="@+id/txttypesearchmain" />
 
     <EditText
         android:id="@+id/editTextCityMainSearchPostsVol"
-        android:layout_width="126dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="142dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewCityMainSearchPostsVol"
-        app:layout_constraintTop_toBottomOf="@+id/titleMainSearchPostsVol" />
-
-    <EditText
-        android:id="@+id/editTextTypeMainSearchPostsVol"
-        android:layout_width="126dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="56dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
-        app:layout_constraintStart_toEndOf="@+id/textViewTypeMainSearchPostsVol"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCityMainSearchPostsVol" />
+        app:layout_constraintTop_toBottomOf="@+id/txtlocationsearchmain" />
 
     <Button
         android:id="@+id/btnCityMainSearchPostsVol"
-        android:layout_width="82dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="117dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="7dp"
         android:text="search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.564"
-        app:layout_constraintStart_toEndOf="@+id/editTextCityMainSearchPostsVol"
-        app:layout_constraintTop_toBottomOf="@+id/titleMainSearchPostsVol" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCityMainSearchPostsVol" />
+
+    <TextView
+        android:id="@+id/textViewCityMainSearchPostsVol"
+        android:layout_width="72dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="16dp"
+        android:text="insert city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtlocationsearchmain" />
+
+    <TextView
+        android:id="@+id/txttypesearchmain"
+        android:layout_width="125dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="28dp"
+        android:text="search by type"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCityMainSearchPostsVol" />
+
+    <TextView
+        android:id="@+id/txtlastaddedsearchmain"
+        android:layout_width="157dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="28dp"
+        android:text="search by last added"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTypeMainSearchPostsVol" />
 
     <Button
-        android:id="@+id/btnTypeMainSearchPostsVol"
-        android:layout_width="82dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="56dp"
+        android:id="@+id/btnsearchbylastadded"
+        android:layout_width="100dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
         android:text="search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
-        app:layout_constraintStart_toEndOf="@+id/editTextTypeMainSearchPostsVol"
-        app:layout_constraintTop_toBottomOf="@+id/btnCityMainSearchPostsVol" />
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtlastaddedsearchmain" />
+
+    <Spinner
+        android:id="@+id/spineroftypepost"
+        android:layout_width="143dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewTypeMainSearchPostsVol"
+        app:layout_constraintTop_toBottomOf="@+id/txttypesearchmain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FeedPostsVol extends AppCompatActivity {
 
@@ -55,6 +56,7 @@ public class FeedPostsVol extends AppCompatActivity {
                           posts.add(pair1);
 
                       }
+                        Collections.reverse(posts);
                         AdapterPostVol adapter = new AdapterPostVol( FeedPostsVol.this,vol_user_id,"",2);
                         adapter.setPosts(posts);
 
