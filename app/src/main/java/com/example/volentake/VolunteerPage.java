@@ -1,6 +1,8 @@
 package com.example.volentake;
 
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Vol_user;
@@ -43,6 +46,7 @@ public class VolunteerPage extends AppCompatActivity {
     private TextView PhoneNumberInsert;
     private TextView EmailInsert;
     private ImageView profile_pic;
+    AlertDialog.Builder builder;
     //    firebase
     private DatabaseReference mDatabase;
     private StorageReference mystorge;
@@ -51,9 +55,14 @@ public class VolunteerPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_page);
+        builder = new AlertDialog.Builder(this);
 //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
 //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
@@ -102,10 +111,12 @@ public class VolunteerPage extends AppCompatActivity {
 
                                     final Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                                     profile_pic.setImageBitmap(bitmap);
+                                    progressDialog.dismiss();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
                         }
                     });
                 }
@@ -117,6 +128,7 @@ public class VolunteerPage extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // File not found
+                progressDialog.dismiss();
             }
         });
 
@@ -151,8 +163,25 @@ public class VolunteerPage extends AppCompatActivity {
 
 
         logOut.setOnClickListener(view -> {
-            Intent intent = new Intent(VolunteerPage.this, VolunteerLogIn.class);
-            startActivity(intent);
+            builder.setTitle("logout")
+                    .setMessage("you are about to log out")
+                    .setCancelable(true)
+                    .setPositiveButton("log out", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent1 = new Intent(VolunteerPage.this, VolunteerLogIn.class);
+                            startActivity(intent1);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alterdialod = builder.create();
+            alterdialod.show();
+
         });
     }
 }

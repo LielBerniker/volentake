@@ -62,7 +62,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addposttittle" />
 
@@ -91,7 +91,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPostalAddress"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPostName" />
 
@@ -118,7 +118,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="number"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addressnuminput3" />
 
@@ -155,7 +155,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="phone"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerporttype" />
 
@@ -180,7 +180,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/InputPhoneNum" />
 
@@ -254,7 +254,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputcity3" />
 
@@ -279,7 +279,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="number"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputstreet3" />
 

@@ -32,8 +32,10 @@
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
-                android:textSize="14sp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
@@ -195,9 +197,11 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:ems="10"
-                android:textSize="14sp"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailName" />
 
@@ -208,8 +212,10 @@
                 android:layout_marginTop="85dp"
                 android:layout_marginEnd="50dp"
                 android:ems="10"
-                android:textSize="14sp"
                 android:inputType="textPersonName"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/birthdateselector" />
 
@@ -220,7 +226,9 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="50dp"
                 android:ems="10"
-                android:textSize="14sp"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputcity" />
 
@@ -231,8 +239,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
-                android:textSize="14sp"
                 android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPhoneVolSU" />
 
@@ -243,8 +253,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
-                android:textSize="14sp"
                 android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputMail" />
 
@@ -254,9 +266,11 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:ems="10"
-                android:textSize="14sp"
                 android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
@@ -268,6 +282,8 @@
                 android:layout_marginEnd="50dp"
                 android:ems="10"
                 android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/insertStreet2" />
 
@@ -294,8 +310,9 @@
                 android:layout_marginEnd="40dp"
                 android:text="Select Birth Date"
                 android:textAlignment="center"
-                android:textSize="14sp"
-                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/oswald_font_wght"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputLastName" />
 
@@ -330,8 +347,10 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
-                android:textSize="14sp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:inputType="phone"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/insertHouseNumber2" />
 

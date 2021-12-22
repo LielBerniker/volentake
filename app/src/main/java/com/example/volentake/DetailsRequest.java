@@ -1,8 +1,10 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,10 +39,12 @@ public class DetailsRequest extends AppCompatActivity {
     String post_id;
     Request_vol cur_req;
     int numofvolreq;
+    AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_request);
+        builder = new AlertDialog.Builder(this);
         mRootRef = FirebaseDatabase.getInstance().getReference();
         //        get information bundle
         Bundle bun = null;
@@ -98,12 +102,44 @@ public class DetailsRequest extends AppCompatActivity {
             startActivity(intent);
         });
         approvebtn.setOnClickListener(view -> {
-            cur_req.setStatus(Status.APPROVED);
-            update_information(0);
+            builder.setTitle("approve request")
+                    .setMessage("are you sure you want to approve this request?")
+                    .setCancelable(true)
+                    .setPositiveButton("approve", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            cur_req.setStatus(Status.APPROVED);
+                            update_information(0);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alterdialod = builder.create();
+            alterdialod.show();
         });
         rejectbtn.setOnClickListener(view -> {
-            cur_req.setStatus(Status.REJECTED);
-            update_information(1);
+            builder.setTitle("reject request")
+                    .setMessage("are you sure you want to reject this request?")
+                    .setCancelable(true)
+                    .setPositiveButton("reject", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            cur_req.setStatus(Status.REJECTED);
+                            update_information(1);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alterdialod = builder.create();
+            alterdialod.show();
         });
     }
     public void update_information(int cur_status)

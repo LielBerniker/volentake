@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Pair;
 
@@ -29,6 +30,11 @@ public class FeedPostsVolByType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_vol_by_type);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
         Bundle bun = null;
         bun = getIntent().getExtras();
         if(bun != null)
@@ -59,6 +65,7 @@ public class FeedPostsVolByType extends AppCompatActivity {
 
                         recyclePostsVolByType.setAdapter(adapter);
                         recyclePostsVolByType.setLayoutManager(new GridLayoutManager(FeedPostsVolByType.this,1));
+                        progressDialog.dismiss();
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
