@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FeedPostsVolByCity extends AppCompatActivity {
 
@@ -82,6 +83,7 @@ public class FeedPostsVolByCity extends AppCompatActivity {
                             AlertDialog alterdialod = builder.create();
                             alterdialod.show();
                         }
+                        Collections.reverse(posts);
                         AdapterPostVol adapter = new AdapterPostVol(FeedPostsVolByCity.this, vol_user_id, search_city, 0);
                         adapter.setPosts(posts);
 
@@ -95,7 +97,7 @@ public class FeedPostsVolByCity extends AppCompatActivity {
                     }
                 });
         backBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(FeedPostsVolByCity.this, DetailsPostVol.class);
+            Intent intent = new Intent(FeedPostsVolByCity.this, MainSearchPostsVol.class);
             intent.putExtra("id", vol_user_id);
             startActivity(intent);
         });

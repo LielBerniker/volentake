@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class InboxAssociation extends AppCompatActivity {
@@ -105,6 +106,7 @@ public class InboxAssociation extends AppCompatActivity {
                                     requests.add(pair1);
                                     if(count+1==num_of_requests)
                                     {
+                                        Collections.reverse(requests);
                                         AdapterReqAssociation adapter = new AdapterReqAssociation( InboxAssociation.this,assoc_id);
                                         adapter.setListRequests(requests);
 

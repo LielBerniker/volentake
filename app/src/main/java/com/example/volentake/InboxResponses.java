@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class InboxResponses extends AppCompatActivity {
 
@@ -102,6 +103,7 @@ public class InboxResponses extends AppCompatActivity {
                                     responses.add(pair1);
                                     if(count+1==num_of_responses)
                                     {
+                                        Collections.reverse(responses);
                                         AdapterResponse adapter = new AdapterResponse( InboxResponses.this,vol_id);
                                         adapter.setResponses(responses);
 

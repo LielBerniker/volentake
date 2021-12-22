@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FeedPostsVolByType extends AppCompatActivity {
 
@@ -82,6 +83,7 @@ public class FeedPostsVolByType extends AppCompatActivity {
                             AlertDialog alterdialod = builder.create();
                             alterdialod.show();
                         }
+                        Collections.reverse(posts);
                         AdapterPostVol adapter = new AdapterPostVol(FeedPostsVolByType.this, vol_user_id, search_type, 1);
                         adapter.setPosts(posts);
 
@@ -95,7 +97,7 @@ public class FeedPostsVolByType extends AppCompatActivity {
                     }
                 });
         backBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(FeedPostsVolByType.this, DetailsPostVol.class);
+            Intent intent = new Intent(FeedPostsVolByType.this, MainSearchPostsVol.class);
             intent.putExtra("id", vol_user_id);
             startActivity(intent);
         });
