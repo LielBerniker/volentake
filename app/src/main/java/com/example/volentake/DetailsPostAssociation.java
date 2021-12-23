@@ -1,14 +1,20 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,13 +41,20 @@ public class DetailsPostAssociation extends AppCompatActivity {
     //    firebase
     private DatabaseReference mDatabase;
     private StorageReference mystorge;
+    AlertDialog.Builder builder;
     String association_user_id = "";
     String post_id = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_post_association);
-
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
+        builder = new AlertDialog.Builder(this);
         //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -92,6 +105,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
 
                                     final Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                                     post_pic.setImageBitmap(bitmap);
+                                    progressDialog.dismiss();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -106,7 +120,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                // File not found
+                progressDialog.dismiss();
             }
         });
 
@@ -127,5 +141,43 @@ public class DetailsPostAssociation extends AppCompatActivity {
             intent.putExtra("post_id",post_id);
             startActivity(intent);
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itembacktouser:
+                Intent intent1 = new Intent(DetailsPostAssociation.this,AssociationPage.class);
+                intent1.putExtra("id",association_user_id);
+                startActivity(intent1);
+                return true;
+            case R.id.itemlogout:
+                builder.setTitle("log out")
+                        .setMessage("are you sure you want to log out?")
+                        .setCancelable(true)
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent1 = new Intent(DetailsPostAssociation.this, AssociationLogIn.class);
+                                startActivity(intent1);
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alterdialod = builder.create();
+                alterdialod.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -1,11 +1,17 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,12 +36,20 @@ public class EditAssociation extends AppCompatActivity {
     private EditText addressnuminsert;
     private EditText assocInfo;
     private DatabaseReference mDatabase;
+    AlertDialog.Builder builder;
     String assoc_id = "";
     Assoc_user assoc_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_association);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
+        builder = new AlertDialog.Builder(this);
         //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
 //        get information bundle
@@ -69,6 +83,7 @@ public class EditAssociation extends AppCompatActivity {
                     assocInfo.setText(assoc_user.getAbout());
 
                 }
+                progressDialog.dismiss();
             }
         });
         add_changes.setOnClickListener(view -> {
@@ -99,5 +114,43 @@ public class EditAssociation extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itembacktouser:
+                Intent intent1 = new Intent(EditAssociation.this,AssociationPage.class);
+                intent1.putExtra("id",assoc_id);
+                startActivity(intent1);
+                return true;
+            case R.id.itemlogout:
+                builder.setTitle("log out")
+                        .setMessage("are you sure you want to log out?")
+                        .setCancelable(true)
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent1 = new Intent(EditAssociation.this, AssociationLogIn.class);
+                                startActivity(intent1);
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alterdialod = builder.create();
+                alterdialod.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
