@@ -37,7 +37,7 @@ public class FeedPostsVolByType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_vol_by_type);
-        backBtn = findViewById(R.id.back_activity_feed_posts_vol_by_city);
+        backBtn = findViewById(R.id.back_activity_feed_posts_vol_by_type);
         builder = new AlertDialog.Builder(this);
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
@@ -76,7 +76,7 @@ public class FeedPostsVolByType extends AppCompatActivity {
                                     .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
-                                            Intent intent1 = new Intent(FeedPostsVolByType.this, VolunteerPage.class);
+                                            Intent intent1 = new Intent(FeedPostsVolByType.this, MainSearchPostsVol.class);
                                             intent1.putExtra("id", vol_user_id);
                                             startActivity(intent1);
                                         }
