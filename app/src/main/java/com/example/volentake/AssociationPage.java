@@ -32,13 +32,13 @@ public class AssociationPage extends AppCompatActivity {
     private Button logOut;
     private Button see_posts;
     private Button inboxRequests;
-//    private TextView Nametxt;
+    //    private TextView Nametxt;
 //    private TextView PhoneNumbertxt;
 //    private TextView Emailtxt;
     private TextView NameInsert;
     private TextView PhoneNumberInsert;
     private TextView EmailInsert;
-    String assoc_id ;
+    String assoc_id;
     AlertDialog.Builder builder;
     //    firebase
     private DatabaseReference mDatabase;
@@ -60,29 +60,24 @@ public class AssociationPage extends AppCompatActivity {
         Bundle bun = null;
 
         bun = getIntent().getExtras();
-        if(bun != null)
-        {
+        if (bun != null) {
             assoc_id = bun.getString("id");
         }
-        edit = (Button)findViewById(R.id.btnEdit);
-        addPost = (Button)findViewById(R.id.addPost);
-        logOut = (Button)findViewById(R.id.btnBackToFeedOfPosts);
-        see_posts = (Button)findViewById(R.id.btnseeallposts);
-        inboxRequests = (Button)findViewById(R.id.btnInboxResponses);
-//        Nametxt = (TextView)findViewById(R.id.nametxt2);
-//        PhoneNumbertxt = (TextView)findViewById(R.id.phonenumbertxt2);
-//        Emailtxt = (TextView)findViewById(R.id.emailtxt2);
-        NameInsert = (TextView)findViewById(R.id.nameinsert2);
-        PhoneNumberInsert = (TextView)findViewById(R.id.phonenumberinsert2);
-        EmailInsert = (TextView)findViewById(R.id.emailinsert2);
+        edit = (Button) findViewById(R.id.btnEdit);
+        addPost = (Button) findViewById(R.id.addPost);
+        logOut = (Button) findViewById(R.id.btnBackToFeedOfPosts);
+        see_posts = (Button) findViewById(R.id.btnseeallposts);
+        inboxRequests = (Button) findViewById(R.id.btnInboxResponses);
+        NameInsert = (TextView) findViewById(R.id.nameinsert2);
+        PhoneNumberInsert = (TextView) findViewById(R.id.phonenumberinsert2);
+        EmailInsert = (TextView) findViewById(R.id.emailinsert2);
         mDatabase.child("assoc_users").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-                    Assoc_user cure_user =  task.getResult().getValue(Assoc_user.class);
+                } else {
+                    Assoc_user cure_user = task.getResult().getValue(Assoc_user.class);
                     NameInsert.setText(cure_user.getName());
                     PhoneNumberInsert.setText(cure_user.getPhone_num());
                     EmailInsert.setText(cure_user.getEmail());
@@ -92,13 +87,13 @@ public class AssociationPage extends AppCompatActivity {
         });
         edit.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, EditAssociation.class);
-            intent.putExtra("id",assoc_id);
+            intent.putExtra("id", assoc_id);
             startActivity(intent);
         });
 
         addPost.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, Add_post.class);
-            intent.putExtra("id",assoc_id);
+            intent.putExtra("id", assoc_id);
             startActivity(intent);
         });
 
@@ -109,7 +104,7 @@ public class AssociationPage extends AppCompatActivity {
                     .setPositiveButton("log out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent1 = new Intent(AssociationPage.this,  AssociationLogIn.class);
+                            Intent intent1 = new Intent(AssociationPage.this, AssociationLogIn.class);
                             startActivity(intent1);
                         }
                     })
@@ -124,22 +119,24 @@ public class AssociationPage extends AppCompatActivity {
         });
         see_posts.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, FeedPostsAssociation.class);
-            intent.putExtra("id",assoc_id);
+            intent.putExtra("id", assoc_id);
             startActivity(intent);
         });
         inboxRequests.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, InboxAssociation.class);
-            intent.putExtra("id",assoc_id);
+            intent.putExtra("id", assoc_id);
             startActivity(intent);
         });
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_bar, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

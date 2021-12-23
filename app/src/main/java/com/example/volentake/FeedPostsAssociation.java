@@ -46,15 +46,14 @@ public class FeedPostsAssociation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_posts_associations);
-        backBtn.findViewById(R.id.back_activity_feed_posts_associations);
+        backBtn = (Button) findViewById(R.id.back_activity_feed_posts_associations);
         builder = new AlertDialog.Builder(this);
-        ProgressDialog progressDialog
-                = new ProgressDialog(this);
+        ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
         progressDialog.setCancelable(false);
         progressDialog.setIcon(R.drawable.logovector_01);
         progressDialog.show();
-//        get information bundle
+        // get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
         if (bun != null) {
@@ -126,18 +125,20 @@ public class FeedPostsAssociation extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_bar, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itembacktouser:
-                Intent intent1 = new Intent(FeedPostsAssociation.this,AssociationPage.class);
-                intent1.putExtra("id",association_user_id);
+                Intent intent1 = new Intent(FeedPostsAssociation.this, AssociationPage.class);
+                intent1.putExtra("id", association_user_id);
                 startActivity(intent1);
                 return true;
             case R.id.itemlogout:
