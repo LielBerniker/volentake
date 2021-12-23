@@ -54,7 +54,6 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="insert type"
-        android:fontFamily="@font/oswald_font_wght"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent"
