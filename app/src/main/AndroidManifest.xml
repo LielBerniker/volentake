@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".FeedPostsVolShuffle"
+            android:exported="false" />
+        <activity
             android:name=".EditCredentialsAssoc"
             android:exported="false" />
         <activity
