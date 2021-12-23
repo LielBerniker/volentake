@@ -11,7 +11,10 @@
         android:layout_width="360dp"
         android:layout_height="220dp"
         android:layout_marginTop="60dp"
-        android:textSize="20sp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +26,7 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,14 +52,29 @@
         android:id="@+id/btnupdatenumofvolreq"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/blue"
         android:drawableLeft="@drawable/ic_update_1"
         android:fontFamily="@font/oswald_font_wght"
         android:text="update"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requerdnumberofvoledirrequest" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/backToMainMenu"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/oswald_font_wght"
+        android:drawableLeft="@drawable/ic_back_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

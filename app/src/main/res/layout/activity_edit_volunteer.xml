@@ -28,8 +28,9 @@
             <Button
                 android:id="@+id/btnPageRequst"
                 android:layout_width="100dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="#268BBC"
                 android:drawableLeft="@drawable/ic_update_1"
@@ -39,8 +40,8 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailinsert3"
+                app:layout_constraintVertical_bias="1.0"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -321,6 +322,24 @@
                 android:text="Select Birth Date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addressnumberinsert" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/blue"
+                android:drawableLeft="@drawable/ic_back_1"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/backToMainMenu"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailinsert3"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

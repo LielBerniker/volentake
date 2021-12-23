@@ -47,9 +47,9 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/associationNameTXT"
                 android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
@@ -59,9 +59,9 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="56dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/phoneText"
                 android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetnumtxt2" />
 
@@ -78,39 +78,15 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
 
             <TextView
-                android:id="@+id/txtPassW1"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="56dp"
-                android:text="@string/passwordText"
-                android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/associnfoinsert" />
-
-            <TextView
-                android:id="@+id/txtPassW2"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/confirmPasswordTXT"
-                android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassW1" />
-
-            <TextView
                 android:id="@+id/cityAssociationInputTXT1"
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="30dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/addressText"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
@@ -123,6 +99,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
@@ -136,6 +113,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputName" />
@@ -149,6 +127,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="phone"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetnuminsert2" />
@@ -156,50 +135,26 @@
             <EditText
                 android:id="@+id/associnfoinsert"
                 android:layout_width="180dp"
-                android:layout_height="125dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputPhone" />
 
-            <EditText
-                android:id="@+id/inputPassW1"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
-                android:ems="10"
-                android:fontFamily="@font/oswald_font_wght"
-                android:inputType="textPassword"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/associnfoinsert" />
-
-            <EditText
-                android:id="@+id/inputPassW2"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="40dp"
-                android:ems="10"
-                android:fontFamily="@font/oswald_font_wght"
-                android:inputType="textPassword"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassW1" />
-
             <Button
                 android:id="@+id/btnaddchanges2"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="#268BBC"
                 android:drawableLeft="@drawable/ic_update_1"
@@ -208,11 +163,10 @@
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassW2" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_credentials_btn_activity_edit_association"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/citytxt2"
@@ -220,9 +174,9 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="40dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/cityText"
                 android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cityAssociationInputTXT1" />
 
@@ -232,9 +186,9 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/streetText"
                 android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/citytxt2" />
 
@@ -244,9 +198,9 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/numberText"
                 android:textSize="14sp"
-                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streettxt2" />
 
@@ -259,6 +213,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cityinsert2" />
@@ -272,9 +227,43 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="number"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetinsert2" />
+
+            <Button
+                android:id="@+id/edit_credentials_btn_activity_edit_association"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/blue"
+                android:drawableLeft="@drawable/ic_edit_1"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/edit_credentials_details_Text"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/associnfoinsert" />
+
+            <Button
+                android:id="@+id/back_btn_activity_edit_association"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/blue"
+                android:drawableLeft="@drawable/ic_back_1"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/backToMainMenu"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_credentials_btn_activity_edit_association"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

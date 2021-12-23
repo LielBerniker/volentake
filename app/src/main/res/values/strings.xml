@@ -51,6 +51,12 @@
     <string name="type_of_volunteeringText">Type of Volunteering:</string>
     <string name="ageText">Age:</string>
     <string name="quitText">Quit</string>
+    <string name="edit_credentials_details_Text">Edit Credentials Details</string>
+    <string name="change_emailText">Change Email:</string>
+    <string name="change_passwordText">Change Password:</string>
+    <string name="current_passwordText">Current Password:</string>
+    <string name="new_passwordText">New Password:</string>
+    <string name="confirm_new_passwordText">Confirm New Password:</string>
     <string-array name="types">
         <item>animals</item>
         <item>cleaning</item>

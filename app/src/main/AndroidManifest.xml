@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Volentake">
         <activity
+            android:name=".EditCredentialsAssoc"
+            android:exported="false" />
+        <activity
+            android:name=".EditCredentialsVol"
+            android:exported="false" />
+        <activity
             android:name=".MainSearchPostsVol"
             android:exported="false" />
         <activity
