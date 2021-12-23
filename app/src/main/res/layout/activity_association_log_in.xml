@@ -14,7 +14,7 @@
         android:layout_width="85dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="85dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/emailText"
         android:textAlignment="textStart"
@@ -27,30 +27,26 @@
         android:layout_width="85dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/passwordText"
         android:textAlignment="textStart"
-        app:layout_constraintBottom_toTopOf="@+id/associationloginbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailtext2"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/associationuseremail"
         android:layout_width="230dp"
         android:layout_height="45dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:fontFamily="@font/oswald_font_wght"
         android:inputType="textEmailAddress"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/emailtext2"
         app:layout_constraintTop_toBottomOf="@+id/associationloglntitle"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -60,17 +56,13 @@
         android:layout_height="45dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="65dp"
         android:ems="10"
         android:fontFamily="@font/oswald_font_wght"
         android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/associationloginbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/passwordtext2"
         app:layout_constraintTop_toBottomOf="@+id/associationuseremail"
-        app:layout_constraintVertical_bias="0.131"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <Button
@@ -88,6 +80,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/associationpassword"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -148,7 +142,6 @@
         android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo_01" />
 </androidx.constraintlayout.widget.ConstraintLayout>

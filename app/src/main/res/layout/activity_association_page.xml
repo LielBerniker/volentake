@@ -24,6 +24,18 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/btnEdit"
+
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/ic_edit_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
             <FrameLayout
                 android:id="@+id/frameLayout2"
                 android:layout_width="match_parent"
@@ -32,10 +44,11 @@
 
                 <ImageView
                     android:layout_width="420dp"
-                    android:layout_height="80dp"
-                    android:contentDescription="@string/detailsbackground"
+                    android:layout_height="100dp"
+                    android:background="@drawable/box_shadow"
+                    android:outlineAmbientShadowColor="@color/black"
+                    android:outlineSpotShadowColor="@color/black"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/page_back_03"
                     tools:visibility="visible" />
 
             </FrameLayout>
@@ -54,19 +67,18 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/btnInboxResponses"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnEdit"
+                app:layout_constraintTop_toBottomOf="@+id/btnseeallposts"
                 tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/addPost"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginEnd="60dp"
                 android:background="@drawable/button_background"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/black"
                 android:text="@string/plusBTN"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
@@ -78,58 +90,49 @@
                 app:layout_constraintTop_toBottomOf="@+id/btnInboxResponses"
                 tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/btnEdit"
-                android:layout_width="215dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/blue"
-                android:drawableLeft="@drawable/ic_edit_1"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/EditAssociation"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnseeallposts"
-                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/nameinsert2"
                 android:layout_width="160dp"
                 android:layout_height="40dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
 
             <TextView
                 android:id="@+id/emailinsert2"
-                android:layout_width="130dp"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginTop="7dp"
+                android:alpha="0.8"
                 android:fontFamily="@font/oswald_font_wght"
-                android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2" />
 
             <TextView
                 android:id="@+id/phonenumberinsert2"
-                android:layout_width="130dp"
+                android:layout_width="100dp"
                 android:layout_height="30dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginTop="7dp"
-                android:layout_marginEnd="55dp"
+                android:alpha="0.8"
                 android:fontFamily="@font/oswald_font_wght"
-                android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2" />
 
 
@@ -141,7 +144,7 @@
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2"
-                app:srcCompat="@drawable/ic_email_2" />
+                app:srcCompat="@drawable/ic_email_1" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -149,9 +152,9 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/phoneicon"
-                app:layout_constraintEnd_toStartOf="@+id/phonenumberinsert2"
+                app:layout_constraintStart_toEndOf="@+id/emailinsert2"
                 app:layout_constraintTop_toBottomOf="@+id/nameinsert2"
-                app:srcCompat="@drawable/ic_phone_2" />
+                app:srcCompat="@drawable/ic_phone_1" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -173,11 +176,12 @@
                 android:layout_width="215dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
-                android:backgroundTint="@color/green"
+                android:background="@drawable/white_button_shadow"
+                android:drawableLeft="@drawable/ic_heart_2"
                 android:fontFamily="@font/oswald_font_wght"
+                android:paddingLeft="10dp"
                 android:text="My Volunteering Events"
-                android:drawableLeft="@drawable/ic_heart_1"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -199,7 +203,7 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/btnBackToFeedOfPosts"
-                app:layout_constraintTop_toBottomOf="@+id/btnEdit" />
+                app:layout_constraintTop_toBottomOf="@+id/btnseeallposts" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

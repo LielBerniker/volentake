@@ -40,7 +40,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/volunteercreateuser"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volunteeruserpassword"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/volunteercreateuser"
@@ -78,18 +80,15 @@
         android:id="@+id/volunteeruserpassword"
         android:layout_width="230dp"
         android:layout_height="45dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="65dp"
         android:ems="10"
         android:fontFamily="@font/oswald_font_wght"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/passwordtext"
         app:layout_constraintTop_toBottomOf="@+id/volunteeruseremail"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -97,19 +96,16 @@
         android:id="@+id/volunteeruseremail"
         android:layout_width="230dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:fontFamily="@font/oswald_font_wght"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/volunteeruserpassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/emailtext"
         app:layout_constraintTop_toBottomOf="@+id/volunteerloglntitle"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
@@ -117,13 +113,11 @@
         android:layout_width="85dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/passwordText"
         android:textAlignment="textStart"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/volunteerloginbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailtext"
         tools:ignore="MissingConstraints" />
@@ -133,7 +127,7 @@
         android:layout_width="85dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="85dp"
         android:fontFamily="@font/oswald_font_wght"
         android:text="@string/emailText"
         android:textAlignment="textStart"

@@ -20,10 +20,12 @@ public class MainSearchPostsVol extends AppCompatActivity {
     private Button btnCityMainSearchPostsVol, btnTypeMainSearchPostsVol, btnlastaddedMainSearchPostsVol;
     private EditText editTextCityMainSearchPostsVol;
     private Spinner spintype;
+    private Button backBtn;
     AlertDialog.Builder builder;
-     String vol_user_id ;
+    String vol_user_id;
     String txtType;
     String txtcity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,55 +34,62 @@ public class MainSearchPostsVol extends AppCompatActivity {
         //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
-        if(bun != null)
-        {
-           vol_user_id = bun.getString("id");
+        if (bun != null) {
+            vol_user_id = bun.getString("id");
         }
 
-        btnCityMainSearchPostsVol = (Button)findViewById(R.id.btnCityMainSearchPostsVol);
-        btnTypeMainSearchPostsVol = (Button)findViewById(R.id.btnTypeMainSearchPostsVol);
-        btnlastaddedMainSearchPostsVol = (Button)findViewById(R.id.btnsearchbylastadded);
-        editTextCityMainSearchPostsVol = (EditText)findViewById(R.id.editTextCityMainSearchPostsVol);
+        btnCityMainSearchPostsVol = (Button) findViewById(R.id.btnCityMainSearchPostsVol);
+        btnTypeMainSearchPostsVol = (Button) findViewById(R.id.btnTypeMainSearchPostsVol);
+        btnlastaddedMainSearchPostsVol = (Button) findViewById(R.id.btnsearchbylastadded);
+        editTextCityMainSearchPostsVol = (EditText) findViewById(R.id.editTextCityMainSearchPostsVol);
+        backBtn = (Button) findViewById(R.id.back_activity_main_search_posts_vol);
         spintype = (Spinner) findViewById(R.id.spineroftypepost);
         ArrayAdapter<String> typeadapter = new ArrayAdapter<String>(MainSearchPostsVol.this,
-                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.types));
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.types));
         typeadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spintype.setAdapter(typeadapter);
 
         btnCityMainSearchPostsVol.setOnClickListener(view -> {
             txtcity = editTextCityMainSearchPostsVol.getText().toString();
             Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVolByCity.class);
-            intent.putExtra("id",vol_user_id);
-            intent.putExtra("city",txtcity);
+            intent.putExtra("id", vol_user_id);
+            intent.putExtra("city", txtcity);
             startActivity(intent);
         });
 
         btnTypeMainSearchPostsVol.setOnClickListener(view -> {
-           txtType = spintype.getSelectedItem().toString();
+            txtType = spintype.getSelectedItem().toString();
             Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVolByType.class);
-            intent.putExtra("id",vol_user_id);
-          intent.putExtra("type",txtType);
+            intent.putExtra("id", vol_user_id);
+            intent.putExtra("type", txtType);
             startActivity(intent);
         });
         btnlastaddedMainSearchPostsVol.setOnClickListener(view -> {
             txtType = spintype.getSelectedItem().toString();
             Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVol.class);
-            intent.putExtra("id",vol_user_id);
+            intent.putExtra("id", vol_user_id);
+            startActivity(intent);
+        });
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainSearchPostsVol.this, VolunteerPage.class);
+            intent.putExtra("id", vol_user_id);
             startActivity(intent);
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_bar, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itembacktouser:
-                Intent intent1 = new Intent(MainSearchPostsVol.this,VolunteerPage.class);
-                intent1.putExtra("id",vol_user_id);
+                Intent intent1 = new Intent(MainSearchPostsVol.this, VolunteerPage.class);
+                intent1.putExtra("id", vol_user_id);
                 startActivity(intent1);
                 return true;
             case R.id.itemlogout:

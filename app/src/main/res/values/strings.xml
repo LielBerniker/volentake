@@ -57,6 +57,9 @@
     <string name="current_passwordText">Current Password:</string>
     <string name="new_passwordText">New Password:</string>
     <string name="confirm_new_passwordText">Confirm New Password:</string>
+    <string name="inboxText">Inbox</string>
+    <string name="searchText">Search</string>
+    <string name="fromText">From:</string>
     <string-array name="types">
         <item>animals</item>
         <item>cleaning</item>

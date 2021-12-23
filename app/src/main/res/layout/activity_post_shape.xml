@@ -31,7 +31,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/post_back_3"
+            android:background="@drawable/box_shadow"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -64,7 +64,6 @@
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/txtLocationPost"
                 app:layout_constraintTop_toBottomOf="@+id/numVolOfPost" />
@@ -74,13 +73,12 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="7dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="city"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/txtMailVol"
                 app:layout_constraintTop_toBottomOf="@+id/nameMessage" />
 
@@ -95,7 +93,6 @@
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/txtNumVolOfPost"
                 app:layout_constraintTop_toBottomOf="@+id/mailVolunteer" />
 
@@ -104,7 +101,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:drawableLeft="@drawable/ic_location_1"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
@@ -145,7 +142,7 @@
                 android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:backgroundTint="@color/dark_blue3"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="+ See More Details"

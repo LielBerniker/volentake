@@ -26,7 +26,7 @@
 
 
             <Button
-                android:id="@+id/btnPageRequst"
+                android:id="@+id/update_btn_back_btn_activity_edit_volunteer"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -40,7 +40,7 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailinsert3"
+                app:layout_constraintTop_toBottomOf="@+id/edit_credentials_btn_activity_edit_volunteer"
                 app:layout_constraintVertical_bias="1.0"
                 tools:ignore="MissingConstraints" />
 
@@ -96,49 +96,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/AddressEditVolText" />
 
             <TextView
-                android:id="@+id/txtPassword1"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/passwordText"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDate" />
-
-            <TextView
-                android:id="@+id/txtPassword2"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/confirmPasswordTXT"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPassword1" />
-
-            <TextView
-                android:id="@+id/emailtxt3"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/emailText"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
-
-            <TextView
                 android:id="@+id/txtDate"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="56dp"
-                android:text="@string/birthOfDateText"
+                android:layout_marginTop="50dp"
                 android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/birthOfDateText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -154,35 +118,10 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phunenumberinsert3" />
-
-            <EditText
-                android:id="@+id/inputPassword1"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="40dp"
-                android:ems="10"
-                android:fontFamily="@font/oswald_font_wght"
-                android:inputType="textPassword"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputdateselector2" />
-
-            <EditText
-                android:id="@+id/inputPassword2"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="40dp"
-                android:ems="10"
-                android:fontFamily="@font/oswald_font_wght"
-                android:inputType="textPassword"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassword1" />
 
             <TextView
                 android:id="@+id/streettxt"
@@ -217,6 +156,8 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
@@ -230,6 +171,7 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -240,11 +182,12 @@
                 android:id="@+id/streetinsert"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="50dp"
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputcity" />
@@ -253,11 +196,12 @@
                 android:id="@+id/addressnumberinsert"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="50dp"
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="number"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetinsert" />
@@ -283,22 +227,10 @@
                 android:ems="10"
                 android:fontFamily="@font/oswald_font_wght"
                 android:inputType="phone"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputLastName2" />
-
-            <EditText
-                android:id="@+id/emailinsert3"
-                android:layout_width="180dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="40dp"
-                android:ems="10"
-                android:fontFamily="@font/oswald_font_wght"
-                android:inputType="textEmailAddress"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
 
             <TextView
                 android:id="@+id/AddressEditVolText"
@@ -320,15 +252,16 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Select Birth Date"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addressnumberinsert" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/back_btn_activity_edit_volunteer"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="@color/blue"
                 android:drawableLeft="@drawable/ic_back_1"
@@ -338,8 +271,23 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailinsert3"
+                app:layout_constraintTop_toBottomOf="@+id/edit_credentials_btn_activity_edit_volunteer"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/edit_credentials_btn_activity_edit_volunteer"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/blue"
+                android:drawableLeft="@drawable/ic_edit_1"
+                android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/edit_credentials_details_Text"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputdateselector2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

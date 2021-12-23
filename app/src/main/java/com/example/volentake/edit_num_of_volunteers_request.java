@@ -11,9 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.Address;
 import com.example.myapplication.Assoc_post;
-import com.example.myapplication.Association_post;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class edit_num_of_volunteers_request extends AppCompatActivity {
     private EditText numofvol;
     private TextView contant_req;
-    private Button updatedata;
+    private Button updateData;
+    private Button backBtn;
     private DatabaseReference mDatabase;
     String assoc_id="";
     String vol_user_name="";
@@ -49,7 +48,8 @@ public class edit_num_of_volunteers_request extends AppCompatActivity {
             numofvolreq = bun.getInt("numofvolreq");
             post_name = bun.getString("post_name");
         }
-        updatedata = (Button)findViewById(R.id.btnupdatenumofvolreq);
+        updateData = (Button)findViewById(R.id.update_btn_activity_edit_num_of_volunteers_request);
+        backBtn = (Button)findViewById(R.id.back_btn_activity_edit_num_of_volunteers_request);
         contant_req = (TextView) findViewById(R.id.editnumofvolunteerdescription);
         numofvol = (EditText) findViewById(R.id.insrtnumofvolafterrequest);
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -71,9 +71,14 @@ public class edit_num_of_volunteers_request extends AppCompatActivity {
                 "the request included a number of: " + String.valueOf(numofvolreq) + " volunteers\n" +
                 "please update the number of volunteer needed for this volunteering event";
         contant_req.setText(massage_con);
-        updatedata.setOnClickListener(view -> {
+        updateData.setOnClickListener(view -> {
             String txtnewnumofvol = numofvol.getText().toString();
             update_post(txtnewnumofvol);
+        });
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(edit_num_of_volunteers_request.this, DetailsRequest.class);
+            intent.putExtra("id", assoc_id);
+            startActivity(intent);
         });
 
     }

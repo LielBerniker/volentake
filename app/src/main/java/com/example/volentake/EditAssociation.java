@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class EditAssociation extends AppCompatActivity {
     private Button add_changes;
+    private Button backBtn;
+    private Button editCredentialsBtn;
     private EditText NameInsert;
     private EditText PhoneNumberInsert;
     private EditText addresscityinsert;
@@ -60,6 +62,8 @@ public class EditAssociation extends AppCompatActivity {
             assoc_id = bun.getString("id");
         }
         add_changes = (Button)findViewById(R.id.btnaddchanges2);
+        backBtn = (Button)findViewById(R.id.back_btn_activity_edit_association);
+        editCredentialsBtn = (Button)findViewById(R.id.edit_credentials_btn_activity_edit_association);
         NameInsert = (EditText)findViewById(R.id.inputName);
 
         PhoneNumberInsert = (EditText)findViewById(R.id.inputPhone);
@@ -94,6 +98,18 @@ public class EditAssociation extends AppCompatActivity {
             String txtphonenum = PhoneNumberInsert.getText().toString();
             String txtabout = assocInfo.getText().toString();
             update_data(txtName,txtaddrresscity,txtaddrressstreet,txtaddrressnum,txtphonenum,txtabout);
+        });
+
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(EditAssociation.this, AssociationPage.class);
+            intent.putExtra("id", assoc_id);
+            startActivity(intent);
+        });
+
+        editCredentialsBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(EditAssociation.this, EditCredentialsAssoc.class);
+            intent.putExtra("id", assoc_id);
+            startActivity(intent);
         });
     }
     private void update_data(String name,String city,String street,int streetnum, String phonenum,String about)

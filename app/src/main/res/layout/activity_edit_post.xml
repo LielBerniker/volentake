@@ -26,7 +26,7 @@
 
 
             <Button
-                android:id="@+id/btnUpdatePost"
+                android:id="@+id/update_btn_activity_edit_post"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -41,7 +41,7 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPostDescription"
+                app:layout_constraintTop_toBottomOf="@+id/description_activity_edit_post"
                 app:layout_constraintVertical_bias="1.0"
                 tools:ignore="MissingConstraints" />
 
@@ -55,70 +55,75 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/associationNameTXT"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/editPostName"
+                app:layout_constraintEnd_toStartOf="@+id/post_name_activity_edit_post"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
             <EditText
-                android:id="@+id/editPostName"
+                android:id="@+id/post_name_activity_edit_post"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text=""
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePost" />
 
             <EditText
-                android:id="@+id/editPostLocation"
+                android:id="@+id/city_activity_edit_post"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text=""
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPostName" />
+                app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
             <EditText
-                android:id="@+id/editPostNumVol"
+                android:id="@+id/num_of_vol_activity_edit_post"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text=""
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPostLocation" />
+                app:layout_constraintTop_toBottomOf="@+id/house_num_activity_edit_post" />
 
             <EditText
-                android:id="@+id/editPostPhone"
+                android:id="@+id/phone_activity_edit_post"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text=""
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerpostedittype" />
 
             <EditText
-                android:id="@+id/editPostDescription"
+                android:id="@+id/description_activity_edit_post"
                 android:layout_width="200dp"
                 android:layout_height="125dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text=""
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPostPhone" />
+                app:layout_constraintTop_toBottomOf="@+id/phone_activity_edit_post" />
 
             <TextView
                 android:id="@+id/txtTitleUpdatePost"
@@ -140,29 +145,29 @@
                 android:id="@+id/txtUpdateLocationPost"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/locationText"
+                android:text="@string/cityText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/editPostLocation"
+                app:layout_constraintEnd_toStartOf="@+id/city_activity_edit_post"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePost" />
+                app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
             <TextView
                 android:id="@+id/cityInsertVol1"
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/num_of_participantsText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/editPostNumVol"
+                app:layout_constraintEnd_toStartOf="@+id/num_of_vol_activity_edit_post"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
             <TextView
                 android:id="@+id/txtUpdateTypePost"
@@ -185,7 +190,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/phoneText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/editPostPhone"
+                app:layout_constraintEnd_toStartOf="@+id/phone_activity_edit_post"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateTypePost" />
@@ -199,7 +204,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/descriptionText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/editPostDescription"
+                app:layout_constraintEnd_toStartOf="@+id/description_activity_edit_post"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdatePhonePost" />
@@ -211,10 +216,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPostNumVol" />
+                app:layout_constraintTop_toBottomOf="@+id/num_of_vol_activity_edit_post" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/back_btn_activity_edit_post"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="60dp"
@@ -228,8 +233,65 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editPostDescription"
+                app:layout_constraintTop_toBottomOf="@+id/description_activity_edit_post"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/streetText"
+                android:fontFamily="@font/oswald_font_wght"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPost" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/numberText"
+                android:fontFamily="@font/oswald_font_wght"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+            <EditText
+                android:id="@+id/street_activity_edit_post"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="50dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:fontFamily="@font/oswald_font_wght"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/city_activity_edit_post" />
+
+            <EditText
+                android:id="@+id/house_num_activity_edit_post"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="50dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:fontFamily="@font/oswald_font_wght"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/street_activity_edit_post" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/addressText"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePost" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

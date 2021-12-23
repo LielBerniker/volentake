@@ -24,6 +24,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
+
             <FrameLayout
                 android:id="@+id/frameLayout"
                 android:layout_width="match_parent"
@@ -33,11 +34,52 @@
                 <ImageView
                     android:layout_width="420dp"
                     android:layout_height="160dp"
-                    android:contentDescription="@string/detailsbackground"
+                    android:background="@drawable/box_shadow"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/page_back_03"
                     tools:visibility="visible" />
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/avatarCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.42000002"
+                    tools:ignore="MissingConstraints">
+
+
+                    <ImageView
+                        android:id="@+id/imagevolprofile"
+                        android:layout_width="105dp"
+                        android:layout_height="105dp"
+                        android:background="@color/white"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/voltitle"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btnaddpic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:alpha="0.8"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="100dp"
+                    android:background="@drawable/ic_edit_3"
+                    app:layout_constraintBottom_toBottomOf="@+id/avatarCardView"
+                    app:layout_constraintEnd_toEndOf="@+id/avatarCardView" />
 
             </FrameLayout>
 
@@ -50,10 +92,11 @@
                 android:layout_marginBottom="40dp"
                 android:alpha="1"
                 android:backgroundTint="#268BBC"
+                android:drawableStart="@drawable/ic_back_1"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/logOutText"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,11 +107,12 @@
                 android:id="@+id/phonenumberinsert"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="3dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
-                android:textColor="@color/dark_blue2"
+                android:textColor="@color/white"
                 android:textSize="14sp"
+                android:alpha="0.8"
                 app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/emailinsert" />
 
@@ -76,42 +120,31 @@
                 android:id="@+id/emailinsert"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="3dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
-                android:textColor="@color/dark_blue2"
+                android:textColor="@color/white"
                 android:textSize="14sp"
+                android:alpha="0.8"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
 
-            <Button
-                android:id="@+id/btnEditVol"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:alpha="1"
-                android:backgroundTint="#268BBC"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="@string/edit_details"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/btnInboxResponses"
-                app:layout_constraintStart_toEndOf="@+id/btnaddpic"
-                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-                tools:ignore="MissingConstraints" />
+
 
             <Button
                 android:id="@+id/btnActivePosts"
-                android:layout_width="220dp"
+                android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:alpha="1"
-                android:backgroundTint="@color/green"
-                android:drawableLeft="@drawable/ic_love_1"
+                android:background="@drawable/white_button_shadow"
+                android:drawableStart="@drawable/ic_heart_2"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="active volunteerings"
-                android:textColor="#FFFFFF"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Active Volunteering Events"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -122,116 +155,91 @@
                 android:id="@+id/firstnameinsert"
                 android:layout_width="130dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/frameLayout" />
 
-            <Button
-                android:id="@+id/btnaddpic"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="#268BBC"
-                android:drawableLeft="@drawable/ic_edit_3"
-                android:fontFamily="@font/oswald_font_wght"
-                android:text="Edit Image"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
             <Button
                 android:id="@+id/btnInboxResponses"
-                android:layout_width="100dp"
+                android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="40dp"
                 android:alpha="1"
-                android:backgroundTint="#268BBC"
-                android:drawableLeft="@drawable/ic_inbox"
+                android:background="@drawable/white_button_shadow"
+                android:drawableStart="@drawable/ic_email_3"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="inbox"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/inboxText"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginStart="40dp"
-                android:elevation="10dp"
-                app:cardCornerRadius="100dp"
-                app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.12"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.42000002"
-                tools:ignore="MissingConstraints">
-
-                <ImageView
-                    android:id="@+id/imagevolprofile"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
-                    android:background="@color/white"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/frameLayout"
-                    app:layout_constraintTop_toBottomOf="@+id/voltitle"
-                    tools:srcCompat="@tools:sample/avatars" />
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="140dp"
                 android:layout_marginTop="15dp"
-                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert"
-                app:srcCompat="@drawable/ic_email_2"
+                app:srcCompat="@drawable/ic_email_1"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btnEditVol"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="40dp"
+                android:alpha="0.8"
+                android:background="@drawable/ic_edit_1"
+                app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+                app:layout_constraintTop_toTopOf="@+id/frameLayout"
                 tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintStart_toEndOf="@+id/cardView"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6"
-                app:srcCompat="@drawable/ic_phone_2"
+                app:srcCompat="@drawable/ic_phone_1"
                 tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/searchPostBTN"
-                android:layout_width="220dp"
+                android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:alpha="1"
-                android:backgroundTint="@color/green"
-                android:drawableLeft="@drawable/search_icon_foreground"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_button_shadow"
+                android:drawableStart="@drawable/ic_search_1"
                 android:fontFamily="@font/oswald_font_wght"
-                android:paddingRight="30dp"
-                android:text="Search Volunteering"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Search for Volunteering"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnEditVol" />
+                app:layout_constraintTop_toBottomOf="@+id/btnInboxResponses" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

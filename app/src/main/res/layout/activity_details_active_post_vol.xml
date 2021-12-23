@@ -63,6 +63,7 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Name"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -77,6 +78,7 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="city"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailPostNameActivePostVol" />
@@ -89,6 +91,7 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="numVol"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailHouseNumberPostActivePostVol" />
@@ -101,6 +104,7 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="type"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -115,6 +119,7 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="Phone Number"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -129,6 +134,7 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="description"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -248,6 +254,7 @@
                 android:layout_marginEnd="50dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="street"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailCityPostActivePostVol" />
@@ -260,6 +267,7 @@
                 android:layout_marginEnd="50dp"
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="number"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailStreetPostActivePostVol" />

@@ -20,11 +20,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Address;
-import com.example.myapplication.Request;
-import com.example.myapplication.Request_vol;
-import com.example.myapplication.Response;
-import com.example.myapplication.Response_Interface;
-import com.example.myapplication.Status;
 import com.example.myapplication.Vol_user;
 import com.example.myapplication.Volunteer_user;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,10 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 
 public class VolunteerUserSignUp extends AppCompatActivity {
@@ -79,7 +71,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
         inputPhone = (EditText) findViewById(R.id.inputPhoneVolSU);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword1);
         inputPassword2 =(EditText)  findViewById(R.id.inputPassword2);
-        register = (Button)findViewById(R.id.btnPageRequst);
+        register = (Button)findViewById(R.id.update_btn_back_btn_activity_edit_volunteer);
         logInVolunteer = (Button)findViewById(R.id.btnBackToFeedOfPosts);
         mDisplayDate = (TextView) findViewById(R.id.birthdateselector);
 

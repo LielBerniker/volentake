@@ -12,101 +12,105 @@
 
 
     <RelativeLayout
-        android:layout_width="465dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="371dp"
-            android:layout_height="136dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="40dp"
-            android:background="#A3C9D7"
-            android:backgroundTint="#A3C9D7"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/white_button_shadow"
             android:gravity="center"
             android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/nameResponse2Vol"
-                android:layout_width="172dp"
-                android:layout_height="19dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/mailVolunteerResponse2Vol"
                 android:layout_width="153dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/oswald_font_wght"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/txtMailVolResponse2Vol"
-                app:layout_constraintTop_toBottomOf="@+id/nameResponse2Vol" />
+                app:layout_constraintTop_toBottomOf="@+id/assocNameResponse2Vol" />
 
             <TextView
                 android:id="@+id/assocNameResponse2Vol"
-                android:layout_width="137dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
                 android:textAlignment="viewStart"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toEndOf="@+id/txtPostNameResponse2Vol"
-                app:layout_constraintTop_toBottomOf="@+id/mailVolunteerResponse2Vol" />
-
-            <TextView
-                android:id="@+id/txtMailVolResponse2Vol"
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:text="Mail"
-                android:textAlignment="viewStart"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.147"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameResponse2Vol" />
 
             <TextView
-                android:id="@+id/txtPostNameResponse2Vol"
-                android:layout_width="100dp"
+                android:id="@+id/txtMailVolResponse2Vol"
+                android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="4dp"
-                android:text="Association name"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.7"
+                android:background="@drawable/ic_email_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPostNameResponse2Vol" />
+
+            <TextView
+                android:id="@+id/txtPostNameResponse2Vol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Association Name:"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.147"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtMailVolResponse2Vol" />
+                app:layout_constraintTop_toBottomOf="@+id/nameResponse2Vol" />
 
             <Button
                 android:id="@+id/btnSeeDetailsResponse2Vol"
-                android:layout_width="137dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="See More Details"
-                android:textColor="#268BBC"
-                android:textSize="12sp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_more_1"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/assocNameResponse2Vol" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
