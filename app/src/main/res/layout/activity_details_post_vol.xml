@@ -165,11 +165,11 @@
 
             <TextView
                 android:id="@+id/txtTitleUpdatePost"
-                android:layout_width="232dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="Post Details"
+                android:text="@string/volunteering_detailsText"
                 android:textAlignment="center"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
@@ -250,8 +250,8 @@
 
             <ImageView
                 android:id="@+id/PostImage2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

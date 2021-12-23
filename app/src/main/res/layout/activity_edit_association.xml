@@ -236,7 +236,7 @@
                 android:id="@+id/edit_credentials_btn_activity_edit_association"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:backgroundTint="@color/blue"
                 android:drawableLeft="@drawable/ic_edit_1"
                 android:fontFamily="@font/oswald_font_wght"

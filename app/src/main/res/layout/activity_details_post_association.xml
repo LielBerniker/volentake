@@ -34,7 +34,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="edit volunteering"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostAss"
@@ -51,7 +51,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="@string/backToMainMenu"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -162,11 +162,11 @@
 
             <TextView
                 android:id="@+id/txtTitleUpdatePostAss"
-                android:layout_width="232dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font_wght"
-                android:text="Post Details"
+                android:text="@string/volunteering_detailsText"
                 android:textAlignment="center"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
@@ -246,8 +246,8 @@
 
             <ImageView
                 android:id="@+id/PostImage2Ass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -264,7 +264,7 @@
                 android:fontFamily="@font/oswald_font_wght"
                 android:text="edit picture"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -277,6 +277,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/cityText"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostAss" />
 
@@ -287,6 +288,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/streetText"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -297,6 +299,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/numberText"
+                android:fontFamily="@font/oswald_font_wght"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
