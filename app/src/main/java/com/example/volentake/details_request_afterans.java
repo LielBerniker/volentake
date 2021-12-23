@@ -1,11 +1,17 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,6 +27,7 @@ public class details_request_afterans extends AppCompatActivity {
     private TextView PostName,volfullname,volemail,numofvol,content,status_inform;
     private Button back,seevoldetails;
     private DatabaseReference mRootRef;
+    AlertDialog.Builder builder;
     String  request_id ;
     String assoc_id = "";
     String post_name = "";
@@ -33,6 +40,13 @@ public class details_request_afterans extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_request_afterans);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
+        builder = new AlertDialog.Builder(this);
         mRootRef = FirebaseDatabase.getInstance().getReference();
         //        get information bundle
         Bundle bun = null;
@@ -78,6 +92,7 @@ public class details_request_afterans extends AppCompatActivity {
                         status_inform.setText(rejected_massage);
                     }
                 }
+                progressDialog.dismiss();
             }
         });
         back.setOnClickListener(view -> {
@@ -96,5 +111,43 @@ public class details_request_afterans extends AppCompatActivity {
             intent.putExtra("status_def",1);
             startActivity(intent);
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itembacktouser:
+                Intent intent1 = new Intent(details_request_afterans.this,AssociationPage.class);
+                intent1.putExtra("id",assoc_id);
+                startActivity(intent1);
+                return true;
+            case R.id.itemlogout:
+                builder.setTitle("log out")
+                        .setMessage("are you sure you want to log out?")
+                        .setCancelable(true)
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent1 = new Intent(details_request_afterans.this, AssociationLogIn.class);
+                                startActivity(intent1);
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alterdialod = builder.create();
+                alterdialod.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

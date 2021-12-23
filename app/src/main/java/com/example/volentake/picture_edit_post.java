@@ -2,9 +2,11 @@ package com.example.volentake;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -12,6 +14,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -38,13 +43,14 @@ public class picture_edit_post extends AppCompatActivity {
     // instance for firebase storage and StorageReference
     FirebaseStorage storage;
     StorageReference storageReference;
+    AlertDialog.Builder builder;
 String assoc_id = "";
     String post_id = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_edit_post);
-
+        builder = new AlertDialog.Builder(this);
 //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
@@ -228,6 +234,44 @@ String assoc_id = "";
 
                                 }
                             });
+        }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itembacktouser:
+                Intent intent1 = new Intent(picture_edit_post.this,AssociationPage.class);
+                intent1.putExtra("id",assoc_id);
+                startActivity(intent1);
+                return true;
+            case R.id.itemlogout:
+                builder.setTitle("log out")
+                        .setMessage("are you sure you want to log out?")
+                        .setCancelable(true)
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent1 = new Intent(picture_edit_post.this, AssociationLogIn.class);
+                                startActivity(intent1);
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alterdialod = builder.create();
+                alterdialod.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

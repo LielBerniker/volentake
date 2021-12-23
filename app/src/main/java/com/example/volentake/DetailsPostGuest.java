@@ -3,6 +3,7 @@ package com.example.volentake;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -40,6 +41,12 @@ public class DetailsPostGuest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_post_guest);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
 //        firebase code
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -86,6 +93,7 @@ public class DetailsPostGuest extends AppCompatActivity {
 
                                     final Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                                     post_pic.setImageBitmap(bitmap);
+                                    progressDialog.dismiss();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -100,7 +108,7 @@ public class DetailsPostGuest extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                // File not found
+                progressDialog.dismiss();
             }
         });
 

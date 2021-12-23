@@ -4,11 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +48,12 @@ public class DetailsRequest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_request);
+        ProgressDialog progressDialog
+                = new ProgressDialog(this);
+        progressDialog.setTitle("loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.setIcon(R.drawable.logovector_01);
+        progressDialog.show();
         builder = new AlertDialog.Builder(this);
         mRootRef = FirebaseDatabase.getInstance().getReference();
         //        get information bundle
@@ -80,6 +90,7 @@ public class DetailsRequest extends AppCompatActivity {
                     numofvol.setText(Integer.toString(cur_req.getNum_of_vol()));
                     content.setText(cur_req.getContent());
                     vol_user_id = cur_req.getVol_user_id();
+                    progressDialog.dismiss();
                 }
             }
         });
@@ -216,5 +227,43 @@ public class DetailsRequest extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itembacktouser:
+                Intent intent1 = new Intent(DetailsRequest.this,AssociationPage.class);
+                intent1.putExtra("id",assoc_id);
+                startActivity(intent1);
+                return true;
+            case R.id.itemlogout:
+                builder.setTitle("log out")
+                        .setMessage("are you sure you want to log out?")
+                        .setCancelable(true)
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent1 = new Intent(DetailsRequest.this, AssociationLogIn.class);
+                                startActivity(intent1);
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alterdialod = builder.create();
+                alterdialod.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
