@@ -41,6 +41,7 @@ public class EditAssociation extends AppCompatActivity {
     private DatabaseReference mDatabase;
     AlertDialog.Builder builder;
     String assoc_id = "";
+    String assoc_email = "";
     Assoc_user assoc_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,7 @@ public class EditAssociation extends AppCompatActivity {
                     addressstreetinsert.setText(assoc_user.getAddress().getStreet());
                     addressnuminsert.setText(Integer.toString(assoc_user.getAddress().getNumber()));
                     assocInfo.setText(assoc_user.getAbout());
+                    assoc_email = assoc_user.getEmail();
 
                 }
                 progressDialog.dismiss();
@@ -116,6 +118,7 @@ public class EditAssociation extends AppCompatActivity {
         editCredentialsBtn.setOnClickListener(view -> {
             Intent intent = new Intent(EditAssociation.this, EditCredentialsAssoc.class);
             intent.putExtra("id", assoc_id);
+            intent.putExtra("assoc_email", assoc_email);
             startActivity(intent);
         });
     }

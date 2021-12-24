@@ -51,6 +51,7 @@ public class EditVolunteer extends AppCompatActivity {
     String user_id = "";
     Vol_user cure_user;
     String BirthDay;
+    String vol_email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +96,7 @@ public class EditVolunteer extends AppCompatActivity {
                     addressstreetinsert.setText(cure_user.getAddress().getStreet());
                     addressnuminsert.setText(Integer.toString(cure_user.getAddress().getNumber()));
                     mDisplayDate.setText(cure_user.getBirth_date());
-
+                    vol_email = cure_user.getEmail();
                 }
                 progressDialog.dismiss();
             }
@@ -145,6 +146,7 @@ public class EditVolunteer extends AppCompatActivity {
         editCredentialsBtn.setOnClickListener(view -> {
             Intent intent = new Intent(EditVolunteer.this, EditCredentialsVol.class);
             intent.putExtra("id", user_id);
+            intent.putExtra("vol_email", vol_email);
             startActivity(intent);
         });
         backBtn.setOnClickListener(view -> {
