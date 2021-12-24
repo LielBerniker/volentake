@@ -115,8 +115,11 @@ public class EditAssociation extends AppCompatActivity {
     private void update_data(String name,String city,String street,int streetnum, String phonenum,String about)
     {
         Address address = new Address(city,street,streetnum);
-        Association_user assoc_user2 = new Assoc_user(phonenum,address,name,assoc_user.getEmail(),about);
-        mDatabase.child("assoc_users").child(assoc_id).setValue(assoc_user2).addOnCompleteListener(new OnCompleteListener<Void>() {
+        assoc_user.setAddress(address);
+        assoc_user.setName(name);
+        assoc_user.setPhone_num(phonenum);
+        assoc_user.setAbout(about);
+        mDatabase.child("assoc_users").child(assoc_id).setValue(assoc_user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){

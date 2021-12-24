@@ -32,6 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 
 public class VolunteerUserSignUp extends AppCompatActivity {
@@ -113,7 +114,7 @@ public class VolunteerUserSignUp extends AppCompatActivity {
                 String txtEmail = inputMail.getText().toString();
                 String txtPassword1 = inputPassword1.getText().toString();
                 String txtPassword2 = inputPassword2.getText().toString();
-                String txtCity = inputCity.getText().toString();
+                String txtCity = inputCity.getText().toString().toLowerCase(Locale.ROOT);
                 String txtStreet = inputStreet.getText().toString();
                 String txtHouseNumber = inputHouseNumber.getText().toString();
                 String txtBirthDay = BirthDay;

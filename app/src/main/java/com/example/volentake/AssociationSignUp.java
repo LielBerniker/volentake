@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class AssociationSignUp extends AppCompatActivity {
@@ -76,7 +77,7 @@ public class AssociationSignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String txtName = inputName.getText().toString();
-                String txtCity = inputCity.getText().toString();
+                String txtCity = inputCity.getText().toString().toLowerCase(Locale.ROOT);
 
                 String txtStreet = inputStreet.getText().toString();
                 String txtHouseNumber = inputHouseNumber.getText().toString();

@@ -109,6 +109,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
                         }
                     });
                 } catch (IOException e) {

@@ -32,6 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 public class Add_post extends AppCompatActivity {
     private EditText inputName;
@@ -86,7 +87,7 @@ public class Add_post extends AppCompatActivity {
                 String txtName = inputName.getText().toString();
                 String txtPhone = inputPhone.getText().toString();
                 String txtDescription = inputDescription.getText().toString();
-                String txtcity = inputCity.getText().toString();
+                String txtcity = inputCity.getText().toString().toLowerCase(Locale.ROOT);
                 String txtstreet = inputStreet.getText().toString();
                 String txtnum = inputNum.getText().toString();
                 String txtType = spintype.getSelectedItem().toString();

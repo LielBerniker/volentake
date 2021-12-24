@@ -40,7 +40,6 @@ public class EditVolunteer extends AppCompatActivity {
     private EditText FirstNameInsert;
     private EditText LastNameInsert;
     private EditText PhoneNumberInsert;
-    private EditText EmailInsert;
     private EditText addresscityinsert;
     private EditText addressstreetinsert;
     private EditText addressnuminsert;
@@ -151,8 +150,12 @@ public class EditVolunteer extends AppCompatActivity {
 
     private void update_data(String fname, String lname, String city, String street, int streetnum, String phonenum, String birthdaycur) {
         Address address = new Address(city, street, streetnum);
-        Volunteer_user cur_user2 = new Vol_user(fname, lname, address, phonenum, birthdaycur, cure_user.getEmail());
-        mDatabase.child("vol_users").child(user_id).setValue(cur_user2).addOnCompleteListener(new OnCompleteListener<Void>() {
+        cure_user.setAddress(address);
+        cure_user.setBirth_date(birthdaycur);
+        cure_user.setFirst_name(fname);
+        cure_user.setLast_name(lname);
+        cure_user.setPhone_num(phonenum);
+        mDatabase.child("vol_users").child(user_id).setValue(cure_user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {

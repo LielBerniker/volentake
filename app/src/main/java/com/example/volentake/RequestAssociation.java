@@ -153,9 +153,17 @@ public class RequestAssociation extends AppCompatActivity {
                                                 intent.putExtra("type", search_keyword);
                                                 startActivity(intent);
                                             }
-                                            else
+                                            else if(state==2)
                                             {
                                                 Intent intent = new Intent(RequestAssociation.this, FeedPostsVol.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                intent.putExtra("id", vol_user_id);
+                                                intent.putExtra("no_word", search_keyword);
+                                                startActivity(intent);
+                                            }
+                                            else
+                                            {
+                                                Intent intent = new Intent(RequestAssociation.this, FeedPostsVolShuffle.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                 intent.putExtra("id", vol_user_id);
                                                 intent.putExtra("no_word", search_keyword);

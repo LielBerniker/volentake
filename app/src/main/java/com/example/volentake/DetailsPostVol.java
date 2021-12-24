@@ -116,6 +116,7 @@ public class DetailsPostVol extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
                         }
                     });
                 } catch (IOException e) {
@@ -140,12 +141,18 @@ public class DetailsPostVol extends AppCompatActivity {
                 intent.putExtra("id", vol_user_id);
                 intent.putExtra("type", search_keyword);
                 startActivity(intent);
-            } else {
+            } else if(state == 2){
                 Intent intent = new Intent(DetailsPostVol.this, FeedPostsVol.class);
                 intent.putExtra("id", vol_user_id);
                 intent.putExtra("no_word", search_keyword);
                 startActivity(intent);
             }
+         else {
+            Intent intent = new Intent(DetailsPostVol.this, FeedPostsVolShuffle.class);
+            intent.putExtra("id", vol_user_id);
+            intent.putExtra("no_word", search_keyword);
+            startActivity(intent);
+        }
         });
         btnPageRequest.setOnClickListener(view -> {
             builder.setTitle("apply request")

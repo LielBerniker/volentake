@@ -84,7 +84,7 @@ public class FeedPostsVolShuffle extends AppCompatActivity {
                             alterdialod.show();
                         }
                         Collections.shuffle(posts);
-                        AdapterPostVol adapter = new AdapterPostVol(FeedPostsVolShuffle.this, vol_user_id, "", 0);
+                        AdapterPostVol adapter = new AdapterPostVol(FeedPostsVolShuffle.this, vol_user_id, "", 3);
                         adapter.setPosts(posts);
 
                         recyclePostsVolShuffle.setAdapter(adapter);

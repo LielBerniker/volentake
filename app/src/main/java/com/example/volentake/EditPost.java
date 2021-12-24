@@ -27,6 +27,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Locale;
+
 public class EditPost extends AppCompatActivity {
     private Button update;
     private Button back_btn;
@@ -100,7 +102,7 @@ public class EditPost extends AppCompatActivity {
         });
         update.setOnClickListener(view -> {
             String txtName = NameInsert.getText().toString();
-            String txtaddrresscity = cityInsert.getText().toString();
+            String txtaddrresscity = cityInsert.getText().toString().toLowerCase(Locale.ROOT);
             String txtphonenum = PhoneNumberInsert.getText().toString();
             String txttype = spintype.getSelectedItem().toString();
             String txtpostnumofvol = postnumofvol.getText().toString();
@@ -117,8 +119,13 @@ public class EditPost extends AppCompatActivity {
 
     private void update_post(String name, String city, String phonenum, String type, String numofvol, String desc) {
         Address address = new Address(city, "s1", 2424);
-        Association_post post_n2 = new Assoc_post(name, address, Integer.valueOf(numofvol), type, phonenum, assoc_id, desc);
-        mDatabase.child("posts").child(post_id).setValue(post_n2).addOnCompleteListener(new OnCompleteListener<Void>() {
+       post_n.setNum_of_participants(Integer.valueOf(numofvol));
+        post_n.setDescription(desc);
+        post_n.setLocation(address);
+        post_n.setName(name);
+        post_n.setType(type);
+        post_n.setPhone_number(phonenum);
+        mDatabase.child("posts").child(post_id).setValue(post_n).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {

@@ -15,9 +15,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainSearchPostsVol extends AppCompatActivity {
 
-    private Button btnCityMainSearchPostsVol, btnTypeMainSearchPostsVol, btnlastaddedMainSearchPostsVol;
+    private Button btnCityMainSearchPostsVol, btnTypeMainSearchPostsVol, btnlastaddedMainSearchPostsVol,btnshufflesearch;
     private EditText editTextCityMainSearchPostsVol;
     private Spinner spintype;
     private Button backBtn;
@@ -37,7 +39,7 @@ public class MainSearchPostsVol extends AppCompatActivity {
         if (bun != null) {
             vol_user_id = bun.getString("id");
         }
-
+        btnshufflesearch = (Button) findViewById(R.id.btnshufflesearch);
         btnCityMainSearchPostsVol = (Button) findViewById(R.id.btnCityMainSearchPostsVol);
         btnTypeMainSearchPostsVol = (Button) findViewById(R.id.btnTypeMainSearchPostsVol);
         btnlastaddedMainSearchPostsVol = (Button) findViewById(R.id.btnsearchbylastadded);
@@ -50,7 +52,7 @@ public class MainSearchPostsVol extends AppCompatActivity {
         spintype.setAdapter(typeadapter);
 
         btnCityMainSearchPostsVol.setOnClickListener(view -> {
-            txtcity = editTextCityMainSearchPostsVol.getText().toString();
+            txtcity = editTextCityMainSearchPostsVol.getText().toString().toLowerCase(Locale.ROOT);
             Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVolByCity.class);
             intent.putExtra("id", vol_user_id);
             intent.putExtra("city", txtcity);
@@ -67,6 +69,12 @@ public class MainSearchPostsVol extends AppCompatActivity {
         btnlastaddedMainSearchPostsVol.setOnClickListener(view -> {
             txtType = spintype.getSelectedItem().toString();
             Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVol.class);
+            intent.putExtra("id", vol_user_id);
+            startActivity(intent);
+        });
+        btnshufflesearch.setOnClickListener(view -> {
+            txtType = spintype.getSelectedItem().toString();
+            Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVolShuffle.class);
             intent.putExtra("id", vol_user_id);
             startActivity(intent);
         });

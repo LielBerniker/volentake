@@ -15,6 +15,7 @@ import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.example.myapplication.AdapterReqAssociation;
 import com.example.myapplication.AdapterResponse;
@@ -34,7 +35,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class InboxResponses extends AppCompatActivity {
-
+    private Button back;
     private RecyclerView recycleResponses;
     private DatabaseReference mRootRef;
     AlertDialog.Builder builder;
@@ -62,6 +63,7 @@ public class InboxResponses extends AppCompatActivity {
 
         recycleResponses = findViewById(R.id.recycleResponses);
         mRootRef = FirebaseDatabase.getInstance().getReference();
+        back = (Button) findViewById(R.id.backtovolfromresponses);
 
         mRootRef.child("vol_users").child(vol_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -123,6 +125,11 @@ public class InboxResponses extends AppCompatActivity {
 
                 }
             }
+        });
+        back.setOnClickListener(view -> {
+            Intent intent = new Intent(InboxResponses.this,VolunteerPage.class);
+            intent.putExtra("id", vol_id);
+            startActivity(intent);
         });
     }
     @Override
