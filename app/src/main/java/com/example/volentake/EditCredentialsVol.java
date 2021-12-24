@@ -1,12 +1,17 @@
 package com.example.volentake;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,12 +35,14 @@ public class EditCredentialsVol extends AppCompatActivity {
     private String vol_cur_email;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
+    AlertDialog.Builder builder;
     Vol_user vol_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_credentials_vol);
+        builder = new AlertDialog.Builder(this);
 //        firebase
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -132,5 +139,43 @@ public class EditCredentialsVol extends AppCompatActivity {
                 Toast.makeText(EditCredentialsVol.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itembacktouser:
+                Intent intent1 = new Intent(EditCredentialsVol.this,VolunteerPage.class);
+                intent1.putExtra("id",vol_user_id);
+                startActivity(intent1);
+                return true;
+            case R.id.itemlogout:
+                builder.setTitle("log out")
+                        .setMessage("are you sure you want to log out?")
+                        .setCancelable(true)
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent1 = new Intent(EditCredentialsVol.this,VolunteerLogIn.class);
+                                startActivity(intent1);
+                            }
+                        })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alterdialod = builder.create();
+                alterdialod.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
