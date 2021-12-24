@@ -113,7 +113,6 @@ public class AssociationSignUp extends AppCompatActivity {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Address address = new Address(city,street,Integer.parseInt(housenum));
-                Date date = new Date();
                 String user_id = mAuth.getCurrentUser().getUid();
                 Association_user cur_user = new Assoc_user(phone,address,Name,email,about);
 

@@ -67,13 +67,11 @@ public class MainSearchPostsVol extends AppCompatActivity {
             startActivity(intent);
         });
         btnlastaddedMainSearchPostsVol.setOnClickListener(view -> {
-            txtType = spintype.getSelectedItem().toString();
             Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVol.class);
             intent.putExtra("id", vol_user_id);
             startActivity(intent);
         });
         btnshufflesearch.setOnClickListener(view -> {
-            txtType = spintype.getSelectedItem().toString();
             Intent intent = new Intent(MainSearchPostsVol.this, FeedPostsVolShuffle.class);
             intent.putExtra("id", vol_user_id);
             startActivity(intent);

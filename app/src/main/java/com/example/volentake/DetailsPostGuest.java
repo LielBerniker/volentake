@@ -30,7 +30,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class DetailsPostGuest extends AppCompatActivity {
-    private TextView PostName,PostCity,PostStreet,Poststnum,NumOfVol,PostType,PostPhoneNum, PostDescription;
+    private TextView PostName,PostCity,NumOfVol,PostType,PostPhoneNum, PostDescription;
     private Button back;
     private ImageView post_pic;
     //    firebase
@@ -63,6 +63,7 @@ public class DetailsPostGuest extends AppCompatActivity {
         PostPhoneNum = (TextView)findViewById(R.id.detailPhoneNumberPostGuest);
         PostDescription = (TextView)findViewById(R.id.detailDescriptionPostGuest);
         PostType = (TextView)findViewById(R.id.detailTypePostGuest);
+        PostCity = (TextView)findViewById(R.id.detailLocationPostGuest);
         post_pic = (ImageView)findViewById(R.id.PostImage2Guest);
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -78,6 +79,7 @@ public class DetailsPostGuest extends AppCompatActivity {
                     PostPhoneNum.setText(cur_post.getPhone_number());
                     PostDescription.setText(cur_post.getDescription());
                     PostType.setText(cur_post.getType());
+                    PostCity.setText(cur_post.getLocation().getCity());
                 }
             }
         });

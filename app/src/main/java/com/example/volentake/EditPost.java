@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -92,6 +93,8 @@ public class EditPost extends AppCompatActivity {
                     NameInsert.setText(post_n.getName());
                     PhoneNumberInsert.setText(post_n.getPhone_number());
                     cityInsert.setText(post_n.getLocation().getCity());
+                    streetInsert.setText(post_n.getLocation().getStreet());
+                    houseNumberInsert.setText(Integer.toString(post_n.getLocation().getNumber()));
                     postnumofvol.setText(Integer.toString(post_n.getNum_of_participants()));
                     int spinnerPosition = typeadapter.getPosition(post_n.getType());
                     spintype.setSelection(spinnerPosition);
@@ -103,11 +106,19 @@ public class EditPost extends AppCompatActivity {
         update.setOnClickListener(view -> {
             String txtName = NameInsert.getText().toString();
             String txtaddrresscity = cityInsert.getText().toString().toLowerCase(Locale.ROOT);
+            String txtaddrresshousenum = houseNumberInsert.getText().toString();
+            String txtaddrressstreet = streetInsert.getText().toString();
             String txtphonenum = PhoneNumberInsert.getText().toString();
             String txttype = spintype.getSelectedItem().toString();
             String txtpostnumofvol = postnumofvol.getText().toString();
             String txtpostdesc = postdescreption.getText().toString();
-            update_post(txtName, txtaddrresscity, txtphonenum, txttype, txtpostnumofvol, txtpostdesc);
+            if (TextUtils.isEmpty(txtName) || TextUtils.isEmpty(txtaddrresscity ) || TextUtils.isEmpty(txtaddrresshousenum) || TextUtils.isEmpty(txtaddrressstreet) || TextUtils.isEmpty(txtphonenum)
+                    || TextUtils.isEmpty(txttype) || TextUtils.isEmpty(txtpostnumofvol)  || TextUtils.isEmpty(txtpostdesc) ) {
+                Toast.makeText(EditPost.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                update_post(txtName, txtaddrresscity, txtphonenum, txttype, txtpostnumofvol, txtpostdesc, txtaddrressstreet, txtaddrresshousenum);
+            }
         });
         back_btn.setOnClickListener(view -> {
             Intent intent = new Intent(EditPost.this, DetailsPostAssociation.class);
@@ -117,8 +128,8 @@ public class EditPost extends AppCompatActivity {
         });
     }
 
-    private void update_post(String name, String city, String phonenum, String type, String numofvol, String desc) {
-        Address address = new Address(city, "s1", 2424);
+    private void update_post(String name, String city, String phonenum, String type, String numofvol, String desc,String street,String housenum) {
+        Address address = new Address(city, street, Integer.parseInt(housenum));
        post_n.setNum_of_participants(Integer.valueOf(numofvol));
         post_n.setDescription(desc);
         post_n.setLocation(address);

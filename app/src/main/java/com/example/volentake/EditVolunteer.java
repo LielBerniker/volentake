@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -130,10 +131,16 @@ public class EditVolunteer extends AppCompatActivity {
             String txtLastName = LastNameInsert.getText().toString();
             String txtaddrresscity = addresscityinsert.getText().toString();
             String txtaddrressstreet = addressstreetinsert.getText().toString();
-            int txtaddrressnum = Integer.parseInt(addressnuminsert.getText().toString());
+            String txtaddrressnum = addressnuminsert.getText().toString();
             String txtphonenum = PhoneNumberInsert.getText().toString();
             String txtbirhday = mDisplayDate.getText().toString();
-            update_data(txtFirstName, txtLastName, txtaddrresscity, txtaddrressstreet, txtaddrressnum, txtphonenum, txtbirhday);
+            if (TextUtils.isEmpty(txtFirstName) || TextUtils.isEmpty(txtLastName ) || TextUtils.isEmpty(txtaddrresscity) || TextUtils.isEmpty(txtaddrressstreet) || TextUtils.isEmpty(txtaddrressnum)
+                    || TextUtils.isEmpty(txtbirhday) || TextUtils.isEmpty(txtphonenum )  ) {
+                Toast.makeText(EditVolunteer.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                update_data(txtFirstName, txtLastName, txtaddrresscity, txtaddrressstreet, txtaddrressnum, txtphonenum, txtbirhday);
+            }
         });
         editCredentialsBtn.setOnClickListener(view -> {
             Intent intent = new Intent(EditVolunteer.this, EditCredentialsVol.class);
@@ -148,8 +155,8 @@ public class EditVolunteer extends AppCompatActivity {
         });
     }
 
-    private void update_data(String fname, String lname, String city, String street, int streetnum, String phonenum, String birthdaycur) {
-        Address address = new Address(city, street, streetnum);
+    private void update_data(String fname, String lname, String city, String street, String streetnum, String phonenum, String birthdaycur) {
+        Address address = new Address(city, street, Integer.parseInt(streetnum));
         cure_user.setAddress(address);
         cure_user.setBirth_date(birthdaycur);
         cure_user.setFirst_name(fname);

@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -94,10 +95,16 @@ public class EditAssociation extends AppCompatActivity {
             String txtName = NameInsert.getText().toString();
             String txtaddrresscity = addresscityinsert.getText().toString();
             String txtaddrressstreet = addressstreetinsert.getText().toString();
-            int txtaddrressnum = Integer.parseInt(addressnuminsert.getText().toString());
+            String  txtaddrressnum = addressnuminsert.getText().toString();
             String txtphonenum = PhoneNumberInsert.getText().toString();
             String txtabout = assocInfo.getText().toString();
-            update_data(txtName,txtaddrresscity,txtaddrressstreet,txtaddrressnum,txtphonenum,txtabout);
+            if (TextUtils.isEmpty(txtName) || TextUtils.isEmpty(txtaddrresscity) || TextUtils.isEmpty(txtaddrressstreet) || TextUtils.isEmpty(txtaddrressnum) || TextUtils.isEmpty(txtphonenum)
+                    || TextUtils.isEmpty(txtabout) ) {
+                Toast.makeText(EditAssociation.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                update_data(txtName, txtaddrresscity, txtaddrressstreet, txtaddrressnum, txtphonenum, txtabout);
+            }
         });
 
         backBtn.setOnClickListener(view -> {
@@ -112,9 +119,9 @@ public class EditAssociation extends AppCompatActivity {
             startActivity(intent);
         });
     }
-    private void update_data(String name,String city,String street,int streetnum, String phonenum,String about)
+    private void update_data(String name,String city,String street,String  streetnum, String phonenum,String about)
     {
-        Address address = new Address(city,street,streetnum);
+        Address address = new Address(city,street,Integer.parseInt(streetnum));
         assoc_user.setAddress(address);
         assoc_user.setName(name);
         assoc_user.setPhone_num(phonenum);

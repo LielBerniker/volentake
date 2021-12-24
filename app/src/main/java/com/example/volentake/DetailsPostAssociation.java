@@ -75,6 +75,9 @@ public class DetailsPostAssociation extends AppCompatActivity {
         PostPhoneNum = (TextView) findViewById(R.id.detailPhoneNumberPostAss);
         PostDescription = (TextView) findViewById(R.id.detailDescriptionPostAss);
         PostType = (TextView) findViewById(R.id.detailTypePostAss);
+        PostStreet = (TextView)findViewById(R.id.streetEditPostAssoc);
+        PostCity = (TextView)findViewById(R.id.cityEditPostAssoc);
+        Poststnum = (TextView)findViewById(R.id.numberHouseEditPostAssoc);
         post_pic = (ImageView) findViewById(R.id.PostImage2Ass);
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -89,6 +92,9 @@ public class DetailsPostAssociation extends AppCompatActivity {
                     PostPhoneNum.setText(cur_post.getPhone_number());
                     PostDescription.setText(cur_post.getDescription());
                     PostType.setText(cur_post.getType());
+                    PostStreet.setText(cur_post.getLocation().getStreet());
+                    PostCity.setText(cur_post.getLocation().getCity());
+                    Poststnum.setText(Integer.toString(cur_post.getLocation().getNumber()));
                 }
             }
         });
