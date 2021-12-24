@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FeedPostsAssociation extends AppCompatActivity {
 
@@ -102,6 +103,7 @@ public class FeedPostsAssociation extends AppCompatActivity {
                                     Pair<Assoc_post, String> pair1 = new Pair<>(cur_post2, post_id);
                                     posts.add(pair1);
                                     if (count + 1 == num_of_posts) {
+                                        Collections.reverse(posts);
                                         AdapterPostAssociation adapter = new AdapterPostAssociation(FeedPostsAssociation.this, association_user_id);
                                         adapter.setPosts(posts);
 

@@ -122,7 +122,7 @@ public class EditPost extends AppCompatActivity {
         });
         back_btn.setOnClickListener(view -> {
             Intent intent = new Intent(EditPost.this, DetailsPostAssociation.class);
-            intent.putExtra("id", assoc_id);
+            intent.putExtra("assoc_id", assoc_id);
             intent.putExtra("post_id", post_id);
             startActivity(intent);
         });
