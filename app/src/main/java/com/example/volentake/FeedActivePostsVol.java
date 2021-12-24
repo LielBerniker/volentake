@@ -105,7 +105,6 @@ public class FeedActivePostsVol extends AppCompatActivity {
                                     Pair<Assoc_post, String> pair1 = new Pair<>(cur_post2, post_id);
                                     posts.add(pair1);
                                     if (count + 1 == num_of_posts) {
-                                        Collections.reverse(posts);
                                         AdapterActivePostVol adapter = new AdapterActivePostVol(FeedActivePostsVol.this, vol_user_id);
                                         adapter.setPosts(posts);
 
