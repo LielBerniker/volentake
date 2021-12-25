@@ -11,10 +11,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,6 +36,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.659"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostAss"
                 tools:ignore="MissingConstraints" />
@@ -54,8 +55,10 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.657"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btneditpostpic"
+                app:layout_constraintVertical_bias="1.0"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -258,7 +261,7 @@
                 android:id="@+id/btneditpostpic"
                 android:layout_width="180dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:backgroundTint="#268BBC"
                 android:drawableLeft="@drawable/ic_image_1"
                 android:fontFamily="@font/oswald_font_wght"
@@ -266,7 +269,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.659"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnPageEditPostsAss" />
 
@@ -276,8 +279,8 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/cityText"
                 android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/cityText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostAss" />
 
@@ -287,8 +290,8 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/streetText"
                 android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/streetText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -298,8 +301,8 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/numberText"
                 android:fontFamily="@font/oswald_font_wght"
+                android:text="@string/numberText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -328,6 +331,18 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetEditPostAssoc" />
+
+            <Button
+                android:id="@+id/btn_delete_volunteerassoc"
+                android:layout_width="131dp"
+                android:layout_height="79dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="32dp"
+                android:text="delete volunteering"
+                app:layout_constraintEnd_toStartOf="@+id/btnPageEditPostsAss"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostAss" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -67,4 +67,5 @@ public interface Volunteer_user {
      * @return  return user active posts,
      */
     public ArrayList<String> getActive_posts();
+
     }

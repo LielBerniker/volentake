@@ -18,8 +18,12 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.Assoc_post;
+import com.example.myapplication.Assoc_user;
+import com.example.myapplication.Status;
+import com.example.myapplication.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,7 +40,7 @@ import java.io.IOException;
 
 public class DetailsPostAssociation extends AppCompatActivity {
     private TextView PostName, PostCity, PostStreet, Poststnum, NumOfVol, PostType, PostPhoneNum, PostDescription;
-    private Button back, btnForEditPost, editPic;
+    private Button back, btnForEditPost, editPic,deletepost;
     private ImageView post_pic;
     //    firebase
     private DatabaseReference mDatabase;
@@ -44,6 +48,8 @@ public class DetailsPostAssociation extends AppCompatActivity {
     AlertDialog.Builder builder;
     String association_user_id = "";
     String post_id = "";
+    Assoc_post cur_post;
+    Assoc_user assoc_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +74,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
         }
         myStorage = FirebaseStorage.getInstance().getReference().child("post_description_pic/" + post_id);
         back = (Button) findViewById(R.id.btnBackToFeedOfPostsAss);
+        deletepost = (Button) findViewById(R.id.btn_delete_volunteerassoc);
         editPic = (Button) findViewById(R.id.btneditpostpic);
         btnForEditPost = (Button) findViewById(R.id.btnPageEditPostsAss);
         PostName = (TextView) findViewById(R.id.detailPostNameAss);
@@ -85,7 +92,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
                 } else {
-                    Assoc_post cur_post = task.getResult().getValue(Assoc_post.class);
+                     cur_post = task.getResult().getValue(Assoc_post.class);
                     assert cur_post != null;
                     PostName.setText(cur_post.getName());
                     NumOfVol.setText(String.valueOf(cur_post.getNum_of_participants()));
@@ -130,7 +137,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
         });
 
         back.setOnClickListener(view -> {
-            Intent intent = new Intent(DetailsPostAssociation.this, AssociationPage.class);
+            Intent intent = new Intent(DetailsPostAssociation.this, FeedPostsAssociation.class);
             intent.putExtra("id", association_user_id);
             startActivity(intent);
         });
@@ -145,6 +152,25 @@ public class DetailsPostAssociation extends AppCompatActivity {
             intent.putExtra("assoc_id", association_user_id);
             intent.putExtra("post_id", post_id);
             startActivity(intent);
+        });
+        deletepost.setOnClickListener(view -> {
+            builder.setTitle("delete volunteering event")
+                    .setMessage("are you sure you want to delete this volunteering event?")
+                    .setCancelable(true)
+                    .setPositiveButton("delete now", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                           delete_posts_process();
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alterdialod = builder.create();
+            alterdialod.show();
         });
     }
 
@@ -186,5 +212,39 @@ public class DetailsPostAssociation extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void delete_posts_process()
+    {
+        mDatabase.child("assoc_users").child(association_user_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                } else {
+                    assoc_user= task.getResult().getValue(Assoc_user.class);
+                    assoc_user.getPosts().remove(post_id);
+                    mDatabase.child("assoc_users").child(association_user_id).setValue(assoc_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                mDatabase.child("posts").child(post_id).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (!task.isSuccessful()) {
+                                            Log.e("firebase", "Error getting data", task.getException());
+                                        } else {
+                                            Intent intent = new Intent(DetailsPostAssociation.this,AssociationPage.class);
+                                            intent.putExtra("id", association_user_id);
+                                            startActivity(intent);
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+
+                }
+            }
+        });
     }
 }

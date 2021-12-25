@@ -7,7 +7,7 @@ public class Vol_user implements Volunteer_user {
    private String first_name;
     private String last_name;
   private Address address;
-   private String phone_num;
+    private String phone_num;
    private String birth_date;
    private String Email;
     public ArrayList<String> massages_res;
@@ -28,6 +28,7 @@ public class Vol_user implements Volunteer_user {
     public Vol_user() {
 
     }
+
 
     public ArrayList<String> getActive_posts() {
         return active_posts;

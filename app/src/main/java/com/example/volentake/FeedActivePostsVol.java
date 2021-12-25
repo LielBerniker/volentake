@@ -49,7 +49,7 @@ public class FeedActivePostsVol extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_active_posts_vol);
         builder = new AlertDialog.Builder(this);
-        backBtn = findViewById(R.id.back_activity_feed_posts_vol_by_city);
+        backBtn = findViewById(R.id.back_activity_feed_active_posts_vol);
         ProgressDialog progressDialog
                 = new ProgressDialog(this);
         progressDialog.setTitle("loading...");
@@ -122,7 +122,7 @@ public class FeedActivePostsVol extends AppCompatActivity {
             }
         });
         backBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(FeedActivePostsVol.this, DetailsActivePostVol.class);
+            Intent intent = new Intent(FeedActivePostsVol.this, VolunteerPage.class);
             intent.putExtra("id", vol_user_id);
             startActivity(intent);
         });
