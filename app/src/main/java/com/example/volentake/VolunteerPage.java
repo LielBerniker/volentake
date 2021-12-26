@@ -109,12 +109,9 @@ public class VolunteerPage extends AppCompatActivity {
                     PhoneNumberInsert.setText(cure_user.getPhone_num());
                     EmailInsert.setText(cure_user.getEmail());
                     int num_of_posts = cure_user.getActive_posts().size();
-                    System.out.println("size of posts" + Integer.toString(num_of_posts));
                     if (num_of_posts != 1) {
                         for (int i = 1; i < num_of_posts; i++) {
                             int pos = i;
-                            System.out.println(pos);
-                            deleted_id = "0";
                             String cur_post_id = cure_user.getActive_posts().get(pos);
                             mDatabase.child("posts").child(cur_post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
@@ -129,7 +126,6 @@ public class VolunteerPage extends AppCompatActivity {
                                         }
                                         if (pos + 1 == num_of_posts) {
                                             for (int j = 0; j < deleted_posts_id.size(); j++) {
-                                                System.out.println("noe deleteng post  " + deleted_posts_id.get(j));
                                                 cure_user.active_posts.remove(deleted_posts_id.get(j));
                                             }
                                             mDatabase.child("vol_users").child(user_id).setValue(cure_user).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -22,7 +22,6 @@ public class edit_num_of_volunteers_request extends AppCompatActivity {
     private EditText numofvol;
     private TextView contant_req;
     private Button updateData;
-    private Button backBtn;
     private DatabaseReference mDatabase;
     String assoc_id="";
     String vol_user_name="";
@@ -49,7 +48,6 @@ public class edit_num_of_volunteers_request extends AppCompatActivity {
             post_name = bun.getString("post_name");
         }
         updateData = (Button)findViewById(R.id.update_btn_activity_edit_num_of_volunteers_request);
-        backBtn = (Button)findViewById(R.id.back_btn_activity_edit_num_of_volunteers_request);
         contant_req = (TextView) findViewById(R.id.editnumofvolunteerdescription);
         numofvol = (EditText) findViewById(R.id.insrtnumofvolafterrequest);
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -74,11 +72,6 @@ public class edit_num_of_volunteers_request extends AppCompatActivity {
         updateData.setOnClickListener(view -> {
             String txtnewnumofvol = numofvol.getText().toString();
             update_post(txtnewnumofvol);
-        });
-        backBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(edit_num_of_volunteers_request.this, DetailsRequest.class);
-            intent.putExtra("id", assoc_id);
-            startActivity(intent);
         });
 
     }

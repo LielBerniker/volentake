@@ -222,7 +222,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
                     Log.e("firebase", "Error getting data", task.getException());
                 } else {
                     assoc_user= task.getResult().getValue(Assoc_user.class);
-                    assoc_user.getPosts().remove(post_id);
+                    assoc_user.posts.remove(post_id);
                     mDatabase.child("assoc_users").child(association_user_id).setValue(assoc_user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
