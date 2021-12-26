@@ -67,6 +67,11 @@
         <item>elderly</item>
         <item>children</item>
         <item>homeless</item>
+        <item>agriculture</item>
+        <item>safeguarding</item>
+        <item>food</item>
+        <item>health</item>
         <item>disabled people</item>
+        <item>other</item>
     </string-array>
 </resources>
