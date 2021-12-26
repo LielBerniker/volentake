@@ -15,8 +15,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.myapplication.Request_vol;
-import com.example.myapplication.Vol_user;
+import com.example.model_voluntake_class.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;

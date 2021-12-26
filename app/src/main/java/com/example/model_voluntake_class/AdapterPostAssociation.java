@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,20 +13,20 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.volentake.DetailsActivePostVol;
-import com.example.volentake.DetailsPostVol;
+import com.example.volentake.DetailsPostAssociation;
+
 import com.example.volentake.R;
 
 import java.util.ArrayList;
 
-public class AdapterActivePostVol extends RecyclerView.Adapter<AdapterActivePostVol.ViewHolder> {
+public class AdapterPostAssociation extends RecyclerView.Adapter<AdapterPostAssociation.ViewHolder> {
     Context context;
-    String vol_user_id;
+    String association_user_id;
     ArrayList<Pair<Assoc_post,String>> listPosts= new ArrayList<>();
 
-    public AdapterActivePostVol(Context context, String vol_user_id){
+    public AdapterPostAssociation(Context context, String association_user_id){
         this.context = context;
-        this.vol_user_id = vol_user_id;
+        this.association_user_id = association_user_id;
     }
 
     @Override
@@ -43,10 +43,9 @@ public class AdapterActivePostVol extends RecyclerView.Adapter<AdapterActivePost
         holder.txtType.setText(listPosts.get(position).first.getType());
         holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetailsActivePostVol.class);
-            intent.putExtra("vol_id",vol_user_id);
+            Intent intent = new Intent(context, DetailsPostAssociation.class);
+            intent.putExtra("assoc_id",association_user_id);
             intent.putExtra("post_id",listPosts.get(position).second);
-            intent.putExtra("post_position",position+1);
             context.startActivity(intent);
         });
 

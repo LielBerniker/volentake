@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 public class Assoc_post implements Association_post {
    public String userId;

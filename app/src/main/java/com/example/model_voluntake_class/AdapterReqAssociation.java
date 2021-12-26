@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 import android.content.Context;
 import android.content.Intent;

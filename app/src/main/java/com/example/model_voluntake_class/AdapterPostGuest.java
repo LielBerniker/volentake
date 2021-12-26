@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,29 +13,23 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.volentake.DetailsPostVol;
+import com.example.volentake.DetailsPostGuest;
 import com.example.volentake.R;
 
 import java.util.ArrayList;
 
-public class AdapterPostVol extends RecyclerView.Adapter<AdapterPostVol.ViewHolder> {
+public class AdapterPostGuest extends RecyclerView.Adapter<AdapterPostGuest.ViewHolder> {
     Context context;
-    String vol_user_id;
-    String search_keyword;
-    int state;
-    ArrayList<Pair<Assoc_post,String>> listPosts= new ArrayList<>();
+    ArrayList<Pair<Assoc_post, String>> listPosts = new ArrayList<>();
 
-    public AdapterPostVol(Context context, String vol_user_id,String search_keyword,int state){
+    public AdapterPostGuest(Context context) {
         this.context = context;
-        this.vol_user_id = vol_user_id;
-        this.search_keyword = search_keyword;
-        this.state = state;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_post_shape, parent, false);
-        ViewHolder holder= new ViewHolder(view);
+        ViewHolder holder = new ViewHolder(view);
         return new ViewHolder(view);
     }
 
@@ -46,11 +40,8 @@ public class AdapterPostVol extends RecyclerView.Adapter<AdapterPostVol.ViewHold
         holder.txtType.setText(listPosts.get(position).first.getType());
         holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetailsPostVol.class);
-            intent.putExtra("vol_id",vol_user_id);
-            intent.putExtra("post_id",listPosts.get(position).second);
-            intent.putExtra("search_keyword",search_keyword);
-            intent.putExtra("state",state);
+            Intent intent = new Intent(context, DetailsPostGuest.class);
+            intent.putExtra("post_id", listPosts.get(position).second);
             context.startActivity(intent);
         });
 
@@ -61,12 +52,13 @@ public class AdapterPostVol extends RecyclerView.Adapter<AdapterPostVol.ViewHold
         return listPosts.size();
     }
 
-    public void setPosts(ArrayList<Pair<Assoc_post,String>> posts){
+    public void setPosts(ArrayList<Pair<Assoc_post, String>> posts) {
         this.listPosts = posts;
         notifyDataSetChanged();
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtNameAssociation, txtNumVol,txtType,txtCity;
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView txtNameAssociation, txtNumVol, txtType, txtCity;
         private Button btnSeeMoreDetails;
         private CardView parent;
 
@@ -78,9 +70,6 @@ public class AdapterPostVol extends RecyclerView.Adapter<AdapterPostVol.ViewHold
             txtCity = itemView.findViewById(R.id.mailVolunteer);
             parent = itemView.findViewById(R.id.parent);
             btnSeeMoreDetails = itemView.findViewById(R.id.btnseedetails);
-
-
-
         }
     }
 }

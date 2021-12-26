@@ -1,7 +1,6 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public interface Association_user {
 

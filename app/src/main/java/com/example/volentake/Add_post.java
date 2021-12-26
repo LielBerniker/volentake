@@ -19,19 +19,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.myapplication.Address;
-import com.example.myapplication.Assoc_post;
-import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Association_post;
-import com.example.myapplication.Association_user;
-import com.example.myapplication.Vol_user;
+import com.example.model_voluntake_class.Address;
+import com.example.model_voluntake_class.Assoc_post;
+import com.example.model_voluntake_class.Assoc_user;
+import com.example.model_voluntake_class.Association_post;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
 import java.util.Locale;
 
 public class Add_post extends AppCompatActivity {

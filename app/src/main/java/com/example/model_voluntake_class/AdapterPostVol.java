@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,20 +13,23 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.volentake.DetailsPostAssociation;
-
+import com.example.volentake.DetailsPostVol;
 import com.example.volentake.R;
 
 import java.util.ArrayList;
 
-public class AdapterPostAssociation extends RecyclerView.Adapter<AdapterPostAssociation.ViewHolder> {
+public class AdapterPostVol extends RecyclerView.Adapter<AdapterPostVol.ViewHolder> {
     Context context;
-    String association_user_id;
+    String vol_user_id;
+    String search_keyword;
+    int state;
     ArrayList<Pair<Assoc_post,String>> listPosts= new ArrayList<>();
 
-    public AdapterPostAssociation(Context context, String association_user_id){
+    public AdapterPostVol(Context context, String vol_user_id,String search_keyword,int state){
         this.context = context;
-        this.association_user_id = association_user_id;
+        this.vol_user_id = vol_user_id;
+        this.search_keyword = search_keyword;
+        this.state = state;
     }
 
     @Override
@@ -43,9 +46,11 @@ public class AdapterPostAssociation extends RecyclerView.Adapter<AdapterPostAsso
         holder.txtType.setText(listPosts.get(position).first.getType());
         holder.txtCity.setText(listPosts.get(position).first.getLocation().getCity());
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetailsPostAssociation.class);
-            intent.putExtra("assoc_id",association_user_id);
+            Intent intent = new Intent(context, DetailsPostVol.class);
+            intent.putExtra("vol_id",vol_user_id);
             intent.putExtra("post_id",listPosts.get(position).second);
+            intent.putExtra("search_keyword",search_keyword);
+            intent.putExtra("state",state);
             context.startActivity(intent);
         });
 

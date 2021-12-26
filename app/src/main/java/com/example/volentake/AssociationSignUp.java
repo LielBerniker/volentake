@@ -13,12 +13,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.Address;
-import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Association_user;
-import com.example.myapplication.Request;
-import com.example.myapplication.Request_vol;
-import com.example.myapplication.Status;
+import com.example.model_voluntake_class.Address;
+import com.example.model_voluntake_class.Assoc_user;
+import com.example.model_voluntake_class.Association_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,9 +25,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 

@@ -17,19 +17,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.example.myapplication.AdapterReqAssociation;
-import com.example.myapplication.AdapterResponse;
-import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Request_vol;
-import com.example.myapplication.Response;
-import com.example.myapplication.Vol_user;
+import com.example.model_voluntake_class.AdapterResponse;
+import com.example.model_voluntake_class.Response;
+import com.example.model_voluntake_class.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;

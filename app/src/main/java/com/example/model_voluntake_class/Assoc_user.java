@@ -1,7 +1,6 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Assoc_user implements Association_user {
    private String phone_num;

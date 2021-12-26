@@ -18,11 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.myapplication.Request_vol;
-import com.example.myapplication.Response;
-import com.example.myapplication.Response_Interface;
-import com.example.myapplication.Status;
-import com.example.myapplication.Vol_user;
+import com.example.model_voluntake_class.Request_vol;
+import com.example.model_voluntake_class.Response;
+import com.example.model_voluntake_class.Response_Interface;
+import com.example.model_voluntake_class.Status;
+import com.example.model_voluntake_class.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;

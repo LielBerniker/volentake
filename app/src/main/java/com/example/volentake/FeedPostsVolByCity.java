@@ -15,8 +15,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.example.myapplication.AdapterPostVol;
-import com.example.myapplication.Assoc_post;
+import com.example.model_voluntake_class.AdapterPostVol;
+import com.example.model_voluntake_class.Assoc_post;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

@@ -1,7 +1,6 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Vol_user implements Volunteer_user {
    private String first_name;

@@ -12,9 +12,8 @@ import android.os.Bundle;
 import android.util.Pair;
 import android.widget.Button;
 
-import com.example.myapplication.AdapterPostGuest;
-import com.example.myapplication.AdapterPostVol;
-import com.example.myapplication.Assoc_post;
+import com.example.model_voluntake_class.AdapterPostGuest;
+import com.example.model_voluntake_class.Assoc_post;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

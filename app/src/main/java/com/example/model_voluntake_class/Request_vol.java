@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 public class Request_vol implements Request{
    private String vol_user_id;

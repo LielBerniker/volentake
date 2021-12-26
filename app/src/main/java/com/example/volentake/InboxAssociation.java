@@ -17,24 +17,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.example.myapplication.AdapterPostAssociation;
-import com.example.myapplication.AdapterPostVol;
-import com.example.myapplication.AdapterReqAssociation;
-import com.example.myapplication.Assoc_post;
-import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Request;
-import com.example.myapplication.Request_vol;
+import com.example.model_voluntake_class.AdapterReqAssociation;
+import com.example.model_voluntake_class.Assoc_user;
+import com.example.model_voluntake_class.Request_vol;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 
 public class InboxAssociation extends AppCompatActivity {
     private Button back;

@@ -17,11 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.Address;
-import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Association_user;
-import com.example.myapplication.Vol_user;
-import com.example.myapplication.Volunteer_user;
+import com.example.model_voluntake_class.Address;
+import com.example.model_voluntake_class.Assoc_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;

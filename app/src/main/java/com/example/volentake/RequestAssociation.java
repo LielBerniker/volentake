@@ -18,19 +18,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.Assoc_post;
-import com.example.myapplication.Assoc_user;
-import com.example.myapplication.Request;
-import com.example.myapplication.Request_vol;
-import com.example.myapplication.Status;
-import com.example.myapplication.Vol_user;
+import com.example.model_voluntake_class.Assoc_user;
+import com.example.model_voluntake_class.Request;
+import com.example.model_voluntake_class.Request_vol;
+import com.example.model_voluntake_class.Status;
+import com.example.model_voluntake_class.Vol_user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
 
 public class RequestAssociation extends AppCompatActivity {
     private Button SendRequest;

@@ -1,8 +1,7 @@
-package com.example.myapplication;
+package com.example.model_voluntake_class;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public interface Volunteer_user {
         /**
