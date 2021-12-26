@@ -30,6 +30,8 @@ public class FeedPostGuest extends AppCompatActivity {
     private Button backBtn;
     AlertDialog.Builder builder;
     ArrayList<Pair<Assoc_post, String>> posts = new ArrayList<>();
+    int state;
+    String assoc_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,13 @@ public class FeedPostGuest extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.setIcon(R.drawable.logovector_01);
         progressDialog.show();
+        //        get information bundle
+        Bundle bun = null;
+        bun = getIntent().getExtras();
+        if (bun != null) {
+           assoc_id = bun.getString("id");
+           state = bun.getInt("state");
+        }
         mRootRef.child("posts")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -65,15 +74,22 @@ public class FeedPostGuest extends AppCompatActivity {
                                     .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
-                                            Intent intent1 = new Intent(FeedPostGuest.this,GuestUser.class);
-                                            startActivity(intent1);
+                                            if (state == 0) {
+                                                Intent intent1 = new Intent(FeedPostGuest.this, GuestUser.class);
+                                                startActivity(intent1);
+                                            } else
+                                            {
+                                                Intent intent1 = new Intent(FeedPostGuest.this, AssociationPage.class);
+                                                intent1.putExtra("id", assoc_id);
+                                                startActivity(intent1);
+                                            }
                                         }
                                     });
                             AlertDialog alterdialod = builder.create();
                             alterdialod.show();
                         }
                         Collections.reverse(posts);
-                        AdapterPostGuest adapter = new AdapterPostGuest(FeedPostGuest.this);
+                        AdapterPostGuest adapter = new AdapterPostGuest(FeedPostGuest.this,state,assoc_id);
                         adapter.setPosts(posts);
 
                         postsRecycle.setAdapter(adapter);
@@ -86,8 +102,16 @@ public class FeedPostGuest extends AppCompatActivity {
                     }
                 });
         backBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(FeedPostGuest.this, GuestUser.class);
-            startActivity(intent);
+            if(state == 0) {
+                Intent intent = new Intent(FeedPostGuest.this, GuestUser.class);
+                startActivity(intent);
+            }
+            else
+            {
+                Intent intent = new Intent(FeedPostGuest.this, AssociationPage.class);
+                intent.putExtra("id", assoc_id);
+                startActivity(intent);
+            }
         });
     }
 

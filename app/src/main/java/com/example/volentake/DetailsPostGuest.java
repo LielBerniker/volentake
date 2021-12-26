@@ -37,6 +37,8 @@ public class DetailsPostGuest extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private StorageReference mystorge;
     String post_id = "";
+    String assoc_id;
+    int state;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,8 @@ public class DetailsPostGuest extends AppCompatActivity {
         bun = getIntent().getExtras();
         if(bun != null) {
             post_id = bun.getString("post_id");
+            assoc_id = bun.getString("id");
+            state= bun.getInt("state");
         }
         mystorge = FirebaseStorage.getInstance().getReference().child("post_description_pic/"+post_id);
         back = (Button) findViewById(R.id.btnBackToFeedOfPostsGuest);
@@ -117,6 +121,8 @@ public class DetailsPostGuest extends AppCompatActivity {
 
         back.setOnClickListener(view -> {
             Intent intent = new Intent(DetailsPostGuest.this, FeedPostGuest.class);
+            intent.putExtra("state", state);
+            intent.putExtra("id", assoc_id);
             startActivity(intent);
         });
 

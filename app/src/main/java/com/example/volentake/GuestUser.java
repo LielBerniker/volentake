@@ -23,6 +23,7 @@ public class GuestUser extends AppCompatActivity {
 
         vol_events.setOnClickListener(view -> {
             Intent intent = new Intent(GuestUser.this, FeedPostGuest.class);
+            intent.putExtra("state", 0);
             startActivity(intent);
         });
     }

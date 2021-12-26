@@ -21,9 +21,13 @@ import java.util.ArrayList;
 public class AdapterPostGuest extends RecyclerView.Adapter<AdapterPostGuest.ViewHolder> {
     Context context;
     ArrayList<Pair<Assoc_post, String>> listPosts = new ArrayList<>();
+    int state;
+    String assoc_id;
 
-    public AdapterPostGuest(Context context) {
+    public AdapterPostGuest(Context context,int state,String assoc_id) {
         this.context = context;
+        this.state = state;
+        this.assoc_id = assoc_id;
     }
 
     @Override
@@ -42,6 +46,8 @@ public class AdapterPostGuest extends RecyclerView.Adapter<AdapterPostGuest.View
         holder.btnSeeMoreDetails.setOnClickListener(view -> {
             Intent intent = new Intent(context, DetailsPostGuest.class);
             intent.putExtra("post_id", listPosts.get(position).second);
+            intent.putExtra("state", state);
+            intent.putExtra("id",assoc_id);
             context.startActivity(intent);
         });
 
