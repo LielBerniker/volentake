@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -39,13 +38,13 @@ public class MainSearchPostsVol extends AppCompatActivity {
         if (bun != null) {
             vol_user_id = bun.getString("id");
         }
-        btnshufflesearch = (Button) findViewById(R.id.btnshufflesearch);
+        btnshufflesearch = (Button) findViewById(R.id.btnRandomMainSearchPostsVol);
         btnCityMainSearchPostsVol = (Button) findViewById(R.id.btnCityMainSearchPostsVol);
         btnTypeMainSearchPostsVol = (Button) findViewById(R.id.btnTypeMainSearchPostsVol);
-        btnlastaddedMainSearchPostsVol = (Button) findViewById(R.id.btnsearchbylastadded);
+        btnlastaddedMainSearchPostsVol = (Button) findViewById(R.id.btnLastCreatedMainSearchPostsVol);
         editTextCityMainSearchPostsVol = (EditText) findViewById(R.id.editTextCityMainSearchPostsVol);
         backBtn = (Button) findViewById(R.id.back_activity_main_search_posts_vol);
-        spintype = (Spinner) findViewById(R.id.spineroftypepost);
+        spintype = (Spinner) findViewById(R.id.spinnerOfTypePost);
         ArrayAdapter<String> typeadapter = new ArrayAdapter<String>(MainSearchPostsVol.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.types));
         typeadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

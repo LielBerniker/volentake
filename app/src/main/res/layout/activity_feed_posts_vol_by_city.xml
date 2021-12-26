@@ -28,7 +28,7 @@
         android:text="@string/backToMainMenu"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:fontFamily="@font/oswald_font_wght"
+        android:fontFamily="@font/oswald_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

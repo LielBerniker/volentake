@@ -33,7 +33,7 @@ import java.io.IOException;
 
 public class picture_edit_post extends AppCompatActivity {
     // views for button
-    private Button btnSelect, btnUpload,backtoassoc;
+    private Button btnSelect, btnUpload, backtoassoc;
     // view for image view
     private ImageView imageView;
     // Uri indicates, where the image will be picked from
@@ -44,19 +44,19 @@ public class picture_edit_post extends AppCompatActivity {
     FirebaseStorage storage;
     StorageReference storageReference;
     AlertDialog.Builder builder;
-String assoc_id = "";
+    String assoc_id = "";
     String post_id = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_edit_post);
         builder = new AlertDialog.Builder(this);
-//        get information bundle
+        //  get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
-        if(bun != null)
-        {
-           post_id = bun.getString("post_id");
+        if (bun != null) {
+            post_id = bun.getString("post_id");
             assoc_id = bun.getString("assoc_id");
         }
         ActionBar actionBar;
@@ -65,6 +65,7 @@ String assoc_id = "";
                 = new ColorDrawable(
                 Color.parseColor("#0F9D58"));
         actionBar.setBackgroundDrawable(colorDrawable);
+
         // initialise views
         btnSelect = findViewById(R.id.btnChoose2);
         btnUpload = findViewById(R.id.btnUpload2);
@@ -74,11 +75,11 @@ String assoc_id = "";
         // get the Firebase  storage reference
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+
         // on pressing btnSelect SelectImage() is called
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 SelectImage();
             }
         });
@@ -86,25 +87,24 @@ String assoc_id = "";
         // on pressing btnUpload uploadImage() is called
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 uploadImage();
             }
         });
+
         backtoassoc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent1 = new Intent(picture_edit_post.this, DetailsPostAssociation.class);
-                intent1.putExtra("post_id",post_id);
-                intent1.putExtra("assoc_id",assoc_id);
+                intent1.putExtra("post_id", post_id);
+                intent1.putExtra("assoc_id", assoc_id);
                 startActivity(intent1);
             }
         });
     }
+
     // Select Image method
-    private void SelectImage()
-    {
+    private void SelectImage() {
 
         // Defining Implicit Intent to mobile gallery
         Intent intent = new Intent();
@@ -121,8 +121,7 @@ String assoc_id = "";
     @Override
     protected void onActivityResult(int requestCode,
                                     int resultCode,
-                                    Intent data)
-    {
+                                    Intent data) {
 
         super.onActivityResult(requestCode,
                 resultCode,
@@ -149,9 +148,7 @@ String assoc_id = "";
                                 getContentResolver(),
                                 filePath);
                 imageView.setImageBitmap(bitmap);
-            }
-
-            catch (IOException e) {
+            } catch (IOException e) {
                 // Log the exception
                 e.printStackTrace();
             }
@@ -159,8 +156,7 @@ String assoc_id = "";
     }
 
     // UploadImage method
-    private void uploadImage()
-    {
+    private void uploadImage() {
         if (filePath != null) {
 
             // Code for showing progressDialog while uploading
@@ -183,8 +179,7 @@ String assoc_id = "";
 
                                 @Override
                                 public void onSuccess(
-                                        UploadTask.TaskSnapshot taskSnapshot)
-                                {
+                                        UploadTask.TaskSnapshot taskSnapshot) {
 
                                     // Image uploaded successfully
                                     // Dismiss dialog
@@ -195,16 +190,15 @@ String assoc_id = "";
                                                     Toast.LENGTH_SHORT)
                                             .show();
                                     Intent intent1 = new Intent(picture_edit_post.this, DetailsPostAssociation.class);
-                                    intent1.putExtra("post_id",post_id);
-                                    intent1.putExtra("assoc_id",assoc_id);
+                                    intent1.putExtra("post_id", post_id);
+                                    intent1.putExtra("assoc_id", assoc_id);
                                     startActivity(intent1);
                                 }
                             })
 
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
-                        public void onFailure(@NonNull Exception e)
-                        {
+                        public void onFailure(@NonNull Exception e) {
 
                             // Error, Image not uploaded
                             progressDialog.dismiss();
@@ -222,32 +216,33 @@ String assoc_id = "";
                                 // percentage on the dialog box
                                 @Override
                                 public void onProgress(
-                                        UploadTask.TaskSnapshot taskSnapshot)
-                                {
+                                        UploadTask.TaskSnapshot taskSnapshot) {
                                     double progress
                                             = (100.0
                                             * taskSnapshot.getBytesTransferred()
                                             / taskSnapshot.getTotalByteCount());
                                     progressDialog.setMessage(
                                             "Uploaded "
-                                                    + (int)progress + "%");
+                                                    + (int) progress + "%");
 
                                 }
                             });
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_bar, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itembacktouser:
-                Intent intent1 = new Intent(picture_edit_post.this,AssociationPage.class);
-                intent1.putExtra("id",assoc_id);
+                Intent intent1 = new Intent(picture_edit_post.this, AssociationPage.class);
+                intent1.putExtra("id", assoc_id);
                 startActivity(intent1);
                 return true;
             case R.id.itemlogout:

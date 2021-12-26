@@ -54,12 +54,19 @@
                     app:layout_constraintVertical_bias="0.42000002"
                     tools:ignore="MissingConstraints">
 
+                    <ImageView
+                        android:id="@+id/imagevolprofiledefault"
+                        android:layout_width="105dp"
+                        android:layout_height="105dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/user_default_profile_photo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
                     <ImageView
                         android:id="@+id/imagevolprofile"
                         android:layout_width="105dp"
                         android:layout_height="105dp"
-                        android:background="@color/white"
                         android:scaleType="centerCrop"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -74,9 +81,9 @@
                     android:id="@+id/btnaddpic"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:alpha="0.8"
                     android:layout_marginLeft="100dp"
                     android:layout_marginTop="100dp"
+                    android:alpha="0.8"
                     android:background="@drawable/ic_edit_3"
                     app:layout_constraintBottom_toBottomOf="@+id/avatarCardView"
                     app:layout_constraintEnd_toEndOf="@+id/avatarCardView" />
@@ -93,7 +100,7 @@
                 android:alpha="1"
                 android:backgroundTint="#268BBC"
                 android:drawableStart="@drawable/ic_back_1"
-                android:fontFamily="@font/oswald_font_wght"
+                android:fontFamily="@font/oswald_font"
                 android:text="@string/logOutText"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
@@ -108,11 +115,11 @@
                 android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="3dp"
-                android:fontFamily="@font/oswald_font_wght"
+                android:alpha="0.8"
+                android:fontFamily="@font/oswald_font"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:alpha="0.8"
                 app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/emailinsert" />
 
@@ -122,14 +129,13 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/oswald_font_wght"
+                android:alpha="0.8"
+                android:fontFamily="@font/oswald_font"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:alpha="0.8"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
                 app:layout_constraintTop_toBottomOf="@+id/firstnameinsert" />
-
 
 
             <Button
@@ -138,9 +144,9 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:alpha="1"
-                android:background="@drawable/white_button_shadow"
+                android:background="@drawable/white_button_shadow_2"
                 android:drawableStart="@drawable/ic_heart_2"
-                android:fontFamily="@font/oswald_font_wght"
+                android:fontFamily="@font/oswald_font"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="Active Volunteering Events"
@@ -156,7 +162,7 @@
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="25dp"
-                android:fontFamily="@font/oswald_font_wght"
+                android:fontFamily="@font/oswald_font"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="24sp"
@@ -172,9 +178,9 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:alpha="1"
-                android:background="@drawable/white_button_shadow"
+                android:background="@drawable/white_button_shadow_2"
                 android:drawableStart="@drawable/ic_email_3"
-                android:fontFamily="@font/oswald_font_wght"
+                android:fontFamily="@font/oswald_font"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="@string/inboxText"
@@ -228,9 +234,9 @@
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/white_button_shadow"
+                android:background="@drawable/white_button_shadow_2"
                 android:drawableStart="@drawable/ic_search_1"
-                android:fontFamily="@font/oswald_font_wght"
+                android:fontFamily="@font/oswald_font"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="Search for Volunteering"

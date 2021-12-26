@@ -61,6 +61,8 @@
     <string name="searchText">Search</string>
     <string name="fromText">From:</string>
     <string name="volunteering_detailsText">Volunteering Details</string>
+    <string name="delete_volunteeringText">Delete Volunteering</string>
+    <string name="edit_pictureText">Edit Picture</string>
     <string-array name="types">
         <item>animals</item>
         <item>cleaning</item>

@@ -191,7 +191,7 @@ public class DetailsRequest extends AppCompatActivity {
                                                         if(cur_status==0)
                                                         {
                                                             Toast.makeText(DetailsRequest.this, "Done Successfully!", Toast.LENGTH_SHORT).show();
-                                                            Intent intent = new Intent(DetailsRequest.this, edit_num_of_volunteers_request.class);
+                                                            Intent intent = new Intent(DetailsRequest.this, EditNumOfVolunteersRequest.class);
                                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                             intent.putExtra("id", assoc_id);
                                                             intent.putExtra("vol_user_name", vol_user_name);

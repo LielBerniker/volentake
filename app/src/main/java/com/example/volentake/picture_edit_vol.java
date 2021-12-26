@@ -34,7 +34,7 @@ import java.util.UUID;
 
 public class picture_edit_vol extends AppCompatActivity {
     // views for button
-    private Button btnSelect, btnUpload,backtovol;
+    private Button btnSelect, btnUpload, backtovol;
     // view for image view
     private ImageView imageView;
     // Uri indicates, where the image will be picked from
@@ -46,6 +46,7 @@ public class picture_edit_vol extends AppCompatActivity {
     StorageReference storageReference;
     AlertDialog.Builder builder;
     String user_id = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +55,7 @@ public class picture_edit_vol extends AppCompatActivity {
 //        get information bundle
         Bundle bun = null;
         bun = getIntent().getExtras();
-        if(bun != null)
-        {
+        if (bun != null) {
             user_id = bun.getString("id");
         }
         ActionBar actionBar;
@@ -76,8 +76,7 @@ public class picture_edit_vol extends AppCompatActivity {
         // on pressing btnSelect SelectImage() is called
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 SelectImage();
             }
         });
@@ -85,24 +84,22 @@ public class picture_edit_vol extends AppCompatActivity {
         // on pressing btnUpload uploadImage() is called
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 uploadImage();
             }
         });
         backtovol.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent1 = new Intent(picture_edit_vol.this, VolunteerPage.class);
-                intent1.putExtra("id",user_id);
+                intent1.putExtra("id", user_id);
                 startActivity(intent1);
             }
         });
     }
+
     // Select Image method
-    private void SelectImage()
-    {
+    private void SelectImage() {
 
         // Defining Implicit Intent to mobile gallery
         Intent intent = new Intent();
@@ -119,8 +116,7 @@ public class picture_edit_vol extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode,
                                     int resultCode,
-                                    Intent data)
-    {
+                                    Intent data) {
 
         super.onActivityResult(requestCode,
                 resultCode,
@@ -147,9 +143,7 @@ public class picture_edit_vol extends AppCompatActivity {
                                 getContentResolver(),
                                 filePath);
                 imageView.setImageBitmap(bitmap);
-            }
-
-            catch (IOException e) {
+            } catch (IOException e) {
                 // Log the exception
                 e.printStackTrace();
             }
@@ -157,8 +151,7 @@ public class picture_edit_vol extends AppCompatActivity {
     }
 
     // UploadImage method
-    private void uploadImage()
-    {
+    private void uploadImage() {
         if (filePath != null) {
 
             // Code for showing progressDialog while uploading
@@ -181,8 +174,7 @@ public class picture_edit_vol extends AppCompatActivity {
 
                                 @Override
                                 public void onSuccess(
-                                        UploadTask.TaskSnapshot taskSnapshot)
-                                {
+                                        UploadTask.TaskSnapshot taskSnapshot) {
 
                                     // Image uploaded successfully
                                     // Dismiss dialog
@@ -193,15 +185,14 @@ public class picture_edit_vol extends AppCompatActivity {
                                                     Toast.LENGTH_SHORT)
                                             .show();
                                     Intent intent1 = new Intent(picture_edit_vol.this, VolunteerPage.class);
-                                    intent1.putExtra("id",user_id);
+                                    intent1.putExtra("id", user_id);
                                     startActivity(intent1);
                                 }
                             })
 
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
-                        public void onFailure(@NonNull Exception e)
-                        {
+                        public void onFailure(@NonNull Exception e) {
 
                             // Error, Image not uploaded
                             progressDialog.dismiss();
@@ -219,32 +210,33 @@ public class picture_edit_vol extends AppCompatActivity {
                                 // percentage on the dialog box
                                 @Override
                                 public void onProgress(
-                                        UploadTask.TaskSnapshot taskSnapshot)
-                                {
+                                        UploadTask.TaskSnapshot taskSnapshot) {
                                     double progress
                                             = (100.0
                                             * taskSnapshot.getBytesTransferred()
                                             / taskSnapshot.getTotalByteCount());
                                     progressDialog.setMessage(
                                             "Uploaded "
-                                                    + (int)progress + "%");
+                                                    + (int) progress + "%");
 
                                 }
                             });
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_bar, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itembacktouser:
-                Intent intent1 = new Intent(picture_edit_vol.this,VolunteerPage.class);
-                intent1.putExtra("id",user_id);
+                Intent intent1 = new Intent(picture_edit_vol.this, VolunteerPage.class);
+                intent1.putExtra("id", user_id);
                 startActivity(intent1);
                 return true;
             case R.id.itemlogout:

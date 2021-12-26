@@ -4,83 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".edit_num_of_volunteers_request">
-
-    <TextView
-        android:id="@+id/editnumofvolunteerdescription"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:fontFamily="@font/oswald_font_wght"
-        android:textAlignment="viewStart"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".EditNumOfVolunteersRequest">
 
     <EditText
         android:id="@+id/insrtnumofvolafterrequest"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="70dp"
         android:ems="10"
-        android:fontFamily="@font/oswald_font_wght"
+        android:fontFamily="@font/oswald_font"
         android:inputType="number"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editnumofvolunteerdescription" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutSearchByCity" />
 
     <TextView
         android:id="@+id/requerdnumberofvoledirrequest"
-        android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="11dp"
-        android:fontFamily="@font/oswald_font_wght"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/oswald_font"
         android:text="Requerd Number Of Volunteers:"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/insrtnumofvolafterrequest"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editnumofvolunteerdescription" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutSearchByCity" />
 
     <Button
         android:id="@+id/update_btn_activity_edit_num_of_volunteers_request"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/blue"
         android:drawableLeft="@drawable/ic_update_1"
-        android:fontFamily="@font/oswald_font_wght"
+        android:fontFamily="@font/oswald_font"
         android:text="update"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requerdnumberofvoledirrequest" />
 
-    <Button
-        android:id="@+id/back_btn_activity_edit_num_of_volunteers_request"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/blue"
-        android:text="@string/backToMainMenu"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:fontFamily="@font/oswald_font_wght"
-        android:drawableLeft="@drawable/ic_back_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutSearchByCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/white_button_shadow_2"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/p1_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="You just approved a volunteer request from:"
+            android:textAlignment="textStart"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="310dp" />
+
+        <TextView
+            android:id="@+id/p2_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="To participate at the volunteering event:"
+            android:textAlignment="textStart"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="364dp" />
+
+        <TextView
+            android:id="@+id/p3_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="The request included a number of:"
+            android:textAlignment="textStart"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <TextView
+            android:id="@+id/p4_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="225dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="volunteers."
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="494dp" />
+
+        <TextView
+            android:id="@+id/p5_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="95dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="Please update the number of volunteer needed for this volunteering event:"
+            android:textAlignment="textStart"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="547dp" />
+
+        <TextView
+            android:id="@+id/vol_name_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="vol_name"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="213dp"
+            tools:layout_editor_absoluteY="310dp" />
+
+        <TextView
+            android:id="@+id/post_name_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="post_name"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="220dp"
+            tools:layout_editor_absoluteY="375dp" />
+
+        <TextView
+            android:id="@+id/num_vol_activity_edit_num_of_volunteers_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/oswald_font"
+            android:text="num"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="220dp"
+            tools:layout_editor_absoluteY="452dp" />
+
+
+    </FrameLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

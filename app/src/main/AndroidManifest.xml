@@ -31,7 +31,7 @@
             android:name=".FeedPostsVolByCity"
             android:exported="false" />
         <activity
-            android:name=".edit_num_of_volunteers_request"
+            android:name=".EditNumOfVolunteersRequest"
             android:exported="false" />
         <activity
             android:name=".details_request_afterans"
