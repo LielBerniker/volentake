@@ -32,9 +32,7 @@ public class AssociationPage extends AppCompatActivity {
     private Button logOut;
     private Button see_posts;
     private Button inboxRequests;
-    //    private TextView Nametxt;
-//    private TextView PhoneNumbertxt;
-//    private TextView Emailtxt;
+    private Button all_posts;
     private TextView NameInsert;
     private TextView PhoneNumberInsert;
     private TextView EmailInsert;
@@ -64,6 +62,7 @@ public class AssociationPage extends AppCompatActivity {
             assoc_id = bun.getString("id");
         }
         edit = (Button) findViewById(R.id.btnEdit);
+        all_posts = (Button) findViewById(R.id.btnallvoleventsassoc);
         addPost = (Button) findViewById(R.id.addPost);
         logOut = (Button) findViewById(R.id.btnBackToFeedOfPosts);
         see_posts = (Button) findViewById(R.id.btnseeallposts);
@@ -125,6 +124,12 @@ public class AssociationPage extends AppCompatActivity {
         inboxRequests.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, InboxAssociation.class);
             intent.putExtra("id", assoc_id);
+            startActivity(intent);
+        });
+       all_posts.setOnClickListener(view -> {
+            Intent intent = new Intent(AssociationPage.this, FeedPostGuest.class);
+            intent.putExtra("id", assoc_id);
+           intent.putExtra("state",1);
             startActivity(intent);
         });
 
