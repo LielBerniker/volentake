@@ -84,14 +84,14 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font"
                 android:text="@string/emailText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/inputEmail"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAbout" />
+                app:layout_constraintTop_toBottomOf="@+id/credentials_activity_association_sign_up" />
 
             <TextView
                 android:id="@+id/txtPass1"
@@ -242,14 +242,14 @@
                 android:id="@+id/inputEmail"
                 android:layout_width="200dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="40dp"
                 android:ems="10"
                 android:fontFamily="@font/oswald_font"
                 android:inputType="textEmailAddress"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inputAbout" />
+                app:layout_constraintTop_toBottomOf="@+id/credentials_activity_association_sign_up" />
 
             <EditText
                 android:id="@+id/inputPass1"
@@ -320,6 +320,19 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+            <TextView
+                android:id="@+id/credentials_activity_association_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="@font/oswald_font"
+
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/credentialsText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputAbout" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

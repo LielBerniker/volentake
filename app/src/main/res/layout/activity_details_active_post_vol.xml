@@ -20,7 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -28,9 +28,9 @@
             <Button
                 android:id="@+id/quitVolunteeringActivePostVol"
                 android:layout_width="100dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="60dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="@color/red"
                 android:drawableLeft="@drawable/ic_cancel_1"
@@ -41,6 +41,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostActivePostVol"
+                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -224,9 +225,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:scaleType="centerCrop"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePostActivePostVol"
                 tools:srcCompat="@tools:sample/avatars" />
 
@@ -234,7 +235,7 @@
                 android:id="@+id/backtoactiveposts"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="60dp"
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="@color/blue"
@@ -245,7 +246,8 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostActivePostVol" />
+                app:layout_constraintTop_toBottomOf="@+id/detailDescriptionPostActivePostVol"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/detailStreetPostActivePostVol"
