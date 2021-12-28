@@ -38,6 +38,7 @@ public class InboxResponses extends AppCompatActivity {
     ArrayList<String> cur_responses ;
     ArrayList<Pair<Response,String>> responses = new ArrayList<>();
     int num_of_responses;
+    Vol_user cure_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +68,7 @@ public class InboxResponses extends AppCompatActivity {
                     Log.e("firebase", "Error getting data", task.getException());
                 }
                 else {
-                    Vol_user cure_user =  task.getResult().getValue(Vol_user.class);
+                     cure_user =  task.getResult().getValue(Vol_user.class);
                     cur_responses= cure_user.getMassages_res();
 
                     num_of_responses = cur_responses.size();

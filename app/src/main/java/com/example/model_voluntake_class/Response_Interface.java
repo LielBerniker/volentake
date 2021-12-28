@@ -40,6 +40,13 @@ public interface Response_Interface {
      * @return
      */
     public void setPost_id(String post_id);
-
-
+    /**
+     * @return  return massage update
+     */
+    public Status getMassage_update();
+    /**
+     * @param massage_update - update msaage
+     * @return
+     */
+    public void setMassage_update(Status massage_update);
 }

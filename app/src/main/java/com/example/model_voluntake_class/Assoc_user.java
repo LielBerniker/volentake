@@ -10,6 +10,7 @@ public class Assoc_user implements Association_user {
     private String about;
    public ArrayList<String> posts;
     public ArrayList<String> massages_req;
+    boolean HasMassage;
 
     public Assoc_user(String phone_num, Address address, String name,String email,String about) {
         this.phone_num = phone_num;
@@ -21,9 +22,18 @@ public class Assoc_user implements Association_user {
        posts.add("0");
         this.massages_req = new ArrayList<>();
         massages_req.add("0");
+        this.HasMassage = false;
     }
     public Assoc_user() {
 
+    }
+
+    public boolean isHasMassage() {
+        return HasMassage;
+    }
+
+    public void setHasMassage(boolean hasMassage) {
+        HasMassage = hasMassage;
     }
 
     public String getPhone_num() {

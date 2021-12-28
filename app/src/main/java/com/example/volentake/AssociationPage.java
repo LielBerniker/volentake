@@ -4,6 +4,7 @@ package com.example.volentake;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -38,6 +39,7 @@ public class AssociationPage extends AppCompatActivity {
     private TextView EmailInsert;
     String assoc_id;
     AlertDialog.Builder builder;
+    Assoc_user cure_user;
     //    firebase
     private DatabaseReference mDatabase;
 
@@ -76,14 +78,21 @@ public class AssociationPage extends AppCompatActivity {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
                 } else {
-                    Assoc_user cure_user = task.getResult().getValue(Assoc_user.class);
+                    cure_user = task.getResult().getValue(Assoc_user.class);
                     NameInsert.setText(cure_user.getName());
                     PhoneNumberInsert.setText(cure_user.getPhone_num());
                     EmailInsert.setText(cure_user.getEmail());
+                    if(cure_user.isHasMassage()==true)
+                    {
+                        inboxRequests.setBackgroundColor(Color.argb(100,255,165,0));
+                        inboxRequests.setText("new massage!");
+                    }
                     progressDialog.dismiss();
+                    check_massage_status();
                 }
             }
         });
+
         edit.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, EditAssociation.class);
             intent.putExtra("id", assoc_id);
@@ -122,9 +131,7 @@ public class AssociationPage extends AppCompatActivity {
             startActivity(intent);
         });
         inboxRequests.setOnClickListener(view -> {
-            Intent intent = new Intent(AssociationPage.this, InboxAssociation.class);
-            intent.putExtra("id", assoc_id);
-            startActivity(intent);
+update_new_massage_state();
         });
        all_posts.setOnClickListener(view -> {
             Intent intent = new Intent(AssociationPage.this, FeedPostGuest.class);
@@ -141,7 +148,23 @@ public class AssociationPage extends AppCompatActivity {
         inflater.inflate(R.menu.menu_bar, menu);
         return true;
     }
-
+    public void check_massage_status()
+    {
+        if(cure_user.isHasMassage()==true)
+        {
+            builder.setTitle("new massage!")
+                    .setMessage("you have a new massage in your inbox")
+                    .setCancelable(true)
+                    .setNegativeButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alterdialod = builder.create();
+            alterdialod.show();
+        }
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -170,5 +193,19 @@ public class AssociationPage extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void update_new_massage_state()
+    {
+        cure_user.setHasMassage(false);
+        mDatabase.child("assoc_users").child(assoc_id).setValue(cure_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Intent intent = new Intent(AssociationPage.this, InboxAssociation.class);
+                    intent.putExtra("id", assoc_id);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,7 +59,6 @@ public class VolunteerPage extends AppCompatActivity {
     Vol_user cure_user;
     String user_id = "";
     ArrayList<String> deleted_posts_id = new ArrayList<>();
-    String deleted_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +102,11 @@ public class VolunteerPage extends AppCompatActivity {
                     FirstNameInsert.setText(cure_user.getFirst_name() + " " + cure_user.getLast_name());
                     PhoneNumberInsert.setText(cure_user.getPhone_num());
                     EmailInsert.setText(cure_user.getEmail());
+                    if(cure_user.isHasMassage()==true)
+                    {
+                        inboxResponse.setBackgroundColor(Color.argb(100,255,165,0));
+                        inboxResponse.setText("new massage!");
+                    }
                     int num_of_posts = cure_user.getActive_posts().size();
                     if (num_of_posts != 1) {
                         for (int i = 1; i < num_of_posts; i++) {
@@ -138,9 +143,10 @@ public class VolunteerPage extends AppCompatActivity {
                             });
                         }
                     }
+                    progressDialog.dismiss();
+                    check_massage_status();
 
                 }
-                progressDialog.dismiss();
             }
         });
         mystorge.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -176,6 +182,7 @@ public class VolunteerPage extends AppCompatActivity {
         });
 
 
+
         activePosts.setOnClickListener(view -> {
             Intent intent = new Intent(VolunteerPage.this, FeedActivePostsVol.class);
             intent.putExtra("id", user_id);
@@ -199,9 +206,7 @@ public class VolunteerPage extends AppCompatActivity {
             startActivity(intent);
         });
         inboxResponse.setOnClickListener(view -> {
-            Intent intent = new Intent(VolunteerPage.this, InboxResponses.class);
-            intent.putExtra("id", user_id);
-            startActivity(intent);
+           update_new_massage_state();
         });
 
 
@@ -227,7 +232,37 @@ public class VolunteerPage extends AppCompatActivity {
 
         });
     }
-
+public void update_new_massage_state()
+{
+    cure_user.setHasMassage(false);
+    mDatabase.child("vol_users").child(user_id).setValue(cure_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+        @Override
+        public void onComplete(@NonNull Task<Void> task) {
+            if (task.isSuccessful()) {
+                Intent intent = new Intent(VolunteerPage.this, InboxResponses.class);
+                intent.putExtra("id", user_id);
+                startActivity(intent);
+            }
+        }
+    });
+}
+public void check_massage_status()
+{
+    if(cure_user.isHasMassage()==true)
+    {
+        builder.setTitle("new massage!")
+                .setMessage("you have a new massage in your inbox")
+                .setCancelable(true)
+                .setNegativeButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alterdialod = builder.create();
+        alterdialod.show();
+    }
+}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

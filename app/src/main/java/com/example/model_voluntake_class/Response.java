@@ -6,14 +6,24 @@ public class Response implements Response_Interface{
     private String association_user_id;
     private String post_id;
     private Status status;
+    private Status massage_update;
 
     public Response(String vol_user_id, String association_user_id, String post_id, Status status) {
         this.vol_user_id = vol_user_id;
         this.association_user_id = association_user_id;
         this.post_id = post_id;
         this.status = status;
+        this.massage_update = Status.WAITING;
     }
     public Response() {
+    }
+
+    public Status getMassage_update() {
+        return massage_update;
+    }
+
+    public void setMassage_update(Status massage_update) {
+        this.massage_update = massage_update;
     }
 
     @Override

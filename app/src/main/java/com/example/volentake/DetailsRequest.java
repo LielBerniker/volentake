@@ -180,6 +180,7 @@ public class DetailsRequest extends AppCompatActivity {
                                         else {
                                             Vol_user vol_user1 =  task.getResult().getValue(Vol_user.class);
                                             vol_user1.massages_res.add(res_id);
+                                            vol_user1.setHasMassage(true);
                                             if(cur_status == 0)
                                             {
                                                 vol_user1.active_posts.add(post_id);

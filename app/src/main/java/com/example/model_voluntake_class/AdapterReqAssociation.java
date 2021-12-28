@@ -2,6 +2,7 @@ package com.example.model_voluntake_class;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -48,6 +49,12 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String vol_id = listRequests.get(position).first.getVol_user_id();
         String post_id = listRequests.get(position).first.getPost_id();
+        Status massage_status= listRequests.get(position).first.getStatus();
+        if(massage_status == Status.WAITING)
+        {
+            holder.btnupdatemassagestatus.setText("new massage");
+            holder.btnupdatemassagestatus.setBackgroundColor(Color.argb(100,255,165,0));
+        }
         holder.mDatabase.child("vol_users").child(vol_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -71,6 +78,7 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
                 else {
                     Assoc_post cure_post =  task.getResult().getValue(Assoc_post.class);
                     holder.namePost.setText(cure_post.getName());
+
                 }
             }
         });
@@ -110,7 +118,7 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView MailVolRequestToAss, namePost,txtFullNameRequestToAss;
-        private Button btnSeeDetailsRequestToAss;
+        private Button btnSeeDetailsRequestToAss,btnupdatemassagestatus;
         private CardView parentRequestToAss;
         //    firebase
         private DatabaseReference mDatabase;
@@ -125,7 +133,7 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
             MailVolRequestToAss = itemView.findViewById(R.id.mailVolunteerRequestToAss);
             btnSeeDetailsRequestToAss = itemView.findViewById(R.id.btnSeeDetailsRequestToAss);
             parentRequestToAss = itemView.findViewById(R.id.parentRequestToAss);
-
+            btnupdatemassagestatus = itemView.findViewById(R.id.btnupdatemassagestatusreq);
         }
     }
 }

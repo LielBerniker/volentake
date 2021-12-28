@@ -66,5 +66,13 @@ public interface Volunteer_user {
      * @return  return user active posts,
      */
     public ArrayList<String> getActive_posts();
-
+    /**
+     * @return  return if user have new massages
+     */
+    public boolean isHasMassage();
+    /**
+     * @param hasMassage - update user massages state
+     * @return
+     */
+    public void setHasMassage(boolean hasMassage);
     }

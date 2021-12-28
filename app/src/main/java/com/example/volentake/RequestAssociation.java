@@ -129,6 +129,7 @@ public class RequestAssociation extends AppCompatActivity {
                             else {
                                 Assoc_user assoc_user2 =  task.getResult().getValue(Assoc_user.class);
                                 assoc_user2.massages_req.add(req_id);
+                                assoc_user2.setHasMassage(true);
                                 mDatabase.child("assoc_users").child(Assoc_id).setValue(assoc_user2).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

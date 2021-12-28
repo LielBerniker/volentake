@@ -58,4 +58,13 @@ public interface Association_user {
      * @return  return the Association massages ,
      */
     public ArrayList<String> getMassages_req();
+    /**
+     * @return  return if the user have massages ,
+     */
+    public boolean isHasMassage();
+    /**
+     * @param hasMassage - update if have massages
+     * @return
+     */
+    public void setHasMassage(boolean hasMassage);
 }

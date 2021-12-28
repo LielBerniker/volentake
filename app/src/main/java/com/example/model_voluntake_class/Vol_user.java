@@ -11,6 +11,7 @@ public class Vol_user implements Volunteer_user {
    private String Email;
     public ArrayList<String> massages_res;
     public ArrayList<String> active_posts;
+    boolean HasMassage;
 
     public Vol_user(String first_name, String last_name, Address address, String phone_num,String birthdate, String email) {
         this.first_name = first_name;
@@ -23,11 +24,19 @@ public class Vol_user implements Volunteer_user {
         massages_res.add("0");
         this.active_posts = new ArrayList<>();
         active_posts.add("0");
+        this.HasMassage = false;
     }
     public Vol_user() {
 
     }
 
+    public boolean isHasMassage() {
+        return HasMassage;
+    }
+
+    public void setHasMassage(boolean hasMassage) {
+        HasMassage = hasMassage;
+    }
 
     public ArrayList<String> getActive_posts() {
         return active_posts;

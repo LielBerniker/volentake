@@ -2,6 +2,7 @@ package com.example.model_voluntake_class;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -46,12 +47,23 @@ public class AdapterResponse extends RecyclerView.Adapter<AdapterResponse.ViewHo
         String assoc_id = listResponse.get(position).first.getAssociation_user_id();
         String post_id = listResponse.get(position).first.getPost_id();
         Status cur_status = listResponse.get(position).first.getStatus();
+        Status massage_update = listResponse.get(position).first.getMassage_update();
+        holder.res_id = listResponse.get(position).second;
         String status;
         if(cur_status == Status.APPROVED)
             status  = "approved";
         else
             status  = "rejected";
-
+        if(massage_update == Status.WAITING)
+        {
+            holder.btnupdatemassageres.setText("new massage");
+            holder.btnupdatemassageres.setBackgroundColor(Color.argb(100,255,165,0));
+        }
+        else
+        {
+            holder.btnupdatemassageres.setText("");
+            holder.btnupdatemassageres.setBackgroundColor(Color.WHITE);
+        }
         holder.mDatabase.child("assoc_users").child(assoc_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -86,6 +98,7 @@ public class AdapterResponse extends RecyclerView.Adapter<AdapterResponse.ViewHo
             intent.putExtra("assoc_name",holder.txtNameAssociation.getText().toString());
             intent.putExtra("assoc_email",holder.txtMailAssociation.getText().toString());
             intent.putExtra("status",status);
+            intent.putExtra("res_id",holder.res_id);
             context.startActivity(intent);
         });
 
@@ -102,9 +115,10 @@ public class AdapterResponse extends RecyclerView.Adapter<AdapterResponse.ViewHo
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView  txtNameAssociation, txtMailAssociation,txtNamePost;
-        private Button btnSeeMoreDetails;
+        private Button btnSeeMoreDetails,btnupdatemassageres;
         private CardView parent;
         private DatabaseReference mDatabase;
+        String res_id;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //        firebase code
@@ -114,8 +128,7 @@ public class AdapterResponse extends RecyclerView.Adapter<AdapterResponse.ViewHo
             txtNamePost = itemView.findViewById(R.id.nameResponse2Vol);
             parent = itemView.findViewById(R.id.parentResponse);
             btnSeeMoreDetails = itemView.findViewById(R.id.btnSeeDetailsResponse2Vol);
-
-
+            btnupdatemassageres = itemView.findViewById(R.id.new_massage_box_update_res);
 
         }
     }
