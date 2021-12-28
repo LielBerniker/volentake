@@ -55,6 +55,7 @@ public class AdapterReqAssociation extends RecyclerView.Adapter<AdapterReqAssoci
             holder.btnupdatemassagestatus.setText("new massage");
             holder.btnupdatemassagestatus.setBackgroundColor(Color.argb(100,255,165,0));
         }
+
         holder.mDatabase.child("vol_users").child(vol_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
