@@ -101,6 +101,7 @@ public class InboxResponses extends AppCompatActivity {
                                 else {
                                     Response cur_res1 =  task.getResult().getValue(Response.class);
                                     Response cur_res2 = new Response(cur_res1.getVol_user_id(),cur_res1.getAssociation_user_id(),cur_res1.getPost_id(),cur_res1.getStatus());
+                                    cur_res2.setMassage_update(cur_res1.getMassage_update());
                                     Pair<Response,String> pair1 =new Pair<>(cur_res2,res_id);
                                     responses.add(pair1);
                                     if(count+1==num_of_responses)

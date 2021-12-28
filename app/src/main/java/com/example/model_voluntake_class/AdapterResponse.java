@@ -56,6 +56,7 @@ public class AdapterResponse extends RecyclerView.Adapter<AdapterResponse.ViewHo
             status  = "rejected";
         if(massage_update == Status.WAITING)
         {
+            System.out.println(massage_update +" this is the status");
             holder.btnupdatemassageres.setText("new massage");
             holder.btnupdatemassageres.setBackgroundColor(Color.argb(100,255,165,0));
         }

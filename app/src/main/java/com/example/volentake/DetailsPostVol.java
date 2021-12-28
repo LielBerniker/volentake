@@ -115,6 +115,7 @@ public class DetailsPostVol extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+
                             progressDialog.dismiss();
                         }
                     });
@@ -125,6 +126,7 @@ public class DetailsPostVol extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
+                post_pic.setImageResource(R.drawable.logo_01);
                 progressDialog.dismiss();
             }
         });

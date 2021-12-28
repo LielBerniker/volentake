@@ -129,6 +129,7 @@ public class DetailsPostAssociation extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
+                post_pic.setImageResource(R.drawable.logo_01);
                 progressDialog.dismiss();
             }
         });
