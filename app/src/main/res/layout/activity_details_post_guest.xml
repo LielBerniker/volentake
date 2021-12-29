@@ -71,25 +71,25 @@
                 app:layout_constraintTop_toBottomOf="@+id/PostImage2Guest" />
 
             <TextView
-                android:id="@+id/detailLocationPostGuest"
+                android:id="@+id/city_activity_details_post_guest"
                 android:layout_width="180dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="40dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
                 android:fontFamily="@font/oswald_font"
-                android:text="location"
+                android:text="city"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailPostNameGuest" />
+                app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
             <TextView
                 android:id="@+id/detailNumVolPostGuest"
                 android:layout_width="180dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/oswald_font"
                 android:text="numVol"
@@ -98,7 +98,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailLocationPostGuest" />
+                app:layout_constraintTop_toBottomOf="@+id/house_number_activity_details_post_guest" />
 
             <TextView
                 android:id="@+id/detailTypePostGuest"
@@ -165,29 +165,29 @@
                 android:id="@+id/txtUpdateLocationPostGuest"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/oswald_font"
-                android:text="@string/addressText"
+                android:text="@string/cityText"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/detailLocationPostGuest"
+                app:layout_constraintEnd_toStartOf="@+id/city_activity_details_post_guest"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePostGuest" />
+                app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
             <TextView
                 android:id="@+id/cityInsertVol1Guest"
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/oswald_font"
                 android:text="@string/num_of_participantsText"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/detailNumVolPostGuest"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostGuest" />
+                app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
             <TextView
                 android:id="@+id/txtUpdateTypePostGuest"
@@ -241,6 +241,65 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitleUpdatePostGuest"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/oswald_font"
+                android:layout_marginTop="40dp"
+                android:text="TextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateNamePostGuest" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/oswald_font"
+                android:text="@string/streetText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUpdateLocationPostGuest" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/oswald_font"
+                android:text="@string/numberText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+            <TextView
+                android:id="@+id/street_activity_details_post_guest"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/oswald_font"
+                android:text="street"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/city_activity_details_post_guest" />
+
+            <TextView
+                android:id="@+id/house_number_activity_details_post_guest"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/oswald_font"
+                android:text="number house"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/street_activity_details_post_guest" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

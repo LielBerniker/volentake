@@ -67,7 +67,7 @@ public class DetailsPostGuest extends AppCompatActivity {
         PostPhoneNum = (TextView)findViewById(R.id.detailPhoneNumberPostGuest);
         PostDescription = (TextView)findViewById(R.id.detailDescriptionPostGuest);
         PostType = (TextView)findViewById(R.id.detailTypePostGuest);
-        PostCity = (TextView)findViewById(R.id.detailLocationPostGuest);
+        PostCity = (TextView)findViewById(R.id.city_activity_details_post_guest);
         post_pic = (ImageView)findViewById(R.id.PostImage2Guest);
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
