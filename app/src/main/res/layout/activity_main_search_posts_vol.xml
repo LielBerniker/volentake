@@ -6,248 +6,266 @@
     android:layout_height="match_parent"
     tools:context=".MainSearchPostsVol">
 
-    <TextView
-        android:id="@+id/titleMainSearchPostsVol"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/oswald_font"
-        android:gravity="center"
-        android:text="Search For Volunteering Events"
-        android:textColor="@color/dark_blue"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/frameLayoutSearchByCity"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/white_button_shadow_2"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/txtlocationsearchmain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/oswald_font"
-            android:text="Search by City:"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="30dp"
-            tools:layout_editor_absoluteY="141dp" />
-
-        <EditText
-            android:id="@+id/editTextCityMainSearchPostsVol"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="25dp"
-            android:ems="10"
-            android:fontFamily="@font/oswald_font"
-            android:inputType="textPersonName"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="131dp" />
-
-        <Button
-            android:id="@+id/btnCityMainSearchPostsVol"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="255dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/white_button_shadow_2"
-            android:drawableStart="@drawable/ic_search_1"
-            android:fontFamily="@font/oswald_font"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/searchText"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="280dp"
-            tools:layout_editor_absoluteY="121dp" />
-
-    </FrameLayout>
-
-
-    <FrameLayout
-        android:id="@+id/frameLayoutSearchByType"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/white_button_shadow_2"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/txttypesearchmain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/oswald_font"
-            android:text="Search by Type:"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="233dp" />
-
-        <Spinner
-            android:id="@+id/spinnerOfTypePost"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="25dp"
-            android:fontFamily="@font/oswald_font"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="150dp"
-            tools:layout_editor_absoluteY="233dp" />
-
-        <Button
-            android:id="@+id/btnTypeMainSearchPostsVol"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="255dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/white_button_shadow_2"
-            android:drawableStart="@drawable/ic_search_1"
-            android:fontFamily="@font/oswald_font"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/searchText"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="300dp"
-            tools:layout_editor_absoluteY="233dp" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayoutSearchByLastUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/white_button_shadow_2"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/txtlastaddedsearchmain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/oswald_font"
-            android:text="Search by Last Created:"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="347dp" />
-
-        <Button
-            android:id="@+id/btnLastCreatedMainSearchPostsVol"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="255dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/white_button_shadow_2"
-            android:drawableStart="@drawable/ic_search_1"
-            android:fontFamily="@font/oswald_font"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/searchText"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="200dp"
-            tools:layout_editor_absoluteY="347dp" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayoutSearchByRandom"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="490dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/white_button_shadow_2"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/txtsearchshuffle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/oswald_font"
-            android:text="Search by Random:"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="43dp"
-            tools:layout_editor_absoluteY="455dp" />
-
-        <Button
-            android:id="@+id/btnRandomMainSearchPostsVol"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="255dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/white_button_shadow_2"
-            android:drawableStart="@drawable/ic_search_1"
-            android:fontFamily="@font/oswald_font"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/searchText"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="193dp"
-            tools:layout_editor_absoluteY="455dp" />
-
-    </FrameLayout>
-
-
-    <Button
-        android:id="@+id/back_activity_main_search_posts_vol"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/blue"
-        android:drawableLeft="@drawable/ic_back_1"
-        android:fontFamily="@font/oswald_font"
-        android:text="@string/backToMainMenu"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayoutSearchByRandom"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleMainSearchPostsVol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/oswald_font"
+                android:gravity="center"
+                android:text="Search For Volunteering Events"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/frameLayoutSearchByCity"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/white_button_shadow_2"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtlocationsearchmain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/oswald_font"
+                    android:text="Search by City:"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="30dp"
+                    tools:layout_editor_absoluteY="141dp" />
+
+                <EditText
+                    android:id="@+id/editTextCityMainSearchPostsVol"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="25dp"
+                    android:ems="10"
+                    android:fontFamily="@font/oswald_font"
+                    android:inputType="textPersonName"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="130dp"
+                    tools:layout_editor_absoluteY="131dp" />
+
+                <Button
+                    android:id="@+id/btnCityMainSearchPostsVol"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="255dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white_button_shadow_2"
+                    android:drawableStart="@drawable/ic_search_1"
+                    android:fontFamily="@font/oswald_font"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/searchText"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="280dp"
+                    tools:layout_editor_absoluteY="121dp" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/frameLayoutSearchByType"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="230dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/white_button_shadow_2"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txttypesearchmain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/oswald_font"
+                    android:text="Search by Type:"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="233dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerOfTypePost"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/oswald_font"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="150dp"
+                    tools:layout_editor_absoluteY="233dp" />
+
+                <Button
+                    android:id="@+id/btnTypeMainSearchPostsVol"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="255dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white_button_shadow_2"
+                    android:drawableStart="@drawable/ic_search_1"
+                    android:fontFamily="@font/oswald_font"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/searchText"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="300dp"
+                    tools:layout_editor_absoluteY="233dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutSearchByLastUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="360dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/white_button_shadow_2"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtlastaddedsearchmain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/oswald_font"
+                    android:text="Search by Last Created:"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="347dp" />
+
+                <Button
+                    android:id="@+id/btnLastCreatedMainSearchPostsVol"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="255dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white_button_shadow_2"
+                    android:drawableStart="@drawable/ic_search_1"
+                    android:fontFamily="@font/oswald_font"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/searchText"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="200dp"
+                    tools:layout_editor_absoluteY="347dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutSearchByRandom"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="490dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/white_button_shadow_2"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtsearchshuffle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/oswald_font"
+                    android:text="Search by Random:"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="43dp"
+                    tools:layout_editor_absoluteY="455dp" />
+
+                <Button
+                    android:id="@+id/btnRandomMainSearchPostsVol"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="255dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white_button_shadow_2"
+                    android:drawableStart="@drawable/ic_search_1"
+                    android:fontFamily="@font/oswald_font"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/searchText"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="193dp"
+                    tools:layout_editor_absoluteY="455dp" />
+
+            </FrameLayout>
+
+
+            <Button
+                android:id="@+id/back_activity_main_search_posts_vol"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/blue"
+                android:drawableLeft="@drawable/ic_back_1"
+                android:fontFamily="@font/oswald_font"
+                android:text="@string/backToMainMenu"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayoutSearchByRandom"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
