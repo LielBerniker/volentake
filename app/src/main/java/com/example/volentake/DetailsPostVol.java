@@ -79,6 +79,9 @@ public class DetailsPostVol extends AppCompatActivity {
         PostPhoneNum = (TextView) findViewById(R.id.detailPhoneNumberPost);
         PostDescription = (TextView) findViewById(R.id.detailDescriptionPost);
         PostType = (TextView) findViewById(R.id.detailTypePost);
+        PostCity = (TextView) findViewById(R.id.city_activity_details_post_vol);
+        PostStreet = (TextView) findViewById(R.id.street_activity_details_post_vol);
+        Poststnum = (TextView) findViewById(R.id.house_number_activity_details_post_vol);
         post_pic = (ImageView) findViewById(R.id.PostImage2);
         mDatabase.child("posts").child(post_id).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -94,7 +97,9 @@ public class DetailsPostVol extends AppCompatActivity {
                     PostDescription.setText(cur_post.getDescription());
                     PostType.setText(cur_post.getType());
                     assoc_id = cur_post.userId;
-                    System.out.println("this id the user id in the post" + assoc_id);
+                    Poststnum.setText(Integer.toString(cur_post.getLocation().getNumber()));
+                    PostStreet.setText(cur_post.getLocation().getStreet());
+                    PostCity.setText(cur_post.getLocation().getCity());
                 }
             }
         });
